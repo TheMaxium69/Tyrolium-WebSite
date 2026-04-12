@@ -1,7 +1,0 @@
-body.light #account h4{
-    color: white;
-}
-
-body.light #account .checkbox:checked + label, body.light #account .checkbox:not(:checked) + label{
-    background-color: #e1e1e1;
-}
