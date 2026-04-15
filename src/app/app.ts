@@ -1,11 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ITyroUiNavbarPages, TyroUiButtom, TyroUiNavbar } from 'tyrolium-ui';
+import { ITyroUiNavbarPages, TyroUiButtom, TyroUiFooter, TyroUiNavbar } from 'tyrolium-ui';
 import { Header } from './components/header/header';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, TyroUiButtom, TyroUiNavbar, Header],
+  imports: [RouterOutlet, TyroUiButtom, TyroUiNavbar, Header, TyroUiFooter],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
