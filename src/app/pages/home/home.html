@@ -81,67 +81,18 @@
     </p>
 
     <div class="projects-grid">
+      @for (project of featuredProjects; track project.name) {
+        <app-project-card [project]="project"></app-project-card>
+      }
 
-      <a href="#" class="project-card project-card--blue">
-        <div class="project-card__header">
-          <span class="project-tag">Gaming · Minecraft</span>
-          <i class="ri-gamepad-line project-card__icon-big"></i>
-        </div>
-        <h3>TyroServ</h3>
-        <p>Serveur Minecraft moddé depuis 2017, PVP-Faction moddé et mini-jeux. Gratuit, semi-crack, avec un système de comptes intégré pour la sécurité.</p>
-        <div class="project-card__footer">
-          <div class="project-tags">
-            <span>Minecraft</span>
-            <span>Modding</span>
-            <span>PVP</span>
-          </div>
-          <i class="ri-arrow-right-up-line"></i>
-        </div>
-      </a>
-
-      <a href="#" class="project-card">
-        <div class="project-card__header">
-          <span class="project-tag">Cloud · Comptes</span>
-          <i class="ri-user-settings-line project-card__icon-big"></i>
-        </div>
-        <h3>Useritium</h3>
-        <p>Plateforme de gestion de comptes unifiée pour l'ensemble de l'écosystème Tyrolium. Stockage cloud, messagerie et authentification centralisée.</p>
-        <div class="project-card__footer">
-          <div class="project-tags">
-            <span>Cloud</span>
-            <span>Auth</span>
-            <span>Stockage</span>
-          </div>
-          <i class="ri-arrow-right-up-line"></i>
-        </div>
-      </a>
-
-      <a href="#" class="project-card">
-        <div class="project-card__header">
-          <span class="project-tag">Web · SaaS</span>
-          <i class="ri-database-2-line project-card__icon-big"></i>
-        </div>
-        <h3>SolidServ</h3>
-        <p>Solution d'hébergement et de gestion de serveurs dédiée aux communautés gaming et aux projets techniques nécessitant une infrastructure robuste.</p>
-        <div class="project-card__footer">
-          <div class="project-tags">
-            <span>Hébergement</span>
-            <span>DevOps</span>
-            <span>Linux</span>
-          </div>
-          <i class="ri-arrow-right-up-line"></i>
-        </div>
-      </a>
-
-      <a href="/project" class="project-card project-card--ghost">
-        <div class="project-card__more">
+      <a href="/project" class="home-more-card">
+        <div class="home-more-card__inner">
           <i class="ri-apps-2-line"></i>
           <h3>Et bien d'autres…</h3>
           <p>Découvrez l'ensemble de nos projets et initiatives en cours.</p>
           <span class="btn-outline-small">Voir tous les projets <i class="ri-arrow-right-line"></i></span>
         </div>
       </a>
-
     </div>
   </div>
 </section>

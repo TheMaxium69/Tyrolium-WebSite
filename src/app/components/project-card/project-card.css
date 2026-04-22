@@ -1,0 +1,199 @@
+/* ══════════════════════════════════════════════════════════════════════════ */
+/* ── Rotating border animation ────────────────────────────────────────────── */
+/* ══════════════════════════════════════════════════════════════════════════ */
+
+@property --border-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes rotate-border {
+  to { --border-angle: 360deg; }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════ */
+/* ── Card base ────────────────────────────────────────────────────────────── */
+/* ══════════════════════════════════════════════════════════════════════════ */
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 18px;
+  border: 2px solid transparent;
+  overflow: hidden;
+  text-decoration: none;
+  /* angle animates always so it's already in motion when hover triggers */
+  animation: rotate-border 3s linear infinite;
+  background:
+    linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(#e2e6f3, #e2e6f3) border-box;
+  transition: box-shadow 0.24s ease, transform 0.2s ease;
+}
+
+.project-card:hover {
+  background:
+    linear-gradient(#ffffff, #ffffff) padding-box,
+    conic-gradient(
+      from var(--border-angle),
+      #001a6e 0%,
+      #4055dd 30%,
+      #ee2b2b 55%,
+      #ff5533 70%,
+      #001a6e 100%
+    ) border-box;
+  box-shadow: 0 16px 48px rgba(0, 26, 110, 0.14);
+  transform: translateY(-4px);
+}
+
+/* Sub-project variant — different gradient */
+
+.project-card--sub {
+  background:
+    linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(#dde2f3, #dde2f3) border-box;
+}
+
+.project-card--sub:hover {
+  background:
+    linear-gradient(#ffffff, #ffffff) padding-box,
+    conic-gradient(
+      from var(--border-angle),
+      #1d4ed8 0%,
+      #7c3aed 40%,
+      #db2777 70%,
+      #1d4ed8 100%
+    ) border-box;
+  box-shadow: 0 16px 48px rgba(124, 58, 237, 0.14);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════ */
+/* ── Visual / Logo zone ───────────────────────────────────────────────────── */
+/* ══════════════════════════════════════════════════════════════════════════ */
+
+.project-card__visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: linear-gradient(135deg, #001a6e 0%, #ee2b2b 100%);
+  transition: background 0.35s ease;
+}
+
+.project-card--sub .project-card__visual {
+  background: linear-gradient(135deg, #1d4ed8 0%, #7c3aed 100%);
+}
+
+.project-card:hover .project-card__visual {
+  background: #eef0f9;
+}
+
+.project-card--sub:hover .project-card__visual {
+  background: #f0eef9;
+}
+
+.project-card__logo {
+  width: 76px;
+  height: 76px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  transition: filter 0.35s ease, transform 0.24s ease;
+}
+
+.project-card:hover .project-card__logo {
+  filter: none;
+  transform: scale(1.07);
+}
+
+.project-arrow {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.8rem;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.4);
+  transition: color 0.22s ease, transform 0.22s ease;
+}
+
+.project-card:hover .project-arrow {
+  color: #001a6e;
+  transform: translate(2px, -2px);
+}
+
+.project-card--sub:hover .project-arrow {
+  color: #7c3aed;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════ */
+/* ── Body ─────────────────────────────────────────────────────────────────── */
+/* ══════════════════════════════════════════════════════════════════════════ */
+
+.project-card__body {
+  padding: 1.15rem 1.4rem 1.5rem;
+}
+
+.project-card__title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.project-card__title-row h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+
+.project-card__body p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.855rem;
+  line-height: 1.6;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* ── Toggle button ────────────────────────────────────────────────────────── */
+
+.sub-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1.5px solid #e2e6f3;
+  background: #f6f7fb;
+  color: #6b7280;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+  padding: 0;
+}
+
+.sub-toggle i {
+  font-size: 1rem;
+  transition: transform 0.25s ease;
+}
+
+.sub-toggle:hover {
+  border-color: #001a6e;
+  background: #eef0f9;
+  color: #001a6e;
+}
+
+.sub-toggle--open i {
+  transform: rotate(90deg);
+}
+
+.project-card--sub .sub-toggle:hover {
+  border-color: #7c3aed;
+  background: #f0eef9;
+  color: #7c3aed;
+}

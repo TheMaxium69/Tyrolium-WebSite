@@ -36,37 +36,74 @@
 
     <div class="projects-grid">
       @for (project of mainProjects; track project.name) {
-        <a class="project-card"
-           [href]="project.link"
-           [target]="project.link.startsWith('http') ? '_blank' : '_self'"
-           [attr.rel]="project.link.startsWith('http') ? 'noopener noreferrer' : null">
+        <app-project-card
+          [project]="project"
+          [expanded]="isExpanded(project.name)"
+          (toggleSub)="toggle(project.name)">
+        </app-project-card>
 
-          <div class="project-card__visual">
-            <img class="project-card__logo" [src]="project.image" [alt]="project.name">
-
-            @if (project.subItems?.length) {
-              <div class="project-subs">
-                @for (sub of project.subItems!; track sub.name) {
-                  <div class="project-sub-chip">
-                    <img [src]="sub.image" [alt]="sub.name">
-                    <span>{{ sub.name }}</span>
-                  </div>
-                }
-              </div>
-            }
-
-            <i class="ri-arrow-right-up-line project-arrow"></i>
-          </div>
-
-          <div class="project-card__body">
-            <h3>{{ project.name }}</h3>
-            <p>{{ project.description }}</p>
-          </div>
-
-        </a>
+        @if (isExpanded(project.name)) {
+          @for (sub of project.subItems!; track sub.name) {
+            <app-project-card
+              [project]="sub"
+              [isSubProject]="true">
+            </app-project-card>
+          }
+        }
       }
     </div>
 
+  </div>
+</section>
+
+<!-- ── Indépendance ───────────────────────────────────────────────────── -->
+
+<section class="section independence">
+  <div class="container">
+    <div class="ind-inner">
+
+      <div class="ind-left">
+        <p class="label label--accent">Notre structure</p>
+        <h2 class="ind-title">Zéro compromis.<br>Totale liberté.</h2>
+        <p class="ind-text">
+          Chaque projet naît de notre passion et grandit à notre rythme.
+          Pas d'actionnaire à contenter, pas d'investisseur à rembourser —
+          nous construisons ce que nous croyons, comme nous le voulons.
+        </p>
+      </div>
+
+      <div class="ind-right">
+        <div class="ind-item ind-item--no">
+          <i class="ri-close-circle-fill"></i>
+          <div>
+            <strong>Aucun actionnaire</strong>
+            <span>100 % auto-fondé</span>
+          </div>
+        </div>
+        <div class="ind-item ind-item--no">
+          <i class="ri-close-circle-fill"></i>
+          <div>
+            <strong>Aucun investissement externe</strong>
+            <span>Financé par nos propres moyens</span>
+          </div>
+        </div>
+        <div class="ind-item ind-item--no">
+          <i class="ri-close-circle-fill"></i>
+          <div>
+            <strong>Aucune levée de fonds</strong>
+            <span>Jamais dilué, jamais contraint</span>
+          </div>
+        </div>
+        <div class="ind-item ind-item--yes">
+          <i class="ri-shield-check-fill"></i>
+          <div>
+            <strong>Liberté totale de décision</strong>
+            <span>Nos règles, notre vision</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 

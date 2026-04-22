@@ -1,0 +1,27 @@
+<a class="project-card"
+   [class.project-card--sub]="isSubProject"
+   [href]="project.link"
+   [target]="project.link.startsWith('http') ? '_blank' : '_self'"
+   [attr.rel]="project.link.startsWith('http') ? 'noopener noreferrer' : null">
+
+  <div class="project-card__visual">
+    <img class="project-card__logo" [src]="project.image" [alt]="project.name">
+    <i class="ri-arrow-right-up-line project-arrow"></i>
+  </div>
+
+  <div class="project-card__body">
+    <div class="project-card__title-row">
+      <h3>{{ project.name }}</h3>
+      @if (project.subItems?.length) {
+        <button
+          class="sub-toggle"
+          [class.sub-toggle--open]="expanded"
+          (click)="$event.stopPropagation(); $event.preventDefault(); toggleSub.emit()">
+          <i class="ri-arrow-right-s-line"></i>
+        </button>
+      }
+    </div>
+    <p>{{ project.description }}</p>
+  </div>
+
+</a>
