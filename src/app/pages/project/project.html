@@ -41,10 +41,20 @@
            [target]="project.link.startsWith('http') ? '_blank' : '_self'"
            [attr.rel]="project.link.startsWith('http') ? 'noopener noreferrer' : null">
 
-          <div class="project-card__top">
-            <div class="project-logo" [style.background]="project.iconBg">
-              <img [src]="project.image" [alt]="project.name">
-            </div>
+          <div class="project-card__visual">
+            <img class="project-card__logo" [src]="project.image" [alt]="project.name">
+
+            @if (project.subItems?.length) {
+              <div class="project-subs">
+                @for (sub of project.subItems!; track sub.name) {
+                  <div class="project-sub-chip">
+                    <img [src]="sub.image" [alt]="sub.name">
+                    <span>{{ sub.name }}</span>
+                  </div>
+                }
+              </div>
+            }
+
             <i class="ri-arrow-right-up-line project-arrow"></i>
           </div>
 
@@ -53,68 +63,6 @@
             <p>{{ project.description }}</p>
           </div>
 
-          @if (project.subItems?.length) {
-            <div class="project-subs">
-              @for (sub of project.subItems!; track sub.name) {
-                <div class="project-sub-chip" [style.background]="sub.iconBg">
-                  <img [src]="sub.image" [alt]="sub.name">
-                  <span>{{ sub.name }}</span>
-                </div>
-              }
-            </div>
-          }
-
-        </a>
-      }
-    </div>
-
-  </div>
-</section>
-
-<!-- ── Liens & Services ───────────────────────────────────────────────── -->
-
-<section class="section">
-  <div class="container">
-
-    <p class="label">À explorer</p>
-    <h2 class="title">Liens & Services</h2>
-
-    <div class="links-grid">
-      @for (item of otherItems; track item.name) {
-        <a class="link-card"
-           [href]="item.link"
-           [target]="item.link.startsWith('http') ? '_blank' : '_self'"
-           [attr.rel]="item.link.startsWith('http') ? 'noopener noreferrer' : null">
-
-          <div class="link-card__icon" [style.background]="item.iconBg">
-            @if (item.image.startsWith('ri-')) {
-              <i [class]="item.image"></i>
-            } @else {
-              <img [src]="item.image" [alt]="item.name">
-            }
-          </div>
-
-          <div class="link-card__body">
-            <h3>{{ item.name }}</h3>
-            <p>{{ item.description }}</p>
-
-            @if (item.subItems?.length) {
-              <ul class="link-subs">
-                @for (sub of item.subItems!; track sub.name) {
-                  <li>
-                    <a [href]="sub.link"
-                       [target]="sub.link.startsWith('http') ? '_blank' : '_self'"
-                       [attr.rel]="sub.link.startsWith('http') ? 'noopener noreferrer' : null"
-                       (click)="$event.stopPropagation()">
-                      {{ sub.name }} — {{ sub.description }}
-                    </a>
-                  </li>
-                }
-              </ul>
-            }
-          </div>
-
-          <i class="ri-arrow-right-line link-card__arrow"></i>
         </a>
       }
     </div>
