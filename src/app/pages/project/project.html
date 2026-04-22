@@ -1,0 +1,147 @@
+<!-- ── En-tête de page ─────────────────────────────────────────────────── -->
+
+<div class="page-hero">
+  <div class="container">
+    <p class="hero-label">Notre univers</p>
+    <h1 class="hero-title">Nos Projets</h1>
+    <p class="hero-desc">
+      Découvrez l'ensemble des projets et services portés par Tyrolium,
+      de nos débuts en 2017 à aujourd'hui.
+    </p>
+  </div>
+  <div class="page-hero__wave">
+    <svg viewBox="0 24 150 28" preserveAspectRatio="none">
+      <defs>
+        <path id="pw" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/>
+      </defs>
+      <use href="#pw" x="48" y="0" fill="rgba(255,255,255,0.5)"/>
+      <use href="#pw" x="48" y="3" fill="rgba(255,255,255,0.3)"/>
+      <use href="#pw" x="48" y="7" fill="#f6f7fb"/>
+    </svg>
+  </div>
+</div>
+
+<!-- ── Projets principaux ──────────────────────────────────────────────── -->
+
+<section class="section bg-light">
+  <div class="container">
+
+    <div class="section-head">
+      <div>
+        <p class="label">Produits & Services</p>
+        <h2 class="title">Projets principaux</h2>
+      </div>
+      <p class="section-count">{{ mainProjects.length }} projets</p>
+    </div>
+
+    <div class="projects-grid">
+      @for (project of mainProjects; track project.name) {
+        <a class="project-card"
+           [href]="project.link"
+           [target]="project.link.startsWith('http') ? '_blank' : '_self'"
+           [attr.rel]="project.link.startsWith('http') ? 'noopener noreferrer' : null">
+
+          <div class="project-card__top">
+            <div class="project-logo" [style.background]="project.iconBg">
+              <img [src]="project.image" [alt]="project.name">
+            </div>
+            <i class="ri-arrow-right-up-line project-arrow"></i>
+          </div>
+
+          <div class="project-card__body">
+            <h3>{{ project.name }}</h3>
+            <p>{{ project.description }}</p>
+          </div>
+
+          @if (project.subItems?.length) {
+            <div class="project-subs">
+              @for (sub of project.subItems!; track sub.name) {
+                <div class="project-sub-chip" [style.background]="sub.iconBg">
+                  <img [src]="sub.image" [alt]="sub.name">
+                  <span>{{ sub.name }}</span>
+                </div>
+              }
+            </div>
+          }
+
+        </a>
+      }
+    </div>
+
+  </div>
+</section>
+
+<!-- ── Liens & Services ───────────────────────────────────────────────── -->
+
+<section class="section">
+  <div class="container">
+
+    <p class="label">À explorer</p>
+    <h2 class="title">Liens & Services</h2>
+
+    <div class="links-grid">
+      @for (item of otherItems; track item.name) {
+        <a class="link-card"
+           [href]="item.link"
+           [target]="item.link.startsWith('http') ? '_blank' : '_self'"
+           [attr.rel]="item.link.startsWith('http') ? 'noopener noreferrer' : null">
+
+          <div class="link-card__icon" [style.background]="item.iconBg">
+            @if (item.image.startsWith('ri-')) {
+              <i [class]="item.image"></i>
+            } @else {
+              <img [src]="item.image" [alt]="item.name">
+            }
+          </div>
+
+          <div class="link-card__body">
+            <h3>{{ item.name }}</h3>
+            <p>{{ item.description }}</p>
+
+            @if (item.subItems?.length) {
+              <ul class="link-subs">
+                @for (sub of item.subItems!; track sub.name) {
+                  <li>
+                    <a [href]="sub.link"
+                       [target]="sub.link.startsWith('http') ? '_blank' : '_self'"
+                       [attr.rel]="sub.link.startsWith('http') ? 'noopener noreferrer' : null"
+                       (click)="$event.stopPropagation()">
+                      {{ sub.name }} — {{ sub.description }}
+                    </a>
+                  </li>
+                }
+              </ul>
+            }
+          </div>
+
+          <i class="ri-arrow-right-line link-card__arrow"></i>
+        </a>
+      }
+    </div>
+
+  </div>
+</section>
+
+<!-- ── CTA ────────────────────────────────────────────────────────────── -->
+
+<section class="section cta-section bg-light">
+  <div class="container">
+    <div class="cta-card">
+      <div class="cta-card__text">
+        <p class="label label--white">Une idée de projet ?</p>
+        <h2>Construisons-le ensemble.</h2>
+        <p>Nos équipes sont à l'écoute pour étudier votre projet et vous proposer la solution adaptée.</p>
+      </div>
+      <div class="cta-card__actions">
+        <a href="mailto:contact@tyrolium.fr" class="btn-white">
+          <i class="ri-mail-send-line"></i> Contactez-nous
+        </a>
+        <a href="/" class="btn-transparent">
+          Retour à l'accueil <i class="ri-arrow-right-line"></i>
+        </a>
+      </div>
+      <div class="cta-deco cta-deco--1"></div>
+      <div class="cta-deco cta-deco--2"></div>
+    </div>
+  </div>
+</section>

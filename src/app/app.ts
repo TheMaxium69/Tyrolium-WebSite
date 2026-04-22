@@ -1,35 +1,20 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ITyroUiNavbarPages, TyroUiButtom, TyroUiFooter, TyroUiNavbar } from 'tyrolium-ui';
-import { Header } from './components/header/header';
+import { ITyroUiNavbarPages, TyroUiFooter, TyroUiNavbar } from 'tyrolium-ui';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, TyroUiButtom, TyroUiNavbar, Header, TyroUiFooter],
+  imports: [RouterOutlet, TyroUiNavbar, TyroUiFooter],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
 export class App {
-  /*
-   *
-   * GLOBAL VARIABLE
-   *
-   * */
-
-  public APP_ENV = 'DEV';
   public PROJECT_NAME = 'Tyrolium';
   public PROJECT_LOGO = 'https://tyrolium.fr/Contenu/Image/Tyrolium%20Site.png';
   public PROJECT_CONTENT = `<strong>TyroServ</strong>, un serveur <strong>Minecraft moddé</strong> depuis <strong>2017</strong>,
                 propose du <strong>PVP-Faction moddés</strong> (actuellement en saison 3) et bientôt des
                 <strong>mini-jeux moddés</strong>. <strong>Gratuit</strong> et semi-crack, il offre une sécurité
                 renforcée contre les tricheurs grâce à la création de comptes spécifiques.`
-
-
-  /*
-   *
-   * PAGES
-   *
-   * */
 
   public pages: ITyroUiNavbarPages[] = [
     { label: 'Accueil', link: '/', icon: 'ri-home-line' },
@@ -38,9 +23,11 @@ export class App {
       label: 'Produit',
       icon: 'ri-briefcase-line',
       children: [
-        { label: 'Développement web', link: '/prestation/web', icon: 'ri-code-line' },
-        { label: 'Infrastructure', link: '/prestation/infra', icon: 'ri-server-line' },
-        { label: 'Conseil', link: '/prestation/conseil' }, // pas d'icône, optionnel
+        { label: 'Site Web',    link: '/prestation/web',        icon: 'ri-global-line' },
+        { label: 'Serveur',     link: '/prestation/server',     icon: 'ri-server-line' },
+        { label: 'Minecraft',   link: '/prestation/minecraft',  icon: 'ri-gamepad-line' },
+        { label: 'Incubateur',  link: '/prestation/incubateur', icon: 'ri-rocket-2-line' },
+        { label: 'Formation',   link: '/prestation/formation',  icon: 'ri-graduation-cap-line' },
       ],
     },
   ];
