@@ -145,24 +145,12 @@
 
 <!-- ── CTA ─────────────────────────────────────────────────────────────── -->
 
-<section class="section cta-section">
-  <div class="container">
-    <div class="cta-card">
-      <div class="cta-card__text">
-        <p class="label label--white">Formation</p>
-        <h2>Prêt à apprendre<br>avec nous ?</h2>
-        <p>Décrivez-nous vos objectifs et votre contexte. On revient vers vous avec une proposition dans les 48h.</p>
-      </div>
-      <div class="cta-card__actions">
-        <a href="mailto:contact@tyrolium.fr" class="btn-white">
-          <i class="ri-mail-send-line"></i> Demander un devis
-        </a>
-        <a href="/project" class="btn-ghost-white">
-          Nos réalisations <i class="ri-arrow-right-line"></i>
-        </a>
-      </div>
-      <div class="cta-deco cta-deco--1"></div>
-      <div class="cta-deco cta-deco--2"></div>
-    </div>
-  </div>
-</section>
+<tyro-ui-cta
+        [title]="'Votre idée mérite<br>d\'exister.'"
+        [label]="'Incubateur'"
+        [content]="'Envoyez-nous un email avec une description de votre projet. La sélection est ouverte en continu.'"
+        [btn]="'Demander un devis'"
+        [btnIcon]="`<i class='ri-mail-send-line'></i>`"
+        [subbtn]="'Nos réalisations'"
+        [notBack]="true"
+></tyro-ui-cta>

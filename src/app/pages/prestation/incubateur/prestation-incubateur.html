@@ -123,24 +123,12 @@
 
 <!-- ── CTA ─────────────────────────────────────────────────────────────── -->
 
-<section class="section cta-section bg-light">
-  <div class="container">
-    <div class="cta-card">
-      <div class="cta-card__text">
-        <p class="label label--white">Incubateur</p>
-        <h2>Votre idée mérite<br>d'exister.</h2>
-        <p>Envoyez-nous un email avec une description de votre projet. La sélection est ouverte en continu.</p>
-      </div>
-      <div class="cta-card__actions">
-        <a href="mailto:incubateur@tyrolium.fr" class="btn-white">
-          <i class="ri-send-plane-line"></i> Candidater
-        </a>
-        <a href="mailto:contact@tyrolium.fr" class="btn-ghost-white">
-          Une question ? <i class="ri-arrow-right-line"></i>
-        </a>
-      </div>
-      <div class="cta-deco cta-deco--1"></div>
-      <div class="cta-deco cta-deco--2"></div>
-    </div>
-  </div>
-</section>
+<tyro-ui-cta
+        [title]="'Votre idée mérite<br>d\'exister.'"
+        [label]="'Incubateur'"
+        [content]="'Envoyez-nous un email avec une description de votre projet. La sélection est ouverte en continu.'"
+        [btn]="'Candidater'"
+        [btnIcon]="`<i class='ri-send-plane-line'></i>`"
+        [subbtn]="'Une question ?'"
+></tyro-ui-cta>
+

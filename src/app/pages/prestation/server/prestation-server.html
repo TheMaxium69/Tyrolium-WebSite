@@ -127,24 +127,11 @@
 
 <!-- ── CTA ─────────────────────────────────────────────────────────────── -->
 
-<section class="section cta-section bg-light">
-  <div class="container">
-    <div class="cta-card">
-      <div class="cta-card__text">
-        <p class="label label--white">Infrastructure</p>
-        <h2>Votre infra entre<br>de bonnes mains.</h2>
-        <p>Parlez-nous de votre projet et on configure la solution adaptée à vos besoins et votre budget.</p>
-      </div>
-      <div class="cta-card__actions">
-        <a href="mailto:contact@tyrolium.fr" class="btn-white">
-          <i class="ri-mail-send-line"></i> Nous contacter
-        </a>
-        <a href="https://solidserv.fr" target="_blank" rel="noopener" class="btn-ghost-white">
-          Voir SolidServ <i class="ri-external-link-line"></i>
-        </a>
-      </div>
-      <div class="cta-deco cta-deco--1"></div>
-      <div class="cta-deco cta-deco--2"></div>
-    </div>
-  </div>
-</section>
+<tyro-ui-cta
+        [title]="'Votre infra entre<br>de bonnes mains.'"
+        [label]="'Infrastructure'"
+        [content]="'Parlez-nous de votre projet et on configure la solution adaptée à vos besoins et votre budget.'"
+        [btn]="'Nous contacter'"
+        [btnIcon]="`<i class='ri-mail-send-line'></i>`"
+        [subbtn]="'Voir SolidServ'"
+></tyro-ui-cta>
