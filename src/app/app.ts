@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ITyroUiNavbarPages, TyroUiButtom, TyroUiFooter, TyroUiNavbar } from 'tyrolium-ui';
 import { Header } from './components/header/header';
