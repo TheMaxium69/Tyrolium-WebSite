@@ -24,7 +24,7 @@
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #002080;
+  color: #001a6e;
   margin-bottom: 0.6rem;
 }
 
@@ -93,9 +93,9 @@
   font-size: 1.5rem;
 }
 
-.icon--blue  { background: #e8edff; color: #002080; }
-.icon--navy  { background: #e0e7ff; color: #0024ff; }
-.icon--red   { background: #ffe8ec; color: #8B0000; }
+.icon--blue  { background: rgba(0, 26, 110, 0.05); color: #001a6e; }
+.icon--navy  { background: #e0e7ff; color: #001a6e; }
+.icon--red   { background: rgba(238, 43, 43, 0.1); color: #ee2b2b; }
 
 /* Card text */
 
@@ -137,7 +137,7 @@
 }
 
 .feature-list li i {
-  color: #002080;
+  color: #001a6e;
   font-size: 0.9rem;
   flex-shrink: 0;
 }
@@ -152,7 +152,7 @@
   font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.01em;
-  color: #002080;
+  color: #001a6e;
   text-decoration: none;
   margin-top: auto;
   transition: gap 0.2s ease;
@@ -264,15 +264,15 @@
 /* Color variants */
 
 .project-card--blue {
-  background: linear-gradient(135deg, #002080 0%, #0033CC 100%);
+  background: linear-gradient(135deg, #001a6e 0%, #ee2b2b 100%);
 }
 
 .project-card--purple {
-  background: linear-gradient(135deg, #3b0093 0%, #6424cc 100%);
+  background: linear-gradient(135deg, #001a6e 0%, #ee2b2b 100%);
 }
 
 .project-card--green {
-  background: linear-gradient(135deg, #064e3b 0%, #047857 100%);
+  background: linear-gradient(135deg, #001a6e 0%, #ee2b2b 100%);
 }
 
 /* Ghost "more" card */
@@ -286,7 +286,7 @@
 }
 
 .project-card--ghost:hover {
-  border-color: #002080;
+  border-color: #001a6e;
   box-shadow: 0 8px 30px rgba(0, 32, 128, 0.08);
 }
 
@@ -322,8 +322,8 @@
   font-family: 'Inter', sans-serif;
   font-size: 0.82rem;
   font-weight: 600;
-  color: #002080;
-  border: 1.5px solid #002080;
+  color: #001a6e;
+  border: 1.5px solid #001a6e;
   border-radius: 100px;
   padding: 0.5rem 1.1rem;
   text-decoration: none;
@@ -331,7 +331,7 @@
 }
 
 .project-card--ghost:hover .btn-outline-small {
-  background: #e8edff;
+  background: rgba(0, 26, 110, 0.05);
 }
 
 /* ══════════════════════════════════════════════════════════════════════════ */
@@ -362,7 +362,7 @@
   justify-content: center;
   background: #f0f3ff;
   border-radius: 12px;
-  color: #002080;
+  color: #001a6e;
   font-size: 1.4rem;
   margin-bottom: 1.25rem;
 }
@@ -416,7 +416,7 @@
 }
 
 .tech-category h4 i {
-  color: #002080;
+  color: #001a6e;
   font-size: 1.1rem;
 }
 
@@ -439,9 +439,9 @@
 }
 
 .tech-pills span:hover {
-  background: #e8edff;
+  background: rgba(0, 26, 110, 0.05);
   border-color: #c2caf0;
-  color: #002080;
+  color: #001a6e;
 }
 
 /* ══════════════════════════════════════════════════════════════════════════ */
@@ -493,8 +493,8 @@
 }
 
 .timeline-dot--active {
-  background: #002080;
-  border-color: #002080;
+  background: #001a6e;
+  border-color: #001a6e;
   box-shadow: 0 0 0 4px rgba(0, 32, 128, 0.15);
 }
 
@@ -510,15 +510,15 @@
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #002080;
-  background: #e8edff;
+  color: #001a6e;
+  background: rgba(0, 26, 110, 0.05);
   border-radius: 100px;
   padding: 0.2rem 0.75rem;
   margin-bottom: 0.6rem;
 }
 
 .timeline-item--active .timeline-year {
-  background: #002080;
+  background: #001a6e;
   color: #ffffff;
 }
 
@@ -547,7 +547,7 @@
 
 .cta-card {
   position: relative;
-  background: linear-gradient(135deg, #001a6e 0%, #002080 50%, #003399 100%);
+  background: linear-gradient(135deg, #001a6e 0%, #ee2b2b 100%);
   border-radius: 24px;
   padding: 5rem 4rem;
   display: flex;
@@ -587,7 +587,7 @@
   align-items: center;
   gap: 0.5rem;
   background: #ffffff;
-  color: #002080;
+  color: #001a6e;
   font-family: 'Inter', sans-serif;
   font-size: 0.875rem;
   font-weight: 700;
@@ -634,7 +634,7 @@
 .cta-deco--1 {
   width: 350px;
   height: 350px;
-  background: rgba(0, 51, 204, 0.4);
+  background: rgba(0, 26, 110, 0.4);
   filter: blur(70px);
   top: -100px;
   right: -80px;
@@ -643,7 +643,7 @@
 .cta-deco--2 {
   width: 250px;
   height: 250px;
-  background: rgba(139, 0, 0, 0.2);
+  background: rgba(238, 43, 43, 0.2);
   filter: blur(60px);
   bottom: -60px;
   left: 30%;
