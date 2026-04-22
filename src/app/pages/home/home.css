@@ -24,7 +24,7 @@
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #001a6e;
+  color: #0533c8;
   margin-bottom: 0.6rem;
 }
 
@@ -93,9 +93,9 @@
   font-size: 1.5rem;
 }
 
-.icon--blue  { background: rgba(0, 26, 110, 0.05); color: #001a6e; }
-.icon--navy  { background: #e0e7ff; color: #001a6e; }
-.icon--red   { background: rgba(238, 43, 43, 0.1); color: #ee2b2b; }
+.icon--blue  { background: #e8edff; color: #0533c8; }
+.icon--navy  { background: #e8edff; color: #0533c8; }
+.icon--red   { background: #e8edff; color: #0533c8; }
 
 /* Card text */
 
@@ -152,7 +152,7 @@
   font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.01em;
-  color: #001a6e;
+  color: #000000;
   text-decoration: none;
   margin-top: auto;
   transition: gap 0.2s ease;
@@ -272,14 +272,15 @@
 
 .project-card--ghost {
   background: #ffffff;
-  border: 2px dashed #d1d8f0;
+  /*border: 2px dashed #d1d8f0;*/
+  border: 1px solid #e9ecf4;
   min-height: 200px;
   align-items: center;
   justify-content: center;
 }
 
 .project-card--ghost:hover {
-  border-color: #001a6e;
+  /*border-color: #001a6e;*/
   box-shadow: 0 8px 30px rgba(0, 32, 128, 0.08);
 }
 
@@ -353,9 +354,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f0f3ff;
   border-radius: 12px;
-  color: #001a6e;
+  background: #e8edff;
+  color: #0533c8;
   font-size: 1.4rem;
   margin-bottom: 1.25rem;
 }
@@ -404,12 +405,11 @@
   font-family: 'Syne', sans-serif;
   font-size: 0.95rem;
   font-weight: 700;
-  color: #111827;
+  color: #051d68;
   margin-bottom: 1.25rem;
 }
 
 .tech-category h4 i {
-  color: #001a6e;
   font-size: 1.1rem;
 }
 
@@ -486,8 +486,8 @@
 }
 
 .timeline-dot--active {
-  background: #001a6e;
-  border-color: #001a6e;
+  background: #0533c8;
+  border-color: #0134dc;
   box-shadow: 0 0 0 4px rgba(0, 32, 128, 0.15);
 }
 
@@ -503,15 +503,14 @@
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #001a6e;
-  background: rgba(0, 26, 110, 0.05);
+  background: #e8edff; color: #0533c8;
   border-radius: 100px;
   padding: 0.2rem 0.75rem;
   margin-bottom: 0.6rem;
 }
 
 .timeline-item--active .timeline-year {
-  background: #001a6e;
+  background: #0533c8;
   color: #ffffff;
 }
 
@@ -519,7 +518,7 @@
   font-family: 'Syne', sans-serif;
   font-size: 1rem;
   font-weight: 700;
-  color: #111827;
+  color: black;
   margin-bottom: 0.35rem;
 }
 
