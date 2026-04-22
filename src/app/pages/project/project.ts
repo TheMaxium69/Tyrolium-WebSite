@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
-import { NavbarMenuCategory, ITyroUiNavbarMenuItem } from 'tyrolium-ui';
+import {NavbarMenuCategory, ITyroUiNavbarMenuItem, TyroUiCTA} from 'tyrolium-ui';
 
 @Component({
-  selector: 'app-project',
-  templateUrl: './project.html',
-  styleUrl: './project.css',
+    selector: 'app-project',
+    templateUrl: './project.html',
+    styleUrl: './project.css',
+    imports: [
+        TyroUiCTA
+    ]
 })
 export class Project {
   private readonly gradientBg = 'linear-gradient(135deg, #001a6e 0%, #ee2b2b 100%)';

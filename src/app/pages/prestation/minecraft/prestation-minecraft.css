@@ -1,9 +1,10 @@
 :host {
-  --accent: #ee2b2b;
-  --accent-light: rgba(238, 43, 43, 0.1);
-  --accent-gradient: linear-gradient(135deg, #001a6e 0%, #ee2b2b 100%);
+  --accent: #b45309;
+  --accent-light: #fef3c7;
+  --accent-gradient: linear-gradient(135deg, #78350f 0%, #92400e 55%, #b45309 100%);
 }
 
 .prest-hero {
-  background: linear-gradient(135deg, #000c35 0%, #001a6e 55%, #ee2b2b 100%);
+  background: linear-gradient(135deg, #451a03 0%, #78350f 50%, #92400e 100%);
+  /*background: linear-gradient(135deg, #92400e 23%, #2e2ed5 60%, #BF0000 100%);*/
 }

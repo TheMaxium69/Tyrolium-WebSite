@@ -7,7 +7,7 @@ import { ITyroUiNavbarPages, TyroUiSubnav } from 'tyrolium-ui';
   imports: [TyroUiSubnav, RouterOutlet],
   template: `
     <div class="prestation-wrapper">
-      <tyro-ui-subnav [pages]="subnavPages" [isFixed]="true"></tyro-ui-subnav>
+      <tyro-ui-subnav [pages]="subnavPages" [isFixed]="true" [havePlaceholder]="false"></tyro-ui-subnav>
       <router-outlet></router-outlet>
     </div>
   `,
@@ -18,10 +18,10 @@ import { ITyroUiNavbarPages, TyroUiSubnav } from 'tyrolium-ui';
 })
 export class PrestationLayout {
   public subnavPages: ITyroUiNavbarPages[] = [
-    { label: 'Site Web',    link: '/prestation/web' },
-    { label: 'Serveur',     link: '/prestation/server' },
-    { label: 'Minecraft',   link: '/prestation/minecraft' },
-    { label: 'Incubateur',  link: '/prestation/incubateur' },
-    { label: 'Formation',   link: '/prestation/formation' },
+    { label: 'Site Web',    link: '/prestation/web', color: '#002080' },
+    { label: 'Serveur',     link: '/prestation/server', color: '#006c4f' },
+    { label: 'Minecraft',   link: '/prestation/minecraft', color: '#92400e' },
+    { label: 'Incubateur',  link: '/prestation/incubateur', color: '#2e1065' },
+    { label: 'Formation',   link: '/prestation/formation', color: '#0c4a6e' },
   ];
 }

@@ -305,24 +305,11 @@
 <!-- ── CTA ───────────────────────────────────────────────────────────── -->
 <!-- ══════════════════════════════════════════════════════════════════════ -->
 
-<section class="section cta">
-  <div class="container">
-    <div class="cta-card">
-      <div class="cta-card__text">
-        <p class="label label--white">Passons à l'action</p>
-        <h2>Prêt à démarrer<br>votre projet ?</h2>
-        <p class="cta-desc">Discutons de vos besoins. Nos équipes sont disponibles pour étudier votre projet et vous proposer une solution adaptée.</p>
-      </div>
-      <div class="cta-card__actions">
-        <a href="mailto:contact@tyrolium.fr" class="btn-white">
-          <i class="ri-mail-send-line"></i> Contactez-nous
-        </a>
-        <a href="/project" class="btn-transparent">
-          Voir nos projets <i class="ri-arrow-right-line"></i>
-        </a>
-      </div>
-      <div class="cta-deco cta-deco--1"></div>
-      <div class="cta-deco cta-deco--2"></div>
-    </div>
-  </div>
-</section>
+<tyro-ui-cta
+    [title]="'Prêt à démarrer<br>votre projet ?'"
+    [label]="'Passons à l\'action'"
+    [content]="'Discutons de vos besoins. Nos équipes sont disponibles pour étudier votre projet et vous proposer une solution adaptée.'"
+    [btn]="'Contactez-nous'"
+    [btnIcon]="`<i class='ri-mail-send-line'></i>`"
+    [subbtn]="'Voir nos projets'"
+></tyro-ui-cta>
