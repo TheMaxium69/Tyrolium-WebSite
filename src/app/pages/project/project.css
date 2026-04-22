@@ -130,97 +130,54 @@
 }
 
 /* ══════════════════════════════════════════════════════════════════════════ */
-/* ── Independence section ─────────────────────────────────────────────────── */
+/* ── Independence banner — pleine largeur, sans container ────────────────── */
 /* ══════════════════════════════════════════════════════════════════════════ */
 
-.independence {
-  background: #0d1526;
-}
-
-.ind-inner {
-  display: flex;
-  align-items: flex-start;
-  gap: 5rem;
-}
-
-.ind-left {
-  flex: 1;
-  min-width: 0;
+.independence-banner {
+  background: #ffffff;
+  padding: 72px 2rem;
+  text-align: center;
 }
 
 .ind-title {
   font-family: 'Syne', sans-serif;
-  font-size: clamp(1.75rem, 3vw, 2.75rem);
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
   font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-  color: #ffffff;
-  margin-bottom: 1.25rem;
+  letter-spacing: -0.025em;
+  color: #111827;
+  margin-bottom: 2rem;
 }
 
-.ind-text {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.95rem;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.5);
-  max-width: 420px;
-}
-
-.ind-right {
-  flex: 0 0 380px;
+.ind-items {
   display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem 1.5rem;
 }
 
 .ind-item {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 1rem 1.25rem;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.07);
-}
-
-.ind-item--no {
-  background: rgba(238, 43, 43, 0.07);
-}
-
-.ind-item--yes {
-  background: rgba(0, 26, 110, 0.3);
-  border-color: rgba(64, 85, 221, 0.35);
+  gap: 0.4rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem;
+  color: #374151;
 }
 
 .ind-item i {
-  font-size: 1.35rem;
-  flex-shrink: 0;
-}
-
-.ind-item--no i {
-  color: #f87171;
+  font-size: 1rem;
+  color: #ef4444;
 }
 
 .ind-item--yes i {
-  color: #818cf8;
+  color: #22c55e;
 }
 
-.ind-item div {
-  display: flex;
-  flex-direction: column;
-  gap: 0.1rem;
-}
-
-.ind-item strong {
-  font-family: 'Syne', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: #ffffff;
-}
-
-.ind-item span {
+.ind-sep {
   font-family: 'Inter', sans-serif;
-  font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.4);
+  font-size: 1rem;
+  color: #d1d5db;
 }
 
 /* ══════════════════════════════════════════════════════════════════════════ */
@@ -232,9 +189,10 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .ind-inner {
+  .ind-card {
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 2rem;
+    padding: 2.5rem 2rem;
   }
 
   .ind-right {

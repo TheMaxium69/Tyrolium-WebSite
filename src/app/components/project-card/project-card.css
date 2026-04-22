@@ -1,5 +1,14 @@
 /* ══════════════════════════════════════════════════════════════════════════ */
-/* ── Rotating border animation ────────────────────────────────────────────── */
+/* ── Host ─────────────────────────────────────────────────────────────────── */
+/* ══════════════════════════════════════════════════════════════════════════ */
+
+:host {
+  display: block;
+  height: 100%;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════ */
+/* ── Rotating border ──────────────────────────────────────────────────────── */
 /* ══════════════════════════════════════════════════════════════════════════ */
 
 @property --border-angle {
@@ -19,11 +28,11 @@
 .project-card {
   display: flex;
   flex-direction: column;
+  height: 100%;
   border-radius: 18px;
   border: 2px solid transparent;
   overflow: hidden;
   text-decoration: none;
-  /* angle animates always so it's already in motion when hover triggers */
   animation: rotate-border 3s linear infinite;
   background:
     linear-gradient(#ffffff, #ffffff) padding-box,
@@ -46,7 +55,7 @@
   transform: translateY(-4px);
 }
 
-/* Sub-project variant — different gradient */
+/* Sub-project variant */
 
 .project-card--sub {
   background:
@@ -67,12 +76,23 @@
   box-shadow: 0 16px 48px rgba(124, 58, 237, 0.14);
 }
 
+/* Horizontal variant — row layout, no lift on hover */
+
+.project-card--h {
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.project-card--h:hover {
+  transform: none;
+  box-shadow: 0 8px 32px rgba(0, 26, 110, 0.12);
+}
+
 /* ══════════════════════════════════════════════════════════════════════════ */
 /* ── Visual / Logo zone ───────────────────────────────────────────────────── */
 /* ══════════════════════════════════════════════════════════════════════════ */
 
 .project-card__visual {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -95,35 +115,55 @@
   background: #f0eef9;
 }
 
-.project-card__logo {
+/* Horizontal: visual zone — vertical strip on the left */
+
+.project-card--h .project-card__visual {
+  height: auto;
+  width: 110px;
+  flex-shrink: 0;
+}
+
+/* ── Two-image logo crossfade ─────────────────────────────────────────────── */
+
+.project-card__logo-wrap {
+  position: relative;
   width: 76px;
   height: 76px;
-  object-fit: contain;
-  filter: brightness(0) invert(1);
-  transition: filter 0.35s ease, transform 0.24s ease;
+  flex-shrink: 0;
 }
 
-.project-card:hover .project-card__logo {
-  filter: none;
-  transform: scale(1.07);
-}
-
-.project-arrow {
+.project-card__logo {
   position: absolute;
-  top: 0.7rem;
-  right: 0.8rem;
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.4);
-  transition: color 0.22s ease, transform 0.22s ease;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: opacity 0.35s ease, transform 0.24s ease;
 }
 
-.project-card:hover .project-arrow {
-  color: #001a6e;
-  transform: translate(2px, -2px);
+/* Default: light/white logo visible */
+
+.project-card__logo--light {
+  opacity: 1;
 }
 
-.project-card--sub:hover .project-arrow {
-  color: #7c3aed;
+.project-card__logo--light.auto-white {
+  filter: brightness(0) invert(1);
+}
+
+/* Colored logo hidden until hover */
+
+.project-card__logo--color {
+  opacity: 0;
+}
+
+.project-card:hover .project-card__logo--light {
+  opacity: 0;
+}
+
+.project-card:hover .project-card__logo--color {
+  opacity: 1;
+  transform: scale(1.07);
 }
 
 /* ══════════════════════════════════════════════════════════════════════════ */
@@ -132,6 +172,45 @@
 
 .project-card__body {
   padding: 1.15rem 1.4rem 1.5rem;
+  flex: 1;
+}
+
+/* Horizontal: body centered vertically, no title-row arrows */
+
+.project-card--h .project-card__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.25rem 1.5rem;
+}
+
+.project-card--h .project-card__title-row {
+  margin-bottom: 0.25rem;
+}
+
+/* Right action zone — redirect arrow */
+
+.project-card__action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 0 1.5rem 0 0.5rem;
+}
+
+.project-card__action i {
+  font-size: 1.3rem;
+  color: #c5cbe8;
+  transition: color 0.22s ease, transform 0.22s ease;
+}
+
+.project-card:hover .project-card__action i {
+  color: #001a6e;
+  transform: translate(2px, -2px);
+}
+
+.project-card--sub:hover .project-card__action i {
+  color: #7c3aed;
 }
 
 .project-card__title-row {
@@ -157,6 +236,24 @@
   line-height: 1.6;
   color: #6b7280;
   margin: 0;
+}
+
+/* ── Arrow (body position) ────────────────────────────────────────────────── */
+
+.project-arrow {
+  font-size: 0.95rem;
+  color: #c5cbe8;
+  flex-shrink: 0;
+  transition: color 0.22s ease, transform 0.22s ease;
+}
+
+.project-card:hover .project-arrow {
+  color: #001a6e;
+  transform: translate(2px, -2px);
+}
+
+.project-card--sub:hover .project-arrow {
+  color: #7c3aed;
 }
 
 /* ── Toggle button ────────────────────────────────────────────────────────── */

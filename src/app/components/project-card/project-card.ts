@@ -9,6 +9,7 @@ import { ITyroUiNavbarMenuItem } from 'tyrolium-ui';
 export class ProjectCard {
   @Input() project!: ITyroUiNavbarMenuItem;
   @Input() isSubProject = false;
+  @Input() horizontal = false;
   @Input() expanded = false;
   @Output() toggleSub = new EventEmitter<void>();
 }
