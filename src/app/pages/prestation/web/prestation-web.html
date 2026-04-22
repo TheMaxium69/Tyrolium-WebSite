@@ -127,24 +127,12 @@
 
 <!-- ── CTA ─────────────────────────────────────────────────────────────── -->
 
-<section class="section cta-section bg-light">
-  <div class="container">
-    <div class="cta-card">
-      <div class="cta-card__text">
-        <p class="label label--white">Lançons votre projet</p>
-        <h2>Votre site web,<br>conçu pour durer.</h2>
-        <p>Partagez votre projet, on vous répond sous 48h avec une première estimation.</p>
-      </div>
-      <div class="cta-card__actions">
-        <a href="mailto:contact@tyrolium.fr" class="btn-white">
-          <i class="ri-mail-send-line"></i> Nous contacter
-        </a>
-        <a href="/project" class="btn-ghost-white">
-          Voir nos réalisations <i class="ri-arrow-right-line"></i>
-        </a>
-      </div>
-      <div class="cta-deco cta-deco--1"></div>
-      <div class="cta-deco cta-deco--2"></div>
-    </div>
-  </div>
-</section>
+<tyro-ui-cta
+        [title]="'Votre site web,<br>conçu pour durer.'"
+        [label]="'Lançons votre projet'"
+        [content]="'Partagez votre projet, on vous répond sous 48h avec une première estimation.'"
+        [btn]="'Nous contacter'"
+        [btnIcon]="`<i class='ri-mail-send-line'></i>`"
+        [subbtn]="'Voir nos réalisations'"
+></tyro-ui-cta>
+
