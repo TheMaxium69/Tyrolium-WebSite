@@ -6,4 +6,6 @@ import { Component } from '@angular/core';
   styleUrl: '../legal-shared.css',
   imports: [],
 })
-export class LegalTerms {}
+export class LegalTerms {
+  currentYear = new Date().getFullYear();
+}
