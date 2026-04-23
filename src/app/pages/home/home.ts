@@ -2,12 +2,13 @@ import { Component } from '@angular/core';
 import { Header } from '../../components/header/header';
 import { TyroUiCTA, NavbarMenuCategory, ITyroUiNavbarMenuItem } from 'tyrolium-ui';
 import { ProjectCard } from '../../components/project-card/project-card';
+import {RouterLink} from "@angular/router";
 
 const FEATURED = ['TyroServ', 'Useritium', 'SolidServ'];
 
 @Component({
   selector: 'app-home',
-  imports: [Header, TyroUiCTA, ProjectCard],
+  imports: [Header, TyroUiCTA, ProjectCard, RouterLink],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
