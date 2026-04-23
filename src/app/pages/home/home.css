@@ -503,6 +503,7 @@
 
   .value-item {
     align-items: center;
+    text-align: center;
   }
 
   .value-item h3 {
