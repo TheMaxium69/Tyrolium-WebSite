@@ -20,7 +20,7 @@ export class App {
     { label: 'Accueil', link: '/', icon: 'ri-home-line' },
     { label: 'Projet', link: '/project', icon: 'ri-folder-line' },
     {
-      label: 'Produit',
+      label: 'Prestation',
       icon: 'ri-briefcase-line',
       children: [
         { label: 'Site Web',    link: '/prestation/web',        icon: 'ri-global-line' },
