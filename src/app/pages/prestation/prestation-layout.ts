@@ -20,8 +20,8 @@ export class PrestationLayout {
   public subnavPages: ITyroUiNavbarPages[] = [
     { label: 'Site Web',    link: '/prestation/web' },
     { label: 'Serveur',     link: '/prestation/server' },
-    { label: 'Minecraft',   link: '/prestation/minecraft' },
-    { label: 'Incubateur',  link: '/prestation/incubateur' },
     { label: 'Formation',   link: '/prestation/formation'},
+    { label: 'Incubateur',  link: '/prestation/incubateur' },
+    { label: 'Minecraft',   link: '/prestation/minecraft' },
   ];
 }

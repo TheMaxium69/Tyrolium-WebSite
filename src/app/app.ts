@@ -25,9 +25,9 @@ export class App {
       children: [
         { label: 'Site Web',    link: '/prestation/web',        icon: 'ri-global-line' },
         { label: 'Serveur',     link: '/prestation/server',     icon: 'ri-server-line' },
-        { label: 'Minecraft',   link: '/prestation/minecraft',  icon: 'ri-gamepad-line' },
-        { label: 'Incubateur',  link: '/prestation/incubateur', icon: 'ri-rocket-2-line' },
         { label: 'Formation',   link: '/prestation/formation',  icon: 'ri-graduation-cap-line' },
+        { label: 'Incubateur',  link: '/prestation/incubateur', icon: 'ri-rocket-2-line' },
+        { label: 'Minecraft',   link: '/prestation/minecraft',  icon: 'ri-gamepad-line' },
       ],
     },
   ];

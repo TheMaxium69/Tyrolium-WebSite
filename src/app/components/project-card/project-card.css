@@ -127,13 +127,6 @@
   flex-shrink: 0;
 }
 
-@media (max-width: 850px) {
-  .project-card--h .project-card__visual {
-    width: 150px;
-  }
-
-}
-
 /* ── Two-image logo crossfade ─────────────────────────────────────────────── */
 
 .project-card__logo-wrap {
@@ -304,4 +297,35 @@
   border-color: #7c3aed;
   background: #f0eef9;
   color: #7c3aed;
+}
+
+/* ── Responsive ────────────────────────────────────────────────────────── */
+
+@media (max-width: 850px) {
+  .project-card--h .project-card__visual {
+    width: unset;
+    height: 150px;
+  }
+
+  .project-card--h {
+    flex-direction: column;
+    align-items: unset;
+    height: 100%;
+  }
+
+  .project-card--h .project-card__body {
+    display: unset;
+    flex-direction: unset;
+    justify-content: unset;
+    padding: 1.15rem 1.4rem 1.5rem;
+  }
+
+  .project-card--h .project-card__title-row {
+    margin-bottom: 0.3rem;
+  }
+
+  .project-card__action{
+    display: none;
+  }
+
 }
