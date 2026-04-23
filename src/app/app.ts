@@ -11,10 +11,7 @@ import { ITyroUiNavbarPages, TyroUiFooter, TyroUiNavbar } from 'tyrolium-ui';
 export class App {
   public PROJECT_NAME = 'Tyrolium';
   public PROJECT_LOGO = 'assets/Tyrolium.png';
-  public PROJECT_CONTENT = `<strong>TyroServ</strong>, un serveur <strong>Minecraft moddé</strong> depuis <strong>2017</strong>,
-                propose du <strong>PVP-Faction moddés</strong> (actuellement en saison 3) et bientôt des
-                <strong>mini-jeux moddés</strong>. <strong>Gratuit</strong> et semi-crack, il offre une sécurité
-                renforcée contre les tricheurs grâce à la création de comptes spécifiques.`
+  public PROJECT_CONTENT = `<strong>Tyrolium</strong> est une <strong>holding technologique française</strong> fondée en <strong>2017</strong> par des passionnés du numérique. De la <strong>conception web</strong> à l'<strong>infrastructure cloud</strong>, nous accompagnons chaque projet avec expertise et passion. En parallèle, nous développons notre <strong>propre écosystème de projets</strong> : de l'hébergement au gaming, en passant par le CRM et les réseaux sociaux. <em>Fondé par Maxime Tournier</em>`
 
   public pages: ITyroUiNavbarPages[] = [
     { label: 'Accueil', link: '/', icon: 'ri-home-line' },
