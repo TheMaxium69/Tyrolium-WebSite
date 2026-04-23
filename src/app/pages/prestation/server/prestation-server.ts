@@ -17,7 +17,7 @@ export class PrestationServer {
     description: this.lang() === 'en'
       ? 'Our hosting offers are operated via SolidServ, our infrastructure dedicated to communities and demanding tech projects. Reliability, performance and support at the heart of every offer.'
       : "Nos offres d'hébergement sont opérées via SolidServ, notre infrastructure dédiée aux communautés et aux projets tech exigeants. Fiabilité, performance et accompagnement au cœur de chaque offre.",
-    image: 'https://tyrolium.fr/Contenu/Image/SolidServ%20Site.png',
+    image: 'assets/SolidServ.png',
     link: 'https://solidserv.fr',
   }));
 }

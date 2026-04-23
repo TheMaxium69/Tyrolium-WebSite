@@ -17,7 +17,7 @@ export class PrestationMinecraft {
     description: this.lang() === 'en'
       ? 'TyroServ is our own modded Minecraft server, active since 2017. Modded PVP-Faction (season 3), custom account system, in-house anti-cheat. Concrete proof of our Minecraft expertise.'
       : 'TyroServ est notre propre serveur Minecraft moddé, actif depuis 2017. PVP-Faction moddé (saison 3), système de comptes custom, anti-cheat maison. La preuve concrète de notre expertise Minecraft.',
-    image: 'https://tyrolium.fr/Contenu/Image/Tyrolium%20ServerMC%20Sword%203D.png',
+    image: 'assets/TyroServ.png',
     link: 'https://tyroserv.fr',
   }));
 }
