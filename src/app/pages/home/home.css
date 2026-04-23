@@ -501,6 +501,14 @@
     gap: 1.5rem;
   }
 
+  .value-item {
+    align-items: center;
+  }
+
+  .value-item h3 {
+    text-align: center;
+  }
+
   .cta-card {
     padding: 2.5rem 1.75rem;
   }
