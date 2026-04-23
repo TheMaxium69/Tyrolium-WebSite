@@ -7,14 +7,14 @@
     <span class="prest-badge"><i class="ri-rocket-2-line"></i> Incubateur</span>
     <h1>Faisons naître<br>votre projet tech.</h1>
     <p class="prest-hero__tagline">
-      Accompagnement, infrastructure, réseau et visibilité — tout ce dont votre idée a besoin
+      Accompagnement, infrastructure, réseau et visibilité. Tout ce dont votre idée a besoin
       pour devenir un produit viable et ambitieux.
     </p>
     <div class="prest-hero__actions">
-      <a href="mailto:contact@tyrolium.fr" class="btn-solid-white">
+      <a routerLink="/contact" class="btn-solid-white">
         <i class="ri-send-plane-line"></i> Soumettre mon projet
       </a>
-      <a href="#programme" class="btn-outline-white">Le programme</a>
+      <a (click)="scrollToProgramme()" class="btn-outline-white">Le programme</a>
     </div>
   </div>
   <div class="prest-hero__wave">
@@ -33,7 +33,7 @@
   <div class="container">
     <p class="label label--accent">Programme</p>
     <h2 class="title">Ce que l'incubateur apporte</h2>
-    <p class="intro">Un programme d'accompagnement sur 3 à 6 mois pour transformer votre idée en produit réel.</p>
+    <p class="intro">Un programme d'accompagnement sur 6 à 12 mois pour transformer votre idée en produit réel.</p>
 
     <div class="offers-grid">
 
@@ -43,11 +43,23 @@
         <p>Sessions hebdomadaires avec des experts en développement, product et stratégie pour faire avancer votre projet.</p>
         <ul>
           <li>1 mentor dédié tout au long</li>
-          <li>Revues produit bi-hebdomadaires</li>
+          <li>Revues produit hebdomadaires</li>
           <li>Accès aux outils de gestion de projet</li>
           <li>Feedback technique en continu</li>
         </ul>
       </div>
+
+        <div class="offer-card">
+            <div class="offer-card__icon"><i class="ri-compass-3-line"></i></div>
+            <h3>Cadrage & Stratégie produit</h3>
+            <p>Posez des bases solides dès le départ, business model et roadmap définis avec nos experts pour avancer dans la bonne direction.</p>
+            <ul>
+                <li>Définition du MVP</li>
+                <li>Business model & monétisation</li>
+                <li>Roadmap produit structurée</li>
+                <li>Préparation au pitch & à la vente</li>
+            </ul>
+        </div>
 
       <div class="offer-card">
         <div class="offer-card__icon"><i class="ri-cloud-line"></i></div>
@@ -64,7 +76,7 @@
       <div class="offer-card">
         <div class="offer-card__icon"><i class="ri-team-line"></i></div>
         <h3>Réseau & Partenaires</h3>
-        <p>Intégrez l'écosystème Tyrolium et bénéficiez de notre réseau de clients, partenaires et investisseurs.</p>
+        <p>Intégrez l'écosystème Tyrolium et bénéficiez de notre réseau de clients et partenaires.</p>
         <ul>
           <li>Mise en relation avec nos clients</li>
           <li>Introduction aux partenaires tech</li>
@@ -73,17 +85,7 @@
         </ul>
       </div>
 
-      <div class="offer-card">
-        <div class="offer-card__icon"><i class="ri-megaphone-line"></i></div>
-        <h3>Visibilité & Communication</h3>
-        <p>On met en lumière votre projet sur nos canaux pour vous aider à trouver vos premiers utilisateurs.</p>
-        <ul>
-          <li>Mise en avant sur tyrolium.fr</li>
-          <li>Posts sur nos réseaux sociaux</li>
-          <li>Newsletter Tyrolium</li>
-          <li>Case study à la sortie</li>
-        </ul>
-      </div>
+
 
     </div>
   </div>
@@ -110,12 +112,12 @@
       <div class="step">
         <div class="step__num">3</div>
         <h3>Incubation</h3>
-        <p>3 à 6 mois d'accompagnement intensif avec accès à toutes les ressources du programme.</p>
+        <p>6 à 12 mois d'accompagnement intensif avec accès à toutes les ressources du programme.</p>
       </div>
       <div class="step">
         <div class="step__num">4</div>
         <h3>Lancement</h3>
-        <p>Sortie publique du produit avec notre soutien communication et technique.</p>
+        <p>Sortie publique du produit avec notre soutien en communication et technique.</p>
       </div>
     </div>
   </div>
@@ -126,9 +128,11 @@
 <tyro-ui-cta
         [title]="'Votre idée mérite<br>d\'exister.'"
         [label]="'Incubateur'"
-        [content]="'Envoyez-nous un email avec une description de votre projet. La sélection est ouverte en continu.'"
+        [content]="'Contactez-nous avec une description de votre projet. La sélection est ouverte en continu.'"
         [btn]="'Candidater'"
         [btnIcon]="`<i class='ri-send-plane-line'></i>`"
-        [subbtn]="'Une question ?'"
+        [btnRouterLink]="'/contact'"
+        [subbtn]="'Voir nos projets'"
+        [subRouterLink]="'/project'"
 ></tyro-ui-cta>
 
