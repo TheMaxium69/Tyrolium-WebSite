@@ -7,14 +7,14 @@
     <span class="prest-badge"><i class="ri-graduation-cap-line"></i> Formation</span>
     <h1>Montez en compétences<br>avec nos experts.</h1>
     <p class="prest-hero__tagline">
-      Formations pratiques animées par des développeurs actifs — en présentiel ou distanciel,
+      Formations pratiques animées par des développeurs actifs : en présentiel ou distanciel,
       individuelles ou en groupe, sur les technologies qui comptent vraiment.
     </p>
     <div class="prest-hero__actions">
-      <a href="mailto:contact@tyrolium.fr" class="btn-solid-white">
+      <a routerLink="/contact" class="btn-solid-white">
         <i class="ri-mail-send-line"></i> Demander un programme
       </a>
-      <a href="#formations" class="btn-outline-white">Les formations</a>
+      <a (click)="scrollToFormations()"  class="btn-outline-white">Les formations</a>
     </div>
   </div>
   <div class="prest-hero__wave">
@@ -33,15 +33,16 @@
   <div class="container">
     <p class="label label--accent">Format</p>
     <h2 class="title">Des formations flexibles</h2>
-    <p class="intro">Adaptées à votre rythme, vos objectifs et votre niveau — pas de programme figé.</p>
+    <p class="intro">Adaptées à votre rythme, vos objectifs et votre niveau, pas de programme figé.</p>
 
-    <div class="highlights">
-      <div class="highlight"><i class="ri-map-pin-line"></i><span>Présentiel ou distanciel</span></div>
-      <div class="highlight"><i class="ri-user-line"></i><span>Individuel ou en groupe (jusqu'à 10)</span></div>
-      <div class="highlight"><i class="ri-calendar-line"></i><span>De 1 jour à plusieurs semaines</span></div>
-      <div class="highlight"><i class="ri-file-list-3-line"></i><span>Support de cours inclus</span></div>
-      <div class="highlight"><i class="ri-medal-line"></i><span>Attestation de formation</span></div>
-      <div class="highlight"><i class="ri-question-answer-line"></i><span>Suivi post-formation disponible</span></div>
+      <div class="highlights">
+          <div class="highlight"><i class="ri-map-pin-line"></i><span>Présentiel ou distanciel</span></div>
+          <div class="highlight"><i class="ri-user-line"></i><span>Individuel ou en groupe (jusqu'à 30)</span></div>
+          <div class="highlight"><i class="ri-calendar-line"></i><span>De 1 jour à plusieurs semaines</span></div>
+          <div class="highlight"><i class="ri-file-list-3-line"></i><span>Support de cours inclus</span></div>
+          <div class="highlight"><i class="ri-medal-line"></i><span>Attestation de formation</span></div>
+          <div class="highlight"><i class="ri-question-answer-line"></i><span>Suivi post-formation disponible</span></div>
+          <div class="highlight"><i class="ri-global-line"></i><span>Plateforme de cours en ligne</span></div>
     </div>
   </div>
 </section>
@@ -58,7 +59,7 @@
       <div class="offer-card">
         <div class="offer-card__icon"><i class="ri-code-s-slash-line"></i></div>
         <h3>Développement Web</h3>
-        <p>Des bases du HTML/CSS jusqu'aux frameworks modernes — pour débutants ou développeurs qui veulent aller plus loin.</p>
+        <p>Des bases du HTML/CSS jusqu'aux frameworks modernes, pour débutants ou développeurs qui veulent aller plus loin.</p>
         <ul>
           <li>HTML, CSS, JavaScript</li>
           <li>TypeScript & Angular</li>
@@ -84,10 +85,10 @@
       <div class="offer-card">
         <div class="offer-card__icon"><i class="ri-gamepad-line"></i></div>
         <h3>Minecraft & Gaming Tech</h3>
-        <p>Développement de plugins Java, administration de serveurs et création de mods — par des praticiens depuis 2017.</p>
+        <p>Développement de plugins Java, administration de serveurs et création de mods. Par des praticiens depuis 2017.</p>
         <ul>
           <li>Java & Bukkit API</li>
-          <li>Développement de plugins custom</li>
+          <li>Développement de mods et plugins custom</li>
           <li>Administration & optimisation</li>
           <li>Déploiement & scaling</li>
         </ul>
@@ -114,43 +115,45 @@
 <!-- ── Process ─────────────────────────────────────────────────────────── -->
 
 <section class="section bg-light">
-  <div class="container">
-    <p class="label label--accent">Déroulé</p>
-    <h2 class="title">Comment se passe une formation ?</h2>
+    <div class="container">
+        <p class="label label--accent">Déroulé</p>
+        <h2 class="title">Comment se passe une formation ?</h2>
 
-    <div class="process-grid">
-      <div class="step">
-        <div class="step__num">1</div>
-        <h3>Analyse</h3>
-        <p>On évalue votre niveau, vos objectifs et on définit le programme adapté.</p>
-      </div>
-      <div class="step">
-        <div class="step__num">2</div>
-        <h3>Programme</h3>
-        <p>Un plan de formation détaillé vous est soumis pour validation avant démarrage.</p>
-      </div>
-      <div class="step">
-        <div class="step__num">3</div>
-        <h3>Formation</h3>
-        <p>Sessions pratiques avec exercices réels, questions en direct et rythme adapté.</p>
-      </div>
-      <div class="step">
-        <div class="step__num">4</div>
-        <h3>Suivi</h3>
-        <p>Attestation remise et période de questions post-formation incluse (1 mois).</p>
-      </div>
+        <div class="process-grid">
+            <div class="step">
+                <div class="step__num">1</div>
+                <h3>Analyse</h3>
+                <p>Nous évaluons les besoins de vos équipes, leurs niveaux et définissons le programme adapté.</p>
+            </div>
+            <div class="step">
+                <div class="step__num">2</div>
+                <h3>Programme</h3>
+                <p>Un plan de formation détaillé vous est soumis pour validation avant démarrage.</p>
+            </div>
+            <div class="step">
+                <div class="step__num">3</div>
+                <h3>Formation</h3>
+                <p>Sessions pratiques avec exercices réels, questions en direct et rythme adapté.</p>
+            </div>
+            <div class="step">
+                <div class="step__num">4</div>
+                <h3>Suivi</h3>
+                <p>Attestation remise et période de questions post-formation incluse.</p>
+            </div>
+        </div>
     </div>
-  </div>
 </section>
 
 <!-- ── CTA ─────────────────────────────────────────────────────────────── -->
 
 <tyro-ui-cta
-        [title]="'Votre idée mérite<br>d\'exister.'"
-        [label]="'Incubateur'"
-        [content]="'Envoyez-nous un email avec une description de votre projet. La sélection est ouverte en continu.'"
+        [title]="'Prêt à apprendre<br>avec nous ?'"
+        [label]="'Formation'"
+        [content]="'Décrivez-nous vos objectifs et votre contexte. On revient vers vous avec une proposition dans les 48h.'"
         [btn]="'Demander un devis'"
         [btnIcon]="`<i class='ri-mail-send-line'></i>`"
+        [btnRouterLink]="'/contact'"
         [subbtn]="'Nos réalisations'"
+        [subRouterLink]="'/project'"
         [notBack]="true"
 ></tyro-ui-cta>
