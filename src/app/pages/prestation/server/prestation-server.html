@@ -4,18 +4,23 @@
   <div class="hero-glow hero-glow--1"></div>
   <div class="hero-glow hero-glow--2"></div>
   <div class="container prest-hero__inner">
-    <span class="prest-badge"><i class="ri-server-line"></i> Serveur · Powered by SolidServ</span>
-    <h1>Hébergement haute<br>disponibilité.</h1>
+    <span class="prest-badge"><i class="ri-server-line"></i> {{ lang() === 'en' ? 'Server · Powered by SolidServ' : 'Serveur · Powered by SolidServ' }}</span>
+    <h1>
+      @if (lang() === 'en') { High-availability<br>hosting. } @else { Hébergement haute<br>disponibilité. }
+    </h1>
     <p class="prest-hero__tagline">
-      Infrastructure professionnelle, datacenter en France, supervision 24/7.
-      Vos services méritent un socle technique solide et fiable.
+      @if (lang() === 'en') {
+        Professional infrastructure, datacenter in France, 24/7 monitoring. Your services deserve a solid and reliable technical foundation.
+      } @else {
+        Infrastructure professionnelle, datacenter en France, supervision 24/7. Vos services méritent un socle technique solide et fiable.
+      }
     </p>
     <div class="prest-hero__actions">
       <a routerLink="/contact" class="btn-solid-white">
-        <i class="ri-mail-send-line"></i> Demander un devis
+        <i class="ri-mail-send-line"></i> {{ lang() === 'en' ? 'Get a quote' : 'Demander un devis' }}
       </a>
       <a href="https://solidserv.fr" target="_blank" rel="noopener" class="btn-outline-white">
-        Visiter SolidServ <i class="ri-external-link-line"></i>
+        {{ lang() === 'en' ? 'Visit SolidServ' : 'Visiter SolidServ' }} <i class="ri-external-link-line"></i>
       </a>
     </div>
   </div>
@@ -33,17 +38,17 @@
 
 <section class="section bg-light">
   <div class="container">
-    <p class="label label--accent">Garanties</p>
-    <h2 class="title">Ce que vous obtenez</h2>
-    <p class="intro">Des engagements clairs sur la disponibilité, la sécurité et le support de vos infrastructures.</p>
+    <p class="label label--accent">{{ lang() === 'en' ? 'Guarantees' : 'Garanties' }}</p>
+    <h2 class="title">{{ lang() === 'en' ? 'What you get' : 'Ce que vous obtenez' }}</h2>
+    <p class="intro">{{ lang() === 'en' ? 'Clear commitments on availability, security and support for your infrastructure.' : 'Des engagements clairs sur la disponibilité, la sécurité et le support de vos infrastructures.' }}</p>
 
     <div class="highlights">
-      <div class="highlight"><i class="ri-shield-check-line"></i><span>99,9 % uptime garanti</span></div>
-      <div class="highlight"><i class="ri-server-line"></i><span>Datacenter en France</span></div>
-      <div class="highlight"><i class="ri-lock-line"></i><span>SSL inclus & chiffrement</span></div>
-      <div class="highlight"><i class="ri-save-3-line"></i><span>Sauvegardes quotidiennes</span></div>
-      <div class="highlight"><i class="ri-customer-service-2-line"></i><span>Support réactif</span></div>
-      <div class="highlight"><i class="ri-speed-line"></i><span>SSD NVMe haute vitesse</span></div>
+      <div class="highlight"><i class="ri-shield-check-line"></i><span>99.9% {{ lang() === 'en' ? 'uptime guaranteed' : 'uptime garanti' }}</span></div>
+      <div class="highlight"><i class="ri-server-line"></i><span>{{ lang() === 'en' ? 'Datacenter in France' : 'Datacenter en France' }}</span></div>
+      <div class="highlight"><i class="ri-lock-line"></i><span>{{ lang() === 'en' ? 'SSL included & encryption' : 'SSL inclus & chiffrement' }}</span></div>
+      <div class="highlight"><i class="ri-save-3-line"></i><span>{{ lang() === 'en' ? 'Daily backups' : 'Sauvegardes quotidiennes' }}</span></div>
+      <div class="highlight"><i class="ri-customer-service-2-line"></i><span>{{ lang() === 'en' ? 'Responsive support' : 'Support réactif' }}</span></div>
+      <div class="highlight"><i class="ri-speed-line"></i><span>{{ lang() === 'en' ? 'High-speed SSD NVMe' : 'SSD NVMe haute vitesse' }}</span></div>
     </div>
   </div>
 </section>
@@ -52,67 +57,67 @@
 
 <section class="section">
   <div class="container">
-    <p class="label label--accent">Nos offres</p>
-    <h2 class="title">Solutions d'hébergement</h2>
+    <p class="label label--accent">{{ lang() === 'en' ? 'Our offers' : 'Nos offres' }}</p>
+    <h2 class="title">{{ lang() === 'en' ? 'Hosting solutions' : 'Solutions d\'hébergement' }}</h2>
 
     <div class="offers-grid">
 
       <div class="offer-card">
         <div class="offer-card__icon"><i class="ri-computer-line"></i></div>
-        <h3>VPS Dédié</h3>
-        <p>Serveur virtuel privé avec ressources garanties. Idéal pour les apps, API et sites à fort trafic.</p>
+        <h3>{{ lang() === 'en' ? 'Dedicated VPS' : 'VPS Dédié' }}</h3>
+        <p>{{ lang() === 'en' ? 'Private virtual server with guaranteed resources. Ideal for apps, APIs and high-traffic sites.' : 'Serveur virtuel privé avec ressources garanties. Idéal pour les apps, API et sites à fort trafic.' }}</p>
         <ul>
-          <li>vCPU dédié & RAM garantie</li>
-          <li>Bande passante illimitée</li>
-          <li>Accès root complet</li>
-          <li>Snapshot & restore</li>
+          <li>{{ lang() === 'en' ? 'Dedicated vCPU & guaranteed RAM' : 'vCPU dédié & RAM garantie' }}</li>
+          <li>{{ lang() === 'en' ? 'Unlimited bandwidth' : 'Bande passante illimitée' }}</li>
+          <li>{{ lang() === 'en' ? 'Full root access' : 'Accès root complet' }}</li>
+          <li>{{ lang() === 'en' ? 'Snapshot & restore' : 'Snapshot & restore' }}</li>
         </ul>
-        <span class="offer-price">À partir de 4 €/mois</span>
+        <span class="offer-price">{{ lang() === 'en' ? 'From €4/month' : 'À partir de 4 €/mois' }}</span>
       </div>
 
       <div class="offer-card">
         <div class="offer-card__icon"><i class="ri-global-line"></i></div>
-        <h3>Hébergement Web</h3>
-        <p>Mutualisé ou semi-dédié pour vos sites WordPress, Angular, Next.js ou tout framework moderne.</p>
+        <h3>{{ lang() === 'en' ? 'Web Hosting' : 'Hébergement Web' }}</h3>
+        <p>{{ lang() === 'en' ? 'Shared or semi-dedicated for your WordPress, Angular, Next.js or any modern framework sites.' : 'Mutualisé ou semi-dédié pour vos sites WordPress, Angular, Next.js ou tout framework moderne.' }}</p>
         <ul>
-          <li>Panel de gestion intuitif</li>
-          <li>Accès FTP/SFTP et cPanel</li>
-          <li>Bases de données MySQL / Postgres</li>
-          <li>Compatible avec Wordpress/Shopify</li>
+          <li>{{ lang() === 'en' ? 'Intuitive management panel' : 'Panel de gestion intuitif' }}</li>
+          <li>{{ lang() === 'en' ? 'FTP/SFTP and cPanel access' : 'Accès FTP/SFTP et cPanel' }}</li>
+          <li>{{ lang() === 'en' ? 'MySQL / Postgres databases' : 'Bases de données MySQL / Postgres' }}</li>
+          <li>{{ lang() === 'en' ? 'Compatible with WordPress/Shopify' : 'Compatible avec Wordpress/Shopify' }}</li>
         </ul>
-        <span class="offer-price">À partir de 2 €/mois</span>
+        <span class="offer-price">{{ lang() === 'en' ? 'From €2/month' : 'À partir de 2 €/mois' }}</span>
       </div>
 
       <div class="offer-card">
         <div class="offer-card__icon"><i class="ri-settings-4-line"></i></div>
         <h3>Managed Hosting</h3>
-        <p>On s'occupe de tout : installation, configuration, mises à jour de sécurité et optimisation.</p>
+        <p>{{ lang() === 'en' ? 'We handle everything: installation, configuration, security updates and optimisation.' : 'On s\'occupe de tout : installation, configuration, mises à jour de sécurité et optimisation.' }}</p>
         <ul>
-          <li>Configuration serveur complète</li>
-          <li>Mises à jour & patchs de sécurité</li>
-          <li>Optimisation des performances</li>
-          <li>Rapport mensuel d'activité</li>
+          <li>{{ lang() === 'en' ? 'Full server configuration' : 'Configuration serveur complète' }}</li>
+          <li>{{ lang() === 'en' ? 'Updates & security patches' : 'Mises à jour & patchs de sécurité' }}</li>
+          <li>{{ lang() === 'en' ? 'Performance optimisation' : 'Optimisation des performances' }}</li>
+          <li>{{ lang() === 'en' ? 'Monthly activity report' : 'Rapport mensuel d\'activité' }}</li>
         </ul>
-        <span class="offer-price">Sur devis</span>
+        <span class="offer-price">{{ lang() === 'en' ? 'On quote' : 'Sur devis' }}</span>
       </div>
 
       <div class="offer-card">
         <div class="offer-card__icon"><i class="ri-pulse-line"></i></div>
         <h3>Monitoring & Backup</h3>
-        <p>Surveillance proactive de vos services avec alertes en temps réel et sauvegardes automatisées.</p>
+        <p>{{ lang() === 'en' ? 'Proactive monitoring of your services with real-time alerts and automated backups.' : 'Surveillance proactive de vos services avec alertes en temps réel et sauvegardes automatisées.' }}</p>
         <ul>
-          <li>Monitoring uptime 24/7</li>
-          <li>Alertes SMS / email</li>
-          <li>Sauvegardes différentielles</li>
-          <li>Restoration rapide garantie</li>
+          <li>{{ lang() === 'en' ? '24/7 uptime monitoring' : 'Monitoring uptime 24/7' }}</li>
+          <li>{{ lang() === 'en' ? 'SMS / email alerts' : 'Alertes SMS / email' }}</li>
+          <li>{{ lang() === 'en' ? 'Differential backups' : 'Sauvegardes différentielles' }}</li>
+          <li>{{ lang() === 'en' ? 'Fast restore guaranteed' : 'Restoration rapide garantie' }}</li>
         </ul>
-          <span class="offer-price">Sur devis</span>
+        <span class="offer-price">{{ lang() === 'en' ? 'On quote' : 'Sur devis' }}</span>
       </div>
 
     </div>
 
     <div class="ref-project-wrap">
-      <app-project-card [project]="solidServProject" [horizontal]="true"></app-project-card>
+      <app-project-card [project]="solidServProject()" [horizontal]="true"></app-project-card>
     </div>
 
   </div>
@@ -121,12 +126,12 @@
 <!-- ── CTA ─────────────────────────────────────────────────────────────── -->
 
 <tyro-ui-cta
-        [title]="'Votre infra entre<br>de bonnes mains.'"
-        [label]="'Infrastructure'"
-        [content]="'Parlez-nous de votre projet et on configure la solution adaptée à vos besoins et votre budget.'"
-        [btn]="'Nous contacter'"
+        [title]="lang() === 'en' ? 'Your infra in<br>good hands.' : 'Votre infra entre<br>de bonnes mains.'"
+        [label]="lang() === 'en' ? 'Infrastructure' : 'Infrastructure'"
+        [content]="lang() === 'en' ? 'Tell us about your project and we\'ll set up the solution adapted to your needs and budget.' : 'Parlez-nous de votre projet et on configure la solution adaptée à vos besoins et votre budget.'"
+        [btn]="lang() === 'en' ? 'Contact us' : 'Nous contacter'"
         [btnIcon]="`<i class='ri-mail-send-line'></i>`"
         [btnRouterLink]="'/contact'"
-        [subbtn]="'Voir SolidServ'"
+        [subbtn]="lang() === 'en' ? 'Visit SolidServ' : 'Voir SolidServ'"
         [subLink]="'https://solidserv.fr'"
 ></tyro-ui-cta>

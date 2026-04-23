@@ -1,16 +1,20 @@
 <!-- ── Hero ──────────────────────────────────────────────────────────────── -->
 
-<tyro-ui-subnav [pages]="subnavPages" [isFixed]="true" [havePlaceholder]="false"></tyro-ui-subnav>
+<tyro-ui-subnav [pages]="subnavPages()" [isFixed]="true" [havePlaceholder]="false"></tyro-ui-subnav>
 
 <div class="legal-wrapper">
 
   <div class="page-hero">
     <div class="container">
-      <p class="hero-label">Transparence & légalité</p>
-      <h1 class="hero-title">Informations légales</h1>
+      <p class="hero-label">{{ lang() === 'en' ? 'Transparency & legality' : 'Transparence & légalité' }}</p>
+      <h1 class="hero-title">{{ lang() === 'en' ? 'Legal information' : 'Informations légales' }}</h1>
       <p class="hero-desc">
-        Retrouvez ici l'ensemble des documents légaux applicables à l'utilisation
-        de nos services et plateformes.
+        @if (lang() === 'en') {
+          Find here all legal documents applicable to the use of our services and platforms.
+        } @else {
+          Retrouvez ici l'ensemble des documents légaux applicables à l'utilisation
+          de nos services et plateformes.
+        }
       </p>
     </div>
     <div class="page-hero__wave">

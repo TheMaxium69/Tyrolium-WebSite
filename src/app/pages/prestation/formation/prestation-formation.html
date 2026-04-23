@@ -4,17 +4,23 @@
   <div class="hero-glow hero-glow--1"></div>
   <div class="hero-glow hero-glow--2"></div>
   <div class="container prest-hero__inner">
-    <span class="prest-badge"><i class="ri-graduation-cap-line"></i> Formation</span>
-    <h1>Montez en compétences<br>avec nos experts.</h1>
+    <span class="prest-badge"><i class="ri-graduation-cap-line"></i> {{ lang() === 'en' ? 'Training' : 'Formation' }}</span>
+    <h1>
+      @if (lang() === 'en') { Level up<br>with our experts. } @else { Montez en compétences<br>avec nos experts. }
+    </h1>
     <p class="prest-hero__tagline">
-      Formations pratiques animées par des développeurs actifs : en présentiel ou distanciel,
-      individuelles ou en groupe, sur les technologies qui comptent vraiment.
+      @if (lang() === 'en') {
+        Hands-on training led by active developers: in-person or remote, one-on-one or group, on the technologies that truly matter.
+      } @else {
+        Formations pratiques animées par des développeurs actifs : en présentiel ou distanciel,
+        individuelles ou en groupe, sur les technologies qui comptent vraiment.
+      }
     </p>
     <div class="prest-hero__actions">
       <a routerLink="/contact" class="btn-solid-white">
-        <i class="ri-mail-send-line"></i> Demander un programme
+        <i class="ri-mail-send-line"></i> {{ lang() === 'en' ? 'Request a programme' : 'Demander un programme' }}
       </a>
-      <a (click)="scrollToFormations()"  class="btn-outline-white">Les formations</a>
+      <a (click)="scrollToFormations()" class="btn-outline-white">{{ lang() === 'en' ? 'Training catalogue' : 'Les formations' }}</a>
     </div>
   </div>
   <div class="prest-hero__wave">
@@ -31,18 +37,18 @@
 
 <section class="section bg-light">
   <div class="container">
-    <p class="label label--accent">Format</p>
-    <h2 class="title">Des formations flexibles</h2>
-    <p class="intro">Adaptées à votre rythme, vos objectifs et votre niveau, pas de programme figé.</p>
+    <p class="label label--accent">{{ lang() === 'en' ? 'Format' : 'Format' }}</p>
+    <h2 class="title">{{ lang() === 'en' ? 'Flexible training' : 'Des formations flexibles' }}</h2>
+    <p class="intro">{{ lang() === 'en' ? 'Adapted to your pace, your goals and your level — no fixed programme.' : 'Adaptées à votre rythme, vos objectifs et votre niveau, pas de programme figé.' }}</p>
 
-      <div class="highlights">
-          <div class="highlight"><i class="ri-map-pin-line"></i><span>Présentiel ou distanciel</span></div>
-          <div class="highlight"><i class="ri-user-line"></i><span>Individuel ou en groupe (jusqu'à 30)</span></div>
-          <div class="highlight"><i class="ri-calendar-line"></i><span>De 1 jour à plusieurs semaines</span></div>
-          <div class="highlight"><i class="ri-file-list-3-line"></i><span>Support de cours inclus</span></div>
-          <div class="highlight"><i class="ri-medal-line"></i><span>Attestation de formation</span></div>
-          <div class="highlight"><i class="ri-question-answer-line"></i><span>Suivi post-formation disponible</span></div>
-          <div class="highlight"><i class="ri-global-line"></i><span>Plateforme de cours en ligne</span></div>
+    <div class="highlights">
+      <div class="highlight"><i class="ri-map-pin-line"></i><span>{{ lang() === 'en' ? 'In-person or remote' : 'Présentiel ou distanciel' }}</span></div>
+      <div class="highlight"><i class="ri-user-line"></i><span>{{ lang() === 'en' ? 'Individual or group (up to 30)' : 'Individuel ou en groupe (jusqu\'à 30)' }}</span></div>
+      <div class="highlight"><i class="ri-calendar-line"></i><span>{{ lang() === 'en' ? 'From 1 day to several weeks' : 'De 1 jour à plusieurs semaines' }}</span></div>
+      <div class="highlight"><i class="ri-file-list-3-line"></i><span>{{ lang() === 'en' ? 'Course materials included' : 'Support de cours inclus' }}</span></div>
+      <div class="highlight"><i class="ri-medal-line"></i><span>{{ lang() === 'en' ? 'Training certificate' : 'Attestation de formation' }}</span></div>
+      <div class="highlight"><i class="ri-question-answer-line"></i><span>{{ lang() === 'en' ? 'Post-training follow-up available' : 'Suivi post-formation disponible' }}</span></div>
+      <div class="highlight"><i class="ri-global-line"></i><span>{{ lang() === 'en' ? 'Online learning platform' : 'Plateforme de cours en ligne' }}</span></div>
     </div>
   </div>
 </section>
@@ -51,61 +57,61 @@
 
 <section class="section" id="formations">
   <div class="container">
-    <p class="label label--accent">Catalogue</p>
-    <h2 class="title">Nos formations</h2>
+    <p class="label label--accent">{{ lang() === 'en' ? 'Catalogue' : 'Catalogue' }}</p>
+    <h2 class="title">{{ lang() === 'en' ? 'Our training courses' : 'Nos formations' }}</h2>
 
     <div class="offers-grid">
 
       <div class="offer-card">
         <div class="offer-card__icon"><i class="ri-code-s-slash-line"></i></div>
-        <h3>Développement Web</h3>
-        <p>Des bases du HTML/CSS jusqu'aux frameworks modernes, pour débutants ou développeurs qui veulent aller plus loin.</p>
+        <h3>{{ lang() === 'en' ? 'Web Development' : 'Développement Web' }}</h3>
+        <p>{{ lang() === 'en' ? 'From HTML/CSS basics to modern frameworks, for beginners or developers who want to go further.' : 'Des bases du HTML/CSS jusqu\'aux frameworks modernes, pour débutants ou développeurs qui veulent aller plus loin.' }}</p>
         <ul>
           <li>HTML, CSS, JavaScript</li>
           <li>TypeScript & Angular</li>
-          <li>Node.js & API REST</li>
-          <li>Bonnes pratiques & architecture</li>
+          <li>Node.js & REST API</li>
+          <li>{{ lang() === 'en' ? 'Best practices & architecture' : 'Bonnes pratiques & architecture' }}</li>
         </ul>
-        <span class="offer-price">À partir de 300 € / jour</span>
+        <span class="offer-price">{{ lang() === 'en' ? 'From €300 / day' : 'À partir de 300 € / jour' }}</span>
       </div>
 
       <div class="offer-card">
         <div class="offer-card__icon"><i class="ri-cloud-line"></i></div>
         <h3>Infrastructure & DevOps</h3>
-        <p>Maîtrisez les outils d'un développeur moderne : Linux, Docker, CI/CD et déploiement cloud.</p>
+        <p>{{ lang() === 'en' ? 'Master the tools of a modern developer: Linux, Docker, CI/CD and cloud deployment.' : 'Maîtrisez les outils d\'un développeur moderne : Linux, Docker, CI/CD et déploiement cloud.' }}</p>
         <ul>
-          <li>Linux & administration serveur</li>
-          <li>Docker & conteneurisation</li>
-          <li>Pipelines CI/CD (GitHub Actions)</li>
-          <li>Monitoring & logs</li>
+          <li>{{ lang() === 'en' ? 'Linux & server administration' : 'Linux & administration serveur' }}</li>
+          <li>{{ lang() === 'en' ? 'Docker & containerisation' : 'Docker & conteneurisation' }}</li>
+          <li>{{ lang() === 'en' ? 'CI/CD pipelines (GitHub Actions)' : 'Pipelines CI/CD (GitHub Actions)' }}</li>
+          <li>{{ lang() === 'en' ? 'Monitoring & logs' : 'Monitoring & logs' }}</li>
         </ul>
-        <span class="offer-price">À partir de 350 € / jour</span>
+        <span class="offer-price">{{ lang() === 'en' ? 'From €350 / day' : 'À partir de 350 € / jour' }}</span>
       </div>
 
       <div class="offer-card">
         <div class="offer-card__icon"><i class="ri-gamepad-line"></i></div>
         <h3>Minecraft & Gaming Tech</h3>
-        <p>Développement de plugins Java, administration de serveurs et création de mods. Par des praticiens depuis 2017.</p>
+        <p>{{ lang() === 'en' ? 'Java plugin development, server administration and mod creation. By practitioners since 2017.' : 'Développement de plugins Java, administration de serveurs et création de mods. Par des praticiens depuis 2017.' }}</p>
         <ul>
           <li>Java & Bukkit API</li>
-          <li>Développement de mods et plugins custom</li>
-          <li>Administration & optimisation</li>
-          <li>Déploiement & scaling</li>
+          <li>{{ lang() === 'en' ? 'Custom mod & plugin development' : 'Développement de mods et plugins custom' }}</li>
+          <li>{{ lang() === 'en' ? 'Administration & optimisation' : 'Administration & optimisation' }}</li>
+          <li>{{ lang() === 'en' ? 'Deployment & scaling' : 'Déploiement & scaling' }}</li>
         </ul>
-        <span class="offer-price">À partir de 250 € / jour</span>
+        <span class="offer-price">{{ lang() === 'en' ? 'From €250 / day' : 'À partir de 250 € / jour' }}</span>
       </div>
 
       <div class="offer-card">
         <div class="offer-card__icon"><i class="ri-settings-3-line"></i></div>
-        <h3>Formation Sur-Mesure</h3>
-        <p>Programme 100% personnalisé selon vos objectifs, votre équipe et votre contexte métier.</p>
+        <h3>{{ lang() === 'en' ? 'Custom Training' : 'Formation Sur-Mesure' }}</h3>
+        <p>{{ lang() === 'en' ? '100% personalised programme based on your goals, your team and your business context.' : 'Programme 100% personnalisé selon vos objectifs, votre équipe et votre contexte métier.' }}</p>
         <ul>
-          <li>Audit des besoins inclus</li>
-          <li>Programme co-construit</li>
-          <li>Exercices sur vos projets réels</li>
-          <li>Suivi et évaluation des acquis</li>
+          <li>{{ lang() === 'en' ? 'Needs audit included' : 'Audit des besoins inclus' }}</li>
+          <li>{{ lang() === 'en' ? 'Co-designed programme' : 'Programme co-construit' }}</li>
+          <li>{{ lang() === 'en' ? 'Exercises on your real projects' : 'Exercices sur vos projets réels' }}</li>
+          <li>{{ lang() === 'en' ? 'Follow-up & skills assessment' : 'Suivi et évaluation des acquis' }}</li>
         </ul>
-        <span class="offer-price">Sur devis</span>
+        <span class="offer-price">{{ lang() === 'en' ? 'On quote' : 'Sur devis' }}</span>
       </div>
 
     </div>
@@ -115,45 +121,45 @@
 <!-- ── Process ─────────────────────────────────────────────────────────── -->
 
 <section class="section bg-light">
-    <div class="container">
-        <p class="label label--accent">Déroulé</p>
-        <h2 class="title">Comment se passe une formation ?</h2>
+  <div class="container">
+    <p class="label label--accent">{{ lang() === 'en' ? 'How it works' : 'Déroulé' }}</p>
+    <h2 class="title">{{ lang() === 'en' ? 'How does a training work?' : 'Comment se passe une formation ?' }}</h2>
 
-        <div class="process-grid">
-            <div class="step">
-                <div class="step__num">1</div>
-                <h3>Analyse</h3>
-                <p>Nous évaluons les besoins de vos équipes, leurs niveaux et définissons le programme adapté.</p>
-            </div>
-            <div class="step">
-                <div class="step__num">2</div>
-                <h3>Programme</h3>
-                <p>Un plan de formation détaillé vous est soumis pour validation avant démarrage.</p>
-            </div>
-            <div class="step">
-                <div class="step__num">3</div>
-                <h3>Formation</h3>
-                <p>Sessions pratiques avec exercices réels, questions en direct et rythme adapté.</p>
-            </div>
-            <div class="step">
-                <div class="step__num">4</div>
-                <h3>Suivi</h3>
-                <p>Attestation remise et période de questions post-formation incluse.</p>
-            </div>
-        </div>
+    <div class="process-grid">
+      <div class="step">
+        <div class="step__num">1</div>
+        <h3>{{ lang() === 'en' ? 'Analysis' : 'Analyse' }}</h3>
+        <p>{{ lang() === 'en' ? 'We assess your teams\' needs and levels, then define the right programme.' : 'Nous évaluons les besoins de vos équipes, leurs niveaux et définissons le programme adapté.' }}</p>
+      </div>
+      <div class="step">
+        <div class="step__num">2</div>
+        <h3>{{ lang() === 'en' ? 'Programme' : 'Programme' }}</h3>
+        <p>{{ lang() === 'en' ? 'A detailed training plan is submitted for your approval before we start.' : 'Un plan de formation détaillé vous est soumis pour validation avant démarrage.' }}</p>
+      </div>
+      <div class="step">
+        <div class="step__num">3</div>
+        <h3>{{ lang() === 'en' ? 'Training' : 'Formation' }}</h3>
+        <p>{{ lang() === 'en' ? 'Practical sessions with real exercises, live Q&A and an adapted pace.' : 'Sessions pratiques avec exercices réels, questions en direct et rythme adapté.' }}</p>
+      </div>
+      <div class="step">
+        <div class="step__num">4</div>
+        <h3>{{ lang() === 'en' ? 'Follow-up' : 'Suivi' }}</h3>
+        <p>{{ lang() === 'en' ? 'Certificate issued and post-training Q&A period included.' : 'Attestation remise et période de questions post-formation incluse.' }}</p>
+      </div>
     </div>
+  </div>
 </section>
 
 <!-- ── CTA ─────────────────────────────────────────────────────────────── -->
 
 <tyro-ui-cta
-        [title]="'Prêt à apprendre<br>avec nous ?'"
-        [label]="'Formation'"
-        [content]="'Décrivez-nous vos objectifs et votre contexte. On revient vers vous avec une proposition dans les 48h.'"
-        [btn]="'Demander un devis'"
+        [title]="lang() === 'en' ? 'Ready to learn<br>with us?' : 'Prêt à apprendre<br>avec nous ?'"
+        [label]="lang() === 'en' ? 'Training' : 'Formation'"
+        [content]="lang() === 'en' ? 'Tell us about your goals and context. We\'ll get back to you with a proposal within 48h.' : 'Décrivez-nous vos objectifs et votre contexte. On revient vers vous avec une proposition dans les 48h.'"
+        [btn]="lang() === 'en' ? 'Get a quote' : 'Demander un devis'"
         [btnIcon]="`<i class='ri-mail-send-line'></i>`"
         [btnRouterLink]="'/contact'"
-        [subbtn]="'Nos réalisations'"
+        [subbtn]="lang() === 'en' ? 'Our achievements' : 'Nos réalisations'"
         [subRouterLink]="'/project'"
         [notBack]="true"
 ></tyro-ui-cta>

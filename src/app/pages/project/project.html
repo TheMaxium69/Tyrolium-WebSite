@@ -2,11 +2,14 @@
 
 <div class="page-hero">
   <div class="container">
-    <p class="hero-label">Notre univers</p>
-    <h1 class="hero-title">Nos Projets</h1>
+    <p class="hero-label">{{ lang() === 'en' ? 'Our universe' : 'Notre univers' }}</p>
+    <h1 class="hero-title">{{ lang() === 'en' ? 'Our Projects' : 'Nos Projets' }}</h1>
     <p class="hero-desc">
-      Découvrez l'ensemble des projets portés par Tyrolium,
-      de nos débuts en 2017 à aujourd'hui.
+      @if (lang() === 'en') {
+        Discover all the projects carried by Tyrolium, from our beginnings in 2017 to today.
+      } @else {
+        Découvrez l'ensemble des projets portés par Tyrolium, de nos débuts en 2017 à aujourd'hui.
+      }
     </p>
   </div>
   <div class="page-hero__wave">
@@ -28,10 +31,10 @@
 
     <div class="section-head">
       <div>
-        <p class="label">Nos réalisations</p>
-        <h2 class="title">Projets</h2>
+        <p class="label">{{ lang() === 'en' ? 'Our achievements' : 'Nos réalisations' }}</p>
+        <h2 class="title">{{ lang() === 'en' ? 'Projects' : 'Projets' }}</h2>
       </div>
-      <p class="section-count">8 projets</p>
+      <p class="section-count">8 {{ lang() === 'en' ? 'projects' : 'projets' }}</p>
     </div>
 
     <div class="projects-grid">
@@ -64,12 +67,16 @@
         <div class="ind-inner">
 
             <div class="ind-left">
-                <p class="label label--accent">Notre structure</p>
-                <h2 class="ind-title">Zéro compromis.<br>Totale liberté.</h2>
+                <p class="label label--accent">{{ lang() === 'en' ? 'Our structure' : 'Notre structure' }}</p>
+                <h2 class="ind-title">
+                  @if (lang() === 'en') { Zero compromise.<br>Total freedom. } @else { Zéro compromis.<br>Totale liberté. }
+                </h2>
                 <p class="ind-text">
-                    Chaque projet naît de notre passion et grandit à notre rythme.
-                    Pas d'actionnaire à contenter, pas d'investisseur à rembourser.
-                    Nous construisons ce que nous croyons, comme nous le voulons.
+                  @if (lang() === 'en') {
+                    Every project is born from our passion and grows at our own pace. No shareholders to please, no investors to repay. We build what we believe in, the way we want.
+                  } @else {
+                    Chaque projet naît de notre passion et grandit à notre rythme. Pas d'actionnaire à contenter, pas d'investisseur à rembourser. Nous construisons ce que nous croyons, comme nous le voulons.
+                  }
                 </p>
             </div>
 
@@ -77,29 +84,29 @@
                 <div class="ind-item ind-item--no">
                     <i class="ri-close-circle-fill"></i>
                     <div>
-                        <strong>Aucun actionnaire</strong>
-                        <span>100 % auto-fondé</span>
+                        <strong>{{ lang() === 'en' ? 'No shareholders' : 'Aucun actionnaire' }}</strong>
+                        <span>{{ lang() === 'en' ? '100% self-founded' : '100 % auto-fondé' }}</span>
                     </div>
                 </div>
                 <div class="ind-item ind-item--no">
                     <i class="ri-close-circle-fill"></i>
                     <div>
-                        <strong>Aucun investissement externe</strong>
-                        <span>Financé par nos propres moyens</span>
+                        <strong>{{ lang() === 'en' ? 'No external investment' : 'Aucun investissement externe' }}</strong>
+                        <span>{{ lang() === 'en' ? 'Funded by our own means' : 'Financé par nos propres moyens' }}</span>
                     </div>
                 </div>
                 <div class="ind-item ind-item--no">
                     <i class="ri-close-circle-fill"></i>
                     <div>
-                        <strong>Aucune levée de fonds</strong>
-                        <span>Jamais dilué, jamais contraint</span>
+                        <strong>{{ lang() === 'en' ? 'No fundraising' : 'Aucune levée de fonds' }}</strong>
+                        <span>{{ lang() === 'en' ? 'Never diluted, never constrained' : 'Jamais dilué, jamais contraint' }}</span>
                     </div>
                 </div>
                 <div class="ind-item ind-item--yes">
                     <i class="ri-shield-check-fill"></i>
                     <div>
-                        <strong>Liberté totale de décision</strong>
-                        <span>Nos règles, notre vision</span>
+                        <strong>{{ lang() === 'en' ? 'Total freedom of decision' : 'Liberté totale de décision' }}</strong>
+                        <span>{{ lang() === 'en' ? 'Our rules, our vision' : 'Nos règles, notre vision' }}</span>
                     </div>
                 </div>
             </div>
@@ -111,12 +118,12 @@
 <!-- ── CTA ────────────────────────────────────────────────────────────── -->
 
 <tyro-ui-cta
-        [title]="'Construisons-le ensemble.'"
-        [label]="'Une idée de projet ?'"
-        [content]="'Nos équipes sont à l\'écoute pour étudier votre projet et vous proposer la solution adaptée.'"
-        [btn]="'Contactez-nous'"
+        [title]="lang() === 'en' ? 'Let\'s build it together.' : 'Construisons-le ensemble.'"
+        [label]="lang() === 'en' ? 'A project idea?' : 'Une idée de projet ?'"
+        [content]="lang() === 'en' ? 'Our teams are here to study your project and propose the right solution.' : 'Nos équipes sont à l\'écoute pour étudier votre projet et vous proposer la solution adaptée.'"
+        [btn]="lang() === 'en' ? 'Contact us' : 'Contactez-nous'"
         [btnIcon]="`<i class='ri-mail-send-line'></i>`"
         [btnRouterLink]="'/contact'"
-        [subbtn]="'Retour à l\'accueil'"
+        [subbtn]="lang() === 'en' ? 'Back to home' : 'Retour à l\'accueil'"
         [subRouterLink]="'/'"
 ></tyro-ui-cta>

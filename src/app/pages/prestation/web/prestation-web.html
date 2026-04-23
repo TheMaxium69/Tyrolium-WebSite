@@ -4,17 +4,22 @@
   <div class="hero-glow hero-glow--1"></div>
   <div class="hero-glow hero-glow--2"></div>
   <div class="container prest-hero__inner">
-    <span class="prest-badge"><i class="ri-global-line"></i> Site Web</span>
-    <h1>Des sites web qui<br>font la différence.</h1>
+    <span class="prest-badge"><i class="ri-global-line"></i> {{ lang() === 'en' ? 'Website' : 'Site Web' }}</span>
+    <h1>
+      @if (lang() === 'en') { Websites that<br>make a difference. } @else { Des sites web qui<br>font la différence. }
+    </h1>
     <p class="prest-hero__tagline">
-      Du site vitrine à l'application métier complexe, nous concevons des expériences web
-        modernes, performantes, accessibles et qui génèrent des leads.
+      @if (lang() === 'en') {
+        From showcase sites to complex business applications, we design modern, high-performance, accessible web experiences that generate leads.
+      } @else {
+        Du site vitrine à l'application métier complexe, nous concevons des expériences web modernes, performantes, accessibles et qui génèrent des leads.
+      }
     </p>
     <div class="prest-hero__actions">
       <a routerLink="/contact" class="btn-solid-white">
-        <i class="ri-mail-send-line"></i> Démarrer un projet
+        <i class="ri-mail-send-line"></i> {{ lang() === 'en' ? 'Start a project' : 'Démarrer un projet' }}
       </a>
-      <a (click)="scrollToOffres()" class="btn-outline-white">Voir les offres</a>
+      <a (click)="scrollToOffres()" class="btn-outline-white">{{ lang() === 'en' ? 'View offers' : 'Voir les offres' }}</a>
     </div>
   </div>
   <div class="prest-hero__wave">
@@ -31,63 +36,62 @@
 
 <section class="section bg-light" id="offres">
   <div class="container">
-    <p class="label label--accent">Nos offres</p>
-    <h2 class="title">Ce que nous réalisons</h2>
-    <p class="intro">Un périmètre large pour répondre à tous vos besoins, du plus simple au plus ambitieux.</p>
+    <p class="label label--accent">{{ lang() === 'en' ? 'Our offers' : 'Nos offres' }}</p>
+    <h2 class="title">{{ lang() === 'en' ? 'What we build' : 'Ce que nous réalisons' }}</h2>
+    <p class="intro">{{ lang() === 'en' ? 'A wide scope to meet all your needs, from the simplest to the most ambitious.' : 'Un périmètre large pour répondre à tous vos besoins, du plus simple au plus ambitieux.' }}</p>
 
     <div class="offers-grid">
 
       <div class="offer-card">
         <div class="offer-card__icon"><i class="ri-layout-line"></i></div>
-        <h3>Site Vitrine</h3>
-        <p>Présentez votre activité avec un site élégant, optimisé pour le référencement et les conversions.</p>
+        <h3>{{ lang() === 'en' ? 'Showcase Site' : 'Site Vitrine' }}</h3>
+        <p>{{ lang() === 'en' ? 'Modern, fast and optimised sites to present your business and attract new clients.' : 'Sites modernes, rapides et optimisés pour présenter votre activité et attirer de nouveaux clients.' }}</p>
         <ul>
-          <li>Design sur-mesure responsive</li>
-          <li>Optimisation SEO intégrée</li>
-          <li>Formulaire de contact & analytics</li>
-          <li>Hébergement & nom de domaine</li>
+          <li>{{ lang() === 'en' ? 'Custom design' : 'Design sur-mesure' }}</li>
+          <li>{{ lang() === 'en' ? 'Mobile first & SEO' : 'Mobile first & SEO' }}</li>
+          <li>{{ lang() === 'en' ? 'CMS integration' : 'Intégration CMS' }}</li>
+          <li>{{ lang() === 'en' ? 'Contact form' : 'Formulaire de contact' }}</li>
         </ul>
-        <span class="offer-price">À partir de 800 €</span>
+        <span class="offer-price">{{ lang() === 'en' ? 'From €800' : 'À partir de 800 €' }}</span>
       </div>
 
       <div class="offer-card">
-        <div class="offer-card__icon"><i class="ri-store-2-line"></i></div>
-        <h3>E-commerce</h3>
-        <p>Boutique en ligne complète avec paiement sécurisé, gestion des stocks et tableau de bord vendeur.</p>
+        <div class="offer-card__icon"><i class="ri-shopping-cart-line"></i></div>
+        <h3>{{ lang() === 'en' ? 'E-commerce' : 'E-commerce' }}</h3>
+        <p>{{ lang() === 'en' ? 'Complete online store: product catalogue, cart, payment and order management.' : 'Boutique en ligne complète : catalogue produits, panier, paiement et gestion des commandes.' }}</p>
         <ul>
-          <li>Catalogue produits illimité</li>
-          <li>Paiement Stripe / PayPal</li>
-          <li>Gestion des commandes & stocks</li>
-          <li>Interface d'administration</li>
+          <li>{{ lang() === 'en' ? 'Stripe / PayPal integration' : 'Intégration Stripe / PayPal' }}</li>
+          <li>{{ lang() === 'en' ? 'Stock management' : 'Gestion des stocks' }}</li>
+          <li>{{ lang() === 'en' ? 'Admin dashboard' : 'Dashboard admin' }}</li>
+          <li>{{ lang() === 'en' ? 'Order tracking' : 'Suivi des commandes' }}</li>
         </ul>
-        <span class="offer-price">À partir de 1 800 €</span>
+        <span class="offer-price">{{ lang() === 'en' ? 'From €1500' : 'À partir de 1500 €' }}</span>
       </div>
 
       <div class="offer-card">
-        <div class="offer-card__icon"><i class="ri-window-line"></i></div>
-        <h3>Application Web</h3>
-          <p>Interfaces métier sur-mesure, dashboards interactifs, outils internes optimisés
-              ou solutions SaaS prêtes à commercialiser.</p>
+        <div class="offer-card__icon"><i class="ri-code-box-line"></i></div>
+        <h3>{{ lang() === 'en' ? 'Custom Application' : 'Application Sur-Mesure' }}</h3>
+        <p>{{ lang() === 'en' ? 'Complex business applications: SaaS, ERP, internal tools, custom API.' : 'Applications métier complexes : SaaS, ERP, outils internes, API custom.' }}</p>
         <ul>
-          <li>Architecture scalable</li>
-          <li>Authentification & rôles</li>
-          <li>API REST ou GraphQL</li>
-          <li>Tests & documentation</li>
+          <li>{{ lang() === 'en' ? 'Angular / React / Vue' : 'Angular / React / Vue' }}</li>
+          <li>{{ lang() === 'en' ? 'REST / GraphQL API' : 'API REST / GraphQL' }}</li>
+          <li>{{ lang() === 'en' ? 'Authentication & roles' : 'Authentification & rôles' }}</li>
+          <li>{{ lang() === 'en' ? 'Scalable architecture' : 'Architecture scalable' }}</li>
         </ul>
-          <span class="offer-price">À partir de 2 900 €</span>
+        <span class="offer-price">{{ lang() === 'en' ? 'On quote' : 'Sur devis' }}</span>
       </div>
 
       <div class="offer-card">
-        <div class="offer-card__icon"><i class="ri-plug-line"></i></div>
-        <h3>API & Intégrations</h3>
-        <p>Connectez vos outils existants, automatisez vos processus et synchronisez vos données en temps réel.</p>
+        <div class="offer-card__icon"><i class="ri-tools-line"></i></div>
+        <h3>{{ lang() === 'en' ? 'Maintenance & Support' : 'Maintenance & Support' }}</h3>
+        <p>{{ lang() === 'en' ? 'Ongoing support for your existing sites: updates, bug fixes, performance and security.' : 'Accompagnement de vos sites existants : mises à jour, corrections, performance et sécurité.' }}</p>
         <ul>
-          <li>API REST & WebSocket</li>
-          <li>Webhooks & automatisations</li>
-          <li>Intégration CRM / ERP</li>
-          <li>Maintenance & évolutions</li>
+          <li>{{ lang() === 'en' ? 'Security updates' : 'Mises à jour de sécurité' }}</li>
+          <li>{{ lang() === 'en' ? 'Performance monitoring' : 'Monitoring des performances' }}</li>
+          <li>{{ lang() === 'en' ? 'Priority bug fixes' : 'Corrections prioritaires' }}</li>
+          <li>{{ lang() === 'en' ? 'Monthly reporting' : 'Rapport mensuel' }}</li>
         </ul>
-        <span class="offer-price">Sur devis</span>
+        <span class="offer-price">{{ lang() === 'en' ? 'From €150/month' : 'À partir de 150 €/mois' }}</span>
       </div>
 
     </div>
@@ -98,29 +102,29 @@
 
 <section class="section">
   <div class="container">
-    <p class="label label--accent">Méthode</p>
-    <h2 class="title">Comment ça se passe ?</h2>
+    <p class="label label--accent">{{ lang() === 'en' ? 'How it works' : 'Notre méthode' }}</p>
+    <h2 class="title">{{ lang() === 'en' ? 'From idea to launch' : 'De l\'idée au lancement' }}</h2>
 
     <div class="process-grid">
       <div class="step">
         <div class="step__num">1</div>
-        <h3>Découverte</h3>
-        <p>On analyse vos besoins, votre cible et vos objectifs pour cadrer le projet ensemble.</p>
+        <h3>{{ lang() === 'en' ? 'Discovery' : 'Découverte' }}</h3>
+        <p>{{ lang() === 'en' ? 'We analyse your needs, your audience and your objectives to design the right solution.' : 'Nous analysons vos besoins, votre cible et vos objectifs pour concevoir la bonne solution.' }}</p>
       </div>
       <div class="step">
         <div class="step__num">2</div>
-        <h3>Conception</h3>
-        <p>Maquettes wireframes puis design final validé avec vous avant tout développement.</p>
+        <h3>{{ lang() === 'en' ? 'Design' : 'Design' }}</h3>
+        <p>{{ lang() === 'en' ? 'Wireframes and UI mockups submitted for your validation before any development.' : 'Maquettes UI soumises à votre validation avant tout développement.' }}</p>
       </div>
       <div class="step">
         <div class="step__num">3</div>
-        <h3>Développement</h3>
-        <p>Code propre, testé et documenté. Accès à un environnement de prévisualisation.</p>
+        <h3>{{ lang() === 'en' ? 'Development' : 'Développement' }}</h3>
+        <p>{{ lang() === 'en' ? 'Agile development with regular deliveries and integration of your feedback.' : 'Développement agile avec livraisons régulières et intégration de vos retours.' }}</p>
       </div>
       <div class="step">
         <div class="step__num">4</div>
-        <h3>Livraison</h3>
-        <p>Mise en ligne, formation à l'outil et suivi post-lancement inclus.</p>
+        <h3>{{ lang() === 'en' ? 'Launch' : 'Lancement' }}</h3>
+        <p>{{ lang() === 'en' ? 'Deployment, testing and monitoring in production. Support available after delivery.' : 'Déploiement, tests et monitoring en production. Accompagnement disponible après livraison.' }}</p>
       </div>
     </div>
   </div>
@@ -129,13 +133,13 @@
 <!-- ── CTA ─────────────────────────────────────────────────────────────── -->
 
 <tyro-ui-cta
-        [title]="'Votre site web,<br>conçu pour durer.'"
-        [label]="'Lançons votre projet'"
-        [content]="'Partagez votre projet, on vous répond sous 48h avec une première estimation.'"
-        [btn]="'Nous contacter'"
-        [btnIcon]="`<i class='ri-mail-send-line'></i>`"
-        [btnRouterLink]="'/contact'"
-        [subbtn]="'Voir nos réalisations'"
-        [subRouterLink]="'/project'"
+    [title]="lang() === 'en' ? 'Ready to build<br>your website?' : 'Prêt à créer<br>votre site web ?'"
+    [label]="lang() === 'en' ? 'Website' : 'Site Web'"
+    [content]="lang() === 'en' ? 'Tell us about your project and we\'ll get back to you with a proposal within 48h.' : 'Décrivez-nous votre projet et on revient vers vous avec une proposition dans les 48h.'"
+    [btn]="lang() === 'en' ? 'Get a quote' : 'Demander un devis'"
+    [btnIcon]="`<i class='ri-mail-send-line'></i>`"
+    [btnRouterLink]="'/contact'"
+    [subbtn]="lang() === 'en' ? 'Our achievements' : 'Nos réalisations'"
+    [subRouterLink]="'/project'"
+    [notBack]="true"
 ></tyro-ui-cta>
-

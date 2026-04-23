@@ -31,7 +31,7 @@
         <i class="ri-arrow-right-up-line project-arrow"></i>
       }
     </div>
-    <p>{{ project.description }}</p>
+    <p>{{ lang() === 'en' ? (project.descriptionEn ?? project.description) : project.description }}</p>
   </div>
 
   @if (horizontal) {

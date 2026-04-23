@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { TyroUiLangService } from 'tyrolium-ui';
 
 @Component({
   selector: 'app-contact',
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './contact.css',
   imports: [],
 })
-export class Contact {}
+export class Contact {
+  readonly lang = inject(TyroUiLangService).lang;
+}

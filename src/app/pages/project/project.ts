@@ -1,5 +1,5 @@
-import { Component, signal } from '@angular/core';
-import { NavbarMenuCategory, ITyroUiNavbarMenuItem, TyroUiCTA } from 'tyrolium-ui';
+import { Component, signal, inject } from '@angular/core';
+import { NavbarMenuCategory, ITyroUiNavbarMenuItem, TyroUiCTA, TyroUiLangService } from 'tyrolium-ui';
 import { ProjectCard } from '../../components/project-card/project-card';
 
 @Component({
@@ -9,6 +9,8 @@ import { ProjectCard } from '../../components/project-card/project-card';
   imports: [TyroUiCTA, ProjectCard],
 })
 export class Project {
+  readonly lang = inject(TyroUiLangService).lang;
+
   public readonly mainProjects: ITyroUiNavbarMenuItem[] =
     NavbarMenuCategory.find(c => c.label === 'Projets')?.items ?? [];
 

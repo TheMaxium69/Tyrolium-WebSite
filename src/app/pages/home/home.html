@@ -6,11 +6,14 @@
 
 <section class="section services">
   <div class="container">
-    <p class="label">Ce que nous faisons</p>
-    <h2 class="title">Nos Expertises</h2>
+    <p class="label">{{ lang() === 'en' ? 'What we do' : 'Ce que nous faisons' }}</p>
+    <h2 class="title">{{ lang() === 'en' ? 'Our Expertise' : 'Nos Expertises' }}</h2>
     <p class="intro">
-      De la conception au déploiement, Tyrolium vous accompagne à chaque étape
-      de votre projet numérique avec expertise et passion.
+      @if (lang() === 'en') {
+        From design to deployment, Tyrolium supports you at every step of your digital project with expertise and passion.
+      } @else {
+        De la conception au déploiement, Tyrolium vous accompagne à chaque étape de votre projet numérique avec expertise et passion.
+      }
     </p>
 
     <div class="services-grid">
@@ -19,15 +22,15 @@
         <div class="service-card__icon icon--blue">
           <i class="ri-code-s-slash-line"></i>
         </div>
-        <h3>Développement Informatique</h3>
-        <p>Conception et développement d'applications modernes, performantes et accessibles.</p>
+        <h3>{{ lang() === 'en' ? 'Software Development' : 'Développement Informatique' }}</h3>
+        <p>{{ lang() === 'en' ? 'Design and development of modern, high-performance and accessible applications.' : 'Conception et développement d\'applications modernes, performantes et accessibles.' }}</p>
         <ul class="feature-list">
-          <li><i class="ri-check-line"></i> Sites vitrine & e-commerce</li>
-          <li><i class="ri-check-line"></i> Applications web métier</li>
-          <li><i class="ri-check-line"></i> API & intégrations</li>
+          <li><i class="ri-check-line"></i> {{ lang() === 'en' ? 'Showcase & e-commerce sites' : 'Sites vitrine & e-commerce' }}</li>
+          <li><i class="ri-check-line"></i> {{ lang() === 'en' ? 'Business web applications' : 'Applications web métier' }}</li>
+          <li><i class="ri-check-line"></i> {{ lang() === 'en' ? 'APIs & integrations' : 'API & intégrations' }}</li>
         </ul>
         <a href="/prestation/web" class="card-link">
-          Découvrir <i class="ri-arrow-right-line"></i>
+          {{ lang() === 'en' ? 'Discover' : 'Découvrir' }} <i class="ri-arrow-right-line"></i>
         </a>
       </div>
 
@@ -36,14 +39,14 @@
           <i class="ri-server-line"></i>
         </div>
         <h3>Infrastructure & Cloud</h3>
-        <p>Architecture, déploiement et supervision de vos infrastructures cloud et serveurs.</p>
+        <p>{{ lang() === 'en' ? 'Architecture, deployment and monitoring of your cloud and server infrastructures.' : 'Architecture, déploiement et supervision de vos infrastructures cloud et serveurs.' }}</p>
         <ul class="feature-list">
-          <li><i class="ri-check-line"></i> Hébergement haute disponibilité</li>
-          <li><i class="ri-check-line"></i> DevOps & automatisation</li>
-          <li><i class="ri-check-line"></i> Monitoring & sécurité</li>
+          <li><i class="ri-check-line"></i> {{ lang() === 'en' ? 'High-availability hosting' : 'Hébergement haute disponibilité' }}</li>
+          <li><i class="ri-check-line"></i> {{ lang() === 'en' ? 'DevOps & automation' : 'DevOps & automatisation' }}</li>
+          <li><i class="ri-check-line"></i> {{ lang() === 'en' ? 'Monitoring & security' : 'Monitoring & sécurité' }}</li>
         </ul>
         <a href="/prestation/server" class="card-link">
-          Découvrir <i class="ri-arrow-right-line"></i>
+          {{ lang() === 'en' ? 'Discover' : 'Découvrir' }} <i class="ri-arrow-right-line"></i>
         </a>
       </div>
 
@@ -51,15 +54,15 @@
         <div class="service-card__icon icon--red">
           <i class="ri-lightbulb-line"></i>
         </div>
-        <h3>Incubateur de projet</h3>
-        <p>Accompagnement stratégique dans votre création ou transformation de votre projet.</p>
+        <h3>{{ lang() === 'en' ? 'Project Incubator' : 'Incubateur de projet' }}</h3>
+        <p>{{ lang() === 'en' ? 'Strategic support in creating or transforming your project.' : 'Accompagnement stratégique dans votre création ou transformation de votre projet.' }}</p>
         <ul class="feature-list">
-          <li><i class="ri-check-line"></i> Mentorat & Accompagnement</li>
-          <li><i class="ri-check-line"></i> Réseau & Partenaires</li>
-          <li><i class="ri-check-line"></i> Pilotage de projet</li>
+          <li><i class="ri-check-line"></i> {{ lang() === 'en' ? 'Mentoring & Support' : 'Mentorat & Accompagnement' }}</li>
+          <li><i class="ri-check-line"></i> {{ lang() === 'en' ? 'Network & Partners' : 'Réseau & Partenaires' }}</li>
+          <li><i class="ri-check-line"></i> {{ lang() === 'en' ? 'Project management' : 'Pilotage de projet' }}</li>
         </ul>
         <a href="/prestation/incubateur" class="card-link">
-          Découvrir <i class="ri-arrow-right-line"></i>
+          {{ lang() === 'en' ? 'Discover' : 'Découvrir' }} <i class="ri-arrow-right-line"></i>
         </a>
       </div>
 
@@ -73,11 +76,14 @@
 
 <section class="section projects bg-light">
   <div class="container">
-    <p class="label">Notre univers</p>
-    <h2 class="title">Nos Réalisations</h2>
+    <p class="label">{{ lang() === 'en' ? 'Our universe' : 'Notre univers' }}</p>
+    <h2 class="title">{{ lang() === 'en' ? 'Our Achievements' : 'Nos Réalisations' }}</h2>
     <p class="intro">
-      Depuis 2017, nous développons des projets qui reflètent notre passion pour la technologie
-      et notre volonté d'innover.
+      @if (lang() === 'en') {
+        Since 2017, we have been developing projects that reflect our passion for technology and our drive to innovate.
+      } @else {
+        Depuis 2017, nous développons des projets qui reflètent notre passion pour la technologie et notre volonté d'innover.
+      }
     </p>
 
     <div class="projects-grid">
@@ -90,9 +96,9 @@
       <a routerLink="/project" class="home-more-card">
         <div class="home-more-card__inner">
           <i class="ri-apps-2-line"></i>
-          <h3>Et bien d'autres…</h3>
-          <p>Découvrez l'ensemble de nos projets</p>
-          <span class="btn-outline-small">Voir tous les projets <i class="ri-arrow-right-line"></i></span>
+          <h3>{{ lang() === 'en' ? 'And much more…' : 'Et bien d\'autres…' }}</h3>
+          <p>{{ lang() === 'en' ? 'Discover all our projects' : 'Découvrez l\'ensemble de nos projets' }}</p>
+          <span class="btn-outline-small">{{ lang() === 'en' ? 'View all projects' : 'Voir tous les projets' }} <i class="ri-arrow-right-line"></i></span>
         </div>
       </a>
     </div>
@@ -105,8 +111,8 @@
 
 <section class="section values">
   <div class="container">
-    <p class="label">Notre différence</p>
-    <h2 class="title">Pourquoi choisir Tyrolium ?</h2>
+    <p class="label">{{ lang() === 'en' ? 'Our difference' : 'Notre différence' }}</p>
+    <h2 class="title">{{ lang() === 'en' ? 'Why choose Tyrolium?' : 'Pourquoi choisir Tyrolium ?' }}</h2>
 
     <div class="values-grid">
 
@@ -114,32 +120,32 @@
         <div class="value-icon">
           <i class="ri-trophy-line"></i>
         </div>
-        <h3>Expertise technique</h3>
-        <p>Des développeurs passionnés qui maîtrisent les technologies modernes du frontend au backend en passant par l'infrastructure.</p>
+        <h3>{{ lang() === 'en' ? 'Technical expertise' : 'Expertise technique' }}</h3>
+        <p>{{ lang() === 'en' ? 'Passionate developers who master modern technologies from frontend to backend and infrastructure.' : 'Des développeurs passionnés qui maîtrisent les technologies modernes du frontend au backend en passant par l\'infrastructure.' }}</p>
       </div>
 
       <div class="value-item">
         <div class="value-icon">
           <i class="ri-verified-badge-line"></i>
         </div>
-        <h3>Entreprise française</h3>
-        <p>Basés en France, nos données et infrastructures restent sur le territoire français. Souveraineté numérique garantie.</p>
+        <h3>{{ lang() === 'en' ? 'French company' : 'Entreprise française' }}</h3>
+        <p>{{ lang() === 'en' ? 'Based in France, our data and infrastructure remain on French soil. Digital sovereignty guaranteed.' : 'Basés en France, nos données et infrastructures restent sur le territoire français. Souveraineté numérique garantie.' }}</p>
       </div>
 
       <div class="value-item">
         <div class="value-icon">
           <i class="ri-rocket-2-line"></i>
         </div>
-        <h3>Passion & Innovation</h3>
-        <p>Fondée par des passionnés en 2017, Tyrolium pousse toujours vers l'innovation et l'amélioration continue de ses solutions.</p>
+        <h3>{{ lang() === 'en' ? 'Passion & Innovation' : 'Passion & Innovation' }}</h3>
+        <p>{{ lang() === 'en' ? 'Founded by enthusiasts in 2017, Tyrolium always pushes towards innovation and continuous improvement of its solutions.' : 'Fondée par des passionnés en 2017, Tyrolium pousse toujours vers l\'innovation et l\'amélioration continue de ses solutions.' }}</p>
       </div>
 
       <div class="value-item">
         <div class="value-icon">
           <i class="ri-hand-heart-line"></i>
         </div>
-        <h3>Partenariat durable</h3>
-        <p>Nous ne sommes pas de simples prestataires. Nous nous impliquons sur le long terme pour faire évoluer votre produit avec vous.</p>
+        <h3>{{ lang() === 'en' ? 'Long-term partnership' : 'Partenariat durable' }}</h3>
+        <p>{{ lang() === 'en' ? 'We are not just service providers. We commit long-term to help your product grow with you.' : 'Nous ne sommes pas de simples prestataires. Nous nous impliquons sur le long terme pour faire évoluer votre produit avec vous.' }}</p>
       </div>
 
     </div>
@@ -152,35 +158,19 @@
 
 <section class="section technologies bg-light">
   <div class="container">
-    <p class="label">Notre stack</p>
-    <h2 class="title">Nos Technologies</h2>
+    <p class="label">{{ lang() === 'en' ? 'Our stack' : 'Notre stack' }}</p>
+    <h2 class="title">{{ lang() === 'en' ? 'Our Technologies' : 'Nos Technologies' }}</h2>
 
     <div class="tech-categories">
 
         <div class="tech-category">
             <h4><i class="ri-layout-line"></i> Frontend</h4>
             <div class="tech-pills">
-                <span>Angular</span>
-                <span>TypeScript</span>
-                <span>React</span>
-                <span>Vue.js</span>
-                <span>Next.js</span>
-                <span>HTML / CSS</span>
-                <span>Sass / SCSS</span>
-                <span>TailwindCSS</span>
-                <span>Bootstrap</span>
-                <span>Material UI</span>
-                <span>JavaScript</span>
-                <span>jQuery</span>
-                <span>Webpack</span>
-                <span>Vite</span>
-                <span>Three.js</span>
-                <span>Less</span>
-                <span>Pug</span>
-                <span>Unity</span>
-                <span>Unreal Engine</span>
-                <span>Forge</span>
-                <span>Fabric</span>
+                <span>Angular</span><span>TypeScript</span><span>React</span><span>Vue.js</span>
+                <span>Next.js</span><span>HTML / CSS</span><span>Sass / SCSS</span><span>TailwindCSS</span>
+                <span>Bootstrap</span><span>Material UI</span><span>JavaScript</span><span>jQuery</span>
+                <span>Webpack</span><span>Vite</span><span>Three.js</span><span>Less</span><span>Pug</span>
+                <span>Unity</span><span>Unreal Engine</span><span>Forge</span><span>Fabric</span>
                 <span>Bukkit / Spigot</span>
             </div>
         </div>
@@ -188,55 +178,23 @@
         <div class="tech-category">
             <h4><i class="ri-terminal-box-line"></i> Backend</h4>
             <div class="tech-pills">
-                <span>Java</span>
-                <span>Spring Boot</span>
-                <span>PHP</span>
-                <span>Symfony</span>
-                <span>Laravel</span>
-                <span>Node.js</span>
-                <span>Express.js</span>
-                <span>Python</span>
-                <span>Django</span>
-                <span>C</span>
-                <span>C++</span>
-                <span>C#</span>
-                <span>.NET</span>
-                <span>Go</span>
-                <span>REST API</span>
-                <span>GraphQL</span>
-                <span>WebSocket</span>
-                <span>PostgreSQL</span>
-                <span>MySQL / MariaDB</span>
-                <span>MongoDB</span>
-                <span>Assembleur</span>
+                <span>Java</span><span>Spring Boot</span><span>PHP</span><span>Symfony</span>
+                <span>Laravel</span><span>Node.js</span><span>Express.js</span><span>Python</span>
+                <span>Django</span><span>C</span><span>C++</span><span>C#</span><span>.NET</span>
+                <span>Go</span><span>REST API</span><span>GraphQL</span><span>WebSocket</span>
+                <span>PostgreSQL</span><span>MySQL / MariaDB</span><span>MongoDB</span><span>Assembleur</span>
             </div>
         </div>
 
         <div class="tech-category">
             <h4><i class="ri-cloud-line"></i> Infrastructure</h4>
             <div class="tech-pills">
-                <span>Docker</span>
-                <span>Kubernetes</span>
-                <span>Linux</span>
-                <span>Ubuntu</span>
-                <span>Debian</span>
-                <span>CentOS</span>
-                <span>Nginx</span>
-                <span>Apache</span>
-                <span>CI/CD</span>
-                <span>GitHub Actions</span>
-                <span>GitLab CI</span>
-                <span>Jenkins</span>
-                <span>Git</span>
-                <span>GitHub</span>
-                <span>GitLab</span>
-                <span>SSH</span>
-                <span>FTP / SFTP</span>
-                <span>Bash</span>
-                <span>PowerShell</span>
-                <span>VMware</span>
-                <span>VirtualBox</span>
-                <span>Proxmox</span>
+                <span>Docker</span><span>Kubernetes</span><span>Linux</span><span>Ubuntu</span>
+                <span>Debian</span><span>CentOS</span><span>Nginx</span><span>Apache</span>
+                <span>CI/CD</span><span>GitHub Actions</span><span>GitLab CI</span><span>Jenkins</span>
+                <span>Git</span><span>GitHub</span><span>GitLab</span><span>SSH</span>
+                <span>FTP / SFTP</span><span>Bash</span><span>PowerShell</span><span>VMware</span>
+                <span>VirtualBox</span><span>Proxmox</span>
             </div>
         </div>
 
@@ -250,8 +208,8 @@
 
 <section class="section timeline">
   <div class="container">
-    <p class="label">Notre histoire</p>
-    <h2 class="title">Notre Parcours</h2>
+    <p class="label">{{ lang() === 'en' ? 'Our story' : 'Notre histoire' }}</p>
+    <h2 class="title">{{ lang() === 'en' ? 'Our Journey' : 'Notre Parcours' }}</h2>
 
     <div class="timeline-track">
 
@@ -259,56 +217,53 @@
         <div class="timeline-dot"></div>
         <div class="timeline-content">
           <span class="timeline-year">2017</span>
-          <h3>Naissance de TyroServ</h3>
-          <p>Lancement du serveur Minecraft moddé TyroServ, le point de départ de l'aventure Tyrolium.</p>
+          <h3>{{ lang() === 'en' ? 'Birth of TyroServ' : 'Naissance de TyroServ' }}</h3>
+          <p>{{ lang() === 'en' ? 'Launch of the modded Minecraft server TyroServ, the starting point of the Tyrolium adventure.' : 'Lancement du serveur Minecraft moddé TyroServ, le point de départ de l\'aventure Tyrolium.' }}</p>
         </div>
       </div>
 
-        
-        <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-                <span class="timeline-year">2019</span>
-                <h3>Création de la Holding</h3>
-                <p>Structuration de Tyrolium en holding technologique couvrant développement, cloud et incubateur de projet.</p>
-            </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-year">2019</span>
+          <h3>{{ lang() === 'en' ? 'Holding creation' : 'Création de la Holding' }}</h3>
+          <p>{{ lang() === 'en' ? 'Tyrolium structured as a tech holding covering development, cloud and project incubation.' : 'Structuration de Tyrolium en holding technologique couvrant développement, cloud et incubateur de projet.' }}</p>
         </div>
+      </div>
 
-        <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-                <span class="timeline-year">2020</span>
-                <h3>Prestations web & jeu-vidéo</h3>
-                <p>Lancement de prestations professionnelles en développement web et création de jeux-vidéo.</p>
-            </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-year">2020</span>
+          <h3>{{ lang() === 'en' ? 'Web & video game services' : 'Prestations web & jeu-vidéo' }}</h3>
+          <p>{{ lang() === 'en' ? 'Launch of professional services in web development and video game creation.' : 'Lancement de prestations professionnelles en développement web et création de jeux-vidéo.' }}</p>
         </div>
+      </div>
 
-        <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-                <span class="timeline-year">2022</span>
-                <h3>Expansion infrastructure</h3>
-                <p>Lancement de l'hébergement de serveurs et services d'infrastructure cloud.</p>
-            </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-year">2022</span>
+          <h3>{{ lang() === 'en' ? 'Infrastructure expansion' : 'Expansion infrastructure' }}</h3>
+          <p>{{ lang() === 'en' ? 'Launch of server hosting and cloud infrastructure services.' : 'Lancement de l\'hébergement de serveurs et services d\'infrastructure cloud.' }}</p>
         </div>
+      </div>
 
-
-        <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-                <span class="timeline-year">2026</span>
-                <h3>Notre entrée dans l'univers du gaming</h3>
-                <p>Création et développement de notre propre studio de jeu-vidéo pour produire des expériences gaming
-                    innovantes.</p>
-            </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-year">2026</span>
+          <h3>{{ lang() === 'en' ? 'Entering the gaming universe' : 'Notre entrée dans l\'univers du gaming' }}</h3>
+          <p>{{ lang() === 'en' ? 'Creation and development of our own video game studio to produce innovative gaming experiences.' : 'Création et développement de notre propre studio de jeu-vidéo pour produire des expériences gaming innovantes.' }}</p>
         </div>
+      </div>
 
       <div class="timeline-item timeline-item--active">
         <div class="timeline-dot timeline-dot--active"></div>
         <div class="timeline-content">
-          <span class="timeline-year">Aujourd'hui</span>
-          <h3>En pleine croissance</h3>
-          <p>Tyrolium continue d'innover, d'étendre son écosystème et d'accompagner ses clients avec ambition.</p>
+          <span class="timeline-year">{{ lang() === 'en' ? 'Today' : 'Aujourd\'hui' }}</span>
+          <h3>{{ lang() === 'en' ? 'Growing fast' : 'En pleine croissance' }}</h3>
+          <p>{{ lang() === 'en' ? 'Tyrolium continues to innovate, expand its ecosystem and support its clients with ambition.' : 'Tyrolium continue d\'innover, d\'étendre son écosystème et d\'accompagner ses clients avec ambition.' }}</p>
         </div>
       </div>
 
@@ -321,12 +276,12 @@
 <!-- ══════════════════════════════════════════════════════════════════════ -->
 
 <tyro-ui-cta
-    [title]="'Prêt à démarrer<br>votre projet ?'"
-    [label]="'Passons à l\'action'"
-    [content]="'Discutons de vos besoins. Nos équipes sont disponibles pour étudier votre projet et vous proposer une solution adaptée.'"
-    [btn]="'Contactez-nous'"
+    [title]="lang() === 'en' ? 'Ready to start<br>your project?' : 'Prêt à démarrer<br>votre projet ?'"
+    [label]="lang() === 'en' ? 'Let\'s get started' : 'Passons à l\'action'"
+    [content]="lang() === 'en' ? 'Let\'s talk about your needs. Our teams are available to study your project and propose a tailored solution.' : 'Discutons de vos besoins. Nos équipes sont disponibles pour étudier votre projet et vous proposer une solution adaptée.'"
+    [btn]="lang() === 'en' ? 'Contact us' : 'Contactez-nous'"
     [btnIcon]="`<i class='ri-mail-send-line'></i>`"
-    [btnRouterLink]="'/contact'";
-    [subbtn]="'Voir nos projets'"
+    [btnRouterLink]="'/contact'"
+    [subbtn]="lang() === 'en' ? 'See our projects' : 'Voir nos projets'"
     [subRouterLink]="'/project'"
 ></tyro-ui-cta>

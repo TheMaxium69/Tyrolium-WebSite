@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { TyroUiLangService } from 'tyrolium-ui';
 
 @Component({
   selector: 'app-legal-terms',
@@ -7,5 +8,6 @@ import { Component } from '@angular/core';
   imports: [],
 })
 export class LegalTerms {
+  readonly lang = inject(TyroUiLangService).lang;
   currentYear = new Date().getFullYear();
 }

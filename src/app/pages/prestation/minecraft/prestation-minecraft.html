@@ -5,17 +5,24 @@
   <div class="hero-glow hero-glow--2"></div>
   <div class="container prest-hero__inner">
     <span class="prest-badge"><i class="ri-gamepad-line"></i> Minecraft</span>
-    <h1>Votre serveur Minecraft<br>clé en main.</h1>
+    <h1>
+      @if (lang() === 'en') { Your Minecraft server,<br>ready to launch. } @else { Votre serveur Minecraft<br>clé en main. }
+    </h1>
     <p class="prest-hero__tagline">
-      Création, configuration et administration de serveurs Minecraft moddés ou vanilla.
-      Bénéficiez de notre expérience depuis 2017 avec TyroServ.
+      @if (lang() === 'en') {
+        Setup, configuration and administration of modded or vanilla Minecraft servers.
+        Built on our expertise since 2017 with TyroServ.
+      } @else {
+        Création, configuration et administration de serveurs Minecraft moddés ou vanilla.
+        Bénéficiez de notre expérience depuis 2017 avec TyroServ.
+      }
     </p>
     <div class="prest-hero__actions">
       <a routerLink="/contact" class="btn-solid-white">
-        <i class="ri-mail-send-line"></i> Lancer mon serveur
+        <i class="ri-mail-send-line"></i> {{ lang() === 'en' ? 'Launch my server' : 'Lancer mon serveur' }}
       </a>
       <a href="https://tyroserv.fr" target="_blank" rel="noopener" class="btn-outline-white">
-        Voir TyroServ <i class="ri-external-link-line"></i>
+        {{ lang() === 'en' ? 'See TyroServ' : 'Voir TyroServ' }} <i class="ri-external-link-line"></i>
       </a>
     </div>
   </div>
@@ -33,70 +40,68 @@
 
 <section class="section bg-light">
   <div class="container">
-    <p class="label label--accent">Nos offres</p>
-    <h2 class="title">Ce qu'on fait pour vous</h2>
-    <p class="intro">Du serveur vanilla au moddé, on maîtrise tout l'écosystème Minecraft.</p>
+    <p class="label label--accent">{{ lang() === 'en' ? 'Our offers' : 'Nos offres' }}</p>
+    <h2 class="title">{{ lang() === 'en' ? 'What we do for you' : 'Ce qu\'on fait pour vous' }}</h2>
+    <p class="intro">{{ lang() === 'en' ? 'From vanilla to modded, we master the entire Minecraft ecosystem.' : 'Du serveur vanilla au moddé, on maîtrise tout l\'écosystème Minecraft.' }}</p>
 
     <div class="offers-grid">
 
       <div class="offer-card">
         <div class="offer-card__icon"><i class="ri-install-line"></i></div>
-        <h3>Installation & Configuration</h3>
-        <p>Mise en place complète de votre serveur : choix de la version, installation des mods et plugins, optimisation des performances.</p>
+        <h3>{{ lang() === 'en' ? 'Installation & Configuration' : 'Installation & Configuration' }}</h3>
+        <p>{{ lang() === 'en' ? 'Full server setup: version selection, mod and plugin installation, performance optimisation.' : 'Mise en place complète de votre serveur : choix de la version, installation des mods et plugins, optimisation des performances.' }}</p>
         <ul>
           <li>Vanilla, Spigot, Paper, Fabric, Forge</li>
-          <li>Configuration anti-cheat</li>
-          <li>Optimisation TPS & mémoire</li>
-          <li>World border & génération</li>
+          <li>{{ lang() === 'en' ? 'Anti-cheat configuration' : 'Configuration anti-cheat' }}</li>
+          <li>{{ lang() === 'en' ? 'TPS & memory optimisation' : 'Optimisation TPS & mémoire' }}</li>
+          <li>{{ lang() === 'en' ? 'World border & generation' : 'World border & génération' }}</li>
         </ul>
-        <span class="offer-price">À partir de 150 €</span>
+        <span class="offer-price">{{ lang() === 'en' ? 'From €150' : 'À partir de 150 €' }}</span>
       </div>
 
-
-        <div class="offer-card">
-            <div class="offer-card__icon"><i class="ri-code-s-slash-line"></i></div>
-            <h3>Développement Mods ou Plugins</h3>
-            <p>Mods ou Plugins Java sur-mesure pour Forge/Fabric ou Bukkit/Spigot/Paper, fonctionnalités uniques pour démarquer votre serveur.</p>
-            <ul>
-                <li>Développement Java</li>
-                <li>Mini-jeux personnalisés</li>
-                <li>Systèmes de monnaie & shops</li>
-                <li>Intégration Discord / site web</li>
-            </ul>
-            <span class="offer-price">Sur devis</span>
-        </div>
+      <div class="offer-card">
+        <div class="offer-card__icon"><i class="ri-code-s-slash-line"></i></div>
+        <h3>{{ lang() === 'en' ? 'Mod & Plugin Development' : 'Développement Mods ou Plugins' }}</h3>
+        <p>{{ lang() === 'en' ? 'Custom Java mods or plugins for Forge/Fabric or Bukkit/Spigot/Paper, unique features to make your server stand out.' : 'Mods ou Plugins Java sur-mesure pour Forge/Fabric ou Bukkit/Spigot/Paper, fonctionnalités uniques pour démarquer votre serveur.' }}</p>
+        <ul>
+          <li>{{ lang() === 'en' ? 'Java development' : 'Développement Java' }}</li>
+          <li>{{ lang() === 'en' ? 'Custom mini-games' : 'Mini-jeux personnalisés' }}</li>
+          <li>{{ lang() === 'en' ? 'Currency & shop systems' : 'Systèmes de monnaie & shops' }}</li>
+          <li>{{ lang() === 'en' ? 'Discord / website integration' : 'Intégration Discord / site web' }}</li>
+        </ul>
+        <span class="offer-price">{{ lang() === 'en' ? 'On quote' : 'Sur devis' }}</span>
+      </div>
 
       <div class="offer-card">
         <div class="offer-card__icon"><i class="ri-admin-line"></i></div>
-        <h3>Administration continue</h3>
-        <p>Gestion quotidienne de votre serveur : permissions, sauvegardes, mises à jour et gestion de la communauté.</p>
+        <h3>{{ lang() === 'en' ? 'Ongoing Administration' : 'Administration continue' }}</h3>
+        <p>{{ lang() === 'en' ? 'Daily management of your server: permissions, backups, updates and community management.' : 'Gestion quotidienne de votre serveur : permissions, sauvegardes, mises à jour et gestion de la communauté.' }}</p>
         <ul>
-          <li>Système de permissions LuckPerms</li>
-          <li>Sauvegardes automatiques</li>
-          <li>Mises à jour & hotfixes</li>
-          <li>Modération & gestion des bans</li>
+          <li>{{ lang() === 'en' ? 'LuckPerms permission system' : 'Système de permissions LuckPerms' }}</li>
+          <li>{{ lang() === 'en' ? 'Automated backups' : 'Sauvegardes automatiques' }}</li>
+          <li>{{ lang() === 'en' ? 'Updates & hotfixes' : 'Mises à jour & hotfixes' }}</li>
+          <li>{{ lang() === 'en' ? 'Moderation & ban management' : 'Modération & gestion des bans' }}</li>
         </ul>
-        <span class="offer-price">À partir de 80 €/mois</span>
+        <span class="offer-price">{{ lang() === 'en' ? 'From €80/month' : 'À partir de 80 €/mois' }}</span>
       </div>
-
 
       <div class="offer-card">
         <div class="offer-card__icon"><i class="ri-customer-service-2-line"></i></div>
-        <h3>Support & Communauté</h3>
-        <p>Accompagnement dans la vie de votre serveur : communication, événements et satisfaction des joueurs.</p>
+        <h3>{{ lang() === 'en' ? 'Support & Community' : 'Support & Communauté' }}</h3>
+        <p>{{ lang() === 'en' ? 'Support for your server\'s community life: communication, events and player satisfaction.' : 'Accompagnement dans la vie de votre serveur : communication, événements et satisfaction des joueurs.' }}</p>
         <ul>
-          <li>Bot Discord intégré</li>
-          <li>Annonces & événements</li>
-          <li>Assistance technique joueurs</li>
-          <li>Rapport d'activité mensuel</li>
+          <li>{{ lang() === 'en' ? 'Integrated Discord bot' : 'Bot Discord intégré' }}</li>
+          <li>{{ lang() === 'en' ? 'Announcements & events' : 'Annonces & événements' }}</li>
+          <li>{{ lang() === 'en' ? 'Player technical support' : 'Assistance technique joueurs' }}</li>
+          <li>{{ lang() === 'en' ? 'Monthly activity report' : 'Rapport d\'activité mensuel' }}</li>
         </ul>
-        <span class="offer-price">À partir de 50 €/mois</span>
+        <span class="offer-price">{{ lang() === 'en' ? 'From €50/month' : 'À partir de 50 €/mois' }}</span>
       </div>
 
     </div>
 
     <div class="ref-project-wrap">
-      <app-project-card [project]="tyroServProject" [horizontal]="true"></app-project-card>
+      <app-project-card [project]="tyroServProject()" [horizontal]="true"></app-project-card>
     </div>
 
   </div>
@@ -106,29 +111,29 @@
 
 <section class="section">
   <div class="container">
-    <p class="label label--accent">Démarrage</p>
-    <h2 class="title">De zéro à votre serveur en ligne</h2>
+    <p class="label label--accent">{{ lang() === 'en' ? 'Getting started' : 'Démarrage' }}</p>
+    <h2 class="title">{{ lang() === 'en' ? 'From zero to your server online' : 'De zéro à votre serveur en ligne' }}</h2>
 
     <div class="process-grid">
       <div class="step">
         <div class="step__num">1</div>
         <h3>Brief</h3>
-        <p>Vous décrivez votre vision : type de serveur, mods souhaités, nombre de joueurs attendu.</p>
+        <p>{{ lang() === 'en' ? 'You describe your vision: server type, desired mods, expected player count.' : 'Vous décrivez votre vision : type de serveur, mods souhaités, nombre de joueurs attendu.' }}</p>
       </div>
       <div class="step">
         <div class="step__num">2</div>
         <h3>Infrastructure</h3>
-        <p>On configure le VPS (via SolidServ) avec les ressources adaptées à votre charge.</p>
+        <p>{{ lang() === 'en' ? 'We configure the VPS (via SolidServ) with resources adapted to your load.' : 'On configure le VPS (via SolidServ) avec les ressources adaptées à votre charge.' }}</p>
       </div>
       <div class="step">
         <div class="step__num">3</div>
-        <h3>Installation</h3>
-        <p>Installation du serveur, des plugins/mods, configuration et tests de performance.</p>
+        <h3>{{ lang() === 'en' ? 'Installation' : 'Installation' }}</h3>
+        <p>{{ lang() === 'en' ? 'Server installation, plugins/mods setup, configuration and performance testing.' : 'Installation du serveur, des plugins/mods, configuration et tests de performance.' }}</p>
       </div>
       <div class="step">
         <div class="step__num">4</div>
-        <h3>Lancement</h3>
-        <p>Ouverture au public avec monitoring en place et support pendant la phase de lancement.</p>
+        <h3>{{ lang() === 'en' ? 'Launch' : 'Lancement' }}</h3>
+        <p>{{ lang() === 'en' ? 'Public opening with monitoring in place and support during the launch phase.' : 'Ouverture au public avec monitoring en place et support pendant la phase de lancement.' }}</p>
       </div>
     </div>
   </div>
@@ -137,13 +142,12 @@
 <!-- ── CTA ─────────────────────────────────────────────────────────────── -->
 
 <tyro-ui-cta
-        [title]="'Prêt à ouvrir<br>votre serveur ?'"
+        [title]="lang() === 'en' ? 'Ready to open<br>your server?' : 'Prêt à ouvrir<br>votre serveur ?'"
         [label]="'Minecraft'"
-        [content]="'Décrivez-nous votre projet et on monte votre serveur de A à Z, en s\'appuyant sur 7 ans d\'expérience.'"
-        [btn]="'Nous contacter'"
+        [content]="lang() === 'en' ? 'Tell us about your project and we\'ll build your server from A to Z, backed by 7 years of experience.' : 'Décrivez-nous votre projet et on monte votre serveur de A à Z, en s\'appuyant sur 7 ans d\'expérience.'"
+        [btn]="lang() === 'en' ? 'Contact us' : 'Nous contacter'"
         [btnIcon]="`<i class='ri-mail-send-line'></i>`"
         [btnRouterLink]="'/contact'"
         [subbtn]="'Discord'"
         [subLink]="'https://discord.com/invite/km8h5jHezt'"
 ></tyro-ui-cta>
-

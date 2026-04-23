@@ -2,89 +2,135 @@
   <div class="container">
     <div class="legal-doc">
 
-      <p class="doc-label">CGV</p>
-      <h1 class="doc-title">Conditions Générales de Vente</h1>
-        <span class="legal-update">Dernière mise à jour : 22 Avril 2026</span>
+      <p class="doc-label">{{ lang() === 'en' ? 'Terms of Sale' : 'CGV' }}</p>
+      <h1 class="doc-title">{{ lang() === 'en' ? 'General Terms of Sale' : 'Conditions Générales de Vente' }}</h1>
+      <span class="legal-update">{{ lang() === 'en' ? 'Last updated: 22 April 2026' : 'Dernière mise à jour : 22 Avril 2026' }}</span>
 
-      <h2>1. Champ d'application</h2>
+      <h2>{{ lang() === 'en' ? '1. Scope' : '1. Champ d\'application' }}</h2>
       <p>
-        Les présentes Conditions Générales de Vente (CGV) s'appliquent à l'ensemble
-        des prestations de services proposées par <strong>Tyrolium</strong> à ses clients,
-        qu'il s'agisse de développement web, d'hébergement, d'incubation ou de formation.
+        @if (lang() === 'en') {
+          These General Terms of Sale (GTS) apply to all services offered by <strong>Tyrolium</strong> to its clients, whether web development, hosting, incubation or training.
+        } @else {
+          Les présentes Conditions Générales de Vente (CGV) s'appliquent à l'ensemble
+          des prestations de services proposées par <strong>Tyrolium</strong> à ses clients,
+          qu'il s'agisse de développement web, d'hébergement, d'incubation ou de formation.
+        }
       </p>
 
-      <h2>2. Commandes et devis</h2>
+      <h2>{{ lang() === 'en' ? '2. Orders and quotes' : '2. Commandes et devis' }}</h2>
       <p>
-        Toute prestation fait l'objet d'un devis préalable établi par Tyrolium.
-        La commande est ferme et définitive après réception du devis signé et,
-        le cas échéant, du règlement de l'acompte convenu.
+        @if (lang() === 'en') {
+          Every service is subject to a prior quote drawn up by Tyrolium. The order becomes firm and final upon receipt of the signed quote and, where applicable, the agreed deposit payment.
+        } @else {
+          Toute prestation fait l'objet d'un devis préalable établi par Tyrolium.
+          La commande est ferme et définitive après réception du devis signé et,
+          le cas échéant, du règlement de l'acompte convenu.
+        }
       </p>
 
-      <h2>3. Tarifs</h2>
+      <h2>{{ lang() === 'en' ? '3. Pricing' : '3. Tarifs' }}</h2>
       <p>
-        Les prix sont indiqués en euros (€) hors taxes (HT). Ils peuvent être modifiés
-        à tout moment. Les tarifs applicables sont ceux en vigueur à la date de validation
-        du devis par le client.
+        @if (lang() === 'en') {
+          Prices are stated in euros (€) excluding VAT. They may be modified at any time. The applicable rates are those in force at the date the quote is validated by the client.
+        } @else {
+          Les prix sont indiqués en euros (€) hors taxes (HT). Ils peuvent être modifiés
+          à tout moment. Les tarifs applicables sont ceux en vigueur à la date de validation
+          du devis par le client.
+        }
       </p>
       <p>
-        Tyrolium se réserve le droit de facturer des frais supplémentaires en cas
-        de dépassement du périmètre initialement défini dans le devis.
+        @if (lang() === 'en') {
+          Tyrolium reserves the right to invoice additional fees in the event of scope creep beyond what was initially defined in the quote.
+        } @else {
+          Tyrolium se réserve le droit de facturer des frais supplémentaires en cas
+          de dépassement du périmètre initialement défini dans le devis.
+        }
       </p>
 
-      <h2>4. Modalités de paiement</h2>
-      <p>Les modalités de paiement sont définies dans chaque devis. De manière générale :</p>
+      <h2>{{ lang() === 'en' ? '4. Payment terms' : '4. Modalités de paiement' }}</h2>
+      <p>{{ lang() === 'en' ? 'Payment terms are defined in each quote. Generally:' : 'Les modalités de paiement sont définies dans chaque devis. De manière générale :' }}</p>
       <ul>
-        <li>Un acompte de 30 à 50 % peut être demandé à la commande</li>
-        <li>Le solde est dû à la livraison ou selon l'échéancier convenu</li>
-        <li>Les paiements s'effectuent par virement bancaire ou tout autre moyen convenu</li>
+        @if (lang() === 'en') {
+          <li>A deposit of 30 to 50% may be required at the time of order</li>
+          <li>The balance is due upon delivery or according to the agreed schedule</li>
+          <li>Payments are made by bank transfer or any other agreed method</li>
+        } @else {
+          <li>Un acompte de 30 à 50 % peut être demandé à la commande</li>
+          <li>Le solde est dû à la livraison ou selon l'échéancier convenu</li>
+          <li>Les paiements s'effectuent par virement bancaire ou tout autre moyen convenu</li>
+        }
       </ul>
 
-      <h2>5. Délais de livraison</h2>
+      <h2>{{ lang() === 'en' ? '5. Delivery times' : '5. Délais de livraison' }}</h2>
       <p>
-        Les délais de livraison sont indicatifs et communiqués lors de la signature du devis.
-        Tyrolium s'engage à respecter ces délais dans la mesure du possible. Tout retard
-        ne pourra donner lieu à des pénalités sauf stipulation contraire dans le devis.
+        @if (lang() === 'en') {
+          Delivery times are indicative and communicated at the time of signing the quote. Tyrolium is committed to meeting these deadlines to the extent possible. Any delay shall not give rise to penalties unless otherwise stipulated in the quote.
+        } @else {
+          Les délais de livraison sont indicatifs et communiqués lors de la signature du devis.
+          Tyrolium s'engage à respecter ces délais dans la mesure du possible. Tout retard
+          ne pourra donner lieu à des pénalités sauf stipulation contraire dans le devis.
+        }
       </p>
 
-      <h2>6. Obligations du client</h2>
+      <h2>{{ lang() === 'en' ? '6. Client obligations' : '6. Obligations du client' }}</h2>
       <p>
-        Le client s'engage à fournir en temps utile l'ensemble des éléments nécessaires
-        à la bonne exécution de la prestation (contenus, accès, retours, validations).
-        Tout retard imputable au client peut entraîner un report des délais de livraison.
+        @if (lang() === 'en') {
+          The client undertakes to provide in a timely manner all elements necessary for the proper execution of the service (content, access, feedback, approvals). Any delay attributable to the client may result in a postponement of delivery deadlines.
+        } @else {
+          Le client s'engage à fournir en temps utile l'ensemble des éléments nécessaires
+          à la bonne exécution de la prestation (contenus, accès, retours, validations).
+          Tout retard imputable au client peut entraîner un report des délais de livraison.
+        }
       </p>
 
-      <h2>7. Propriété des livrables</h2>
+      <h2>{{ lang() === 'en' ? '7. Ownership of deliverables' : '7. Propriété des livrables' }}</h2>
       <p>
-        La propriété des livrables est transférée au client après règlement intégral
-        de la prestation. Tyrolium conserve le droit de mentionner la réalisation
-        dans son portfolio, sauf opposition expresse du client.
+        @if (lang() === 'en') {
+          Ownership of deliverables is transferred to the client after full payment of the service. Tyrolium retains the right to mention the work in its portfolio, unless the client expressly objects.
+        } @else {
+          La propriété des livrables est transférée au client après règlement intégral
+          de la prestation. Tyrolium conserve le droit de mentionner la réalisation
+          dans son portfolio, sauf opposition expresse du client.
+        }
       </p>
 
-      <h2>8. Garanties et SAV</h2>
+      <h2>{{ lang() === 'en' ? '8. Warranties & after-sales service' : '8. Garanties et SAV' }}</h2>
       <p>
-        Tyrolium garantit ses réalisations contre tout défaut de conformité pendant
-        une durée définie dans le devis. Les corrections d'anomalies imputables à Tyrolium
-        sont prises en charge gratuitement pendant cette période.
+        @if (lang() === 'en') {
+          Tyrolium warrants its work against any conformity defect for a period defined in the quote. Corrections of anomalies attributable to Tyrolium are covered free of charge during this period.
+        } @else {
+          Tyrolium garantit ses réalisations contre tout défaut de conformité pendant
+          une durée définie dans le devis. Les corrections d'anomalies imputables à Tyrolium
+          sont prises en charge gratuitement pendant cette période.
+        }
       </p>
 
-      <h2>9. Résiliation</h2>
+      <h2>{{ lang() === 'en' ? '9. Termination' : '9. Résiliation' }}</h2>
       <p>
-        En cas de résiliation à l'initiative du client après démarrage des travaux,
-        les sommes correspondant aux prestations déjà réalisées restent dues.
-        Un préavis et des frais de résiliation peuvent s'appliquer selon les conditions du devis.
+        @if (lang() === 'en') {
+          In the event of termination at the client's initiative after work has begun, amounts corresponding to services already completed remain due. Notice and termination fees may apply depending on the terms of the quote.
+        } @else {
+          En cas de résiliation à l'initiative du client après démarrage des travaux,
+          les sommes correspondant aux prestations déjà réalisées restent dues.
+          Un préavis et des frais de résiliation peuvent s'appliquer selon les conditions du devis.
+        }
       </p>
 
-      <h2>10. Contact</h2>
+      <h2>{{ lang() === 'en' ? '10. Contact' : '10. Contact' }}</h2>
       <p>
-        Pour toute question relative aux présentes CGV :
+        {{ lang() === 'en' ? 'For any questions regarding these Terms of Sale:' : 'Pour toute question relative aux présentes CGV :' }}
         <a href="mailto:juridique@tyrolium.fr">juridique&#64;tyrolium.fr</a>
       </p>
 
-      <h2>11. Litige et droit applicable</h2>
+      <h2>{{ lang() === 'en' ? '11. Disputes and applicable law' : '11. Litige et droit applicable' }}</h2>
       <p>
-        Les présentes CGV sont soumises au droit français. En cas de litige,
-        une solution amiable sera recherchée en priorité. À défaut, les tribunaux
-        compétents de France seront saisis.
+        @if (lang() === 'en') {
+          These General Terms of Sale are governed by French law. In the event of a dispute, an amicable resolution will be sought first. Failing that, the competent courts of France will have jurisdiction.
+        } @else {
+          Les présentes CGV sont soumises au droit français. En cas de litige,
+          une solution amiable sera recherchée en priorité. À défaut, les tribunaux
+          compétents de France seront saisis.
+        }
       </p>
 
     </div>

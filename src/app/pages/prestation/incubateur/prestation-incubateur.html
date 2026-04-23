@@ -4,17 +4,22 @@
   <div class="hero-glow hero-glow--1"></div>
   <div class="hero-glow hero-glow--2"></div>
   <div class="container prest-hero__inner">
-    <span class="prest-badge"><i class="ri-rocket-2-line"></i> Incubateur</span>
-    <h1>Faisons naître<br>votre projet tech.</h1>
+    <span class="prest-badge"><i class="ri-rocket-2-line"></i> {{ lang() === 'en' ? 'Incubator' : 'Incubateur' }}</span>
+    <h1>
+      @if (lang() === 'en') { Let's bring<br>your tech project to life. } @else { Faisons naître<br>votre projet tech. }
+    </h1>
     <p class="prest-hero__tagline">
-      Accompagnement, infrastructure, réseau et visibilité. Tout ce dont votre idée a besoin
-      pour devenir un produit viable et ambitieux.
+      @if (lang() === 'en') {
+        Mentoring, infrastructure, network and visibility. Everything your idea needs to become a viable and ambitious product.
+      } @else {
+        Accompagnement, infrastructure, réseau et visibilité. Tout ce dont votre idée a besoin pour devenir un produit viable et ambitieux.
+      }
     </p>
     <div class="prest-hero__actions">
       <a routerLink="/contact" class="btn-solid-white">
-        <i class="ri-send-plane-line"></i> Soumettre mon projet
+        <i class="ri-send-plane-line"></i> {{ lang() === 'en' ? 'Submit my project' : 'Soumettre mon projet' }}
       </a>
-      <a (click)="scrollToProgramme()" class="btn-outline-white">Le programme</a>
+      <a (click)="scrollToProgramme()" class="btn-outline-white">{{ lang() === 'en' ? 'The programme' : 'Le programme' }}</a>
     </div>
   </div>
   <div class="prest-hero__wave">
@@ -31,61 +36,59 @@
 
 <section class="section bg-light">
   <div class="container">
-    <p class="label label--accent">Programme</p>
-    <h2 class="title">Ce que l'incubateur apporte</h2>
-    <p class="intro">Un programme d'accompagnement sur 6 à 12 mois pour transformer votre idée en produit réel.</p>
+    <p class="label label--accent">{{ lang() === 'en' ? 'Programme' : 'Programme' }}</p>
+    <h2 class="title">{{ lang() === 'en' ? 'What the incubator provides' : 'Ce que l\'incubateur apporte' }}</h2>
+    <p class="intro">{{ lang() === 'en' ? 'A 6 to 12-month support programme to turn your idea into a real product.' : 'Un programme d\'accompagnement sur 6 à 12 mois pour transformer votre idée en produit réel.' }}</p>
 
     <div class="offers-grid">
 
       <div class="offer-card">
         <div class="offer-card__icon"><i class="ri-user-star-line"></i></div>
-        <h3>Mentorat & Accompagnement</h3>
-        <p>Sessions hebdomadaires avec des experts en développement, product et stratégie pour faire avancer votre projet.</p>
+        <h3>{{ lang() === 'en' ? 'Mentoring & Support' : 'Mentorat & Accompagnement' }}</h3>
+        <p>{{ lang() === 'en' ? 'Weekly sessions with experts in development, product and strategy to move your project forward.' : 'Sessions hebdomadaires avec des experts en développement, product et stratégie pour faire avancer votre projet.' }}</p>
         <ul>
-          <li>1 mentor dédié tout au long</li>
-          <li>Revues produit hebdomadaires</li>
-          <li>Accès aux outils de gestion de projet</li>
-          <li>Feedback technique en continu</li>
+          <li>{{ lang() === 'en' ? '1 dedicated mentor throughout' : '1 mentor dédié tout au long' }}</li>
+          <li>{{ lang() === 'en' ? 'Weekly product reviews' : 'Revues produit hebdomadaires' }}</li>
+          <li>{{ lang() === 'en' ? 'Access to project management tools' : 'Accès aux outils de gestion de projet' }}</li>
+          <li>{{ lang() === 'en' ? 'Continuous technical feedback' : 'Feedback technique en continu' }}</li>
         </ul>
       </div>
 
-        <div class="offer-card">
-            <div class="offer-card__icon"><i class="ri-compass-3-line"></i></div>
-            <h3>Cadrage & Stratégie produit</h3>
-            <p>Posez des bases solides dès le départ, business model et roadmap définis avec nos experts pour avancer dans la bonne direction.</p>
-            <ul>
-                <li>Définition du MVP</li>
-                <li>Business model & monétisation</li>
-                <li>Roadmap produit structurée</li>
-                <li>Préparation au pitch & à la vente</li>
-            </ul>
-        </div>
+      <div class="offer-card">
+        <div class="offer-card__icon"><i class="ri-compass-3-line"></i></div>
+        <h3>{{ lang() === 'en' ? 'Framing & Product strategy' : 'Cadrage & Stratégie produit' }}</h3>
+        <p>{{ lang() === 'en' ? 'Build solid foundations from the start, business model and roadmap defined with our experts to move in the right direction.' : 'Posez des bases solides dès le départ, business model et roadmap définis avec nos experts pour avancer dans la bonne direction.' }}</p>
+        <ul>
+          <li>{{ lang() === 'en' ? 'MVP definition' : 'Définition du MVP' }}</li>
+          <li>{{ lang() === 'en' ? 'Business model & monetisation' : 'Business model & monétisation' }}</li>
+          <li>{{ lang() === 'en' ? 'Structured product roadmap' : 'Roadmap produit structurée' }}</li>
+          <li>{{ lang() === 'en' ? 'Pitch & sales preparation' : 'Préparation au pitch & à la vente' }}</li>
+        </ul>
+      </div>
 
       <div class="offer-card">
         <div class="offer-card__icon"><i class="ri-cloud-line"></i></div>
-        <h3>Infrastructure offerte</h3>
-        <p>VPS, hébergement et domaine pris en charge pendant toute la durée de l'incubation via SolidServ.</p>
+        <h3>{{ lang() === 'en' ? 'Free infrastructure' : 'Infrastructure offerte' }}</h3>
+        <p>{{ lang() === 'en' ? 'VPS, hosting and domain covered throughout the incubation period via SolidServ.' : 'VPS, hébergement et domaine pris en charge pendant toute la durée de l\'incubation via SolidServ.' }}</p>
         <ul>
-          <li>VPS jusqu'à 4 vCPU / 8 Go RAM</li>
-          <li>Nom de domaine inclus</li>
-          <li>SSL & emails pro offerts</li>
-          <li>Environnements dev & prod</li>
+          <li>{{ lang() === 'en' ? 'VPS up to 4 vCPU / 8 GB RAM' : 'VPS jusqu\'à 4 vCPU / 8 Go RAM' }}</li>
+          <li>{{ lang() === 'en' ? 'Domain name included' : 'Nom de domaine inclus' }}</li>
+          <li>{{ lang() === 'en' ? 'SSL & pro emails included' : 'SSL & emails pro offerts' }}</li>
+          <li>{{ lang() === 'en' ? 'Dev & prod environments' : 'Environnements dev & prod' }}</li>
         </ul>
       </div>
 
       <div class="offer-card">
         <div class="offer-card__icon"><i class="ri-team-line"></i></div>
-        <h3>Réseau & Partenaires</h3>
-        <p>Intégrez l'écosystème Tyrolium et bénéficiez de notre réseau de clients et partenaires.</p>
+        <h3>{{ lang() === 'en' ? 'Network & Partners' : 'Réseau & Partenaires' }}</h3>
+        <p>{{ lang() === 'en' ? 'Join the Tyrolium ecosystem and benefit from our network of clients and partners.' : 'Intégrez l\'écosystème Tyrolium et bénéficiez de notre réseau de clients et partenaires.' }}</p>
         <ul>
-          <li>Mise en relation avec nos clients</li>
-          <li>Introduction aux partenaires tech</li>
-          <li>Accès aux événements Tyrolium</li>
-          <li>Opportunités de co-développement</li>
+          <li>{{ lang() === 'en' ? 'Introduction to our clients' : 'Mise en relation avec nos clients' }}</li>
+          <li>{{ lang() === 'en' ? 'Introduction to tech partners' : 'Introduction aux partenaires tech' }}</li>
+          <li>{{ lang() === 'en' ? 'Access to Tyrolium events' : 'Accès aux événements Tyrolium' }}</li>
+          <li>{{ lang() === 'en' ? 'Co-development opportunities' : 'Opportunités de co-développement' }}</li>
         </ul>
       </div>
-
-
 
     </div>
   </div>
@@ -95,29 +98,29 @@
 
 <section class="section" id="programme">
   <div class="container">
-    <p class="label label--accent">Candidature</p>
-    <h2 class="title">Comment rejoindre l'incubateur ?</h2>
+    <p class="label label--accent">{{ lang() === 'en' ? 'Application' : 'Candidature' }}</p>
+    <h2 class="title">{{ lang() === 'en' ? 'How to join the incubator?' : 'Comment rejoindre l\'incubateur ?' }}</h2>
 
     <div class="process-grid">
       <div class="step">
         <div class="step__num">1</div>
-        <h3>Candidature</h3>
-        <p>Partagez votre idée, votre vision et ce que vous attendez de l'incubation en quelques lignes.</p>
+        <h3>{{ lang() === 'en' ? 'Application' : 'Candidature' }}</h3>
+        <p>{{ lang() === 'en' ? 'Share your idea, your vision and what you expect from the incubation in a few lines.' : 'Partagez votre idée, votre vision et ce que vous attendez de l\'incubation en quelques lignes.' }}</p>
       </div>
       <div class="step">
         <div class="step__num">2</div>
-        <h3>Entretien</h3>
-        <p>Un appel de 30 min pour mieux comprendre le projet, l'équipe et les besoins réels.</p>
+        <h3>{{ lang() === 'en' ? 'Interview' : 'Entretien' }}</h3>
+        <p>{{ lang() === 'en' ? 'A 30-min call to better understand the project, the team and the real needs.' : 'Un appel de 30 min pour mieux comprendre le projet, l\'équipe et les besoins réels.' }}</p>
       </div>
       <div class="step">
         <div class="step__num">3</div>
-        <h3>Incubation</h3>
-        <p>6 à 12 mois d'accompagnement intensif avec accès à toutes les ressources du programme.</p>
+        <h3>{{ lang() === 'en' ? 'Incubation' : 'Incubation' }}</h3>
+        <p>{{ lang() === 'en' ? '6 to 12 months of intensive support with access to all programme resources.' : '6 à 12 mois d\'accompagnement intensif avec accès à toutes les ressources du programme.' }}</p>
       </div>
       <div class="step">
         <div class="step__num">4</div>
-        <h3>Lancement</h3>
-        <p>Sortie publique du produit avec notre soutien en communication et technique.</p>
+        <h3>{{ lang() === 'en' ? 'Launch' : 'Lancement' }}</h3>
+        <p>{{ lang() === 'en' ? 'Public release of the product with our communication and technical support.' : 'Sortie publique du produit avec notre soutien en communication et technique.' }}</p>
       </div>
     </div>
   </div>
@@ -126,13 +129,12 @@
 <!-- ── CTA ─────────────────────────────────────────────────────────────── -->
 
 <tyro-ui-cta
-        [title]="'Votre idée mérite<br>d\'exister.'"
-        [label]="'Incubateur'"
-        [content]="'Contactez-nous avec une description de votre projet. La sélection est ouverte en continu.'"
-        [btn]="'Candidater'"
+        [title]="lang() === 'en' ? 'Your idea deserves<br>to exist.' : 'Votre idée mérite<br>d\'exister.'"
+        [label]="lang() === 'en' ? 'Incubator' : 'Incubateur'"
+        [content]="lang() === 'en' ? 'Contact us with a description of your project. Applications are open continuously.' : 'Contactez-nous avec une description de votre projet. La sélection est ouverte en continu.'"
+        [btn]="lang() === 'en' ? 'Apply' : 'Candidater'"
         [btnIcon]="`<i class='ri-send-plane-line'></i>`"
         [btnRouterLink]="'/contact'"
-        [subbtn]="'Voir nos projets'"
+        [subbtn]="lang() === 'en' ? 'See our projects' : 'Voir nos projets'"
         [subRouterLink]="'/project'"
 ></tyro-ui-cta>
-

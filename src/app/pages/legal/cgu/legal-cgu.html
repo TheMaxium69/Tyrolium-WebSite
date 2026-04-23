@@ -2,68 +2,106 @@
   <div class="container">
     <div class="legal-doc">
 
-      <p class="doc-label">CGU</p>
-      <h1 class="doc-title">Conditions Générales d'Utilisation</h1>
-      <span class="legal-update">Dernière mise à jour : 22 Avril 2026</span>
+      <p class="doc-label">{{ lang() === 'en' ? 'TOS' : 'CGU' }}</p>
+      <h1 class="doc-title">{{ lang() === 'en' ? 'Terms of Service' : 'Conditions Générales d\'Utilisation' }}</h1>
+      <span class="legal-update">{{ lang() === 'en' ? 'Last updated: 22 April 2026' : 'Dernière mise à jour : 22 Avril 2026' }}</span>
 
-      <h2>1. Objet</h2>
+      <h2>{{ lang() === 'en' ? '1. Purpose' : '1. Objet' }}</h2>
       <p>
-        Les présentes Conditions Générales d'Utilisation (CGU) régissent l'accès et l'utilisation
-        des services et plateformes proposés par <strong>Tyrolium</strong>. En accédant à nos services,
-        vous acceptez sans réserve les présentes conditions.
+        @if (lang() === 'en') {
+          These Terms of Service (TOS) govern access to and use of the services and platforms offered by <strong>Tyrolium</strong>. By accessing our services, you unconditionally accept these terms.
+        } @else {
+          Les présentes Conditions Générales d'Utilisation (CGU) régissent l'accès et l'utilisation
+          des services et plateformes proposés par <strong>Tyrolium</strong>. En accédant à nos services,
+          vous acceptez sans réserve les présentes conditions.
+        }
       </p>
 
-      <h2>2. Accès aux services</h2>
+      <h2>{{ lang() === 'en' ? '2. Access to services' : '2. Accès aux services' }}</h2>
       <p>
-        L'accès aux services Tyrolium est réservé aux personnes physiques ou morales
-        ayant la capacité juridique de contracter. L'utilisation de nos services implique
-        l'acceptation pleine et entière des présentes CGU.
+        @if (lang() === 'en') {
+          Access to Tyrolium services is reserved for natural or legal persons with legal capacity to contract. Use of our services implies full and unconditional acceptance of these TOS.
+        } @else {
+          L'accès aux services Tyrolium est réservé aux personnes physiques ou morales
+          ayant la capacité juridique de contracter. L'utilisation de nos services implique
+          l'acceptation pleine et entière des présentes CGU.
+        }
       </p>
-      <p>Tyrolium se réserve le droit de suspendre ou de résilier l'accès à ses services
-        en cas de non-respect des présentes conditions.</p>
+      <p>
+        @if (lang() === 'en') {
+          Tyrolium reserves the right to suspend or terminate access to its services in the event of non-compliance with these terms.
+        } @else {
+          Tyrolium se réserve le droit de suspendre ou de résilier l'accès à ses services
+          en cas de non-respect des présentes conditions.
+        }
+      </p>
 
-      <h2>3. Utilisation acceptable</h2>
-      <p>Il est strictement interdit d'utiliser nos services pour :</p>
+      <h2>{{ lang() === 'en' ? '3. Acceptable use' : '3. Utilisation acceptable' }}</h2>
+      <p>{{ lang() === 'en' ? 'It is strictly prohibited to use our services to:' : 'Il est strictement interdit d\'utiliser nos services pour :' }}</p>
       <ul>
-        <li>Diffuser des contenus illicites, offensants ou portant atteinte aux droits de tiers</li>
-        <li>Mener des activités de phishing, spam ou tout autre activité malveillante</li>
-        <li>Tenter de compromettre la sécurité de nos infrastructures</li>
-        <li>Violer des droits de propriété intellectuelle</li>
-        <li>Toute activité contraire aux lois françaises et européennes en vigueur</li>
+        @if (lang() === 'en') {
+          <li>Distribute unlawful, offensive or third-party rights-infringing content</li>
+          <li>Conduct phishing, spam or any other malicious activity</li>
+          <li>Attempt to compromise the security of our infrastructure</li>
+          <li>Infringe intellectual property rights</li>
+          <li>Any activity contrary to applicable French and European law</li>
+        } @else {
+          <li>Diffuser des contenus illicites, offensants ou portant atteinte aux droits de tiers</li>
+          <li>Mener des activités de phishing, spam ou tout autre activité malveillante</li>
+          <li>Tenter de compromettre la sécurité de nos infrastructures</li>
+          <li>Violer des droits de propriété intellectuelle</li>
+          <li>Toute activité contraire aux lois françaises et européennes en vigueur</li>
+        }
       </ul>
 
-      <h2>4. Disponibilité des services</h2>
+      <h2>{{ lang() === 'en' ? '4. Service availability' : '4. Disponibilité des services' }}</h2>
       <p>
-        Tyrolium s'engage à maintenir ses services disponibles 24h/24 et 7j/7 dans la limite
-        du possible. Des interruptions pour maintenance peuvent survenir et seront communiquées
-        au préalable dans la mesure du possible.
+        @if (lang() === 'en') {
+          Tyrolium is committed to keeping its services available 24/7 to the extent possible. Maintenance interruptions may occur and will be communicated in advance where possible.
+        } @else {
+          Tyrolium s'engage à maintenir ses services disponibles 24h/24 et 7j/7 dans la limite
+          du possible. Des interruptions pour maintenance peuvent survenir et seront communiquées
+          au préalable dans la mesure du possible.
+        }
       </p>
 
-      <h2>5. Responsabilité de l'utilisateur</h2>
+      <h2>{{ lang() === 'en' ? '5. User responsibility' : '5. Responsabilité de l\'utilisateur' }}</h2>
       <p>
-        L'utilisateur est seul responsable des données, contenus et informations qu'il
-        publie ou transmet via nos services. Tyrolium ne peut être tenu responsable
-        des dommages directs ou indirects résultant d'une mauvaise utilisation de ses services.
+        @if (lang() === 'en') {
+          The user is solely responsible for the data, content and information they publish or transmit via our services. Tyrolium cannot be held liable for direct or indirect damages resulting from misuse of its services.
+        } @else {
+          L'utilisateur est seul responsable des données, contenus et informations qu'il
+          publie ou transmet via nos services. Tyrolium ne peut être tenu responsable
+          des dommages directs ou indirects résultant d'une mauvaise utilisation de ses services.
+        }
       </p>
 
-      <h2>6. Propriété intellectuelle</h2>
+      <h2>{{ lang() === 'en' ? '6. Intellectual property' : '6. Propriété intellectuelle' }}</h2>
       <p>
-        Tous les éléments composant les services Tyrolium (interfaces, logiciels, marques,
-        logos, contenus) sont la propriété exclusive de Tyrolium. Toute reproduction
-        ou exploitation non autorisée est interdite.
+        @if (lang() === 'en') {
+          All elements making up Tyrolium services (interfaces, software, trademarks, logos, content) are the exclusive property of Tyrolium. Any unauthorised reproduction or exploitation is prohibited.
+        } @else {
+          Tous les éléments composant les services Tyrolium (interfaces, logiciels, marques,
+          logos, contenus) sont la propriété exclusive de Tyrolium. Toute reproduction
+          ou exploitation non autorisée est interdite.
+        }
       </p>
 
-      <h2>7. Modification des CGU</h2>
+      <h2>{{ lang() === 'en' ? '7. TOS amendments' : '7. Modification des CGU' }}</h2>
       <p>
-        Tyrolium se réserve le droit de modifier les présentes CGU à tout moment.
-        Les utilisateurs seront informés de toute modification substantielle.
-        La poursuite de l'utilisation des services après notification vaut acceptation
-        des nouvelles conditions.
+        @if (lang() === 'en') {
+          Tyrolium reserves the right to amend these TOS at any time. Users will be informed of any material change. Continued use of the services after notification constitutes acceptance of the new terms.
+        } @else {
+          Tyrolium se réserve le droit de modifier les présentes CGU à tout moment.
+          Les utilisateurs seront informés de toute modification substantielle.
+          La poursuite de l'utilisation des services après notification vaut acceptation
+          des nouvelles conditions.
+        }
       </p>
 
-      <h2>8. Contact</h2>
+      <h2>{{ lang() === 'en' ? '8. Contact' : '8. Contact' }}</h2>
       <p>
-        Pour toute question relative aux présentes CGU :
+        {{ lang() === 'en' ? 'For any questions regarding these TOS:' : 'Pour toute question relative aux présentes CGU :' }}
         <a href="mailto:juridique@tyrolium.fr">juridique&#64;tyrolium.fr</a>
       </p>
 

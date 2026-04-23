@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { TyroUiLangService } from 'tyrolium-ui';
 
 @Component({
   selector: 'app-legal-cgu',
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: '../legal-shared.css',
   imports: [],
 })
-export class LegalCgu {}
+export class LegalCgu {
+  readonly lang = inject(TyroUiLangService).lang;
+}
