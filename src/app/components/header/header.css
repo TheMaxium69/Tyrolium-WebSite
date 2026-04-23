@@ -165,3 +165,10 @@ app-header {
     padding-bottom: calc(0.75rem + 50px);
   }
 }
+
+/* ── Dark theme waves ────────────────────────────────────────────────────── */
+
+:host-context([data-theme="dark"]) .header-waves-parallax > use:nth-child(1) { fill: rgba(15,17,23,0.7); }
+:host-context([data-theme="dark"]) .header-waves-parallax > use:nth-child(2) { fill: rgba(15,17,23,0.5); }
+:host-context([data-theme="dark"]) .header-waves-parallax > use:nth-child(3) { fill: rgba(15,17,23,0.3); }
+:host-context([data-theme="dark"]) .header-waves-parallax > use:nth-child(4) { fill: #0f1117; }

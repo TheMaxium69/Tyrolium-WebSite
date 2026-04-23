@@ -150,3 +150,18 @@
     padding: 0 1.25rem;
   }
 }
+
+/* ── Dark theme ──────────────────────────────────────────────────────────── */
+
+[data-theme="dark"] .section { background: #161b27 !important; }
+[data-theme="dark"] .legal-update { color: #6b7280; }
+[data-theme="dark"] .legal-doc h2 { color: #f3f4f6; }
+[data-theme="dark"] .legal-doc p,
+[data-theme="dark"] .legal-doc li { color: #9ca3af; }
+[data-theme="dark"] .legal-doc strong { color: #d1d5db; }
+[data-theme="dark"] .legal-doc a { color: #60a5fa; }
+[data-theme="dark"] .legal-table td { color: #9ca3af; border-bottom-color: #374151; }
+[data-theme="dark"] .legal-table td:first-child { color: #d1d5db; }
+[data-theme="dark"] .legal-divider { border-top-color: #374151; }
+[data-theme="dark"] .doc-label { color: #60a5fa; }
+[data-theme="dark"] .doc-title { color: #f3f4f6; }

@@ -568,3 +568,37 @@
   .cta-card__actions { flex-direction: column; width: 100%; }
   .btn-solid-white, .btn-white { justify-content: center; }
 }
+
+/* ══════════════════════════════════════════════════════════════════════════ */
+/* ── Dark theme ───────────────────────────────────────────────────────────── */
+/* ══════════════════════════════════════════════════════════════════════════ */
+
+:host-context([data-theme="dark"]) .section { background: #0f1117 !important; }
+:host-context([data-theme="dark"]) .bg-light { background: #161b27 !important; }
+:host-context([data-theme="dark"]) .title { color: #f3f4f6 !important; }
+:host-context([data-theme="dark"]) .intro { color: #9ca3af !important; }
+:host-context([data-theme="dark"]) .label--accent { color: #60a5fa !important; }
+
+/* Wave */
+:host-context([data-theme="dark"]) .prest-hero__wave svg use:last-child { fill: #161b27; }
+
+/* Offer cards */
+:host-context([data-theme="dark"]) .offer-card { background: #1f2937; border-color: #374151; }
+:host-context([data-theme="dark"]) .offer-card h3 { color: #f3f4f6; }
+:host-context([data-theme="dark"]) .offer-card p { color: #9ca3af; }
+:host-context([data-theme="dark"]) .offer-card ul li { color: #d1d5db; }
+:host-context([data-theme="dark"]) .offer-card__icon { background: #1e2d5a; color: #60a5fa; }
+:host-context([data-theme="dark"]) .offer-price { background: #1e2d5a; color: #60a5fa; }
+
+/* Highlights */
+:host-context([data-theme="dark"]) .highlight { background: #1f2937; border-color: #374151; }
+:host-context([data-theme="dark"]) .highlight span { color: #d1d5db; }
+
+/* Process steps */
+:host-context([data-theme="dark"]) .step h3 { color: #f3f4f6; }
+:host-context([data-theme="dark"]) .step p { color: #9ca3af; }
+
+/* Reference block */
+:host-context([data-theme="dark"]) .ref-block { background: #1f2937; border-color: #374151; }
+:host-context([data-theme="dark"]) .ref-block__text p { color: #9ca3af; }
+:host-context([data-theme="dark"]) .ref-block__text strong { color: #f3f4f6; }
