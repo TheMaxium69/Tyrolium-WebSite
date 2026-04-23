@@ -141,8 +141,8 @@
   width: 40px;
   height: 40px;
   border-radius: 10px;
-  background: linear-gradient(135deg, #0000FF 0%, #BF0000 100%);
-  color: #fff;
+  background: #e8edff;
+  color: #0533c8;
   font-size: 1.1rem;
   flex-shrink: 0;
 }
