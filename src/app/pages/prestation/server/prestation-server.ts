@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { TyroUiCTA, NavbarMenuCategory, ITyroUiNavbarMenuItem } from 'tyrolium-ui';
 import { ProjectCard } from '../../../components/project-card/project-card';
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-prestation-server',
   templateUrl: './prestation-server.html',
   styleUrls: ['../prestation-shared.css', './prestation-server.css'],
-  imports: [TyroUiCTA, ProjectCard],
+    imports: [TyroUiCTA, ProjectCard, RouterLink],
 })
 export class PrestationServer {
   readonly solidServProject: ITyroUiNavbarMenuItem = {
