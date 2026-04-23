@@ -96,6 +96,47 @@
   margin-bottom: 0.5rem;
 }
 
+/* ── Table ────────────────────────────────────────────────────────────────── */
+
+.legal-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem;
+}
+
+.legal-table td {
+  padding: 0.5rem 0.75rem;
+  color: #4b5563;
+  line-height: 1.6;
+  vertical-align: top;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.legal-table td:first-child {
+  width: 220px;
+  color: #111827;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ── List columns ─────────────────────────────────────────────────────────── */
+
+.legal-list--col {
+  columns: 2;
+  column-gap: 2rem;
+}
+
+@media (max-width: 480px) {
+  .legal-list--col {
+    columns: 1;
+  }
+  .legal-table td:first-child {
+    width: auto;
+  }
+}
+
 /* ── Divider ──────────────────────────────────────────────────────────────── */
 
 .legal-divider {
