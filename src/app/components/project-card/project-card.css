@@ -68,10 +68,10 @@
     linear-gradient(#ffffff, #ffffff) padding-box,
     conic-gradient(
       from var(--border-angle),
-      #1d4ed8 0%,
-      #7c3aed 40%,
-      #db2777 70%,
-      #1d4ed8 100%
+      #00b8ff 0%,
+      #ff00a5 40%,
+      #ff00a5 70%,
+      #00b8ff 100%
     ) border-box;
   box-shadow: 0 16px 48px rgba(124, 58, 237, 0.14);
 }
@@ -81,6 +81,7 @@
 .project-card--h {
   flex-direction: row;
   align-items: stretch;
+  height: 150px;
 }
 
 .project-card--h:hover {
@@ -99,12 +100,15 @@
   height: 150px;
   flex-shrink: 0;
   overflow: hidden;
-  background: linear-gradient(135deg, #001a6e 0%, #ee2b2b 100%);
+  background: linear-gradient(
+          135deg,
+          #0000FF 0%,
+          #BF0000 100%);
   transition: background 0.35s ease;
 }
 
 .project-card--sub .project-card__visual {
-  background: linear-gradient(135deg, #1d4ed8 0%, #7c3aed 100%);
+  background: linear-gradient(135deg, #ff00a5 10%, #00b8ff 90%)
 }
 
 .project-card:hover .project-card__visual {
@@ -119,8 +123,15 @@
 
 .project-card--h .project-card__visual {
   height: auto;
-  width: 110px;
+  width: 250px;
   flex-shrink: 0;
+}
+
+@media (max-width: 850px) {
+  .project-card--h .project-card__visual {
+    width: 150px;
+  }
+
 }
 
 /* ── Two-image logo crossfade ─────────────────────────────────────────────── */

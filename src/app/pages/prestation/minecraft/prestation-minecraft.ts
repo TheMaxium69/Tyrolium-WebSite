@@ -9,10 +9,9 @@ import { ProjectCard } from '../../../components/project-card/project-card';
   imports: [TyroUiCTA, ProjectCard],
 })
 export class PrestationMinecraft {
-  readonly tyroServProject: ITyroUiNavbarMenuItem =
-    NavbarMenuCategory.find(c => c.label === 'Projets')?.items.find(i => i.name === 'TyroServ') ?? {
-      name: 'TyroServ',
-      description: 'Serveur Minecraft moddé depuis 2017',
+  readonly tyroServProject: ITyroUiNavbarMenuItem = {
+      name: 'TyroServ — Notre référence depuis 2017',
+      description: 'TyroServ est notre propre serveur Minecraft moddé, actif depuis 2017. PVP-Faction moddé (saison 3), système de comptes custom, anti-cheat maison. La preuve concrète de notre expertise Minecraft.',
       image: 'https://tyrolium.fr/Contenu/Image/Tyrolium%20ServerMC%20Sword%203D.png',
       link: 'https://tyroserv.fr',
     };

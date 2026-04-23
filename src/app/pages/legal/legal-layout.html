@@ -1,0 +1,30 @@
+<!-- ── Hero ──────────────────────────────────────────────────────────────── -->
+
+<div class="legal-wrapper">
+
+  <div class="page-hero">
+    <div class="container">
+      <p class="hero-label">Transparence & légalité</p>
+      <h1 class="hero-title">Informations légales</h1>
+      <p class="hero-desc">
+        Retrouvez ici l'ensemble des documents légaux applicables à l'utilisation
+        de nos services et plateformes.
+      </p>
+    </div>
+    <div class="page-hero__wave">
+      <svg viewBox="0 24 150 28" preserveAspectRatio="none">
+        <defs>
+          <path id="lpw" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/>
+        </defs>
+        <use href="#lpw" x="48" y="0" fill="rgba(255,255,255,0.5)"/>
+        <use href="#lpw" x="48" y="3" fill="rgba(255,255,255,0.3)"/>
+        <use href="#lpw" x="48" y="7" fill="#f6f7fb"/>
+      </svg>
+    </div>
+  </div>
+
+  <tyro-ui-subnav [pages]="subnavPages" [isFixed]="true" [havePlaceholder]="true"></tyro-ui-subnav>
+
+  <router-outlet></router-outlet>
+
+</div>

@@ -9,10 +9,9 @@ import { ProjectCard } from '../../../components/project-card/project-card';
   imports: [TyroUiCTA, ProjectCard],
 })
 export class PrestationServer {
-  readonly solidServProject: ITyroUiNavbarMenuItem =
-    NavbarMenuCategory.find(c => c.label === 'Projets')?.items.find(i => i.name === 'SolidServ') ?? {
-      name: 'SolidServ',
-      description: 'Hébergeur de serveurs haute disponibilité',
+  readonly solidServProject: ITyroUiNavbarMenuItem = {
+      name: 'Powered by SolidServ',
+      description: 'Nos offres d\'hébergement sont opérées via SolidServ, notre infrastructure dédiée aux communautés et aux projets tech exigeants. Fiabilité, performance et accompagnement au cœur de chaque offre.',
       image: 'https://tyrolium.fr/Contenu/Image/SolidServ%20Site.png',
       link: 'https://solidserv.fr',
     };

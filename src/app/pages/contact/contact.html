@@ -1,0 +1,97 @@
+<!-- ── Hero ──────────────────────────────────────────────────────────────── -->
+
+<div class="page-hero">
+  <div class="container">
+    <p class="hero-label">On est là</p>
+    <h1 class="hero-title">Contactez-nous</h1>
+    <p class="hero-desc">
+      Une question, un projet, une idée ? Notre équipe est disponible pour vous répondre
+      dans les meilleurs délais.
+    </p>
+  </div>
+  <div class="page-hero__wave">
+    <svg viewBox="0 24 150 28" preserveAspectRatio="none">
+      <defs>
+        <path id="cpw" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/>
+      </defs>
+      <use href="#cpw" x="48" y="0" fill="rgba(255,255,255,0.5)"/>
+      <use href="#cpw" x="48" y="3" fill="rgba(255,255,255,0.3)"/>
+      <use href="#cpw" x="48" y="7" fill="#f6f7fb"/>
+    </svg>
+  </div>
+</div>
+
+<!-- ── Contact ────────────────────────────────────────────────────────────── -->
+
+<section class="section bg-light">
+  <div class="container contact-layout">
+
+    <!-- Infos -->
+    <div class="contact-info">
+      <p class="label">Nos coordonnées</p>
+      <h2 class="title">Parlons de<br>votre projet</h2>
+      <p class="contact-intro">
+        Que vous ayez un projet web, une infrastructure à déployer ou simplement une question,
+        écrivez-nous. Nous répondons généralement sous 24 h.
+      </p>
+
+      <div class="contact-channels">
+        <a class="contact-channel" href="mailto:contact@tyrolium.fr">
+          <div class="contact-channel__icon"><i class="ri-mail-line"></i></div>
+          <div>
+            <span class="contact-channel__label">E-mail</span>
+            <span class="contact-channel__value">contact@tyrolium.fr</span>
+          </div>
+        </a>
+        <a class="contact-channel" href="https://discord.gg/tyrolium" target="_blank" rel="noopener noreferrer">
+          <div class="contact-channel__icon"><i class="ri-discord-line"></i></div>
+          <div>
+            <span class="contact-channel__label">Discord</span>
+            <span class="contact-channel__value">Rejoindre le serveur</span>
+          </div>
+        </a>
+        <a class="contact-channel" href="https://github.com/Tyrolium" target="_blank" rel="noopener noreferrer">
+          <div class="contact-channel__icon"><i class="ri-github-line"></i></div>
+          <div>
+            <span class="contact-channel__label">GitHub</span>
+            <span class="contact-channel__value">github.com/Tyrolium</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="contact-badge">
+        <i class="ri-time-line"></i>
+        <span>Réponse sous <strong>24 h</strong> en moyenne</span>
+      </div>
+    </div>
+
+    <!-- Formulaire -->
+    <div class="contact-form-wrap">
+      <form class="contact-form" (submit)="$event.preventDefault()">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cf-name">Nom</label>
+            <input id="cf-name" type="text" placeholder="Votre nom" autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="cf-email">E-mail</label>
+            <input id="cf-email" type="email" placeholder="vous@exemple.fr" autocomplete="email">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="cf-subject">Sujet</label>
+          <input id="cf-subject" type="text" placeholder="Projet, devis, question…">
+        </div>
+        <div class="form-group">
+          <label for="cf-message">Message</label>
+          <textarea id="cf-message" rows="6" placeholder="Décrivez votre projet ou votre demande…"></textarea>
+        </div>
+        <button type="submit" class="btn-send">
+          <i class="ri-mail-send-line"></i>
+          Envoyer le message
+        </button>
+      </form>
+    </div>
+
+  </div>
+</section>

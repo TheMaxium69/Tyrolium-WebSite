@@ -1,0 +1,78 @@
+.legal-wrapper {
+  margin-top: 63px;
+}
+
+@media (max-width: 768px) {
+  .legal-wrapper {
+    margin-top: 57px;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════ */
+/* ── Hero ─────────────────────────────────────────────────────────────────── */
+/* ══════════════════════════════════════════════════════════════════════════ */
+
+.page-hero {
+  position: relative;
+  background: linear-gradient(135deg, #0000FF 0%, #BF0000 100%);
+  padding: 80px 0 0;
+  overflow: hidden;
+}
+
+.hero-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 0.75rem;
+}
+
+.hero-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.hero-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 520px;
+  margin-bottom: 3rem;
+}
+
+.page-hero__wave {
+  width: 100%;
+  line-height: 0;
+}
+
+.page-hero__wave svg {
+  display: block;
+  width: 100%;
+  height: 80px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+  .page-hero {
+    padding: 56px 0 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+}

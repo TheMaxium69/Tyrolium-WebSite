@@ -1,0 +1,111 @@
+/* ══════════════════════════════════════════════════════════════════════════ */
+/* ── Shared — legal sub-pages ─────────────────────────────────────────────── */
+/* ══════════════════════════════════════════════════════════════════════════ */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section {
+  padding: 64px 0 80px;
+  background: #f6f7fb;
+}
+
+/* ── Document ─────────────────────────────────────────────────────────────── */
+
+.legal-doc {
+  max-width: 780px;
+}
+
+.legal-update {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #9ca3af;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+}
+
+.legal-doc h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.018em;
+  color: #111827;
+  margin: 2.5rem 0 0.65rem;
+}
+
+.legal-doc h2:first-of-type {
+  margin-top: 0;
+}
+
+.legal-doc p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.85;
+  color: #4b5563;
+  margin: 0 0 0.75rem;
+}
+
+.legal-doc ul {
+  margin: 0.5rem 0 0.75rem;
+  padding-left: 1.4rem;
+}
+
+.legal-doc li {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.8;
+  color: #4b5563;
+  margin-bottom: 0.3rem;
+}
+
+.legal-doc strong {
+  color: #111827;
+  font-weight: 600;
+}
+
+.legal-doc a {
+  color: #001a6e;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ── Section title ────────────────────────────────────────────────────────── */
+
+.doc-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #001a6e;
+  margin-bottom: 0.5rem;
+}
+
+.doc-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+/* ── Divider ──────────────────────────────────────────────────────────────── */
+
+.legal-divider {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 2rem 0;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+}
