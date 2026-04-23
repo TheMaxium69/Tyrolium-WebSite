@@ -82,7 +82,9 @@
 
     <div class="projects-grid">
       @for (project of featuredProjects; track project.name) {
-        <app-project-card [project]="project"></app-project-card>
+          @if (project.name == "SolidServ" || project.name == "TyroCiel" || project.name == "Influnias") {
+              <app-project-card [project]="project" [noSubProject]="true"></app-project-card>
+          }
       }
 
       <a href="/project" class="home-more-card">
@@ -118,7 +120,7 @@
 
       <div class="value-item">
         <div class="value-icon">
-          <i class="ri-france-line"></i>
+          <i class="ri-verified-badge-line"></i>
         </div>
         <h3>Entreprise française</h3>
         <p>Basés en France, nos données et infrastructures restent sur le territoire européen. Souveraineté numérique garantie.</p>
@@ -134,7 +136,7 @@
 
       <div class="value-item">
         <div class="value-icon">
-          <i class="ri-handshake-line"></i>
+          <i class="ri-hand-heart-line"></i>
         </div>
         <h3>Partenariat durable</h3>
         <p>Nous ne sommes pas de simples prestataires. Nous nous impliquons sur le long terme pour faire évoluer votre produit avec vous.</p>

@@ -14,6 +14,4 @@ const FEATURED = ['TyroServ', 'Useritium', 'SolidServ'];
 export class Home {
   readonly featuredProjects: ITyroUiNavbarMenuItem[] =
     (NavbarMenuCategory.find(c => c.label === 'Projets')?.items ?? [])
-      .filter(p => FEATURED.includes(p.name))
-      .sort((a, b) => FEATURED.indexOf(a.name) - FEATURED.indexOf(b.name));
 }

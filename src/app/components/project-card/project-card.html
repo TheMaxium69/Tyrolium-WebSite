@@ -20,7 +20,7 @@
   <div class="project-card__body">
     <div class="project-card__title-row">
       <h3>{{ project.name }}</h3>
-      @if (!horizontal && project.subItems?.length) {
+      @if (!horizontal && !noSubProject && project.subItems?.length) {
         <button
           class="sub-toggle"
           [class.sub-toggle--open]="expanded"

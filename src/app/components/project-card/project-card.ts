@@ -11,5 +11,6 @@ export class ProjectCard {
   @Input() isSubProject = false;
   @Input() horizontal = false;
   @Input() expanded = false;
+  @Input() noSubProject = false;
   @Output() toggleSub = new EventEmitter<void>();
 }

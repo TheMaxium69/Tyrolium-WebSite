@@ -10,7 +10,7 @@ import { ITyroUiNavbarPages, TyroUiFooter, TyroUiNavbar } from 'tyrolium-ui';
 })
 export class App {
   public PROJECT_NAME = 'Tyrolium';
-  public PROJECT_LOGO = 'https://tyrolium.fr/Contenu/Image/Tyrolium%20Site.png';
+  public PROJECT_LOGO = 'assets/Tyrolium.png';
   public PROJECT_CONTENT = `<strong>TyroServ</strong>, un serveur <strong>Minecraft moddé</strong> depuis <strong>2017</strong>,
                 propose du <strong>PVP-Faction moddés</strong> (actuellement en saison 3) et bientôt des
                 <strong>mini-jeux moddés</strong>. <strong>Gratuit</strong> et semi-crack, il offre une sécurité
