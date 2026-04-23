@@ -11,7 +11,7 @@
       Bénéficiez de notre expérience depuis 2017 avec TyroServ.
     </p>
     <div class="prest-hero__actions">
-      <a href="mailto:contact@tyrolium.fr" class="btn-solid-white">
+      <a routerLink="/contact" class="btn-solid-white">
         <i class="ri-mail-send-line"></i> Lancer mon serveur
       </a>
       <a href="https://tyroserv.fr" target="_blank" rel="noopener" class="btn-outline-white">
@@ -35,14 +35,14 @@
   <div class="container">
     <p class="label label--accent">Nos offres</p>
     <h2 class="title">Ce qu'on fait pour vous</h2>
-    <p class="intro">Du serveur vanilla au réseau moddé complexe, on maîtrise tout l'écosystème Minecraft.</p>
+    <p class="intro">Du serveur vanilla au moddé, on maîtrise tout l'écosystème Minecraft.</p>
 
     <div class="offers-grid">
 
       <div class="offer-card">
         <div class="offer-card__icon"><i class="ri-install-line"></i></div>
         <h3>Installation & Configuration</h3>
-        <p>Mise en place complète de votre serveur — choix de la version, installation des mods et plugins, optimisation des performances.</p>
+        <p>Mise en place complète de votre serveur : choix de la version, installation des mods et plugins, optimisation des performances.</p>
         <ul>
           <li>Vanilla, Spigot, Paper, Fabric, Forge</li>
           <li>Configuration anti-cheat</li>
@@ -51,6 +51,20 @@
         </ul>
         <span class="offer-price">À partir de 150 €</span>
       </div>
+
+
+        <div class="offer-card">
+            <div class="offer-card__icon"><i class="ri-code-s-slash-line"></i></div>
+            <h3>Développement Mods ou Plugins</h3>
+            <p>Mods ou Plugins Java sur-mesure pour Forge/Fabric ou Bukkit/Spigot/Paper, fonctionnalités uniques pour démarquer votre serveur.</p>
+            <ul>
+                <li>Développement Java</li>
+                <li>Mini-jeux personnalisés</li>
+                <li>Systèmes de monnaie & shops</li>
+                <li>Intégration Discord / site web</li>
+            </ul>
+            <span class="offer-price">Sur devis</span>
+        </div>
 
       <div class="offer-card">
         <div class="offer-card__icon"><i class="ri-admin-line"></i></div>
@@ -65,18 +79,6 @@
         <span class="offer-price">À partir de 80 €/mois</span>
       </div>
 
-      <div class="offer-card">
-        <div class="offer-card__icon"><i class="ri-code-s-slash-line"></i></div>
-        <h3>Développement Plugins</h3>
-        <p>Plugins Java sur-mesure pour Bukkit/Spigot/Paper — fonctionnalités uniques pour démarquer votre serveur.</p>
-        <ul>
-          <li>Développement Java (Bukkit API)</li>
-          <li>Mini-jeux personnalisés</li>
-          <li>Systèmes de monnaie & shops</li>
-          <li>Intégration Discord / site web</li>
-        </ul>
-        <span class="offer-price">Sur devis</span>
-      </div>
 
       <div class="offer-card">
         <div class="offer-card__icon"><i class="ri-customer-service-2-line"></i></div>
@@ -140,6 +142,8 @@
         [content]="'Décrivez-nous votre projet et on monte votre serveur de A à Z, en s\'appuyant sur 7 ans d\'expérience.'"
         [btn]="'Nous contacter'"
         [btnIcon]="`<i class='ri-mail-send-line'></i>`"
+        [btnRouterLink]="'/contact'"
         [subbtn]="'Discord'"
+        [subLink]="'https://discord.com/invite/km8h5jHezt'"
 ></tyro-ui-cta>
 
