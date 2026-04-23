@@ -8,13 +8,13 @@
     <h1>Des sites web qui<br>font la différence.</h1>
     <p class="prest-hero__tagline">
       Du site vitrine à l'application métier complexe, nous concevons des expériences web
-      modernes, performantes et accessibles — sur-mesure, toujours.
+        modernes, performantes, accessibles et qui génèrent des leads.
     </p>
     <div class="prest-hero__actions">
-      <a href="mailto:contact@tyrolium.fr" class="btn-solid-white">
+      <a routerLink="/contact" class="btn-solid-white">
         <i class="ri-mail-send-line"></i> Démarrer un projet
       </a>
-      <a href="#offres" class="btn-outline-white">Voir les offres</a>
+      <a (click)="scrollToOffres()" class="btn-outline-white">Voir les offres</a>
     </div>
   </div>
   <div class="prest-hero__wave">
@@ -66,14 +66,15 @@
       <div class="offer-card">
         <div class="offer-card__icon"><i class="ri-window-line"></i></div>
         <h3>Application Web</h3>
-        <p>Interfaces métier complexes, dashboards, outils internes ou SaaS — développés avec Angular & Node.js.</p>
+          <p>Interfaces métier sur-mesure, dashboards interactifs, outils internes optimisés
+              ou solutions SaaS prêtes à commercialiser.</p>
         <ul>
           <li>Architecture scalable</li>
           <li>Authentification & rôles</li>
           <li>API REST ou GraphQL</li>
           <li>Tests & documentation</li>
         </ul>
-        <span class="offer-price">Sur devis</span>
+          <span class="offer-price">À partir de 2 900 €</span>
       </div>
 
       <div class="offer-card">
@@ -133,6 +134,8 @@
         [content]="'Partagez votre projet, on vous répond sous 48h avec une première estimation.'"
         [btn]="'Nous contacter'"
         [btnIcon]="`<i class='ri-mail-send-line'></i>`"
+        [btnRouterLink]="'/contact'"
         [subbtn]="'Voir nos réalisations'"
+        [subRouterLink]="'/project'"
 ></tyro-ui-cta>
 
