@@ -328,4 +328,44 @@
     display: none;
   }
 
+  /* Rendu card classique*/
+
+  .project-card {
+    background:
+            linear-gradient(#ffffff, #ffffff) padding-box,
+            conic-gradient(
+                    from var(--border-angle),
+                    #001a6e 0%,
+                    #4055dd 30%,
+                    #ee2b2b 55%,
+                    #ff5533 70%,
+                    #001a6e 100%
+            ) border-box;
+    box-shadow: 0 16px 48px rgba(0, 26, 110, 0.14);
+    transform: translateY(-4px);
+  }
+
+
+  .project-card .project-card__visual {
+    background: #eef0f9;
+  }
+
+  .project-card .project-card__logo--light {
+    opacity: 0;
+  }
+
+  .project-card .project-card__logo--color {
+    opacity: 1;
+    transform: scale(1.07);
+  }
+
+  .project-card .project-card__action i {
+    color: #001a6e;
+    transform: translate(2px, -2px);
+  }
+  .project-card .project-arrow {
+    color: #001a6e;
+    transform: translate(2px, -2px);
+  }
+
 }
