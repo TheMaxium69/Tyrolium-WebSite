@@ -6,7 +6,9 @@ import {
   ElementRef,
   NgZone,
   ViewEncapsulation,
+  inject,
 } from '@angular/core';
+import { TyroUiLangService } from 'tyrolium-ui';
 import * as THREE from 'three';
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -383,6 +385,8 @@ class AppScene {
   encapsulation: ViewEncapsulation.None,
 })
 export class Header implements AfterViewInit, OnDestroy {
+  readonly lang = inject(TyroUiLangService).lang;
+
   @ViewChild('canvasContainer') canvasContainerRef!: ElementRef<HTMLDivElement>;
 
   private appScene!: AppScene;

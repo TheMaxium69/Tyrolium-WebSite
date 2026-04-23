@@ -1,13 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ITyroUiNavbarPages, TyroUiSubnav } from 'tyrolium-ui';
+import { ITyroUiNavbarPages, TyroUiLangService, TyroUiSubnav } from 'tyrolium-ui';
 
 @Component({
   selector: 'app-prestation-layout',
   imports: [TyroUiSubnav, RouterOutlet],
   template: `
     <div class="prestation-wrapper">
-      <tyro-ui-subnav [pages]="subnavPages" [isFixed]="true" [havePlaceholder]="false"></tyro-ui-subnav>
+      <tyro-ui-subnav [pages]="subnavPages()" [isFixed]="true" [havePlaceholder]="false"></tyro-ui-subnav>
       <router-outlet></router-outlet>
     </div>
   `,
@@ -17,11 +17,23 @@ import { ITyroUiNavbarPages, TyroUiSubnav } from 'tyrolium-ui';
   `],
 })
 export class PrestationLayout {
-  public subnavPages: ITyroUiNavbarPages[] = [
-    { label: 'Site Web',    link: '/prestation/web' },
-    { label: 'Serveur',     link: '/prestation/server' },
-    { label: 'Formation',   link: '/prestation/formation'},
-    { label: 'Incubateur',  link: '/prestation/incubateur' },
-    { label: 'Minecraft',   link: '/prestation/minecraft' },
-  ];
+  readonly lang = inject(TyroUiLangService).lang;
+
+  public subnavPages = computed<ITyroUiNavbarPages[]>(() =>
+    this.lang() === 'en'
+      ? [
+          { label: 'Website',    link: '/prestation/web' },
+          { label: 'Server',     link: '/prestation/server' },
+          { label: 'Training',   link: '/prestation/formation' },
+          { label: 'Incubator',  link: '/prestation/incubateur' },
+          { label: 'Minecraft',  link: '/prestation/minecraft' },
+        ]
+      : [
+          { label: 'Site Web',    link: '/prestation/web' },
+          { label: 'Serveur',     link: '/prestation/server' },
+          { label: 'Formation',   link: '/prestation/formation' },
+          { label: 'Incubateur',  link: '/prestation/incubateur' },
+          { label: 'Minecraft',   link: '/prestation/minecraft' },
+        ]
+  );
 }
