@@ -43,6 +43,7 @@ export class App {
           {
             label: 'Prestation',
             icon: 'ri-briefcase-line',
+            link: '/prestation',
             children: [
               { label: 'Site Web',   link: '/prestation/web',        icon: 'ri-global-line' },
               { label: 'Serveur',    link: '/prestation/server',     icon: 'ri-server-line' },
