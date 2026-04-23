@@ -579,9 +579,9 @@
 :host-context([data-theme="dark"]) .intro { color: #9ca3af !important; }
 :host-context([data-theme="dark"]) .label--accent { color: #60a5fa !important; }
 
-/* Wave */
-:host-context([data-theme="dark"]) .prest-hero__wave svg use:nth-child(3) { fill: rgba(15,17,23,0.4); }
-:host-context([data-theme="dark"]) .prest-hero__wave svg use:nth-child(2) { fill: rgba(15,17,23,0.25); }
+/* Wave — <defs> is child 1, use elements are children 2, 3, last(4) */
+:host-context([data-theme="dark"]) .prest-hero__wave svg use:nth-child(2) { fill: rgba(15,17,23,0.4); }
+:host-context([data-theme="dark"]) .prest-hero__wave svg use:nth-child(3) { fill: rgba(15,17,23,0.25); }
 :host-context([data-theme="dark"]) .prest-hero__wave svg use:last-child   { fill: #161b27; }
 
 /* Offer cards */
