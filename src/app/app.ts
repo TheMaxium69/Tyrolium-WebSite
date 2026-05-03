@@ -9,16 +9,47 @@ import { ITyroUiNavbarPages, TyroUiFooter, TyroUiNavbar, TyroUiLangService } fro
   styleUrl: './app.css',
 })
 export class App {
+
   private readonly langService = inject(TyroUiLangService);
+
+  /*
+  *
+  * GLOBAL VARIABLE
+  *
+  * */
+
+  public APP_ENV = 'DEV';
+  public currentUser: any = [];
+
+  public debugLoginUser() {
+    if (this.currentUser.length === 0) {
+      this.currentUser = [{id: 1, name: 'Debug User', email: 'debug@tyrolium.fr'}];
+    } else {
+      this.currentUser = [];
+    }
+    console.log(this.currentUser);
+  }
+
+
+  /*
+  *
+  * PROJECT VARIABLE
+  *
+  * */
 
   public PROJECT_NAME = 'Tyrolium';
   public PROJECT_LOGO = 'assets/Tyrolium.png';
-
   public PROJECT_CONTENT = computed(() =>
     this.langService.lang() === 'en'
       ? `<strong>Tyrolium</strong> is a <strong>French tech holding company</strong> founded in <strong>2017</strong> by digital enthusiasts. From <strong>web development</strong> to <strong>cloud infrastructure</strong>, we support every project with expertise and passion. In parallel, we build our <strong>own ecosystem of projects</strong>: from hosting to gaming, CRM and social networks. <em>Founded by Maxime Tournier</em>`
       : `<strong>Tyrolium</strong> est une <strong>holding technologique française</strong> fondée en <strong>2017</strong> par des passionnés du numérique. De la <strong>conception web</strong> à l'<strong>infrastructure cloud</strong>, nous accompagnons chaque projet avec expertise et passion. En parallèle, nous développons notre <strong>propre écosystème de projets</strong> : de l'hébergement au gaming, en passant par le CRM et les réseaux sociaux. <em>Fondé par Maxime Tournier</em>`
   );
+
+  /*
+  *
+  * PAGES
+  *
+  * */
 
   public pages = computed<ITyroUiNavbarPages[]>(() =>
     this.langService.lang() === 'en'
@@ -54,7 +85,6 @@ export class App {
           },
         ]
   );
-
   public socials: ITyroUiNavbarPages[] = [
     { label: 'facebook',  link: 'https://www.facebook.com/tyrolium/',              icon: 'ri-facebook-fill' },
     { label: 'instagram', link: 'https://www.instagram.com/tyroliumentertainment/', icon: 'ri-instagram-line' },
@@ -68,4 +98,6 @@ export class App {
     { label: 'telegram',  link: 'https://t.me/tyrolium',                           icon: 'ri-telegram-fill' },
     { label: 'thread',    link: 'https://www.threads.com/@tyroliumentertainment',  icon: 'ri-threads-fill' },
   ];
+
+
 }

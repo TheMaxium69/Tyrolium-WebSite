@@ -1,4 +1,11 @@
-<tyro-ui-navbar [project]="PROJECT_NAME" [logo]="PROJECT_LOGO" [pages]="pages()" [placeholder]="false"></tyro-ui-navbar>
+<tyro-ui-navbar [project]="PROJECT_NAME" [logo]="PROJECT_LOGO" [pages]="pages()" [placeholder]="false" [currentUser]="currentUser"></tyro-ui-navbar>
+
+<button (click)="debugLoginUser()" style="
+    position: absolute;
+    top: 90px;
+    left: 0;
+    z-index: 100000;
+    padding: 50px;">Test</button>
 
 <router-outlet></router-outlet>
 
