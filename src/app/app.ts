@@ -23,7 +23,7 @@ export class App {
 
   public debugLoginUser() {
     if (this.currentUser.length === 0) {
-      this.currentUser = [{id: 1, name: 'Debug User', email: 'debug@tyrolium.fr'}];
+      this.currentUser = [{id: 1, name: 'Maxime Tournier', email: 'maxime.tournier@tyrolium.fr'}];
     } else {
       this.currentUser = [];
     }
