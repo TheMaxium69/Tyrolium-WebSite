@@ -23,7 +23,7 @@ export class App {
 
   public debugLoginUser() {
     if (this.currentUser.length === 0) {
-      this.currentUser = [{id: 1, name: 'Maxime Tournier', email: 'maxime.tournier@tyrolium.fr', urlPictureProfil: 'https://ui-avatars.com/api/?name=Maxime+Tournier&background=00065c&color=fff&size=128'}];
+      this.currentUser = [{id: 1, name: 'Maxime Tournier', email: 'maxime.tournier@tyrolium.fr', urlPictureProfil: 'https://avatars.githubusercontent.com/u/63310746?v=4'}];
     } else {
       this.currentUser = [];
     }
