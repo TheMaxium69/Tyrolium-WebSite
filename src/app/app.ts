@@ -55,7 +55,7 @@ export class App {
     this.langService.lang() === 'en'
       ? [
           { label: 'Home',     labelEn: 'Home',     link: '/',        icon: 'ri-home-line' },
-          { label: 'Projects', labelEn: 'Projects', link: '/project', icon: 'ri-folder-line' },
+          { label: 'Subsidiaries', labelEn: 'Subsidiaries', link: '/project', icon: 'ri-stack-line' },
           {
             label: 'Services', labelEn: 'Services',
             icon: 'ri-briefcase-line',
@@ -70,7 +70,7 @@ export class App {
         ]
       : [
           { label: 'Accueil',    link: '/',        icon: 'ri-home-line' },
-          { label: 'Projet',     link: '/project', icon: 'ri-folder-line' },
+          { label: 'Filiales',     link: '/project', icon: 'ri-stack-line' },
           {
             label: 'Prestation',
             icon: 'ri-briefcase-line',

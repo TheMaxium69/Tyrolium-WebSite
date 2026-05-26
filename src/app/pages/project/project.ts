@@ -12,7 +12,7 @@ export class Project {
   readonly lang = inject(TyroUiLangService).lang;
 
   public readonly mainProjects: ITyroUiNavbarMenuItem[] =
-    NavbarMenuCategory.find(c => c.label === 'Projets')?.items ?? [];
+    NavbarMenuCategory.find(c => c.label === 'Filiales')?.items ?? [];
 
   private readonly expandedNames = signal<string[]>([]);
 

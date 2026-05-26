@@ -76,37 +76,36 @@
 <!-- ── Nos Projets ───────────────────────────────────────────────────── -->
 <!-- ══════════════════════════════════════════════════════════════════════ -->
 
-<section class="section projects bg-light">
-  <div class="container">
-    <p class="label">{{ lang() === 'en' ? 'Our universe' : 'Notre univers' }}</p>
-    <h2 class="title">{{ lang() === 'en' ? 'Our Achievements' : 'Nos Réalisations' }}</h2>
+<section class="section subsidiaries bg-light"> <div class="container">
+    <p class="label">{{ lang() === 'en' ? 'Our group' : 'Notre groupe' }}</p>
+
+    <h2 class="title">{{ lang() === 'en' ? 'Our Subsidiaries' : 'Nos Filiales' }}</h2>
+
     <p class="intro">
-      @if (lang() === 'en') {
-        Since 2017, we have been developing projects that reflect our passion for technology and our drive to innovate.
-      } @else {
-        Depuis 2017, nous développons des projets qui reflètent notre passion pour la technologie et notre volonté d'innover.
-      }
+        @if (lang() === 'en') {
+            Since 2017, Tyrolium has been coordinating a group of specialized subsidiaries, each expert in its field, from infrastructure to digital innovation.
+        } @else {
+            Depuis 2017, Tyrolium coordonne un ensemble de filiales spécialisées, chacune experte dans son domaine, de l'infrastructure à l'innovation numérique.
+        }
     </p>
 
     <div class="projects-grid">
-      @for (project of featuredProjects; track project.name) {
-          @if (project.name == "SolidServ" || project.name == "TyroCiel" || project.name == "Influnias") {
-              <app-project-card [project]="project" [noSubProject]="true"></app-project-card>
-          }
-      }
+        @for (project of featuredProjects; track project.name) {
+            @if (project.name == "SolidServ" || project.name == "TyroCiel" || project.name == "Influnias") {
+                <app-project-card [project]="project" [noSubProject]="true"></app-project-card>
+            }
+        }
 
-      <a routerLink="/project" class="home-more-card">
-        <div class="home-more-card__inner">
-          <i class="ri-apps-2-line"></i>
-          <h3>{{ lang() === 'en' ? 'And much more…' : 'Et bien d\'autres…' }}</h3>
-          <p>{{ lang() === 'en' ? 'Discover all our projects' : 'Découvrez l\'ensemble de nos projets' }}</p>
-          <span class="btn-outline-small">{{ lang() === 'en' ? 'View all projects' : 'Voir tous les projets' }} <i class="ri-arrow-right-line"></i></span>
-        </div>
-      </a>
+        <a routerLink="/project" class="home-more-card">
+            <div class="home-more-card__inner">
+                <i class="ri-stack-line"></i> <h3>{{ lang() === 'en' ? 'All Entities' : 'Toutes nos entités' }}</h3>
+                <p>{{ lang() === 'en' ? 'Discover all the structures of the group' : 'Découvrez l\'ensemble des structures du groupe' }}</p>
+                <span class="btn-outline-small">{{ lang() === 'en' ? 'View all' : 'Voir tout' }} <i class="ri-arrow-right-line"></i></span>
+            </div>
+        </a>
     </div>
-  </div>
+</div>
 </section>
-
 <!-- ══════════════════════════════════════════════════════════════════════ -->
 <!-- ── Pourquoi Tyrolium ──────────────────────────────────────────────── -->
 <!-- ══════════════════════════════════════════════════════════════════════ -->

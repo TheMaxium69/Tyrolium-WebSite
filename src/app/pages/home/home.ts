@@ -15,5 +15,5 @@ export class Home {
   readonly lang = inject(TyroUiLangService).lang;
 
   readonly featuredProjects: ITyroUiNavbarMenuItem[] =
-    (NavbarMenuCategory.find(c => c.label === 'Projets')?.items ?? [])
+    (NavbarMenuCategory.find(c => c.label === 'Filiales')?.items ?? [])
 }
