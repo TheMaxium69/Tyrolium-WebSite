@@ -32,23 +32,15 @@
     <!-- Infos -->
     <div class="contact-info">
       <p class="label">{{ lang() === 'en' ? 'Our contact info' : 'Nos coordonnées' }}</p>
-      <h2 class="title">
-        @if (lang() === 'en') { Let's talk about<br>your project } @else { Parlons de<br>votre projet }
-      </h2>
-      <p class="contact-intro">
-        @if (lang() === 'en') {
-          Whether you have a web project, infrastructure to deploy or simply a question, write to us. We usually reply within 48 hours.
-        } @else {
-          Que vous ayez un projet web, une infrastructure à déployer ou simplement une question, écrivez-nous. Nous répondons généralement sous 48 h.
-        }
-      </p>
+      <h2 class="title" [innerHTML]="lang() === 'en' ? title.en : title.fr"></h2>
+      <p class="contact-intro">{{ lang() === 'en' ? desc.en : desc.fr }}</p>
 
       <div class="contact-channels">
-        <a class="contact-channel" href="mailto:officiel@tyrolium.fr">
+        <a class="contact-channel" href="mailto:contact@tyrolium.fr">
           <div class="contact-channel__icon"><i class="ri-mail-line"></i></div>
           <div>
             <span class="contact-channel__label">E-mail</span>
-            <span class="contact-channel__value">officiel&#64;tyrolium.fr</span>
+            <span class="contact-channel__value">contact&#64;tyrolium.fr</span>
           </div>
         </a>
         <a class="contact-channel" href="https://discord.com/invite/km8h5jHezt" target="_blank" rel="noopener noreferrer">
