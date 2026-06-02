@@ -39,6 +39,7 @@ const DESCS: Record<FromProject, { fr: string; en: string }> = {
 export class Contact {
   readonly lang = inject(TyroUiLangService).lang;
 
+  readonly from: FromProject;
   readonly title: { fr: string; en: string };
   readonly desc: { fr: string; en: string };
 
@@ -48,9 +49,9 @@ export class Contact {
 
   constructor() {
     const raw = inject(ActivatedRoute).snapshot.queryParamMap.get('from') ?? '';
-    const from: FromProject = VALID_PROJECTS.includes(raw as FromProject) ? (raw as FromProject) : 'tyrolium';
-    this.title = TITLES[from];
-    this.desc = DESCS[from];
+    this.from = VALID_PROJECTS.includes(raw as FromProject) ? (raw as FromProject) : 'tyrolium';
+    this.title = TITLES[this.from];
+    this.desc = DESCS[this.from];
   }
 
   async onSubmit(event: SubmitEvent) {
