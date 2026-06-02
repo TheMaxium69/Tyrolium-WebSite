@@ -29,7 +29,7 @@
         } @else {
           Toute création de l'entreprise nous appartient.<br>
         }
-        <strong>Copyright © Tyrolium. {{ currentYear }} - © 2017-{{ currentYear }} Tyrolium, Ent. - All Rights Reserved © Tyrolium</strong>
+        <strong>Copyright © Tyrolium. {{ currentYear }} - © 2017-{{ currentYear }} Tyrolium. - {{ lang() === 'en' ? 'All rights reserved.' : 'Tous droits réservés.' }} © Tyrolium</strong>
       </p>
 
       <h2>{{ lang() === 'en' ? '2. Administrative information' : '2. Informations administratives' }}</h2>
@@ -73,9 +73,9 @@
       </p>
       <p>
         @if (lang() === 'en') {
-          This is in accordance with copyright <strong>© 2017-{{ currentYear }} Tyrolium, Ent.</strong> and <strong>Article L111-1 of the French Intellectual Property Code</strong>.
+          This is in accordance with copyright <strong>© 2017-{{ currentYear }} Tyrolium.</strong> and <strong>Article L111-1 of the French Intellectual Property Code</strong>.
         } @else {
-          Cela conformément au copyright <strong>© 2017-{{ currentYear }} Tyrolium, Ent.</strong> et à
+          Cela conformément au copyright <strong>© 2017-{{ currentYear }} Tyrolium.</strong> et à
           l'<strong>article L111-1 du code de la propriété intellectuelle française</strong>.
         }
       </p>
@@ -118,12 +118,11 @@
         <li>Yellorium ®</li>
         <li>Volcanium ®</li>
       </ul>
-      <p><em>© 2017-{{ currentYear }} Tyrolium, Ent.</em></p>
+      <p><em>© 2017-{{ currentYear }} Tyrolium.</em></p>
 
       <h2>{{ lang() === 'en' ? '7. Credits & Third-party copyrights' : '7. Crédits & Copyright tiers' }}</h2>
       <p>{{ lang() === 'en' ? 'All logos used belong to their respective creators. Only Tyrolium logos belong to us.' : 'Tous les logos utilisés appartiennent à leur créateur respectif. Seuls les logos de Tyrolium nous appartiennent.' }}</p>
       <ul class="legal-list">
-        <li>© 2017-{{ currentYear }} Tyrolium, Ent.</li>
         <li>© {{ currentYear }} Google LLC</li>
         <li>© {{ currentYear }} Meta</li>
         <li>© {{ currentYear }} Twitter, Inc.</li>
