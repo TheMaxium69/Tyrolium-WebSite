@@ -4,134 +4,497 @@
 
       <p class="doc-label">{{ lang() === 'en' ? 'Terms of Sale' : 'CGV' }}</p>
       <h1 class="doc-title">{{ lang() === 'en' ? 'General Terms of Sale' : 'Conditions Générales de Vente' }}</h1>
-      <span class="legal-update">{{ lang() === 'en' ? 'Last updated: 22 April 2026' : 'Dernière mise à jour : 22 Avril 2026' }}</span>
+      <span class="legal-update">{{ lang() === 'en' ? 'Last updated: 2 June 2026' : 'Dernière mise à jour : 2 Juin 2026' }}</span>
 
-      <h2>{{ lang() === 'en' ? '1. Scope' : '1. Champ d\'application' }}</h2>
+      <!-- SOMMAIRE -->
+      <nav class="legal-toc">
+        <p class="legal-toc-title">{{ lang() === 'en' ? 'Table of contents' : 'Sommaire' }}</p>
+        <ol class="legal-toc-list">
+          <li><a (click)="scrollTo('general')">{{ lang() === 'en' ? 'General' : 'Général' }}</a></li>
+          <li><a (click)="scrollTo('prestation-tyrolium')">{{ lang() === 'en' ? 'Tyrolium Services' : 'Prestation Tyrolium' }}</a></li>
+          <li><a (click)="scrollTo('grade-tyroserv')">{{ lang() === 'en' ? 'Grades & Cosmetics — TyroServ' : 'Grade et Cosmétique TyroServ' }}</a></li>
+          <li><a (click)="scrollTo('server-solidserv')">{{ lang() === 'en' ? 'Server — SolidServ' : 'Serveur SolidServ' }}</a></li>
+          <li><a (click)="scrollTo('goodie-tyrolium-vturias')">{{ lang() === 'en' ? 'Goodies — Tyrolium & Vturias' : 'Goodies Tyrolium & Vturias' }}</a></li>
+          <li><a (click)="scrollTo('abonnement-nexiumiacrm')">{{ lang() === 'en' ? 'Subscription — NexiumiaCRM' : 'Abonnement NexiumiaCRM' }}</a></li>
+        </ol>
+      </nav>
+
+      <hr class="legal-divider">
+
+      <!-- ─── 1. GÉNÉRAL ────────────────────────────────────────── -->
+
+      <h2 id="general">{{ lang() === 'en' ? '1. General' : '1. Général' }}</h2>
+
       <p>
         @if (lang() === 'en') {
-          These General Terms of Sale (GTS) apply to all services offered by <strong>Tyrolium</strong> to its clients, whether web development, hosting, incubation or training.
+          These General Terms of Sale (<strong>GTS</strong>) govern all commercial relations between <strong>Tyrolium</strong>
+          (SIRET 91027536100012, headquartered at 252 Avenue Jean Jaurès, 69150 Décines-Charpieu, France)
+          and any natural or legal person (hereinafter the <strong>Client</strong>) purchasing a product or service from Tyrolium
+          or one of its brands (TyroServ, SolidServ, Vturias, NexiumiaCRM, etc.).
         } @else {
-          Les présentes Conditions Générales de Vente (CGV) s'appliquent à l'ensemble
-          des prestations de services proposées par <strong>Tyrolium</strong> à ses clients,
-          qu'il s'agisse de développement web, d'hébergement, d'incubation ou de formation.
+          Les présentes Conditions Générales de Vente (<strong>CGV</strong>) régissent l'ensemble des relations commerciales entre
+          <strong>Tyrolium</strong> (SIRET 91027536100012, dont le siège est situé au 252 Avenue Jean Jaurès,
+          69150 Décines-Charpieu, France) et toute personne physique ou morale (ci-après le <strong>Client</strong>)
+          procédant à l'achat d'un produit ou service auprès de Tyrolium ou de l'une de ses marques
+          (TyroServ, SolidServ, Vturias, NexiumiaCRM, etc.).
         }
       </p>
 
-      <h2>{{ lang() === 'en' ? '2. Orders and quotes' : '2. Commandes et devis' }}</h2>
       <p>
         @if (lang() === 'en') {
-          Every service is subject to a prior quote drawn up by Tyrolium. The order becomes firm and final upon receipt of the signed quote and, where applicable, the agreed deposit payment.
+          Placing an order or making a payment constitutes full and unconditional acceptance of these GTS.
+          Tyrolium reserves the right to update these terms at any time; the version in force at the time of purchase applies.
         } @else {
-          Toute prestation fait l'objet d'un devis préalable établi par Tyrolium.
-          La commande est ferme et définitive après réception du devis signé et,
-          le cas échéant, du règlement de l'acompte convenu.
+          Le fait de passer commande ou d'effectuer un paiement vaut acceptation pleine et entière des présentes CGV.
+          Tyrolium se réserve le droit de les mettre à jour à tout moment ; la version en vigueur au moment de l'achat s'applique.
         }
       </p>
 
-      <h2>{{ lang() === 'en' ? '3. Pricing' : '3. Tarifs' }}</h2>
       <p>
         @if (lang() === 'en') {
-          Prices are stated in euros (€) excluding VAT. They may be modified at any time. The applicable rates are those in force at the date the quote is validated by the client.
+          <strong>Definitions:</strong> «&nbsp;Tyrolium&nbsp;» refers to the company and all its brands.
+          «&nbsp;Client&nbsp;» refers to any person purchasing a product or service.
+          «&nbsp;Service&nbsp;» refers to any digital or physical product sold by Tyrolium.
         } @else {
-          Les prix sont indiqués en euros (€) hors taxes (HT). Ils peuvent être modifiés
-          à tout moment. Les tarifs applicables sont ceux en vigueur à la date de validation
-          du devis par le client.
-        }
-      </p>
-      <p>
-        @if (lang() === 'en') {
-          Tyrolium reserves the right to invoice additional fees in the event of scope creep beyond what was initially defined in the quote.
-        } @else {
-          Tyrolium se réserve le droit de facturer des frais supplémentaires en cas
-          de dépassement du périmètre initialement défini dans le devis.
+          <strong>Définitions :</strong> « Tyrolium » désigne l'entreprise et l'ensemble de ses marques.
+          « Client » désigne toute personne procédant à l'achat d'un produit ou service.
+          « Prestation » ou « Service » désigne tout produit numérique ou physique vendu par Tyrolium.
         }
       </p>
 
-      <h2>{{ lang() === 'en' ? '4. Payment terms' : '4. Modalités de paiement' }}</h2>
-      <p>{{ lang() === 'en' ? 'Payment terms are defined in each quote. Generally:' : 'Les modalités de paiement sont définies dans chaque devis. De manière générale :' }}</p>
+      <p>
+        @if (lang() === 'en') {
+          These GTS are governed by French law. Any dispute shall first be resolved amicably;
+          failing that, the competent courts of France shall have jurisdiction.
+          Contact: <a href="mailto:juridique@tyrolium.fr">juridique&#64;tyrolium.fr</a>
+        } @else {
+          Les présentes CGV sont soumises au droit français. Tout litige fera l'objet d'une tentative de résolution amiable ;
+          à défaut, les tribunaux compétents de France seront saisis.
+          Contact : <a href="mailto:juridique@tyrolium.fr">juridique&#64;tyrolium.fr</a>
+        }
+      </p>
+
+      <hr class="legal-divider">
+
+      <!-- ─── 2. PRESTATION TYROLIUM ─────────────────────────── -->
+
+      <h2 id="prestation-tyrolium">{{ lang() === 'en' ? '2. Tyrolium Services' : '2. Prestation Tyrolium' }}</h2>
+
+      <p>
+        @if (lang() === 'en') {
+          Tyrolium offers bespoke services in web development, application design, digital incubation, strategic consulting
+          and technical training for businesses and individuals.
+        } @else {
+          Tyrolium propose des prestations sur mesure en développement web, conception d'applications,
+          incubation digitale, conseil stratégique et formation technique à destination des entreprises et des particuliers.
+        }
+      </p>
+
+      <p><strong>{{ lang() === 'en' ? 'Orders & quotes' : 'Commandes et devis' }}</strong></p>
+      <p>
+        @if (lang() === 'en') {
+          Every service is subject to a prior written quote drawn up by Tyrolium and valid for 30 days.
+          The order is confirmed after receipt of the signed quote and, where applicable, the agreed deposit.
+        } @else {
+          Toute prestation fait l'objet d'un devis écrit préalable établi par Tyrolium, valable 30 jours.
+          La commande est confirmée après réception du devis signé et, le cas échéant, de l'acompte convenu.
+        }
+      </p>
+
+      <p><strong>{{ lang() === 'en' ? 'Pricing & invoicing' : 'Tarifs et facturation' }}</strong></p>
+      <p>
+        @if (lang() === 'en') {
+          Prices are stated in euros (€) excluding VAT. The applicable rate is that in force at the date of quote validation.
+          Tyrolium reserves the right to invoice additional fees in the event of scope creep beyond what was defined in the quote.
+        } @else {
+          Les prix sont indiqués en euros (€) hors taxes. Le tarif applicable est celui en vigueur à la date de validation du devis.
+          Tyrolium se réserve le droit de facturer des frais supplémentaires en cas de dépassement du périmètre initialement défini.
+        }
+      </p>
+
+      <p><strong>{{ lang() === 'en' ? 'Payment terms' : 'Conditions de paiement' }}</strong></p>
       <ul>
         @if (lang() === 'en') {
           <li>A deposit of 30 to 50% may be required at the time of order</li>
           <li>The balance is due upon delivery or according to the agreed schedule</li>
-          <li>Payments are made by bank transfer or any other agreed method</li>
+          <li>Payment by bank transfer or any other agreed method</li>
+          <li>Late payment incurs penalties equal to 3× the French legal interest rate</li>
         } @else {
           <li>Un acompte de 30 à 50 % peut être demandé à la commande</li>
           <li>Le solde est dû à la livraison ou selon l'échéancier convenu</li>
-          <li>Les paiements s'effectuent par virement bancaire ou tout autre moyen convenu</li>
+          <li>Paiement par virement bancaire ou tout autre moyen convenu</li>
+          <li>Tout retard de paiement entraîne des pénalités égales à 3 fois le taux d'intérêt légal français</li>
         }
       </ul>
 
-      <h2>{{ lang() === 'en' ? '5. Delivery times' : '5. Délais de livraison' }}</h2>
+      <p><strong>{{ lang() === 'en' ? 'Delivery & deadlines' : 'Livraison et délais' }}</strong></p>
       <p>
         @if (lang() === 'en') {
-          Delivery times are indicative and communicated at the time of signing the quote. Tyrolium is committed to meeting these deadlines to the extent possible. Any delay shall not give rise to penalties unless otherwise stipulated in the quote.
+          Delivery times are communicated at the time of quote signing and are indicative. Any delay attributable to the Client
+          (late provision of content, access or feedback) may result in a postponement of deadlines without liability for Tyrolium.
         } @else {
-          Les délais de livraison sont indicatifs et communiqués lors de la signature du devis.
-          Tyrolium s'engage à respecter ces délais dans la mesure du possible. Tout retard
-          ne pourra donner lieu à des pénalités sauf stipulation contraire dans le devis.
+          Les délais de livraison sont communiqués lors de la signature du devis et sont indicatifs. Tout retard imputable au Client
+          (fourniture tardive de contenus, accès ou retours) peut entraîner un report des délais sans engagement de la responsabilité de Tyrolium.
         }
       </p>
 
-      <h2>{{ lang() === 'en' ? '6. Client obligations' : '6. Obligations du client' }}</h2>
+      <p><strong>{{ lang() === 'en' ? 'Ownership of deliverables' : 'Propriété des livrables' }}</strong></p>
       <p>
         @if (lang() === 'en') {
-          The client undertakes to provide in a timely manner all elements necessary for the proper execution of the service (content, access, feedback, approvals). Any delay attributable to the client may result in a postponement of delivery deadlines.
+          Ownership of deliverables is transferred to the Client after full payment. Tyrolium retains the right
+          to mention the work in its portfolio unless the Client expressly objects in writing.
         } @else {
-          Le client s'engage à fournir en temps utile l'ensemble des éléments nécessaires
-          à la bonne exécution de la prestation (contenus, accès, retours, validations).
-          Tout retard imputable au client peut entraîner un report des délais de livraison.
+          La propriété des livrables est transférée au Client après règlement intégral. Tyrolium conserve le droit de mentionner
+          la réalisation dans son portfolio, sauf opposition écrite expresse du Client.
         }
       </p>
 
-      <h2>{{ lang() === 'en' ? '7. Ownership of deliverables' : '7. Propriété des livrables' }}</h2>
+      <p><strong>{{ lang() === 'en' ? 'Warranty & after-sales service' : 'Garantie et SAV' }}</strong></p>
       <p>
         @if (lang() === 'en') {
-          Ownership of deliverables is transferred to the client after full payment of the service. Tyrolium retains the right to mention the work in its portfolio, unless the client expressly objects.
+          Tyrolium warrants its work against conformity defects for the period defined in the quote.
+          Corrections of anomalies attributable to Tyrolium are covered free of charge during this period.
         } @else {
-          La propriété des livrables est transférée au client après règlement intégral
-          de la prestation. Tyrolium conserve le droit de mentionner la réalisation
-          dans son portfolio, sauf opposition expresse du client.
+          Tyrolium garantit ses réalisations contre tout défaut de conformité pendant la durée définie dans le devis.
+          Les corrections d'anomalies imputables à Tyrolium sont prises en charge gratuitement pendant cette période.
         }
       </p>
 
-      <h2>{{ lang() === 'en' ? '8. Warranties & after-sales service' : '8. Garanties et SAV' }}</h2>
+      <p><strong>{{ lang() === 'en' ? 'Termination' : 'Résiliation' }}</strong></p>
       <p>
         @if (lang() === 'en') {
-          Tyrolium warrants its work against any conformity defect for a period defined in the quote. Corrections of anomalies attributable to Tyrolium are covered free of charge during this period.
+          In the event of termination at the Client's initiative after work has begun, amounts for services already completed
+          remain due. A notice period and termination fees may apply as specified in the quote.
         } @else {
-          Tyrolium garantit ses réalisations contre tout défaut de conformité pendant
-          une durée définie dans le devis. Les corrections d'anomalies imputables à Tyrolium
-          sont prises en charge gratuitement pendant cette période.
+          En cas de résiliation à l'initiative du Client après démarrage des travaux, les sommes correspondant aux prestations
+          déjà réalisées restent dues. Un préavis et des frais de résiliation peuvent s'appliquer selon les conditions du devis.
         }
       </p>
 
-      <h2>{{ lang() === 'en' ? '9. Termination' : '9. Résiliation' }}</h2>
+      <hr class="legal-divider">
+
+      <!-- ─── 3. GRADE ET COSMÉTIQUE TYROSERV ───────────────── -->
+
+      <h2 id="grade-tyroserv">{{ lang() === 'en' ? '3. Grades & Cosmetics — TyroServ' : '3. Grade et Cosmétique TyroServ' }}</h2>
+
       <p>
         @if (lang() === 'en') {
-          In the event of termination at the client's initiative after work has begun, amounts corresponding to services already completed remain due. Notice and termination fees may apply depending on the terms of the quote.
+          TyroServ is a Minecraft server operated by Tyrolium. The following terms apply to the purchase of
+          <strong>ranks (grades)</strong> and <strong>cosmetic items</strong> available on TyroServ servers.
         } @else {
-          En cas de résiliation à l'initiative du client après démarrage des travaux,
-          les sommes correspondant aux prestations déjà réalisées restent dues.
-          Un préavis et des frais de résiliation peuvent s'appliquer selon les conditions du devis.
+          TyroServ est un serveur Minecraft opérée par Tyrolium. Les présentes conditions s'appliquent à l'achat de
+          <strong>grades (rangs)</strong> et d'<strong>articles cosmétiques</strong> disponibles sur les serveurs TyroServ.
         }
       </p>
 
-      <h2>{{ lang() === 'en' ? '10. Contact' : '10. Contact' }}</h2>
-      <p>
-        {{ lang() === 'en' ? 'For any questions regarding these Terms of Sale:' : 'Pour toute question relative aux présentes CGV :' }}
-        <a href="mailto:juridique@tyrolium.fr">juridique&#64;tyrolium.fr</a>
-      </p>
-
-      <h2>{{ lang() === 'en' ? '11. Disputes and applicable law' : '11. Litige et droit applicable' }}</h2>
+      <p><strong>{{ lang() === 'en' ? 'Available grades' : 'Grades disponibles' }}</strong></p>
       <p>
         @if (lang() === 'en') {
-          These General Terms of Sale are governed by French law. In the event of a dispute, an amicable resolution will be sought first. Failing that, the competent courts of France will have jurisdiction.
+          TyroServ offers several mineral-themed grades (Rhodonium, Aventurium, Yellorium, Volcanium, etc.)
+          granting in-game privileges such as custom prefixes, additional commands and exclusive access to certain areas.
+          The list of benefits associated with each grade is detailed on the TyroServ store.
         } @else {
-          Les présentes CGV sont soumises au droit français. En cas de litige,
-          une solution amiable sera recherchée en priorité. À défaut, les tribunaux
-          compétents de France seront saisis.
+          TyroServ propose plusieurs grades à thème minéral (Rhodonium, Aventurium, Yellorium, Volcanium, etc.)
+          octroyant des privilèges en jeu tels que des préfixes personnalisés, des commandes supplémentaires
+          et l'accès exclusif à certaines zones. Le détail des avantages associés à chaque grade est précisé sur la boutique TyroServ.
         }
       </p>
+
+      <p><strong>{{ lang() === 'en' ? 'Cosmetic items' : 'Articles cosmétiques' }}</strong></p>
+      <p>
+        @if (lang() === 'en') {
+          Cosmetic items (skins, effects, pets, etc.) are purely aesthetic and confer no competitive advantage.
+          They are linked to the purchasing player's account and are non-transferable.
+        } @else {
+          Les articles cosmétiques (skins, effets, pets, etc.) sont purement esthétiques et ne confèrent aucun avantage compétitif.
+          Ils sont liés au compte du joueur acheteur et sont non transférables.
+        }
+      </p>
+
+      <p><strong>{{ lang() === 'en' ? 'Purchase & payment' : 'Achat et paiement' }}</strong></p>
+      <p>
+        @if (lang() === 'en') {
+          Purchases are made through the official TyroServ store. Payment is processed by secure third-party platforms.
+          Grades are activated on the server within a maximum of 24 hours after payment confirmation.
+        } @else {
+          Les achats sont effectués via la boutique officielle TyroServ. Le paiement est traité par des plateformes tierces sécurisées.
+          Les grades sont activés sur le serveur dans un délai maximum de 24 heures après confirmation du paiement.
+        }
+      </p>
+
+      <p><strong>{{ lang() === 'en' ? 'Refund policy' : 'Politique de remboursement' }}</strong></p>
+      <p>
+        @if (lang() === 'en') {
+          In accordance with Article L221-28 of the French Consumer Code, digital content delivered immediately is
+          <strong>non-refundable</strong> once activated, except in the event of a proven technical defect on Tyrolium's part.
+          Any refund request must be sent to <a href="mailto:juridique@tyrolium.fr">juridique&#64;tyrolium.fr</a> within 7 days of purchase.
+        } @else {
+          Conformément à l'article L221-28 du Code de la consommation, les contenus numériques livrés immédiatement sont
+          <strong>non remboursables</strong> une fois activés, sauf en cas de défaut technique avéré imputable à Tyrolium.
+          Toute demande de remboursement doit être adressée à <a href="mailto:juridique@tyrolium.fr">juridique&#64;tyrolium.fr</a> dans les 7 jours suivant l'achat.
+        }
+      </p>
+
+      <p><strong>{{ lang() === 'en' ? 'Suspension & revocation' : 'Suspension et révocation' }}</strong></p>
+      <p>
+        @if (lang() === 'en') {
+          Tyrolium reserves the right to suspend or permanently revoke a grade or cosmetic item without refund
+          in the event of a serious breach of TyroServ's rules (cheating, harassment, fraud, etc.).
+        } @else {
+          Tyrolium se réserve le droit de suspendre ou de révoquer définitivement un grade ou un article cosmétique sans remboursement
+          en cas de manquement grave au règlement TyroServ (triche, harcèlement, fraude, etc.).
+        }
+      </p>
+
+      <hr class="legal-divider">
+
+      <!-- ─── 4. SERVER SOLIDSERV ────────────────────────────── -->
+
+      <h2 id="server-solidserv">{{ lang() === 'en' ? '4. Server — SolidServ' : '4. Serveur SolidServ' }}</h2>
+
+      <p>
+        @if (lang() === 'en') {
+          SolidServ is Tyrolium's hosting infrastructure. The following terms apply to all game server, VPS
+          and dedicated server rental offers proposed by SolidServ.
+        } @else {
+          SolidServ est l'infrastructure d'hébergement de Tyrolium. Les présentes conditions s'appliquent à toutes les offres
+          de location de serveurs de jeu, VPS et serveurs dédiés proposées par SolidServ.
+        }
+      </p>
+
+      <p><strong>{{ lang() === 'en' ? 'Available offers' : 'Offres disponibles' }}</strong></p>
+      <p>
+        @if (lang() === 'en') {
+          SolidServ offers monthly or annual subscriptions for game servers (Minecraft, etc.), VPS and dedicated servers.
+          Full technical specifications (RAM, storage, bandwidth) are detailed on the SolidServ website.
+        } @else {
+          SolidServ propose des abonnements mensuels ou annuels pour des serveurs de jeu (Minecraft, etc.), des VPS et des serveurs dédiés.
+          Les caractéristiques techniques détaillées (RAM, stockage, bande passante) sont précisées sur le site SolidServ.
+        }
+      </p>
+
+      <p><strong>{{ lang() === 'en' ? 'Duration, renewal & payment' : 'Durée, renouvellement et paiement' }}</strong></p>
+      <ul>
+        @if (lang() === 'en') {
+          <li>Subscriptions are monthly or annual and renew automatically unless cancelled at least 48 hours before the renewal date</li>
+          <li>Payment is due in advance for each period</li>
+          <li>In the event of non-payment, the service is suspended after 48 hours and deleted after 7 days without prior notice</li>
+        } @else {
+          <li>Les abonnements sont mensuels ou annuels et se renouvellent automatiquement sauf résiliation au moins 48h avant la date de renouvellement</li>
+          <li>Le paiement est dû d'avance pour chaque période</li>
+          <li>En cas de non-paiement, le service est suspendu après 48h et supprimé après 7 jours sans mise en demeure préalable</li>
+        }
+      </ul>
+
+      <p><strong>{{ lang() === 'en' ? 'Availability (SLA)' : 'Disponibilité (SLA)' }}</strong></p>
+      <p>
+        @if (lang() === 'en') {
+          SolidServ commits to a monthly availability rate of <strong>99.5%</strong> for its infrastructure.
+          Scheduled maintenance operations are announced at least 24 hours in advance and do not count towards downtime.
+        } @else {
+          SolidServ s'engage à un taux de disponibilité mensuel de <strong>99,5 %</strong> pour son infrastructure.
+          Les opérations de maintenance planifiées sont annoncées au moins 24h à l'avance et ne comptent pas dans les interruptions.
+        }
+      </p>
+
+      <p><strong>{{ lang() === 'en' ? 'Backups' : 'Sauvegardes' }}</strong></p>
+      <p>
+        @if (lang() === 'en') {
+          SolidServ performs daily automatic backups retained for 7 days for eligible offers.
+          The Client remains solely responsible for their data and is advised to maintain their own backups.
+        } @else {
+          SolidServ effectue des sauvegardes automatiques quotidiennes conservées pendant 7 jours pour les offres éligibles.
+          Le Client reste seul responsable de ses données et est invité à maintenir ses propres sauvegardes.
+        }
+      </p>
+
+      <p><strong>{{ lang() === 'en' ? 'Acceptable use' : 'Usage acceptable' }}</strong></p>
+      <p>
+        @if (lang() === 'en') {
+          The Client undertakes not to use the service for unlawful activities (DDoS, spam, illicit content, etc.).
+          Any such use will result in immediate suspension without refund.
+        } @else {
+          Le Client s'engage à ne pas utiliser le service à des fins illicites (DDoS, spam, contenus illicites, etc.).
+          Tout usage de ce type entraîne une suspension immédiate sans remboursement.
+        }
+      </p>
+
+      <p><strong>{{ lang() === 'en' ? 'Termination' : 'Résiliation' }}</strong></p>
+      <p>
+        @if (lang() === 'en') {
+          The Client may cancel their subscription at any time from their customer area.
+          Cancellation takes effect at the end of the current paid period, with no refund of the remaining period unless agreed otherwise.
+        } @else {
+          Le Client peut résilier son abonnement à tout moment depuis son espace client.
+          La résiliation prend effet à l'issue de la période payante en cours, sans remboursement du reliquat sauf accord contraire.
+        }
+      </p>
+
+      <hr class="legal-divider">
+
+      <!-- ─── 5. GOODIE TYROLIUM & VTURIAS ──────────────────── -->
+
+      <h2 id="goodie-tyrolium-vturias">{{ lang() === 'en' ? '5. Goodies — Tyrolium & Vturias' : '5. Goodies Tyrolium & Vturias' }}</h2>
+
+      <p>
+        @if (lang() === 'en') {
+          This section covers the sale of physical merchandise (clothing, accessories, collectibles, etc.)
+          under the <strong>Tyrolium</strong> and <strong>Vturias</strong> brands.
+        } @else {
+          Cette section couvre la vente de produits physiques (vêtements, accessoires, objets de collection, etc.)
+          sous les marques <strong>Tyrolium</strong> et <strong>Vturias</strong>.
+        }
+      </p>
+
+      <p><strong>{{ lang() === 'en' ? 'Order & validation' : 'Commande et validation' }}</strong></p>
+      <p>
+        @if (lang() === 'en') {
+          Orders are placed through the official online store. An order confirmation email is sent after payment validation.
+          Tyrolium reserves the right to refuse any order in the event of stock shortage, suspected fraud or error in the offer.
+        } @else {
+          Les commandes sont passées via la boutique en ligne officielle. Un e-mail de confirmation de commande est envoyé après validation du paiement.
+          Tyrolium se réserve le droit de refuser toute commande en cas de rupture de stock, de suspicion de fraude ou d'erreur dans l'offre.
+        }
+      </p>
+
+      <p><strong>{{ lang() === 'en' ? 'Prices & payment' : 'Prix et paiement' }}</strong></p>
+      <p>
+        @if (lang() === 'en') {
+          Prices are stated in euros (€) including VAT. Shipping costs are calculated at checkout based on the delivery address.
+          Payment is made by credit card or any other method offered at checkout, processed via secure platforms.
+        } @else {
+          Les prix sont indiqués en euros (€) TTC. Les frais de livraison sont calculés au moment du passage de commande en fonction de l'adresse de livraison.
+          Le paiement s'effectue par carte bancaire ou tout autre moyen proposé au moment du paiement, via des plateformes sécurisées.
+        }
+      </p>
+
+      <p><strong>{{ lang() === 'en' ? 'Delivery & lead times' : 'Livraison et délais' }}</strong></p>
+      <ul>
+        @if (lang() === 'en') {
+          <li>Orders are processed within 2 to 5 business days</li>
+          <li>Standard delivery: 5 to 10 business days (France); 10 to 21 days (international)</li>
+          <li>A tracking number is provided by email once the order has been dispatched</li>
+          <li>Tyrolium is not responsible for delays attributable to the carrier</li>
+        } @else {
+          <li>Les commandes sont traitées sous 2 à 5 jours ouvrés</li>
+          <li>Livraison standard : 5 à 10 jours ouvrés (France) ; 10 à 21 jours (international)</li>
+          <li>Un numéro de suivi est communiqué par e-mail dès expédition de la commande</li>
+          <li>Tyrolium n'est pas responsable des délais imputables au transporteur</li>
+        }
+      </ul>
+
+      <p><strong>{{ lang() === 'en' ? 'Right of withdrawal' : 'Droit de rétractation' }}</strong></p>
+      <p>
+        @if (lang() === 'en') {
+          In accordance with Articles L221-18 et seq. of the French Consumer Code, the Client has a
+          <strong>14-day right of withdrawal</strong> from receipt of the goods, with no reason required.
+          Items must be returned in their original condition, unused and in their original packaging.
+          Return shipping costs are borne by the Client unless the item is defective.
+        } @else {
+          Conformément aux articles L221-18 et suivants du Code de la consommation, le Client dispose d'un
+          <strong>droit de rétractation de 14 jours</strong> à compter de la réception du bien, sans motif à fournir.
+          Les articles doivent être retournés en état d'origine, non utilisés et dans leur emballage d'origine.
+          Les frais de retour sont à la charge du Client sauf article défectueux.
+        }
+      </p>
+
+      <p><strong>{{ lang() === 'en' ? 'Returns & refunds' : 'Retours et remboursements' }}</strong></p>
+      <p>
+        @if (lang() === 'en') {
+          Refunds are issued within 14 days of receipt of the returned item, using the original payment method.
+          Items personalised or made to order are excluded from the right of withdrawal.
+          To initiate a return: <a href="mailto:juridique@tyrolium.fr">juridique&#64;tyrolium.fr</a>
+        } @else {
+          Le remboursement est effectué dans les 14 jours suivant la réception de l'article retourné, par le même moyen de paiement.
+          Les articles personnalisés ou fabriqués sur commande sont exclus du droit de rétractation.
+          Pour initier un retour : <a href="mailto:juridique@tyrolium.fr">juridique&#64;tyrolium.fr</a>
+        }
+      </p>
+
+      <hr class="legal-divider">
+
+      <!-- ─── 6. ABONNEMENT NEXIUMIACRM ─────────────────────── -->
+
+      <h2 id="abonnement-nexiumiacrm">{{ lang() === 'en' ? '6. Subscription — NexiumiaCRM' : '6. Abonnement NexiumiaCRM' }}</h2>
+
+      <p>
+        @if (lang() === 'en') {
+          NexiumiaCRM is a customer relationship management (CRM) SaaS solution developed and operated by Tyrolium.
+          The following terms apply to all subscription plans offered on the NexiumiaCRM platform.
+        } @else {
+          NexiumiaCRM est une solution CRM (Customer Relationship Management) SaaS développée et opérée par Tyrolium.
+          Les présentes conditions s'appliquent à tous les plans d'abonnement proposés sur la plateforme NexiumiaCRM.
+        }
+      </p>
+
+      <p><strong>{{ lang() === 'en' ? 'Subscription plans' : 'Plans d\'abonnement' }}</strong></p>
+      <p>
+        @if (lang() === 'en') {
+          NexiumiaCRM offers several plans (Free, Starter, Pro, Enterprise) with different feature levels.
+          The full details of each plan are available on the NexiumiaCRM pricing page.
+          Features may be updated at any time; existing subscribers are notified at least 30 days in advance of any material reduction in service.
+        } @else {
+          NexiumiaCRM propose plusieurs plans (Free, Starter, Pro, Entreprise) avec des niveaux de fonctionnalités différents.
+          Le détail complet de chaque plan est disponible sur la page tarifaire de NexiumiaCRM.
+          Les fonctionnalités peuvent être mises à jour à tout moment ; les abonnés existants sont notifiés au moins 30 jours à l'avance de toute réduction substantielle du service.
+        }
+      </p>
+
+      <p><strong>{{ lang() === 'en' ? 'Billing & automatic renewal' : 'Facturation et renouvellement automatique' }}</strong></p>
+      <ul>
+        @if (lang() === 'en') {
+          <li>Subscriptions are billed monthly or annually, in advance</li>
+          <li>They renew automatically unless cancelled before the renewal date</li>
+          <li>An invoice is issued automatically by email for each payment</li>
+          <li>Prices are stated excluding VAT; applicable VAT is added at checkout based on the Client's country</li>
+        } @else {
+          <li>Les abonnements sont facturés mensuellement ou annuellement, à l'avance</li>
+          <li>Ils se renouvellent automatiquement sauf résiliation avant la date de renouvellement</li>
+          <li>Une facture est émise automatiquement par e-mail à chaque paiement</li>
+          <li>Les prix sont indiqués HT ; la TVA applicable est ajoutée au moment du paiement selon le pays du Client</li>
+        }
+      </ul>
+
+      <p><strong>{{ lang() === 'en' ? 'Free trial' : 'Essai gratuit' }}</strong></p>
+      <p>
+        @if (lang() === 'en') {
+          Certain plans may include a free trial period (14 days). No payment is required during the trial.
+          At the end of the trial, the subscription switches to the paid plan unless cancelled beforehand.
+        } @else {
+          Certains plans peuvent inclure une période d'essai gratuite (14 jours). Aucun paiement n'est requis pendant l'essai.
+          À l'issue de l'essai, l'abonnement bascule sur le plan payant sauf résiliation préalable.
+        }
+      </p>
+
+      <p><strong>{{ lang() === 'en' ? 'Cancellation' : 'Résiliation' }}</strong></p>
+      <p>
+        @if (lang() === 'en') {
+          The Client may cancel their subscription at any time from the NexiumiaCRM account settings.
+          Cancellation takes effect at the end of the current billing period; no partial refund is issued for the remaining days.
+          After cancellation, data is retained for 30 days before being permanently deleted.
+        } @else {
+          Le Client peut résilier son abonnement à tout moment depuis les paramètres de son compte NexiumiaCRM.
+          La résiliation prend effet à l'issue de la période de facturation en cours ; aucun remboursement partiel n'est effectué pour les jours restants.
+          Après résiliation, les données sont conservées 30 jours avant suppression définitive.
+        }
+      </p>
+
+      <p><strong>{{ lang() === 'en' ? 'Data & confidentiality' : 'Données et confidentialité' }}</strong></p>
+      <p>
+        @if (lang() === 'en') {
+          Data entered by the Client into NexiumiaCRM remains the exclusive property of the Client.
+          Tyrolium processes this data solely to provide the service and in compliance with the GDPR.
+          Data is hosted on servers located in France operated by SolidServ.
+        } @else {
+          Les données saisies par le Client dans NexiumiaCRM restent la propriété exclusive du Client.
+          Tyrolium traite ces données uniquement pour assurer la fourniture du service et dans le respect du RGPD.
+          Les données sont hébergées sur des serveurs situés en France opérés par SolidServ.
+        }
+      </p>
+
+      <hr class="legal-divider">
+
+      <p><em>© 2017-{{ currentYear }} Tyrolium, Ent. — {{ lang() === 'en' ? 'All rights reserved.' : 'Tous droits réservés.' }}</em></p>
 
     </div>
   </div>
