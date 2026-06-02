@@ -64,30 +64,56 @@
 
     <!-- Formulaire -->
     <div class="contact-form-wrap">
-      <form class="contact-form" (submit)="$event.preventDefault()">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="cf-name">{{ lang() === 'en' ? 'Name' : 'Nom' }}</label>
-            <input id="cf-name" type="text" [placeholder]="lang() === 'en' ? 'Your name' : 'Votre nom'" autocomplete="name">
+
+      @if (submitted()) {
+        <div class="contact-success">
+          <div class="contact-success__icon"><i class="ri-checkbox-circle-line"></i></div>
+          <h3 class="contact-success__title">
+            {{ lang() === 'en' ? 'Message sent!' : 'Message envoyé !' }}
+          </h3>
+          <p class="contact-success__desc">
+            {{ lang() === 'en' ? 'Thanks for reaching out. We\'ll get back to you within 48 hours.' : 'Merci pour votre message. Nous vous répondrons sous 48 h.' }}
+          </p>
+        </div>
+      } @else {
+        <form class="contact-form" (submit)="onSubmit($event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cf-name">{{ lang() === 'en' ? 'Name' : 'Nom' }}</label>
+              <input id="cf-name" name="name" type="text" [placeholder]="lang() === 'en' ? 'Your name' : 'Votre nom'" autocomplete="name" required>
+            </div>
+            <div class="form-group">
+              <label for="cf-email">E-mail</label>
+              <input id="cf-email" name="email" type="email" [placeholder]="lang() === 'en' ? 'you@example.com' : 'vous@exemple.fr'" autocomplete="email" required>
+            </div>
           </div>
           <div class="form-group">
-            <label for="cf-email">E-mail</label>
-            <input id="cf-email" type="email" [placeholder]="lang() === 'en' ? 'you@example.com' : 'vous@exemple.fr'" autocomplete="email">
+            <label for="cf-subject">{{ lang() === 'en' ? 'Subject' : 'Sujet' }}</label>
+            <input id="cf-subject" name="subject" type="text" [placeholder]="lang() === 'en' ? 'Project, quote, question…' : 'Projet, devis, question…'" required>
           </div>
-        </div>
-        <div class="form-group">
-          <label for="cf-subject">{{ lang() === 'en' ? 'Subject' : 'Sujet' }}</label>
-          <input id="cf-subject" type="text" [placeholder]="lang() === 'en' ? 'Project, quote, question…' : 'Projet, devis, question…'">
-        </div>
-        <div class="form-group">
-          <label for="cf-message">{{ lang() === 'en' ? 'Message' : 'Message' }}</label>
-          <textarea id="cf-message" rows="6" [placeholder]="lang() === 'en' ? 'Describe your project or request…' : 'Décrivez votre projet ou votre demande…'"></textarea>
-        </div>
-        <button type="submit" class="btn-send">
-          <i class="ri-mail-send-line"></i>
-          {{ lang() === 'en' ? 'Send message' : 'Envoyer le message' }}
-        </button>
-      </form>
+          <div class="form-group">
+            <label for="cf-message">{{ lang() === 'en' ? 'Message' : 'Message' }}</label>
+            <textarea id="cf-message" name="message" rows="6" [placeholder]="lang() === 'en' ? 'Describe your project or request…' : 'Décrivez votre projet ou votre demande…'" required></textarea>
+          </div>
+
+          @if (hasError()) {
+            <p class="form-error">
+              <i class="ri-error-warning-line"></i>
+              {{ lang() === 'en' ? 'An error occurred. Please try again or write to us directly.' : 'Une erreur est survenue. Réessayez ou écrivez-nous directement.' }}
+            </p>
+          }
+
+          <button type="submit" class="btn-send" [disabled]="sending()">
+            @if (sending()) {
+              <i class="ri-loader-4-line btn-send__spinner"></i>
+            } @else {
+              <i class="ri-mail-send-line"></i>
+            }
+            {{ sending() ? (lang() === 'en' ? 'Sending…' : 'Envoi…') : (lang() === 'en' ? 'Send message' : 'Envoyer le message') }}
+          </button>
+        </form>
+      }
+
     </div>
 
   </div>

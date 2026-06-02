@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TyroUiLangService } from 'tyrolium-ui';
 
@@ -42,10 +42,39 @@ export class Contact {
   readonly title: { fr: string; en: string };
   readonly desc: { fr: string; en: string };
 
+  readonly sending = signal(false);
+  readonly submitted = signal(false);
+  readonly hasError = signal(false);
+
   constructor() {
     const raw = inject(ActivatedRoute).snapshot.queryParamMap.get('from') ?? '';
     const from: FromProject = VALID_PROJECTS.includes(raw as FromProject) ? (raw as FromProject) : 'tyrolium';
     this.title = TITLES[from];
     this.desc = DESCS[from];
+  }
+
+  async onSubmit(event: SubmitEvent) {
+    event.preventDefault();
+    this.sending.set(true);
+    this.hasError.set(false);
+
+    const form = event.target as HTMLFormElement;
+
+    try {
+      const res = await fetch('https://formspree.io/f/xldrpwrr', {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
+      });
+      if (res.ok) {
+        this.submitted.set(true);
+      } else {
+        this.hasError.set(true);
+      }
+    } catch {
+      this.hasError.set(true);
+    } finally {
+      this.sending.set(false);
+    }
   }
 }
