@@ -6,16 +6,24 @@
       <h1 class="doc-title">{{ lang() === 'en' ? 'Legal notice' : 'Mentions légales' }}</h1>
       <span class="legal-update">{{ lang() === 'en' ? 'Last updated: 22 April 2026' : 'Dernière mise à jour : 22 Avril 2026' }}</span>
 
-      <h2>{{ lang() === 'en' ? '1. Publisher' : '1. Éditeur du site' }}</h2>
-      <p>
-        @if (lang() === 'en') {
-          The website <strong>tyrolium.fr</strong> is published by <strong>Tyrolium</strong>, a for-profit company founded in 2017 by <strong>Maxime Tournier</strong>.<br> CEO & Publication director: Maxime Tournier.
-        } @else {
-          Le site <strong>tyrolium.fr</strong> est édité par <strong>Tyrolium</strong>, entreprise à but lucratif
-          fondée en 2017 par <strong>Maxime Tournier</strong>.<br> PDG et Directeur de la publication : Maxime Tournier.
-        }
-      </p>
-      <p>
+        <h2>{{ lang() === 'en' ? '1. Publisher' : '1. Éditeur du site' }}</h2>
+        <p>
+            @if (lang() === 'en') {
+                The websites <strong>tyrolium.fr</strong>, <strong>tyroserv.fr</strong>, <strong>solidserv.fr</strong>,
+                <strong>tyrociel.fr</strong>, <strong>gamenium.fr</strong>, <strong>influnias.fr</strong>, <strong>vturias.fr</strong>,
+                <strong>nexiumiacrm.fr</strong> and <strong>useritium.fr</strong> are published by
+                <strong>Tyrolium</strong>, a for-profit company founded in 2017 by <strong>Maxime Tournier</strong>.
+                <br> CEO & Publication director: Maxime Tournier.
+            } @else {
+                Les sites <strong>tyrolium.fr</strong>, <strong>tyroserv.fr</strong>, <strong>solidserv.fr</strong>,
+                <strong>tyrociel.fr</strong>, <strong>gamenium.fr</strong>, <strong>influnias.fr</strong>, <strong>vturias.fr</strong>,
+                <strong>nexiumiacrm.fr</strong> et <strong>useritium.fr</strong> sont édités par
+                <strong>Tyrolium</strong>, entreprise à but lucratif
+                        fondée en 2017 par <strong>Maxime Tournier</strong>.
+                <br> PDG et Directeur de la publication : Maxime Tournier.
+            }
+        </p>
+        <p>
         @if (lang() === 'en') {
           All creations of the company belong to us.<br>
         } @else {

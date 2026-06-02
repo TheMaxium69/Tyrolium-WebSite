@@ -38,7 +38,7 @@ export class App {
   * */
 
   public PROJECT_NAME = 'Tyrolium';
-  public PROJECT_LOGO = 'assets/Tyrolium.png';
+  public PROJECT_LOGO = 'assets/tyrolium-ui/projects/Tyrolium.png';
   public PROJECT_CONTENT = computed(() =>
     this.langService.lang() === 'en'
       ? `<strong>Tyrolium</strong> is a <strong>French tech holding company</strong> founded in <strong>2017</strong> by digital enthusiasts. From <strong>web development</strong> to <strong>cloud infrastructure</strong>, we support every project with expertise and passion. In parallel, we build our <strong>own ecosystem of projects</strong>: from hosting to gaming, CRM and social networks. <em>Founded by Maxime Tournier</em>`
