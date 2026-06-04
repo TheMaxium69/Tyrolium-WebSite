@@ -1,0 +1,79 @@
+<!-- ─── Hero ───────────────────────────────────────────────────────────────── -->
+
+<div class="tl-hero">
+  <div class="tl-hero-noise"></div>
+  <div class="tl-container">
+    <span class="tl-eyebrow"><i class="ri-time-fill"></i> {{ lang() === 'en' ? 'Our story' : 'Notre histoire' }}</span>
+    <h1 class="tl-hero-title">{{ lang() === 'en' ? 'Timeline' : 'Chronologie' }}</h1>
+    <p class="tl-hero-desc">
+      {{ lang() === 'en'
+        ? 'From a modded Minecraft server in 2017 to a growing tech holding — the story of Tyrolium told through its key milestones.'
+        : "D'un serveur Minecraft moddé en 2017 à une holding technologique en pleine croissance — l'histoire de Tyrolium racontée à travers ses moments clés." }}
+    </p>
+  </div>
+  <div class="tl-hero-wave">
+    <svg viewBox="0 24 150 28" preserveAspectRatio="none">
+      <defs><path id="tlw" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/></defs>
+      <use href="#tlw" x="48" y="0" fill="rgba(246,247,251,0.5)"/>
+      <use href="#tlw" x="48" y="3" fill="rgba(246,247,251,0.35)"/>
+      <use href="#tlw" x="48" y="7" fill="#f6f7fb"/>
+    </svg>
+  </div>
+</div>
+
+<!-- ─── Timeline ─────────────────────────────────────────────────────────── -->
+
+<div class="tl-page-body">
+  <div class="tl-container">
+
+    <div class="tl-track" id="timeline">
+
+      <!-- Ligne verticale animée -->
+      <div class="tl-line"></div>
+
+      @for (event of events; track event.date; let i = $index; let last = $last) {
+
+        <div class="tl-item" [class.tl-item--right]="i % 2 === 1" [attr.data-status]="event.status">
+
+          <!-- Carte -->
+          <div class="tl-card">
+            <div class="tl-card-date">
+              <i class="ri-calendar-event-fill"></i>
+              {{ lang() === 'en' ? event.dateEn : event.date }}
+            </div>
+            <h3 class="tl-card-title">{{ lang() === 'en' ? event.titleEn : event.title }}</h3>
+            <p class="tl-card-desc">{{ lang() === 'en' ? event.descriptionEn : event.description }}</p>
+            @if (event.tags?.length) {
+              <div class="tl-tags">
+                @for (tag of event.tags; track tag) {
+                  <span class="tl-tag">{{ tag }}</span>
+                }
+              </div>
+            }
+          </div>
+
+          <!-- Dot central -->
+          <div class="tl-dot">
+            <i [class]="event.icon"></i>
+          </div>
+
+          <!-- Espace vide côté opposé -->
+          <div class="tl-spacer"></div>
+
+        </div>
+
+      }
+
+    </div>
+
+    <div class="tl-footer-note">
+      <i class="ri-map-pin-time-fill"></i>
+      <span>
+        {{ lang() === 'en'
+          ? 'The Tyrolium adventure continues — the best chapters are still being written.'
+          : "L'aventure Tyrolium continue — les meilleurs chapitres sont encore à écrire." }}
+      </span>
+    </div>
+
+  </div>
+</div>

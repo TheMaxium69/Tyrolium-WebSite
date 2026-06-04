@@ -46,7 +46,7 @@
 
 .pt-hero-title {
   font-family: 'Syne', sans-serif;
-  font-size: clamp(3.5rem, 10vw, 8rem);
+  font-size: clamp(2rem, 9vw, 8rem);
   font-weight: 800;
   letter-spacing: -0.04em;
   line-height: 0.95;
@@ -197,20 +197,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f6f7fb;
-  border-radius: 12px;
-  overflow: hidden;
   flex-shrink: 0;
 }
 
-[data-theme="dark"] .pt-card-logo {
-  background: #1f2937;
-}
-
 .pt-card-logo img {
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   object-fit: contain;
+  border-radius: 12px;
 }
 
 .pt-card-info {

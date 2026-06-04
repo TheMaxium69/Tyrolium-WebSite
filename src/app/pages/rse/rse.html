@@ -1,0 +1,128 @@
+<!-- ─── Hero ───────────────────────────────────────────────────────────────── -->
+
+<div class="rse-hero">
+  <div class="rse-hero-noise"></div>
+  <div class="rse-container">
+    <span class="rse-eyebrow"><i class="ri-leaf-fill"></i> {{ lang() === 'en' ? 'CSR' : 'RSE' }}</span>
+    <h1 class="rse-hero-title">
+      {{ lang() === 'en' ? 'Our\nResponsibilities' : 'Nos\nResponsabilités' }}
+    </h1>
+    <p class="rse-hero-desc">
+      {{ lang() === 'en'
+        ? "Technology in service of the nation — Tyrolium's commitment to a sovereign, meritocratic and responsible digital France."
+        : "La technologie au service de la nation — l'engagement de Tyrolium pour une France numérique souveraine, méritocratique et responsable." }}
+    </p>
+  </div>
+  <div class="rse-hero-wave">
+    <svg viewBox="0 24 150 28" preserveAspectRatio="none">
+      <defs><path id="rsew" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/></defs>
+      <use href="#rsew" x="48" y="0" fill="rgba(246,247,251,0.5)"/>
+      <use href="#rsew" x="48" y="3" fill="rgba(246,247,251,0.35)"/>
+      <use href="#rsew" x="48" y="7" fill="#f6f7fb"/>
+    </svg>
+  </div>
+</div>
+
+<!-- ─── Body ────────────────────────────────────────────────────────────────── -->
+
+<div class="rse-page-body">
+  <div class="rse-container">
+
+    <!-- ── Intro ── -->
+    <div class="rse-intro-block">
+      <div class="rse-intro-text">
+        <p class="rse-label">{{ lang() === 'en' ? 'Our vision' : 'Notre vision' }}</p>
+        <h2 class="rse-section-title">
+          {{ lang() === 'en'
+            ? 'A tech holding with its feet on the ground'
+            : 'Une holding technologique les pieds sur terre' }}
+        </h2>
+        <p class="rse-body-text">
+          {{ lang() === 'en'
+            ? "Tyrolium was not built in a Silicon Valley garage. It was built here, in France, by people who believe that a nation's technological sovereignty is not negotiable. We have no lessons to learn from those who have outsourced their data, their talent and their infrastructure to foreign powers."
+            : "Tyrolium n'a pas été construit dans un garage de la Silicon Valley. Il a été construit ici, en France, par des gens qui croient que la souveraineté technologique d'une nation n'est pas négociable. Nous n'avons aucune leçon à recevoir de ceux qui ont externalisé leurs données, leurs talents et leurs infrastructures à des puissances étrangères." }}
+        </p>
+        <p class="rse-body-text">
+          {{ lang() === 'en'
+            ? "Our CSR is not a communication exercise. It is a daily posture: hire locally, train rigorously, build durably and invest in French territories."
+            : "Notre RSE n'est pas un exercice de communication. C'est une posture quotidienne : recruter local, former rigoureusement, construire durablement et investir dans les territoires français." }}
+        </p>
+      </div>
+      <div class="rse-intro-visual">
+        <div class="rse-intro-flag">
+          <i class="ri-flag-2-fill"></i>
+        </div>
+        <blockquote class="rse-quote">
+          {{ lang() === 'en'
+            ? '"Excellence is not a privilege — it is a requirement."'
+            : '"L\'excellence n\'est pas un privilège — c\'est une exigence."' }}
+        </blockquote>
+      </div>
+    </div>
+
+    <!-- ── Métriques ── -->
+    <div class="rse-metrics">
+      @for (m of metrics; track m.label) {
+        <div class="rse-metric">
+          <i [class]="m.icon"></i>
+          <span class="rse-metric-value">{{ m.value }}</span>
+          <span class="rse-metric-label">{{ lang() === 'en' ? m.labelEn : m.label }}</span>
+        </div>
+      }
+    </div>
+
+    <!-- ── Engagements ── -->
+    <div class="rse-section-head">
+      <p class="rse-label">{{ lang() === 'en' ? 'Our values' : 'Nos valeurs' }}</p>
+      <h2 class="rse-section-title">{{ lang() === 'en' ? 'Six commitments' : 'Six engagements' }}</h2>
+    </div>
+
+    <div class="rse-commitments-grid">
+      @for (c of commitments; track c.title) {
+        <div class="rse-commitment-card">
+          <div class="rse-commitment-icon">
+            <i [class]="c.icon"></i>
+          </div>
+          <h3 class="rse-commitment-title">{{ lang() === 'en' ? c.titleEn : c.title }}</h3>
+          <p class="rse-commitment-desc">{{ lang() === 'en' ? c.descEn : c.desc }}</p>
+        </div>
+      }
+    </div>
+
+    <!-- ── Initiatives ── -->
+    <div class="rse-section-head" style="margin-top: 4rem;">
+      <p class="rse-label">{{ lang() === 'en' ? 'In practice' : 'En pratique' }}</p>
+      <h2 class="rse-section-title">{{ lang() === 'en' ? 'Our initiatives' : 'Nos initiatives' }}</h2>
+    </div>
+
+    <div class="rse-initiatives">
+      @for (init of initiatives; track init.title) {
+        <div class="rse-initiative-card">
+          <div class="rse-initiative-left">
+            <div class="rse-initiative-icon">
+              <i [class]="init.icon"></i>
+            </div>
+          </div>
+          <div class="rse-initiative-body">
+            <div class="rse-initiative-head">
+              <h3 class="rse-initiative-title">{{ lang() === 'en' ? init.titleEn : init.title }}</h3>
+              <span class="rse-initiative-badge">{{ lang() === 'en' ? init.badgeEn : init.badge }}</span>
+            </div>
+            <p class="rse-initiative-desc">{{ lang() === 'en' ? init.descEn : init.desc }}</p>
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- ── Footer note ── -->
+    <div class="rse-footer-note">
+      <i class="ri-france-fill"></i>
+      <span>
+        {{ lang() === 'en'
+          ? 'Tyrolium is a French company. All our data is hosted exclusively on French infrastructure.'
+          : "Tyrolium est une entreprise française. L'intégralité de nos données est hébergée exclusivement sur des infrastructures françaises." }}
+      </span>
+    </div>
+
+  </div>
+</div>
