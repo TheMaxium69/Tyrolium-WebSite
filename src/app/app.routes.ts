@@ -12,6 +12,7 @@ import { LegalLayout } from './pages/legal/legal-layout';
 import { LegalTerms } from './pages/legal/terms/legal-terms';
 import { LegalCgu } from './pages/legal/cgu/legal-cgu';
 import { LegalCgv } from './pages/legal/cgv/legal-cgv';
+import {TyroUiNotFound} from "tyrolium-ui";
 
 export const routes: Routes = [
   { path: '', component: Home },
@@ -39,4 +40,5 @@ export const routes: Routes = [
       { path: 'cgv',   component: LegalCgv },
     ],
   },
+  { path: '**', component: TyroUiNotFound }
 ];
