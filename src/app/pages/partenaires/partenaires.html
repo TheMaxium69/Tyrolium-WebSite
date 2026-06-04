@@ -1,0 +1,79 @@
+<!-- ─── Hero ───────────────────────────────────────────────────────────────── -->
+
+<div class="pt-hero">
+  <div class="pt-hero-noise"></div>
+  <div class="pt-container">
+    <span class="pt-eyebrow"><i class="ri-group-fill"></i> {{ lang() === 'en' ? 'Our network' : 'Notre réseau' }}</span>
+    <h1 class="pt-hero-title">{{ lang() === 'en' ? 'Partners' : 'Partenaires' }}</h1>
+    <p class="pt-hero-desc">
+      {{ lang() === 'en'
+        ? 'The organizations, institutions and companies that trust Tyrolium and support its development.'
+        : 'Les organismes, institutions et entreprises qui font confiance à Tyrolium et soutiennent son développement.' }}
+    </p>
+  </div>
+  <div class="pt-hero-wave">
+    <svg viewBox="0 24 150 28" preserveAspectRatio="none">
+      <defs><path id="ptw" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/></defs>
+      <use href="#ptw" x="48" y="0" fill="rgba(246,247,251,0.5)"/>
+      <use href="#ptw" x="48" y="3" fill="rgba(246,247,251,0.35)"/>
+      <use href="#ptw" x="48" y="7" fill="#f6f7fb"/>
+    </svg>
+  </div>
+</div>
+
+<!-- ─── Body ────────────────────────────────────────────────────────────────── -->
+
+<div class="pt-page-body">
+  <div class="pt-container">
+
+    @for (cat of categories; track cat.label; let last = $last) {
+
+      <section class="pt-category">
+
+        <div class="pt-category-head">
+          <div class="pt-category-icon">
+            <i [class]="cat.icon"></i>
+          </div>
+          <div>
+            <h2 class="pt-category-title">{{ lang() === 'en' ? cat.labelEn : cat.label }}</h2>
+            <span class="pt-category-count">{{ cat.partners.length }} {{ lang() === 'en' ? 'partners' : 'partenaires' }}</span>
+          </div>
+        </div>
+
+        <div class="pt-partners-grid">
+          @for (partner of cat.partners; track partner.name) {
+            <div class="pt-card">
+              <div class="pt-card-logo">
+                <img [src]="partner.logo" [alt]="partner.name" (error)="$any($event.target).style.opacity='0'">
+              </div>
+              <div class="pt-card-info">
+                <span class="pt-card-name">{{ partner.name }}</span>
+                @if (partner.description) {
+                  <span class="pt-card-desc">{{ lang() === 'en' ? (partner.descriptionEn ?? partner.description) : partner.description }}</span>
+                }
+              </div>
+            </div>
+          }
+        </div>
+
+      </section>
+
+      @if (!last) {
+        <div class="pt-divider"></div>
+      }
+
+    }
+
+    <div class="pt-footer-note">
+      <i class="ri-handshake-line"></i>
+      <span>
+        @if (lang() === 'en') {
+          Want to become a Tyrolium partner? <a href="/contact">Contact us</a>.
+        } @else {
+          Vous souhaitez devenir partenaire de Tyrolium ? <a href="/contact">Contactez-nous</a>.
+        }
+      </span>
+    </div>
+
+  </div>
+</div>

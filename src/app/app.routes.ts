@@ -3,6 +3,7 @@ import { Home } from './pages/home/home';
 import { Project } from './pages/project/project';
 import { Contact } from './pages/contact/contact';
 import { Mediakit } from './pages/mediakit/mediakit';
+import { Partenaires } from './pages/partenaires/partenaires';
 import { PrestationLayout } from './pages/prestation/prestation-layout';
 import { PrestationWeb } from './pages/prestation/web/prestation-web';
 import { PrestationServer } from './pages/prestation/server/prestation-server';
@@ -20,6 +21,7 @@ export const routes: Routes = [
   { path: 'project', component: Project },
   { path: 'contact', component: Contact },
   { path: 'mediakit', component: Mediakit },
+  { path: 'partenaires', component: Partenaires },
   {
     path: 'prestation',
     component: PrestationLayout,
