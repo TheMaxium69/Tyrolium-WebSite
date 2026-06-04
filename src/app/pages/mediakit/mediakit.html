@@ -1,0 +1,245 @@
+<!-- ─── Hero ───────────────────────────────────────────────────────────────── -->
+
+<div class="mk-hero">
+  <div class="mk-hero-noise"></div>
+  <div class="mk-container">
+    <span class="mk-eyebrow">{{ lang() === 'en' ? 'Brand Guidelines' : 'Charte graphique' }}</span>
+    <h1 class="mk-hero-title">Media Kit</h1>
+    <p class="mk-hero-desc">
+      {{ lang() === 'en'
+        ? 'Official visual resources of the Tyrolium group — logos, typography, colours and variations by subsidiary.'
+        : 'Ressources visuelles officielles du groupe Tyrolium — logos, typographies, couleurs et déclinaisons par filiale.' }}
+    </p>
+    <div class="mk-hero-meta">
+      <span><i class="ri-calendar-line"></i> {{ lang() === 'en' ? 'June 2025' : 'Juin 2025' }}</span>
+      <span><i class="ri-shield-check-line"></i> {{ lang() === 'en' ? 'Press & partners use' : 'Usage presse &amp; partenaires' }}</span>
+      <span><i class="ri-lock-line"></i> {{ lang() === 'en' ? 'Unlisted page' : 'Page non indexée' }}</span>
+    </div>
+  </div>
+  <div class="mk-hero-wave">
+    <svg viewBox="0 24 150 28" preserveAspectRatio="none">
+      <defs><path id="mkw" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/></defs>
+      <use href="#mkw" x="48" y="0" fill="rgba(246,247,251,0.5)"/>
+      <use href="#mkw" x="48" y="3" fill="rgba(246,247,251,0.35)"/>
+      <use href="#mkw" x="48" y="7" fill="#f6f7fb"/>
+    </svg>
+  </div>
+</div>
+
+<!-- ─── GÉNÉRAL ─────────────────────────────────────────────────────────────── -->
+
+<div class="mk-page-body">
+  <div class="mk-container">
+
+    <!-- ── Section header ── -->
+    <div class="mk-section-head">
+      <div class="mk-section-pill">{{ lang() === 'en' ? 'General' : 'Général' }}</div>
+      <h2 class="mk-section-title">{{ lang() === 'en' ? 'Tyrolium · Visual Identity' : 'Tyrolium · Identité visuelle' }}</h2>
+      <p class="mk-section-desc">
+        {{ lang() === 'en'
+          ? 'Resources shared across the entire group. Use these as the foundation for any communication.'
+          : "Ressources communes à l'ensemble du groupe. À utiliser comme base pour toute communication." }}
+      </p>
+    </div>
+
+    <!-- ── Typographies ── -->
+    <div class="mk-block">
+      <div class="mk-block-label"><i class="ri-text"></i> {{ lang() === 'en' ? 'Typography' : 'Typographies' }}</div>
+      <div class="mk-typo-grid">
+        @for (f of fonts; track f.name) {
+          <div class="mk-typo-card">
+            <div class="mk-typo-sample" [style.fontFamily]="f.family">{{ f.sample }}</div>
+            <div class="mk-typo-info">
+              <span class="mk-typo-name">{{ f.name }}</span>
+              <span class="mk-typo-role">{{ lang() === 'en' ? f.roleEn : f.role }}</span>
+              <span class="mk-typo-weight">{{ f.weight }}</span>
+              <p class="mk-typo-desc">{{ lang() === 'en' ? f.descEn : f.desc }}</p>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- ── Couleurs ── -->
+    <div class="mk-block">
+      <div class="mk-block-label"><i class="ri-palette-line"></i> {{ lang() === 'en' ? 'Gradient colours' : 'Couleurs du dégradé' }}</div>
+      <div class="mk-colors-row">
+        @for (c of gradientColors; track c.hex) {
+          <button class="mk-color-chip" [style.background]="c.hex" (click)="copyHex(c.hex)" [title]="'Copy ' + c.hex">
+            <span class="mk-color-chip-info">
+              <span class="mk-color-chip-hex">{{ copied === c.hex ? (lang() === 'en' ? 'Copied ✓' : 'Copié ✓') : c.hex }}</span>
+              <span class="mk-color-chip-name">{{ lang() === 'en' ? c.nameEn : c.name }}</span>
+              <span class="mk-color-chip-role">{{ lang() === 'en' ? c.roleEn : c.role }}</span>
+            </span>
+          </button>
+        }
+      </div>
+      <div class="mk-block-label" style="margin-top: 2rem"><i class="ri-brush-line"></i> {{ lang() === 'en' ? 'UI colours' : 'Couleurs UI' }}</div>
+      <div class="mk-colors-row">
+        @for (c of uiColors; track c.hex) {
+          <button class="mk-color-chip" [style.background]="c.hex" (click)="copyHex(c.hex)" [title]="'Copy ' + c.hex">
+            <span class="mk-color-chip-info">
+              <span class="mk-color-chip-hex">{{ copied === c.hex ? (lang() === 'en' ? 'Copied ✓' : 'Copié ✓') : c.hex }}</span>
+              <span class="mk-color-chip-name">{{ lang() === 'en' ? c.nameEn : c.name }}</span>
+              <span class="mk-color-chip-role">{{ c.role }}</span>
+            </span>
+          </button>
+        }
+      </div>
+    </div>
+
+    <!-- ── Tyrolium logos ── -->
+    <div class="mk-block">
+      <div class="mk-block-label"><i class="ri-image-line"></i> {{ lang() === 'en' ? 'Tyrolium Logos' : 'Logos Tyrolium' }}</div>
+      <div class="mk-logo-grid">
+
+        <!-- Classique -->
+        <div class="mk-logo-card mk-logo-card--classic">
+          <div class="mk-logo-card-badge">{{ lang() === 'en' ? 'Classic' : 'Classique' }}</div>
+          <div class="mk-logo-preview mk-logo-preview--light">
+            <img [src]="tyrolium.logo" [alt]="tyrolium.name + ' logo'">
+          </div>
+          <div class="mk-logo-card-footer">
+            <span class="mk-logo-card-name">{{ tyrolium.name }}</span>
+            <a class="mk-dl-btn" [href]="tyrolium.logo" [download]="tyrolium.slug + '-logo.png'">
+              <i class="ri-download-2-line"></i> PNG
+            </a>
+          </div>
+        </div>
+
+        <!-- White -->
+        <div class="mk-logo-card mk-logo-card--white">
+          <div class="mk-logo-card-badge mk-logo-card-badge--light">White</div>
+          <div class="mk-logo-preview mk-logo-preview--gradient" [style.background]="brandGradient">
+            <img [src]="tyrolium.logo" [alt]="tyrolium.name + ' logo white'" class="mk-logo-white">
+          </div>
+          <div class="mk-logo-card-footer">
+            <span class="mk-logo-card-name">{{ tyrolium.name }} · White</span>
+            <a class="mk-dl-btn" [href]="tyrolium.logo" [download]="tyrolium.slug + '-logo-white.png'">
+              <i class="ri-download-2-line"></i> PNG
+            </a>
+          </div>
+        </div>
+
+        <!-- Logo + Typo -->
+        <div class="mk-logo-card mk-logo-card--combo">
+          <div class="mk-logo-card-badge">Logo + Typo</div>
+          <div class="mk-logo-preview mk-logo-preview--light">
+            <div class="mk-navbar-combo">
+              <img [src]="tyrolium.logo" [alt]="tyrolium.name" class="mk-combo-logo">
+              <div class="mk-combo-text">
+                <span class="mk-combo-name">{{ tyrolium.name }}</span>
+              </div>
+            </div>
+          </div>
+          <div class="mk-logo-card-footer">
+            <span class="mk-logo-card-name">{{ lang() === 'en' ? 'Combo · Navbar' : 'Combo · Navbar' }}</span>
+            <a class="mk-dl-btn" [href]="tyrolium.logo" [download]="tyrolium.slug + '-combo.png'">
+              <i class="ri-download-2-line"></i> PNG
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════════════════════════ -->
+    <!-- ── FILIALES ─────────────────────────────────────────────────────────── -->
+    <!-- ════════════════════════════════════════════════════════════════════════ -->
+
+    @for (project of projects; track project.slug) {
+      <div class="mk-divider"></div>
+
+      <div class="mk-project-section">
+
+        <!-- Project header -->
+        <div class="mk-project-header">
+          <div class="mk-project-avatar" [style.background]="getGradient(project)">
+            <img [src]="project.logo" [alt]="project.name">
+          </div>
+          <div>
+            <div class="mk-project-header-meta">
+              @if (project.parent) {
+                <span class="mk-badge mk-badge--sub">
+                  {{ lang() === 'en' ? 'Sub-subsidiary of ' + (project.parentEn ?? project.parent) : 'Sous-filiale de ' + project.parent }}
+                </span>
+              } @else {
+                <span class="mk-badge">{{ lang() === 'en' ? 'Tyrolium Subsidiary' : 'Filiale Tyrolium' }}</span>
+              }
+            </div>
+            <h2 class="mk-project-title">{{ project.name }}</h2>
+            <p class="mk-project-desc">{{ lang() === 'en' ? project.descriptionEn : project.description }}</p>
+          </div>
+        </div>
+
+        <!-- Logo grid (3 modes) -->
+        <div class="mk-logo-grid">
+
+          <!-- Classique -->
+          <div class="mk-logo-card mk-logo-card--classic">
+            <div class="mk-logo-card-badge">{{ lang() === 'en' ? 'Classic' : 'Classique' }}</div>
+            <div class="mk-logo-preview mk-logo-preview--light">
+              <img [src]="project.logo" [alt]="project.name + ' logo'">
+            </div>
+            <div class="mk-logo-card-footer">
+              <span class="mk-logo-card-name">{{ project.name }}</span>
+              <a class="mk-dl-btn" [href]="project.logo" [download]="project.slug + '-logo.png'">
+                <i class="ri-download-2-line"></i> PNG
+              </a>
+            </div>
+          </div>
+
+          <!-- White -->
+          <div class="mk-logo-card mk-logo-card--white">
+            <div class="mk-logo-card-badge mk-logo-card-badge--light">White</div>
+            <div class="mk-logo-preview mk-logo-preview--gradient" [style.background]="getGradient(project)">
+              <img [src]="project.logo" [alt]="project.name + ' logo white'" class="mk-logo-white">
+            </div>
+            <div class="mk-logo-card-footer">
+              <span class="mk-logo-card-name">{{ project.name }} · White</span>
+              <a class="mk-dl-btn" [href]="project.logo" [download]="project.slug + '-logo-white.png'">
+                <i class="ri-download-2-line"></i> PNG
+              </a>
+            </div>
+          </div>
+
+          <!-- Logo + Typo -->
+          <div class="mk-logo-card mk-logo-card--combo">
+            <div class="mk-logo-card-badge">Logo + Typo</div>
+            <div class="mk-logo-preview mk-logo-preview--light">
+              <div class="mk-navbar-combo">
+                <img [src]="project.logo" [alt]="project.name" class="mk-combo-logo">
+                <div class="mk-combo-text">
+                  <span class="mk-combo-group">Tyrolium</span>
+                  <span class="mk-combo-name">{{ project.name }}</span>
+                </div>
+              </div>
+            </div>
+            <div class="mk-logo-card-footer">
+              <span class="mk-logo-card-name">Combo · Navbar</span>
+              <a class="mk-dl-btn" [href]="project.logo" [download]="project.slug + '-combo.png'">
+                <i class="ri-download-2-line"></i> PNG
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    }
+
+    <!-- ─── Footer ─────────────────────────────────────────────────────────── -->
+    <div class="mk-footer-note">
+      <i class="ri-information-line"></i>
+      <span>
+        @if (lang() === 'en') {
+          These resources are reserved for press, partner and official communication use.
+          For any request, contact <a href="mailto:contact@tyrolium.fr">contact&#64;tyrolium.fr</a>.
+        } @else {
+          Ces ressources sont réservées à un usage presse, partenaires et communication officielle.
+          Pour toute demande, contactez <a href="mailto:contact@tyrolium.fr">contact&#64;tyrolium.fr</a>.
+        }
+      </span>
+    </div>
+
+  </div>
+</div>
