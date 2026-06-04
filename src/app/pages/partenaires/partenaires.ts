@@ -5,7 +5,6 @@ import { TyroUiLangService } from 'tyrolium-ui';
 export interface Partner {
   name: string;
   logo: string;
-  link?: string;
   description?: string;
   descriptionEn?: string;
 }
@@ -34,10 +33,10 @@ export class Partenaires {
       labelEn: 'Academic Partners',
       icon: 'ri-graduation-cap-fill',
       partners: [
-        { name: 'Human Booster',  logo: 'assets/partners/human-booster.png',  link: 'https://www.humanbooster.com',  description: 'École & accélérateur tech',          descriptionEn: 'Tech school & accelerator' },
-        { name: 'Simplon',        logo: 'assets/partners/simplon.png',         link: 'https://simplon.co',            description: 'Formation numérique inclusive',      descriptionEn: 'Inclusive digital training' },
-        { name: 'Ynov Connect',   logo: 'assets/partners/ynov-connect.png',    link: 'https://www.ynov.com',          description: 'Réseau des campus Ynov',             descriptionEn: 'Ynov campus network' },
-        { name: 'IPSSI',          logo: 'assets/partners/ipssi.png',           link: 'https://www.ipssi.net',         description: 'École informatique & cybersécurité', descriptionEn: 'IT & cybersecurity school' },
+        { name: 'Human Booster', logo: 'assets/partners/human-booster.png', description: 'École & accélérateur tech',          descriptionEn: 'Tech school & accelerator' },
+        { name: 'Simplon',       logo: 'assets/partners/simplon.png',        description: 'Formation numérique inclusive',      descriptionEn: 'Inclusive digital training' },
+        { name: 'Ynov Connect',  logo: 'assets/partners/ynov-connect.png',   description: 'Réseau des campus Ynov',             descriptionEn: 'Ynov campus network' },
+        { name: 'IPSSI',         logo: 'assets/partners/ipssi.png',          description: 'École informatique & cybersécurité', descriptionEn: 'IT & cybersecurity school' },
       ],
     },
     {
@@ -45,9 +44,9 @@ export class Partenaires {
       labelEn: 'Institutional Partners',
       icon: 'ri-bank-fill',
       partners: [
-        { name: 'Région Auvergne-Rhône-Alpes', logo: 'assets/partners/region-aura.png',    link: 'https://www.auvergnerhonealpes.fr', description: 'Région AuRA', descriptionEn: 'AuRA Region' },
-        { name: 'Région Grand-Est',             logo: 'assets/partners/region-grand-est.png', link: 'https://www.grandest.fr',         description: 'Région Grand-Est', descriptionEn: 'Grand-Est Region' },
-        { name: 'French Tech St-Étienne/Lyon',  logo: 'assets/partners/french-tech.png',   link: 'https://lafrenchtech.com',          description: 'Écosystème startup', descriptionEn: 'Startup ecosystem' },
+        { name: 'Région Auvergne-Rhône-Alpes', logo: 'assets/partners/region-aura.png',      description: 'Région AuRA',        descriptionEn: 'AuRA Region' },
+        { name: 'Région Grand-Est',             logo: 'assets/partners/region-grand-est.png', description: 'Région Grand-Est',   descriptionEn: 'Grand-Est Region' },
+        { name: 'French Tech St-Étienne/Lyon',  logo: 'assets/partners/french-tech.png',      description: 'Écosystème startup', descriptionEn: 'Startup ecosystem' },
       ],
     },
     {
@@ -55,10 +54,10 @@ export class Partenaires {
       labelEn: 'Technology Partners',
       icon: 'ri-cpu-fill',
       partners: [
-        { name: 'Proxmox', logo: 'assets/partners/proxmox.png', link: 'https://www.proxmox.com',   description: 'Virtualisation & conteneurs',  descriptionEn: 'Virtualisation & containers' },
-        { name: 'Stripe',  logo: 'assets/partners/stripe.png',  link: 'https://stripe.com',        description: 'Paiement en ligne',           descriptionEn: 'Online payment' },
-        { name: 'OVH',     logo: 'assets/partners/ovh.png',     link: 'https://www.ovhcloud.com',  description: 'Cloud & hébergement',         descriptionEn: 'Cloud & hosting' },
-        { name: 'Tebex',   logo: 'assets/partners/tebex.png',   link: 'https://www.tebex.io',      description: 'Monétisation gaming',         descriptionEn: 'Gaming monetisation' },
+        { name: 'Proxmox', logo: 'assets/partners/proxmox.webp', description: 'Virtualisation & conteneurs', descriptionEn: 'Virtualisation & containers' },
+        { name: 'Stripe',  logo: 'assets/partners/stripe.png',   description: 'Paiement en ligne',          descriptionEn: 'Online payment' },
+        { name: 'OVH',     logo: 'assets/partners/ovh.webp',     description: 'Cloud & hébergement',        descriptionEn: 'Cloud & hosting' },
+        { name: 'Tebex',   logo: 'assets/partners/tebex.png',    description: 'Monétisation gaming',        descriptionEn: 'Gaming monetisation' },
       ],
     },
     {
@@ -66,10 +65,10 @@ export class Partenaires {
       labelEn: 'Professional Partners',
       icon: 'ri-suitcase-fill',
       partners: [
-        { name: 'Bâtir Positif', logo: 'assets/partners/batir-positif.png', description: 'Construction & RSE',     descriptionEn: 'Construction & CSR' },
-        { name: 'Graphic Nook',  logo: 'assets/partners/graphic-nook.png',  description: 'Design & identité',     descriptionEn: 'Design & identity' },
-        { name: 'Evogue',        logo: 'assets/partners/evogue.png',         description: 'Communication',         descriptionEn: 'Communication' },
-        { name: 'Ascentia',      logo: 'assets/partners/ascentia.png',       description: 'Projets Minecraft',     descriptionEn: 'Minecraft projects' },
+        { name: 'Bâtir Positif', logo: 'assets/partners/batir-positif.png', description: 'Construction & RSE',  descriptionEn: 'Construction & CSR' },
+        { name: 'Graphic Nook',  logo: 'assets/partners/graphic-nook.png',  description: 'Design & identité',   descriptionEn: 'Design & identity' },
+        { name: 'Evogue',        logo: 'assets/partners/evogue.webp',        description: 'Communication',       descriptionEn: 'Communication' },
+        { name: 'Ascentia',      logo: 'assets/partners/ascentia.png',       description: 'Projets Minecraft',   descriptionEn: 'Minecraft projects' },
       ],
     },
     {
@@ -78,7 +77,7 @@ export class Partenaires {
       icon: 'ri-group-fill',
       partners: [
         { name: 'Génération IUM', logo: 'assets/partners/generation-ium.png', description: "Association d'entrepreneurs", descriptionEn: 'Entrepreneurs association' },
-        { name: 'MO5',            logo: 'assets/partners/mo5.png',             link: 'https://www.mo5.com',             description: 'Patrimoine du jeu vidéo', descriptionEn: 'Video game heritage' },
+        { name: 'MO5',            logo: 'assets/partners/mo5.webp',            description: 'Patrimoine du jeu vidéo',    descriptionEn: 'Video game heritage' },
       ],
     },
   ];
