@@ -46,7 +46,7 @@
 
 .pt-hero-title {
   font-family: 'Syne', sans-serif;
-  font-size: clamp(2rem, 9vw, 8rem);
+  font-size: clamp(2rem, 5vw, 4.5rem);
   font-weight: 800;
   letter-spacing: -0.04em;
   line-height: 0.95;
@@ -75,9 +75,22 @@
   height: 80px;
 }
 
-[data-theme="dark"] .pt-hero-wave use:last-child   { fill: #0f1117; }
-[data-theme="dark"] .pt-hero-wave use:nth-child(1) { fill: rgba(15,17,23,0.5); }
-[data-theme="dark"] .pt-hero-wave use:nth-child(2) { fill: rgba(15,17,23,0.35); }
+[data-theme="dark"] .pt-hero-wave use:last-child {
+  fill: #0f1117;
+}
+[data-theme="dark"] .pt-hero-wave use:nth-child(0) {
+  fill: rgba(15, 17, 23, 0.5);
+}
+[data-theme="dark"] .pt-hero-wave use:nth-child(1) {
+  fill: rgba(15, 17, 23, 0.5);
+}
+[data-theme="dark"] .pt-hero-wave use:nth-child(2) {
+  fill: rgba(15, 17, 23, 0.35);
+}
+[data-theme="dark"] .pt-hero-wave use:nth-child(3) {
+  fill: rgba(15, 17, 23, 0.35);
+}
+
 
 @media (max-width: 768px) {
   .pt-hero { margin-top: 57px; }

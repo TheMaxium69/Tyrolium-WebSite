@@ -46,7 +46,7 @@
 
 .mk-hero-title {
   font-family: 'Syne', sans-serif;
-  font-size: clamp(3.5rem, 10vw, 8rem);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
   font-weight: 800;
   letter-spacing: -0.04em;
   line-height: 0.95;

@@ -46,7 +46,7 @@
 
 .rse-hero-title {
   font-family: 'Syne', sans-serif;
-  font-size: clamp(2.2rem, 7vw, 7.5rem);
+  font-size: clamp(2rem, 4.5vw, 4rem);
   font-weight: 800;
   letter-spacing: -0.04em;
   line-height: 0.92;
@@ -68,9 +68,22 @@
 .rse-hero-wave { width: 100%; line-height: 0; }
 .rse-hero-wave svg { display: block; width: 100%; height: 80px; }
 
-[data-theme="dark"] .rse-hero-wave use:last-child   { fill: #0f1117; }
-[data-theme="dark"] .rse-hero-wave use:nth-child(1) { fill: rgba(15,17,23,0.5); }
-[data-theme="dark"] .rse-hero-wave use:nth-child(2) { fill: rgba(15,17,23,0.35); }
+[data-theme="dark"] .rse-hero-wave use:last-child {
+  fill: #0f1117;
+}
+[data-theme="dark"] .rse-hero-wave use:nth-child(0) {
+  fill: rgba(15, 17, 23, 0.5);
+}
+[data-theme="dark"] .rse-hero-wave use:nth-child(1) {
+  fill: rgba(15, 17, 23, 0.5);
+}
+[data-theme="dark"] .rse-hero-wave use:nth-child(2) {
+  fill: rgba(15, 17, 23, 0.35);
+}
+[data-theme="dark"] .rse-hero-wave use:nth-child(3) {
+  fill: rgba(15, 17, 23, 0.35);
+}
+
 
 @media (max-width: 768px) {
   .rse-hero {
