@@ -23,13 +23,13 @@ export interface ServerGroup {
 }
 
 const GROUPS: ServerGroup[] = [
-  { name: 'Serveur Interne', nameEn: 'Internal Server', prefix: 'int',   icon: '/assets/server/int.png',   description: 'Il s\'agit des serveurs hébergés dans les locaux de Tyrolium.', descriptionEn: 'Servers hosted in Tyrolium\'s own premises.' },
-  { name: 'VPS',             nameEn: 'VPS',             prefix: 'vps',   icon: '/assets/server/vps.png',   description: 'Il s\'agit de VPS hébergés dans un data center.', descriptionEn: 'VPS instances hosted in data centers.' },
-  { name: 'Cloud',           nameEn: 'Cloud',           prefix: 'cloud', icon: '/assets/server/cloud.png', description: 'Il s\'agit de serveurs conçus pour héberger exclusivement des sites web.', descriptionEn: 'Servers designed exclusively for web hosting.' },
-  { name: 'Proxy',           nameEn: 'Proxy',           prefix: 'proxy', icon: '/assets/server/proxy.png', description: 'Il s\'agit de serveurs proxy qui permettent de rediriger le trafic vers les sauvegardes.', descriptionEn: 'Proxy servers that redirect traffic to backups.' },
-  { name: 'Serveur dédié',   nameEn: 'Dedicated',      prefix: 'serv',  icon: '/assets/server/serv.png',  description: 'Il s\'agit de serveurs dédiés hébergés dans un data center.', descriptionEn: 'Dedicated servers hosted in data centers.' },
-  { name: 'Base de données',  nameEn: 'Database',       prefix: 'db',    icon: '/assets/server/db.png',    description: 'Il s\'agit de serveurs conçus pour héberger exclusivement des bases de données.', descriptionEn: 'Servers designed exclusively for databases.' },
-  { name: 'VPN',             nameEn: 'VPN',             prefix: 'vpn',   icon: '/assets/server/vpn.png',   description: 'Il s\'agit de serveurs utilisés pour les VPN, souvent pour notre sécurité.', descriptionEn: 'Servers used for VPNs, mostly for security.' },
+  { name: 'Serveur Interne', nameEn: 'Internal Server', prefix: 'int',   icon: '/assets/tyrolium-ui/server/int.png',   description: 'Il s\'agit des serveurs hébergés dans les locaux de Tyrolium.', descriptionEn: 'Servers hosted in Tyrolium\'s own premises.' },
+  { name: 'VPS',             nameEn: 'VPS',             prefix: 'vps',   icon: '/assets/tyrolium-ui/server/vps.png',   description: 'Il s\'agit de VPS hébergés dans un data center.', descriptionEn: 'VPS instances hosted in data centers.' },
+  { name: 'Cloud',           nameEn: 'Cloud',           prefix: 'cloud', icon: '/assets/tyrolium-ui/server/cloud.png', description: 'Il s\'agit de serveurs conçus pour héberger exclusivement des sites web.', descriptionEn: 'Servers designed exclusively for web hosting.' },
+  { name: 'Proxy',           nameEn: 'Proxy',           prefix: 'proxy', icon: '/assets/tyrolium-ui/server/proxy.png', description: 'Il s\'agit de serveurs proxy qui permettent de rediriger le trafic vers les sauvegardes.', descriptionEn: 'Proxy servers that redirect traffic to backups.' },
+  { name: 'Serveur dédié',   nameEn: 'Dedicated',      prefix: 'serv',  icon: '/assets/tyrolium-ui/server/serv.png',  description: 'Il s\'agit de serveurs dédiés hébergés dans un data center.', descriptionEn: 'Dedicated servers hosted in data centers.' },
+  { name: 'Base de données',  nameEn: 'Database',       prefix: 'db',    icon: '/assets/tyrolium-ui/server/db.png',    description: 'Il s\'agit de serveurs conçus pour héberger exclusivement des bases de données.', descriptionEn: 'Servers designed exclusively for databases.' },
+  { name: 'VPN',             nameEn: 'VPN',             prefix: 'vpn',   icon: '/assets/tyrolium-ui/server/vpn.png',   description: 'Il s\'agit de serveurs utilisés pour les VPN, souvent pour notre sécurité.', descriptionEn: 'Servers used for VPNs, mostly for security.' },
 ];
 
 const PROJECT_LOGOS: Record<string, string> = {
