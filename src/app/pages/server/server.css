@@ -179,6 +179,77 @@
 
 [data-theme="dark"] .sv-uptime-banner__cta { color: #60a5fa; }
 
+/* ─── Rent Banner ───────────────────────────────────────────────────────── */
+
+.sv-rent-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 1.5rem;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(5, 51, 200, 0.06) 0%, rgba(191, 0, 0, 0.06) 100%);
+  border: 1px solid rgba(5, 51, 200, 0.15);
+  text-decoration: none;
+  margin-bottom: 1.25rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.sv-rent-banner:hover {
+  border-color: rgba(5, 51, 200, 0.3);
+  box-shadow: 0 4px 20px rgba(5, 51, 200, 0.08);
+}
+
+[data-theme="dark"] .sv-rent-banner {
+  background: linear-gradient(135deg, rgba(96, 165, 250, 0.06) 0%, rgba(248, 113, 113, 0.06) 100%);
+  border-color: rgba(96, 165, 250, 0.15);
+}
+
+.sv-rent-banner__left {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.sv-rent-banner__logo {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.sv-rent-banner__title {
+  display: block;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--page-text);
+}
+
+.sv-rent-banner__sub {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  color: var(--page-text-muted);
+}
+
+.sv-rent-banner__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #0533c8;
+  white-space: nowrap;
+  transition: gap 0.2s;
+}
+
+.sv-rent-banner:hover .sv-rent-banner__cta { gap: 0.6rem; }
+
+[data-theme="dark"] .sv-rent-banner__cta { color: #60a5fa; }
+
 /* ─── Toolbar ───────────────────────────────────────────────────────────── */
 
 .sv-toolbar {
@@ -543,4 +614,7 @@
   .sv-toolbar { flex-direction: column; }
   .sv-search { width: 100%; }
   .sv-uptime-banner { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+  .sv-uptime-banner__cta { align-self: flex-end; }
+  .sv-rent-banner { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+  .sv-rent-banner__cta { align-self: flex-end; }
 }

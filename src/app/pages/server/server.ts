@@ -49,7 +49,7 @@ const SERVERS: ServerEntry[] = [
   { name:'int802',      alias:'server-lenovo', description:'Serveur de Test Interne à Tyrolium',                    lieu:'Décines-Charpieu - France',     url:'int802.tyrolium.fr',   tag:'Tyrolium',    group:'int',   date:'22/10/2023' },
   { name:'int803',      alias:'server-pl',     description:'Serveur de Test Interne à Tyrolium',                    lieu:'Blainville - France',           url:'int803.tyrolium.fr',   tag:'Tyrolium',    group:'int',   date:'24/10/2023' },
   { name:'int804',      alias:'',              description:'Serveur de SolidServ V2',                               lieu:'Décines-Charpieu - France',     url:'int804.tyrolium.fr',   tag:'SolidServ',   group:'int',   date:'24/11/2023' },
-  { name:'int805',      alias:'',              description:'Serveur de SolidServ V2.5',                             lieu:'Décines-Charpieu - France',     url:'int805.tyrolium.fr',   tag:'SolidServ',   group:'int',   date:'—' },
+  { name:'int805',      alias:'',              description:'Serveur de SolidServ V2.5',                             lieu:'Décines-Charpieu - France',     url:'int805.tyrolium.fr',   tag:'SolidServ',   group:'int',   date:'05/04/2026' },
   // ── VPS ──────────────────────────────────────────────────────────────
   { name:'vps201',      alias:'',              description:'Serveur pour TyroServ S1 & S3 et les bots discord',     lieu:'Gravelines - France',           url:'vps201.tyrolium.fr',   tag:'TyroServ',    group:'vps',   date:'04/02/2020' },
   { name:'vps202',      alias:'',              description:'Serveur de Test',                                       lieu:'Gravelines - France',           url:'vps202.tyrolium.fr',   tag:'',            group:'vps',   date:'01/04/2021' },
