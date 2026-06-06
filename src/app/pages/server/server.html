@@ -1,0 +1,175 @@
+<!-- ─── Hero ─────────────────────────────────────────────────────────────── -->
+
+<div class="sv-hero">
+  <div class="sv-hero__noise"></div>
+  <div class="sv-container">
+    <span class="sv-eyebrow">
+      <i class="ri-server-line"></i>
+      {{ lang() === 'en' ? 'Infrastructure · Hosting' : 'Infrastructure · Hébergement' }}
+    </span>
+    <h1 class="sv-hero__title">
+      {{ lang() === 'en' ? 'All our' : 'Tous nos' }}
+      <span class="sv-hero__title-accent">{{ lang() === 'en' ? 'Servers' : 'Serveurs' }}</span>
+    </h1>
+    <p class="sv-hero__desc">
+      {{ lang() === 'en'
+        ? 'An overview of all servers that make up the Tyrolium infrastructure - VPS, dedicated, internal, cloud and more.'
+        : 'Un aperçu de tous les serveurs qui composent l\'infrastructure Tyrolium - VPS, dédiés, internes, cloud et plus encore.' }}
+    </p>
+    <div class="sv-hero__meta">
+      <span><i class="ri-server-2-line"></i> {{ totalServers }} {{ lang() === 'en' ? 'servers' : 'serveurs' }}</span>
+      <span><i class="ri-global-line"></i> {{ lang() === 'en' ? 'Multiple data centers' : 'Plusieurs data centers' }}</span>
+      <span><i class="ri-shield-check-line"></i> {{ lang() === 'en' ? 'Monitored 24/7' : 'Supervisés 24h/24' }}</span>
+    </div>
+  </div>
+  <div class="sv-hero__wave">
+    <svg viewBox="0 24 150 28" preserveAspectRatio="none">
+      <defs><path id="svw" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/></defs>
+      <use href="#svw" x="48" y="0" fill="rgba(246,247,251,0.5)"/>
+      <use href="#svw" x="48" y="3" fill="rgba(246,247,251,0.35)"/>
+      <use href="#svw" x="48" y="7" fill="#f6f7fb"/>
+    </svg>
+  </div>
+</div>
+
+<!-- ─── Body ──────────────────────────────────────────────────────────────── -->
+
+<div class="sv-body">
+  <div class="sv-container">
+
+    <!-- Uptime banner -->
+    <a href="http://uptimerobot.tyrolium.fr" target="_blank" rel="noopener" class="sv-uptime-banner">
+      <div class="sv-uptime-banner__left">
+        <span class="sv-uptime-dot"></span>
+        <div>
+          <span class="sv-uptime-banner__title">{{ lang() === 'en' ? 'Server status' : 'État des serveurs' }}</span>
+          <span class="sv-uptime-banner__sub">{{ lang() === 'en' ? 'Live monitoring via Uptime Robot' : 'Surveillance en temps réel via Uptime Robot' }}</span>
+        </div>
+      </div>
+      <span class="sv-uptime-banner__cta">
+        {{ lang() === 'en' ? 'View status' : 'Voir l\'état' }}
+        <i class="ri-external-link-line"></i>
+      </span>
+    </a>
+
+    <!-- Filters + Search -->
+    <div class="sv-toolbar">
+      <div class="sv-filters">
+        <button class="sv-filter-btn" [class.sv-filter-btn--active]="activeGroup() === null" (click)="setGroup(null)">
+          {{ lang() === 'en' ? 'All' : 'Tous' }}
+          <span class="sv-filter-count">{{ totalServers }}</span>
+        </button>
+        @for (g of groups; track g.prefix) {
+          <button class="sv-filter-btn" [class.sv-filter-btn--active]="activeGroup() === g.prefix" (click)="setGroup(g.prefix)">
+            <img [src]="g.icon" [alt]="g.name" class="sv-filter-icon">
+            {{ lang() === 'en' ? g.nameEn : g.name }}
+          </button>
+        }
+      </div>
+      <div class="sv-search">
+        <i class="ri-search-line sv-search__icon"></i>
+        <input
+          class="sv-search__input"
+          type="text"
+          [placeholder]="lang() === 'en' ? 'Search a server...' : 'Rechercher un serveur...'"
+          [ngModel]="search()"
+          (ngModelChange)="onSearch($event)"
+        />
+        @if (search()) {
+          <button class="sv-search__clear" (click)="onSearch('')"><i class="ri-close-line"></i></button>
+        }
+      </div>
+    </div>
+
+    <!-- Result count -->
+    <div class="sv-result-count">
+      <span class="label">{{ lang() === 'en' ? 'Results' : 'Résultats' }}</span>
+      <span class="sv-result-count__num">
+        {{ filteredCount() }} {{ lang() === 'en' ? (filteredCount() > 1 ? 'servers' : 'server') : (filteredCount() > 1 ? 'serveurs' : 'serveur') }}
+        @if (activeGroup()) {
+          — {{ lang() === 'en' ? groupOf(activeGroup()!)?.nameEn : groupOf(activeGroup()!)?.name }}
+        }
+      </span>
+    </div>
+
+    <!-- Grid -->
+    @if (filteredCount() > 0) {
+      @if (isGroupedView()) {
+        <!-- Grouped by type -->
+        @for (section of groupedSections(); track section.group.prefix) {
+          <div class="sv-section">
+            <div class="sv-section__head">
+              <img [src]="section.group.icon" [alt]="section.group.name" class="sv-section__icon">
+              <div class="sv-section__head-text">
+                <h2 class="sv-section__title">{{ lang() === 'en' ? section.group.nameEn : section.group.name }}</h2>
+                <p class="sv-section__desc">{{ lang() === 'en' ? section.group.descriptionEn : section.group.description }}</p>
+              </div>
+              <span class="sv-section__count">{{ section.servers.length }}</span>
+            </div>
+            <div class="sv-grid">
+              @for (s of section.servers; track s.name) {
+                <div class="sv-card">
+                  <div class="sv-card__header">
+                    <div class="sv-card__icon-wrap">
+                      <img [src]="groupOf(s.group)?.icon" [alt]="s.group" class="sv-card__type-icon">
+                    </div>
+                    <div class="sv-card__title-wrap">
+                      <h3 class="sv-card__name">{{ s.name }}</h3>
+                      @if (s.alias) { <span class="sv-card__alias">{{ s.alias }}</span> }
+                    </div>
+                    @if (s.tag && projectLogo(s.tag)) {
+                      <img [src]="projectLogo(s.tag)!" [alt]="s.tag" class="sv-card__project-logo">
+                    } @else if (s.tag) {
+                      <span class="sv-card__tag-badge">{{ s.tag }}</span>
+                    }
+                  </div>
+                  <p class="sv-card__desc">{{ s.description }}</p>
+                  <div class="sv-card__footer">
+                    <span class="sv-card__info"><i class="ri-map-pin-2-line"></i>{{ s.lieu }}</span>
+                    <span class="sv-card__info"><i class="ri-calendar-line"></i>{{ s.date }}</span>
+                  </div>
+                </div>
+              }
+            </div>
+          </div>
+        }
+      } @else {
+        <!-- Flat grid (single group filter active) -->
+        <div class="sv-grid">
+          @for (s of filtered(); track s.name) {
+            <div class="sv-card">
+              <div class="sv-card__header">
+                <div class="sv-card__icon-wrap">
+                  <img [src]="groupOf(s.group)?.icon" [alt]="s.group" class="sv-card__type-icon">
+                </div>
+                <div class="sv-card__title-wrap">
+                  <h3 class="sv-card__name">{{ s.name }}</h3>
+                  @if (s.alias) { <span class="sv-card__alias">{{ s.alias }}</span> }
+                </div>
+                @if (s.tag && projectLogo(s.tag)) {
+                  <img [src]="projectLogo(s.tag)!" [alt]="s.tag" class="sv-card__project-logo">
+                } @else if (s.tag) {
+                  <span class="sv-card__tag-badge">{{ s.tag }}</span>
+                }
+              </div>
+              <p class="sv-card__desc">{{ s.description }}</p>
+              <div class="sv-card__footer">
+                <span class="sv-card__info"><i class="ri-map-pin-2-line"></i>{{ s.lieu }}</span>
+                <span class="sv-card__info"><i class="ri-calendar-line"></i>{{ s.date }}</span>
+              </div>
+            </div>
+          }
+        </div>
+      }
+    } @else {
+      <div class="sv-empty">
+        <i class="ri-server-line sv-empty__icon"></i>
+        <p class="sv-empty__text">{{ lang() === 'en' ? 'No server matches your search.' : 'Aucun serveur ne correspond à votre recherche.' }}</p>
+        <button class="sv-empty__reset" (click)="onSearch(''); setGroup(null)">
+          {{ lang() === 'en' ? 'Reset filters' : 'Réinitialiser' }}
+        </button>
+      </div>
+    }
+
+  </div>
+</div>

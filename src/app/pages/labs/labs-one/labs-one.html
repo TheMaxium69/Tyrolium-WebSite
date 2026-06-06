@@ -1,0 +1,181 @@
+@if (lab) {
+
+<!-- ─── Hero ───────────────────────────────────────────────────────────── -->
+
+<div class="lo-hero" [style.background]="lab.gradient">
+  <div class="lo-hero__noise"></div>
+
+  <div class="lo-container">
+
+    <a routerLink="/labs" class="lo-back">
+      <i class="ri-arrow-left-line"></i>
+      {{ lang() === 'en' ? 'All labs' : 'Tous les labs' }}
+    </a>
+
+    <div class="lo-hero__inner">
+      <div class="lo-hero__icon">
+        <i [class]="lab.icon"></i>
+      </div>
+      <div class="lo-hero__text">
+        <span class="lo-hero__tagline">{{ lang() === 'en' ? lab.taglineEn : lab.tagline }}</span>
+        <h1 class="lo-hero__title">{{ lab.name }}</h1>
+        <div class="lo-hero__badges">
+          <span class="lo-badge lo-badge--status" [style.color]="statusColor()" [style.border-color]="statusColor() + '55'">
+            <span class="lo-badge__dot" [style.background]="statusColor()"></span>
+            {{ statusLabel() }}
+          </span>
+          @for (t of lab.tech; track t) {
+            <span class="lo-badge lo-badge--tech">{{ t }}</span>
+          }
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="lo-hero__wave">
+    <svg viewBox="0 24 150 28" preserveAspectRatio="none">
+      <defs><path id="low" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/></defs>
+      <use href="#low" x="48" y="0" fill="rgba(246,247,251,0.5)"/>
+      <use href="#low" x="48" y="3" fill="rgba(246,247,251,0.35)"/>
+      <use href="#low" x="48" y="7" fill="#f6f7fb"/>
+    </svg>
+  </div>
+</div>
+
+<!-- ─── Body ───────────────────────────────────────────────────────────── -->
+
+<div class="lo-body">
+  <div class="lo-container lo-layout">
+
+    <!-- ── Main content ── -->
+    <div class="lo-main">
+
+      <!-- Description -->
+      <div class="lo-block">
+        <div class="lo-block__label">
+          <i class="ri-information-line"></i>
+          {{ lang() === 'en' ? 'About' : 'À propos' }}
+        </div>
+        <p class="lo-block__text">{{ lang() === 'en' ? lab.longDescEn : lab.longDesc }}</p>
+      </div>
+
+      <!-- Features -->
+      <div class="lo-block">
+        <div class="lo-block__label">
+          <i class="ri-list-check"></i>
+          {{ lang() === 'en' ? 'Features' : 'Fonctionnalités' }}
+        </div>
+        <ul class="lo-features">
+          @for (f of (lang() === 'en' ? lab.featuresEn : lab.features); track f) {
+            <li>
+              <i class="ri-checkbox-circle-fill"></i>
+              {{ f }}
+            </li>
+          }
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- ── Sidebar ── -->
+    <aside class="lo-sidebar">
+
+      <!-- Info card -->
+      <div class="lo-info-card">
+        <div class="lo-info-card__title">
+          <i class="ri-information-2-line"></i>
+          Info
+        </div>
+
+        <div class="lo-info-row">
+          <span class="lo-info-row__label">{{ lang() === 'en' ? 'Status' : 'Statut' }}</span>
+          <span class="lo-info-row__value lo-info-row__value--status" [style.color]="statusColor()">
+            <span class="lo-badge__dot" [style.background]="statusColor()"></span>
+            {{ statusLabel() }}
+          </span>
+        </div>
+
+        <div class="lo-info-divider"></div>
+
+        <div class="lo-info-row">
+          <span class="lo-info-row__label">{{ lang() === 'en' ? 'Stack' : 'Stack' }}</span>
+          <span class="lo-info-row__value">{{ lab.tech.join(', ') }}</span>
+        </div>
+
+        @if (lab.github) {
+          <div class="lo-info-divider"></div>
+          <a [href]="lab.github" target="_blank" rel="noopener" class="lo-github-link">
+            <i class="ri-github-fill"></i>
+            GitHub
+            <i class="ri-external-link-line"></i>
+          </a>
+        }
+
+        @if (lab.link) {
+          <a [href]="lab.link" target="_blank" rel="noopener" class="lo-github-link lo-github-link--primary">
+            <i class="ri-global-line"></i>
+            {{ lang() === 'en' ? 'Visit site' : 'Voir le site' }}
+            <i class="ri-external-link-line"></i>
+          </a>
+        }
+      </div>
+
+      <!-- Used by -->
+      @if (lab.usedBy?.length) {
+        <div class="lo-info-card">
+          <div class="lo-info-card__title">
+            <i class="ri-building-2-line"></i>
+            {{ lang() === 'en' ? 'Used by' : 'Utilisé par' }}
+          </div>
+          <div class="lo-used-list">
+            @for (p of lab.usedBy; track p.name) {
+              @if (p.url) {
+                <a [href]="p.url" target="_blank" rel="noopener" class="lo-used-item">
+                  <i class="ri-external-link-line"></i>
+                  {{ p.name }}
+                </a>
+              } @else {
+                <span class="lo-used-item lo-used-item--no-link">
+                  <i class="ri-checkbox-blank-circle-line"></i>
+                  {{ p.name }}
+                </span>
+              }
+            }
+          </div>
+        </div>
+      }
+
+    </aside>
+
+  </div>
+
+  <!-- ── Pagination ── -->
+  <div class="lo-container">
+    <div class="lo-pagination">
+      @if (prevLab) {
+        <a class="lo-pag-btn lo-pag-btn--prev" [routerLink]="['/labs', prevLab.slug]">
+          <i class="ri-arrow-left-circle-line"></i>
+          <div>
+            <span class="lo-pag-label">{{ lang() === 'en' ? 'Previous' : 'Précédent' }}</span>
+            <span class="lo-pag-name">{{ prevLab.name }}</span>
+          </div>
+        </a>
+      } @else {
+        <span></span>
+      }
+      @if (nextLab) {
+        <a class="lo-pag-btn lo-pag-btn--next" [routerLink]="['/labs', nextLab.slug]">
+          <div>
+            <span class="lo-pag-label">{{ lang() === 'en' ? 'Next' : 'Suivant' }}</span>
+            <span class="lo-pag-name">{{ nextLab.name }}</span>
+          </div>
+          <i class="ri-arrow-right-circle-line"></i>
+        </a>
+      }
+    </div>
+  </div>
+
+</div>
+
+}

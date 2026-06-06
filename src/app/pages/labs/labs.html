@@ -1,0 +1,82 @@
+<!-- ─── Hero ─────────────────────────────────────────────────────────────── -->
+
+<div class="lb-hero">
+  <div class="lb-hero__noise"></div>
+  <div class="lb-container">
+    <span class="lb-eyebrow">
+      <i class="ri-flask-line"></i>
+      {{ lang() === 'en' ? 'R&D · Experimentation' : 'R&D · Expérimentation' }}
+    </span>
+    <h1 class="lb-hero__title">Tyrolium <span class="lb-hero__title-accent">Labs</span></h1>
+    <p class="lb-hero__desc">
+      {{ lang() === 'en'
+        ? 'Internal experiments, tools and innovations from the Tyrolium engineering team — built in-house, shared openly.'
+        : 'Expériences internes, outils et innovations de l\'équipe technique Tyrolium — construits en interne, partagés ouvertement.' }}
+    </p>
+    <div class="lb-hero__meta">
+      <span><i class="ri-test-tube-line"></i> {{ labs.length }} Labs</span>
+      <span><i class="ri-code-s-slash-line"></i> {{ lang() === 'en' ? 'Open source spirit' : 'Esprit open source' }}</span>
+      <span><i class="ri-rocket-line"></i> {{ lang() === 'en' ? 'Continuously updated' : 'Mis à jour en continu' }}</span>
+    </div>
+  </div>
+  <div class="lb-hero__wave">
+    <svg viewBox="0 24 150 28" preserveAspectRatio="none">
+      <defs><path id="lbw" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/></defs>
+      <use href="#lbw" x="48" y="0" fill="rgba(246,247,251,0.5)"/>
+      <use href="#lbw" x="48" y="3" fill="rgba(246,247,251,0.35)"/>
+      <use href="#lbw" x="48" y="7" fill="#f6f7fb"/>
+    </svg>
+  </div>
+</div>
+
+<!-- ─── Grid ─────────────────────────────────────────────────────────────── -->
+
+<div class="lb-body">
+  <div class="lb-container">
+
+    <div class="lb-section-head">
+      <span class="label">{{ lang() === 'en' ? 'All labs' : 'Tous les labs' }}</span>
+      <h2 class="lb-section-title">
+        {{ lang() === 'en' ? 'Explore our experiments' : 'Explorez nos expérimentations' }}
+      </h2>
+    </div>
+
+    <div class="lb-grid">
+      @for (lab of labs; track lab.slug) {
+        <a class="lb-card" [routerLink]="['/labs', lab.slug]">
+
+          <div class="lb-card__header" [style.background]="lab.gradient">
+            <div class="lb-card__noise"></div>
+            <div class="lb-card__icon">
+              <i [class]="lab.icon"></i>
+            </div>
+            <span class="lb-card__status" [style.color]="statusColor(lab.status)" [style.border-color]="statusColor(lab.status) + '55'">
+              <span class="lb-card__status-dot" [style.background]="statusColor(lab.status)"></span>
+              {{ statusLabel(lab) }}
+            </span>
+          </div>
+
+          <div class="lb-card__body">
+            <h3 class="lb-card__name">{{ lab.name }}</h3>
+            <p class="lb-card__tagline">{{ lang() === 'en' ? lab.taglineEn : lab.tagline }}</p>
+            <p class="lb-card__desc">{{ lang() === 'en' ? lab.descriptionEn : lab.description }}</p>
+            <div class="lb-card__tags">
+              @for (t of lab.tech; track t) {
+                <span class="lb-card__tag">{{ t }}</span>
+              }
+            </div>
+          </div>
+
+          <div class="lb-card__footer">
+            <span class="lb-card__cta">
+              {{ lang() === 'en' ? 'Explore' : 'Explorer' }}
+              <i class="ri-arrow-right-line"></i>
+            </span>
+          </div>
+
+        </a>
+      }
+    </div>
+
+  </div>
+</div>
