@@ -285,64 +285,48 @@ section .title {
 }
 
 /* ══════════════════════════════════════════════════════════════════════════ */
-/* ── Technologies ─────────────────────────────────────────────────────────── */
+/* ── Stats ────────────────────────────────────────────────────────────────── */
 /* ══════════════════════════════════════════════════════════════════════════ */
 
-.technologies {
-  /* inherits bg-light */
+.stats {
+  background: linear-gradient(135deg, #0000FF 0%, #BF0000 100%);
+  padding: 72px 0;
 }
 
-.tech-categories {
+.stats-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
-  margin-top: 3rem;
+  text-align: center;
 }
 
-.tech-category {
-  background: #ffffff;
-  border: 1px solid #e9ecf4;
-  border-radius: 14px;
-  padding: 1.75rem;
-}
-
-.tech-category h4 {
+.stat-item {
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.stat-number {
   font-family: 'Syne', sans-serif;
-  font-size: 0.95rem;
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
-  color: #051d68;
-  margin-bottom: 1.25rem;
+  color: #ffffff;
+  letter-spacing: -0.03em;
+  line-height: 1;
 }
 
-.tech-category h4 i {
-  font-size: 1.1rem;
+.stat-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
 }
 
-.tech-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.tech-pills span {
+.stat-desc {
   font-family: 'Inter', sans-serif;
   font-size: 0.8rem;
-  font-weight: 500;
-  color: #374151;
-  background: #f3f4f6;
-  border: 1px solid #e5e7eb;
-  border-radius: 6px;
-  padding: 0.35rem 0.75rem;
-  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-}
-
-.tech-pills span:hover {
-  background: rgba(0, 26, 110, 0.05);
-  border-color: #c2caf0;
-  color: #001a6e;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.5;
 }
 
 /* ══════════════════════════════════════════════════════════════════════════ */
@@ -456,10 +440,6 @@ section .title {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .tech-categories {
-    grid-template-columns: 1fr;
-  }
-
   .cta-card {
     flex-direction: column;
     padding: 3.5rem 2.5rem;
@@ -492,6 +472,10 @@ section .title {
     grid-template-columns: 1fr;
   }
 
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .projects-grid {
     grid-template-columns: 1fr;
   }
@@ -520,6 +504,10 @@ section .title {
 }
 
 @media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
   .container {
     padding: 0 1.25rem;
   }
@@ -538,4 +526,8 @@ section .title {
 /* ══════════════════════════════════════════════════════════════════════════ */
 /* ── Dark theme ───────────────────────────────────────────────────────────── */
 /* ══════════════════════════════════════════════════════════════════════════ */
+
+[data-theme="dark"] .stats {
+  background: linear-gradient(135deg, #0000FF 0%, #BF0000 100%)!important;
+}
 

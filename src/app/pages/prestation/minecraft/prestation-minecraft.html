@@ -139,6 +139,42 @@
   </div>
 </section>
 
+<!-- ── Technologies ────────────────────────────────────────────────────── -->
+
+<section class="section bg-light">
+  <div class="container">
+    <p class="label label--accent">{{ lang() === 'en' ? 'Our stack' : 'Notre stack' }}</p>
+    <h2 class="title">{{ lang() === 'en' ? 'Technologies we master' : 'Technologies maîtrisées' }}</h2>
+
+    <div class="tech-categories">
+
+      <div class="tech-category">
+        <h4><i class="ri-code-s-slash-line"></i> {{ lang() === 'en' ? 'Languages' : 'Langages' }}</h4>
+        <div class="tech-pills">
+          <span>Java</span><span>C</span><span>C++</span><span>Assembleur</span>
+        </div>
+      </div>
+
+      <div class="tech-category">
+        <h4><i class="ri-gamepad-line"></i> APIs & Modding</h4>
+        <div class="tech-pills">
+          <span>Forge</span><span>Fabric</span><span>Bukkit</span><span>Spigot</span>
+          <span>Paper</span><span>Purpur</span>
+        </div>
+      </div>
+
+      <div class="tech-category">
+        <h4><i class="ri-tools-line"></i> {{ lang() === 'en' ? 'Tools & Infra' : 'Outils & Infra' }}</h4>
+        <div class="tech-pills">
+          <span>Docker</span><span>Linux</span><span>Git</span><span>Maven</span><span>Gradle</span>
+          <span>IntelliJ IDEA</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ── CTA ─────────────────────────────────────────────────────────────── -->
 
 <tyro-ui-cta
@@ -150,4 +186,5 @@
         [btnRouterLink]="'/contact'"
         [subbtn]="'Discord'"
         [subLink]="'https://discord.com/invite/km8h5jHezt'"
+        [notBack]="true"
 ></tyro-ui-cta>
