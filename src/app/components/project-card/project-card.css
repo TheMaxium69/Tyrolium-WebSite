@@ -64,10 +64,10 @@
     linear-gradient(#ffffff, #ffffff) padding-box,
     conic-gradient(
       from var(--border-angle),
-      #00b8ff 0%,
-      #ff00a5 40%,
-      #ff00a5 70%,
-      #00b8ff 100%
+      #7dd3fc 0%,
+      #f472b6 40%,
+      #f472b6 70%,
+      #7dd3fc 100%
     ) border-box;
   box-shadow: 0 16px 48px rgba(124, 58, 237, 0.14);
 }
@@ -104,7 +104,11 @@
 }
 
 .project-card--sub .project-card__visual {
-  background: linear-gradient(135deg, #ff00a5 10%, #00b8ff 90%)
+  background: linear-gradient(
+          135deg,
+          #f472b6 0%,
+          #a78bfa 50%,
+          #7dd3fc 100%)
 }
 
 .project-card:hover .project-card__visual {

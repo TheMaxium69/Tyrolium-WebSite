@@ -42,7 +42,7 @@ export class Mediakit {
       description: 'Agence de Vtubeur',    descriptionEn: 'VTuber agency',
       logo: 'assets/tyrolium-ui/projects/Vturias.png',
       parent: 'Influnias', parentEn: 'Influnias',
-      gradient: 'linear-gradient(135deg, #ff00a5 10%, #00b8ff 90%)',
+      gradient: 'linear-gradient(135deg,#f472b6 0%,#a78bfa 50%,#7dd3fc 100%)',
     },
     { name: 'Gamenium',    slug: 'gamenium',    description: "Site d'actu jeu-vidéo",  descriptionEn: 'Gaming news site',     logo: 'assets/tyrolium-ui/projects/Gamenium.png' },
     { name: 'NexiumiaCRM', slug: 'nexiumiacrm', description: 'CRM',                    descriptionEn: 'CRM',                  logo: 'assets/tyrolium-ui/projects/NexiumiaCRM.png' },
