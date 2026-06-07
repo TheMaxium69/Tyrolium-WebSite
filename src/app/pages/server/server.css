@@ -96,8 +96,19 @@
 }
 
 [data-theme="dark"] .sv-hero__wave use:last-child   { fill: #0f1117; }
-[data-theme="dark"] .sv-hero__wave use:nth-child(1) { fill: rgba(15, 17, 23, 0.5); }
-[data-theme="dark"] .sv-hero__wave use:nth-child(2) { fill: rgba(15, 17, 23, 0.35); }
+[data-theme="dark"] .sv-hero__wave use:nth-child(0) {
+  fill: rgba(15, 17, 23, 0.5);
+}
+[data-theme="dark"] .sv-hero__wave use:nth-child(1) {
+  fill: rgba(15, 17, 23, 0.5);
+}
+
+[data-theme="dark"] .sv-hero__wave use:nth-child(2) {
+  fill: rgba(15, 17, 23, 0.35);
+}
+[data-theme="dark"] .sv-hero__wave use:nth-child(3) {
+  fill: rgba(15, 17, 23, 0.35);
+}
 
 /* ─── Body ──────────────────────────────────────────────────────────────── */
 
