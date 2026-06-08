@@ -1,0 +1,94 @@
+<!-- ─── Hero ───────────────────────────────────────────────────────────────── -->
+
+<div class="eq-hero">
+  <div class="eq-hero-noise"></div>
+  <div class="eq-container">
+    <span class="eq-eyebrow"><i class="ri-group-fill"></i> {{ lang() === 'en' ? 'Our team' : 'Notre équipe' }}</span>
+    <h1 class="eq-hero-title">{{ lang() === 'en' ? 'Who we are' : 'Qui sommes-nous' }}</h1>
+    <p class="eq-hero-desc">
+      {{ lang() === 'en'
+        ? 'Behind every product, every feature, every line of code — a passionate team that builds Tyrolium one day at a time.'
+        : "Derrière chaque produit, chaque fonctionnalité, chaque ligne de code — une équipe passionnée qui construit Tyrolium jour après jour." }}
+    </p>
+  </div>
+  <div class="eq-hero-wave">
+    <svg viewBox="0 24 150 28" preserveAspectRatio="none">
+      <defs><path id="eqw" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/></defs>
+      <use href="#eqw" x="48" y="0" fill="rgba(246,247,251,0.5)"/>
+      <use href="#eqw" x="48" y="3" fill="rgba(246,247,251,0.35)"/>
+      <use href="#eqw" x="48" y="7" fill="#f6f7fb"/>
+    </svg>
+  </div>
+</div>
+
+<!-- ─── Body ──────────────────────────────────────────────────────────────── -->
+
+<div class="eq-page-body">
+  <div class="eq-container">
+
+    <!-- ── Fondateur ── -->
+    <div class="eq-section-head eq-animate">
+      <div class="eq-section-pill">{{ lang() === 'en' ? 'Founder' : 'Fondateur' }}</div>
+      <h2 class="eq-section-title">{{ lang() === 'en' ? 'At the helm' : 'À la tête du groupe' }}</h2>
+    </div>
+
+    <div class="eq-founder-wrap eq-animate">
+      <div class="eq-founder-card">
+        <div class="eq-founder-photo-wrap">
+          <img class="eq-founder-photo" [src]="founder.photo" [alt]="founder.firstName + ' ' + founder.lastName">
+        </div>
+        <div class="eq-founder-info">
+          <h2 class="eq-founder-name">{{ founder.firstName }} {{ founder.lastName }}</h2>
+          <p class="eq-founder-role">{{ lang() === 'en' ? founder.roleEn : founder.role }}</p>
+          <p class="eq-founder-bio">
+            {{ lang() === 'en'
+              ? 'Founder of Tyrolium in 2017, Maxime built the group from a Minecraft server into a growing tech holding. Visionary, entrepreneur and developer — he drives the strategy and culture of the entire Tyrolium ecosystem.'
+              : "Fondateur de Tyrolium en 2017, Maxime a fait grandir le groupe d'un serveur Minecraft à une holding technologique en pleine croissance. Visionnaire, entrepreneur et développeur — il impulse la stratégie et la culture de tout l'écosystème Tyrolium." }}
+          </p>
+          <div class="eq-founder-tags">
+            <span class="eq-tag"><i class="ri-calendar-line"></i> {{ lang() === 'en' ? 'Since 2017' : 'Depuis 2017' }}</span>
+            <span class="eq-tag"><i class="ri-building-2-line"></i> {{ lang() === 'en' ? '8 subsidiaries' : '8 filiales' }}</span>
+            <span class="eq-tag"><i class="ri-group-line"></i> {{ lang() === 'en' ? '20 members' : '20 membres' }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Équipe ── -->
+    <div class="eq-section-head eq-animate">
+      <div class="eq-section-pill">{{ lang() === 'en' ? 'Team' : 'Équipe' }}</div>
+      <h2 class="eq-section-title">{{ lang() === 'en' ? 'The crew' : 'L\'équipe' }}</h2>
+      <p class="eq-section-desc">
+        {{ lang() === 'en'
+          ? 'Diverse profiles, shared passion. Together we build, ship and grow.'
+          : 'Des profils variés, une passion commune. Ensemble on construit, on livre, on grandit.' }}
+      </p>
+    </div>
+
+    <div class="eq-grid">
+      @for (member of team; track member.lastName; let i = $index) {
+        <div class="eq-card eq-animate" [style.--delay]="(i * 60) + 'ms'">
+          <div class="eq-card-photo-wrap">
+            <img class="eq-card-photo" [src]="member.photo" [alt]="member.firstName + ' ' + member.lastName">
+          </div>
+          <div class="eq-card-info">
+            <h3 class="eq-card-name">{{ member.firstName }} {{ member.lastName }}</h3>
+            <p class="eq-card-role">{{ lang() === 'en' ? member.roleEn : member.role }}</p>
+          </div>
+        </div>
+      }
+    </div>
+
+  </div>
+</div>
+
+<tyro-ui-cta
+  [title]="lang() === 'en' ? 'Build the future<br>with us.' : 'Construis le futur<br>avec nous.'"
+  [label]="lang() === 'en' ? 'Join us' : 'Nous rejoindre'"
+  [content]="lang() === 'en' ? 'We are always looking for passionate people. Check out our open positions and apply.' : 'Nous cherchons toujours des personnes passionnées. Consultez nos offres ouvertes et candidatez.'"
+  [btn]="lang() === 'en' ? 'See open positions' : 'Voir les offres'"
+  [btnIcon]="'<i class=\'ri-briefcase-fill\'></i>'"
+  [btnLink]="'https://jobs.tyrolium.fr'"
+  [subbtn]="lang() === 'en' ? 'Contact us' : 'Nous contacter'"
+  [subLink]="'/contact'"
+></tyro-ui-cta>

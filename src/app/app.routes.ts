@@ -5,6 +5,7 @@ import { Contact } from './pages/contact/contact';
 import { Mediakit } from './pages/mediakit/mediakit';
 import { Partenaires } from './pages/partenaires/partenaires';
 import { Chronologie } from './pages/chronologie/chronologie';
+import { Equipe } from './pages/equipe/equipe';
 import { Rse } from './pages/rse/rse';
 import { Labs } from './pages/labs/labs';
 import { LabsOne } from './pages/labs/labs-one/labs-one';
@@ -31,6 +32,7 @@ export const routes: Routes = [
   { path: 'server', component: Server },
   { path: 'partenaires', component: Partenaires },
   { path: 'chronologie', component: Chronologie },
+  { path: 'equipe', component: Equipe },
   { path: 'rse', component: Rse },
   {
     path: 'prestation',

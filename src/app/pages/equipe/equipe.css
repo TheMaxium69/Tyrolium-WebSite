@@ -1,0 +1,518 @@
+/* ═══════════════════════════════════════════════════════════════════════════ */
+/* ── Équipe — tyrolium.fr/equipe                                             */
+/* ═══════════════════════════════════════════════════════════════════════════ */
+
+.eq-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ─── Hero ──────────────────────────────────────────────────────────────── */
+
+.eq-hero {
+  position: relative;
+  margin-top: 63px;
+  background: linear-gradient(135deg, #0000FF 0%, #BF0000 100%);
+  padding: 90px 0 0;
+  overflow: hidden;
+}
+
+.eq-hero-noise {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+  background-size: 200px;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.eq-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 0.35rem 1rem;
+  border-radius: 99px;
+  margin-bottom: 1.5rem;
+}
+
+.eq-hero-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  color: #ffffff;
+  margin: 0 0 1.5rem;
+}
+
+.eq-hero-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 600px;
+  line-height: 1.7;
+  margin-bottom: 3rem;
+}
+
+.eq-hero-wave { width: 100%; line-height: 0; }
+.eq-hero-wave svg { display: block; width: 100%; height: 80px; }
+
+[data-theme="dark"] .eq-hero-wave use:last-child { fill: #0f1117; }
+[data-theme="dark"] .eq-hero-wave use:nth-child(0) {
+  fill: rgba(15, 17, 23, 0.5);
+}
+[data-theme="dark"] .eq-hero-wave use:nth-child(1) {
+  fill: rgba(15, 17, 23, 0.5);
+}
+
+[data-theme="dark"] .eq-hero-wave use:nth-child(2) {
+  fill: rgba(15, 17, 23, 0.35);
+}
+[data-theme="dark"] .eq-hero-wave use:nth-child(3) {
+  fill: rgba(15, 17, 23, 0.35);
+}
+
+@media (max-width: 768px) {
+  .eq-hero { margin-top: 57px; }
+}
+
+/* ─── Page body ─────────────────────────────────────────────────────────── */
+
+.eq-page-body {
+  background: #f6f7fb;
+  padding: 80px 0 80px;
+}
+
+[data-theme="dark"] .eq-page-body {
+  background: #0f1117;
+}
+
+/* ─── Section head ───────────────────────────────────────────────────────── */
+
+.eq-section-head {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.eq-section-head + .eq-section-head,
+.eq-grid + .eq-section-head {
+  margin-top: 5rem;
+}
+
+.eq-section-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #0533c8;
+  background: rgba(5, 51, 200, 0.07);
+  border: 1px solid rgba(5, 51, 200, 0.15);
+  padding: 0.3rem 0.9rem;
+  border-radius: 99px;
+  margin-bottom: 1rem;
+}
+
+[data-theme="dark"] .eq-section-pill {
+  color: #7ba7ff;
+  background: rgba(123, 167, 255, 0.1);
+  border-color: rgba(123, 167, 255, 0.2);
+}
+
+.eq-section-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #111827;
+  margin: 0 0 0.75rem;
+}
+
+[data-theme="dark"] .eq-section-title {
+  color: #f3f4f6;
+}
+
+.eq-section-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #6b7280;
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.65;
+}
+
+[data-theme="dark"] .eq-section-desc {
+  color: #9ca3af;
+}
+
+/* ─── Founder card ───────────────────────────────────────────────────────── */
+
+.eq-founder-wrap {
+  margin-bottom: 5rem;
+}
+
+.eq-founder-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 24px;
+  padding: 2.5rem;
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.eq-founder-card:hover {
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+
+[data-theme="dark"] .eq-founder-card {
+  background: #161b27;
+  border-color: #374151;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+}
+
+[data-theme="dark"] .eq-founder-card:hover {
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4);
+}
+
+.eq-founder-photo-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.eq-founder-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  border: 4px solid transparent;
+  background: linear-gradient(#fff, #fff) padding-box,
+              linear-gradient(135deg, #0000FF, #BF0000) border-box;
+  display: block;
+}
+
+[data-theme="dark"] .eq-founder-photo {
+  background: linear-gradient(#161b27, #161b27) padding-box,
+              linear-gradient(135deg, #0000FF, #BF0000) border-box;
+}
+
+
+.eq-founder-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.eq-founder-name {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #111827;
+  margin: 0 0 0.3rem;
+}
+
+[data-theme="dark"] .eq-founder-name {
+  color: #f3f4f6;
+}
+
+.eq-founder-role {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0533c8;
+  margin: 0 0 1rem;
+}
+
+[data-theme="dark"] .eq-founder-role {
+  color: #7ba7ff;
+}
+
+.eq-founder-bio {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: #6b7280;
+  margin: 0 0 1.25rem;
+}
+
+[data-theme="dark"] .eq-founder-bio {
+  color: #9ca3af;
+}
+
+.eq-founder-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.eq-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #374151;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  padding: 0.3rem 0.75rem;
+  border-radius: 99px;
+}
+
+[data-theme="dark"] .eq-tag {
+  color: #d1d5db;
+  background: #1f2937;
+  border-color: #374151;
+}
+
+.eq-tag i { font-size: 0.75rem; }
+
+/* ─── Team grid ──────────────────────────────────────────────────────────── */
+
+.eq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.eq-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.eq-card:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+[data-theme="dark"] .eq-card {
+  background: #161b27;
+  border-color: #374151;
+}
+
+[data-theme="dark"] .eq-card:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.eq-card-photo-wrap {
+  display: flex;
+  justify-content: center;
+  padding-top: 1.5rem;
+}
+
+.eq-card-photo {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  border: 3px solid transparent;
+  background: linear-gradient(#fff, #fff) padding-box,
+              linear-gradient(135deg, #0000FF, #BF0000) border-box;
+  transition: transform 0.35s ease;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .eq-card-photo {
+  background: linear-gradient(#161b27, #161b27) padding-box,
+              linear-gradient(135deg, #0000FF, #BF0000) border-box;
+}
+
+.eq-card:hover .eq-card-photo {
+  transform: scale(1.06);
+}
+
+.eq-card-info {
+  padding: 0.9rem 1.25rem 1.25rem;
+  text-align: center;
+}
+
+.eq-card-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #111827;
+  margin: 0 0 0.25rem;
+}
+
+[data-theme="dark"] .eq-card-name {
+  color: #f3f4f6;
+}
+
+.eq-card-role {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #6b7280;
+  margin: 0;
+}
+
+[data-theme="dark"] .eq-card-role {
+  color: #9ca3af;
+}
+
+/* ─── Animations ─────────────────────────────────────────────────────────── */
+
+.eq-animate {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+  transition-delay: var(--delay, 0ms);
+}
+
+.eq-animate.eq-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Mobile ─────────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .eq-hero {
+    margin-top: 57px;
+    padding: 60px 0 0;
+  }
+
+  .eq-container {
+    padding: 0 1.25rem;
+  }
+
+  .eq-page-body {
+    padding: 50px 0 60px;
+  }
+
+  .eq-section-head + .eq-section-head,
+  .eq-grid + .eq-section-head {
+    margin-top: 3.5rem;
+  }
+
+  .eq-founder-wrap {
+    margin-bottom: 3.5rem;
+  }
+
+  .eq-founder-card {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .eq-founder-tags {
+    justify-content: center;
+  }
+
+.eq-founder-photo {
+    width: 110px;
+    height: 110px;
+  }
+
+  .eq-founder-name {
+    font-size: 1.6rem;
+  }
+
+  .eq-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .eq-hero {
+    padding: 48px 0 0;
+  }
+
+  .eq-container {
+    padding: 0 1rem;
+  }
+
+  .eq-page-body {
+    padding: 40px 0 50px;
+  }
+
+  .eq-section-head {
+    margin-bottom: 1.75rem;
+  }
+
+  .eq-section-head + .eq-section-head,
+  .eq-grid + .eq-section-head {
+    margin-top: 2.75rem;
+  }
+
+  .eq-founder-wrap {
+    margin-bottom: 2.75rem;
+  }
+
+  .eq-founder-card {
+    padding: 1.25rem;
+    gap: 0.875rem;
+    border-radius: 18px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .eq-founder-photo {
+    width: 96px;
+    height: 96px;
+  }
+
+  .eq-founder-name {
+    font-size: 1.4rem;
+  }
+
+  .eq-founder-bio {
+    font-size: 0.85rem;
+  }
+
+  .eq-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .eq-card {
+    border-radius: 16px;
+  }
+
+  .eq-card-photo-wrap {
+    padding-top: 1.1rem;
+  }
+
+  .eq-card-photo {
+    width: 72px;
+    height: 72px;
+  }
+
+  .eq-card-info {
+    padding: 0.7rem 0.875rem 1rem;
+  }
+
+  .eq-card-name {
+    font-size: 0.875rem;
+  }
+
+  .eq-card-role {
+    font-size: 0.7rem;
+  }
+}
