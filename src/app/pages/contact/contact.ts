@@ -48,7 +48,7 @@ export class Contact {
   readonly hasError = signal(false);
 
   constructor() {
-    const raw = inject(ActivatedRoute).snapshot.queryParamMap.get('from') ?? '';
+    const raw = (inject(ActivatedRoute).snapshot.queryParamMap.get('from') ?? '').toLowerCase();
     this.from = VALID_PROJECTS.includes(raw as FromProject) ? (raw as FromProject) : 'tyrolium';
     this.title = TITLES[this.from];
     this.desc = DESCS[this.from];
