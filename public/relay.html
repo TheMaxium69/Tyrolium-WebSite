@@ -6,7 +6,7 @@
 </head>
 <body>
 <!--
-  Page relay pour la sync cross-domaine (thème + langue).
+  Page relay pour la sync cross-domaine (thème + langue + auth).
   Hébergée sur tyrolium.fr, intégrée en iframe invisible sur les autres sites.
   Communication via postMessage.
 
@@ -16,7 +16,14 @@
 -->
 <script>
 (function () {
-  var SYNC_KEYS = ['tyrolium-theme', 'tyrolium-lang', 'tyrolium-token', 'tyrolium-user'];
+  var SYNC_KEYS = [
+    'tyrolium-theme',
+    'tyrolium-lang',
+    'tyrolium-token',
+    'tyrolium-user',
+    'tyrolium-logout',    // timestamp de la dernière déconnexion
+    'tyrolium-login-at',  // timestamp du dernier login (pour comparer avec logout)
+  ];
   var ALLOWED = [
     'https://tyrolium.fr',
     'https://solidserv.fr',
@@ -26,25 +33,36 @@
     'https://vturias.fr',
     'https://nexiumiacrm.fr',
     'https://useritium.fr',
+    'https://tyroserv.fr'
   ];
 
   function isAllowed(origin) {
-    return ALLOWED.indexOf(origin) !== -1 || origin.indexOf('http://localhost') === 0;
+    return ALLOWED.indexOf(origin) !== -1 || origin.indexOf('http://192.168.1.81') === 0;
   }
 
-  // Écoute les changements depuis d'autres onglets (même origine tyrolium.fr)
+  // Écoute les changements et suppressions depuis d'autres onglets (même origine tyrolium.fr)
   window.addEventListener('storage', function (e) {
-    if (!e.key || SYNC_KEYS.indexOf(e.key) === -1 || !e.newValue) return;
-    window.parent.postMessage({ type: 'tyro-relay-changed', key: e.key, value: e.newValue }, '*');
+    if (!e.key || SYNC_KEYS.indexOf(e.key) === -1) return;
+    // e.newValue est null quand la clé est supprimée → on envoie '' pour signaler la suppression
+    window.parent.postMessage({
+      type: 'tyro-relay-changed',
+      key: e.key,
+      value: e.newValue !== null ? e.newValue : ''
+    }, '*');
   });
 
   // Écoute les ordres du site parent
   window.addEventListener('message', function (e) {
     if (!isAllowed(e.origin)) return;
     var d = e.data;
-    if (d && d.type === 'tyro-relay-set' && d.key && d.value) {
+    if (!d) return;
+    if (d.type === 'tyro-relay-set' && d.key && d.value) {
       if (SYNC_KEYS.indexOf(d.key) !== -1) {
         localStorage.setItem(d.key, d.value);
+      }
+    } else if (d.type === 'tyro-relay-remove' && d.key) {
+      if (SYNC_KEYS.indexOf(d.key) !== -1) {
+        localStorage.removeItem(d.key);
       }
     }
   });
