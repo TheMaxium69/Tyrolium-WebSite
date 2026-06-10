@@ -1,6 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { TyroUiLangService } from 'tyrolium-ui';
+import { TyroUiAuthService, TyroUiLangService } from 'tyrolium-ui';
 
 type FromProject = 'tyrolium' | 'tyroserv' | 'solidserv' | 'tyrociel' | 'gamenium' | 'influnias' | 'vturias' | 'nexiumiacrm' | 'useritium';
 
@@ -38,6 +38,7 @@ const DESCS: Record<FromProject, { fr: string; en: string }> = {
 })
 export class Contact {
   readonly lang = inject(TyroUiLangService).lang;
+  readonly user = inject(TyroUiAuthService).user;
 
   readonly from: FromProject;
   readonly title: { fr: string; en: string };

@@ -81,11 +81,11 @@
           <div class="form-row">
             <div class="form-group">
               <label for="cf-name">{{ lang() === 'en' ? 'Name' : 'Nom' }}</label>
-              <input id="cf-name" name="name" type="text" [placeholder]="lang() === 'en' ? 'Your name' : 'Votre nom'" autocomplete="name" required>
+              <input id="cf-name" name="name" type="text" [placeholder]="lang() === 'en' ? 'Your name' : 'Votre nom'" autocomplete="name" [value]="user()?.displayname ?? user()?.username ?? ''" required>
             </div>
             <div class="form-group">
               <label for="cf-email">E-mail</label>
-              <input id="cf-email" name="email" type="email" [placeholder]="lang() === 'en' ? 'you@example.com' : 'vous@exemple.fr'" autocomplete="email" required>
+              <input id="cf-email" name="email" type="email" [placeholder]="lang() === 'en' ? 'you@example.com' : 'vous@exemple.fr'" autocomplete="email" [value]="user()?.email ?? ''" required>
             </div>
           </div>
           <div class="form-group">
