@@ -65,6 +65,10 @@
       if (SYNC_KEYS.indexOf(d.key) !== -1) {
         localStorage.removeItem(d.key);
       }
+    } else if (d.type === 'tyro-relay-refresh') {
+      var fresh = {};
+      SYNC_KEYS.forEach(function (k) { var v = localStorage.getItem(k); if (v) fresh[k] = v; });
+      window.parent.postMessage({ type: 'tyro-relay-init', data: fresh }, '*');
     }
   });
 
