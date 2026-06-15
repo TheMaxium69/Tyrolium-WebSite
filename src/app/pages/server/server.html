@@ -102,7 +102,7 @@
       <span class="sv-result-count__num">
         {{ filteredCount() }} {{ lang() === 'en' ? (filteredCount() > 1 ? 'servers' : 'server') : (filteredCount() > 1 ? 'serveurs' : 'serveur') }}
         @if (activeGroup()) {
-          — {{ lang() === 'en' ? groupOf(activeGroup()!)?.nameEn : groupOf(activeGroup()!)?.name }}
+          - {{ lang() === 'en' ? groupOf(activeGroup()!)?.nameEn : groupOf(activeGroup()!)?.name }}
         }
       </span>
     </div>

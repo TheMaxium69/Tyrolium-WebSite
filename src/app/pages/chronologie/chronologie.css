@@ -147,7 +147,7 @@
 .tl-item .tl-spacer  { grid-column: 3; grid-row: 1; }
 
 /* Variante droite */
-.tl-item--right .tl-card    { grid-column: 3; grid-row: 1; text-align: left; padding-right: 0; padding-left: 2.5rem; }
+.tl-item--right .tl-card    { grid-column: 3; grid-row: 1; text-align: left; padding-right: 1.75rem; padding-left: 2.5rem; }
 .tl-item--right .tl-dot     { grid-column: 2; grid-row: 1; }
 .tl-item--right .tl-spacer  { grid-column: 1; grid-row: 1; }
 

@@ -65,7 +65,7 @@ export class Mediakit {
     {
       name: 'Syne',
       role: 'Titres & Displays', roleEn: 'Headings & Displays',
-      weight: '700 — Bold',
+      weight: '700 - Bold',
       family: "'Syne', sans-serif",
       sample: 'Tyrolium',
       desc: 'Police principale pour les grandes typographies. Utilisée sur les H1, H2 et les héros.',
@@ -83,7 +83,7 @@ export class Mediakit {
     {
       name: 'Noto Sans Display',
       role: 'Sous-marque / Labels', roleEn: 'Sub-brand / Labels',
-      weight: '400 — Regular',
+      weight: '400 - Regular',
       family: "'Noto Sans Display', sans-serif",
       sample: 'TYROLIUM',
       desc: 'Police des identifiants secondaires. Utilisée dans la navbar pour le label "Tyrolium" sous-marque.',
