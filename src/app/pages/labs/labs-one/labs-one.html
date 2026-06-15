@@ -103,6 +103,20 @@
           <span class="lo-info-row__value">{{ lab.tech.join(', ') }}</span>
         </div>
 
+        <div class="lo-info-divider"></div>
+
+        <div class="lo-info-row">
+          <span class="lo-info-row__label">{{ lang() === 'en' ? 'Version' : 'Version' }}</span>
+          <span class="lo-info-row__value">{{ lab.version }}</span>
+        </div>
+
+        <div class="lo-info-divider"></div>
+
+        <div class="lo-info-row">
+          <span class="lo-info-row__label">{{ lang() === 'en' ? 'Author' : 'Auteur' }}</span>
+          <span class="lo-info-row__value">{{ lab.contributors.join(', ') }}</span>
+        </div>
+
         @if (lab.github) {
           <div class="lo-info-divider"></div>
           <a [href]="lab.github" target="_blank" rel="noopener" class="lo-github-link">
