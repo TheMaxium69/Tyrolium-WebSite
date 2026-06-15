@@ -57,7 +57,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       dateEn: 'March 5, 2018',
       title: 'Début de la Bêta de TyroServ',
       titleEn: 'TyroServ Beta begins',
-      description: 'Début de la version Bêta du TyroServ, marquant la fin du développement Alpha, avec un nouveau logo pour l\'occasion.',
+      description: 'Début de la version Bêta de TyroServ, marquant la fin du développement Alpha, avec un nouveau logo pour l\'occasion.',
       descriptionEn: 'Start of the TyroServ Beta, marking the end of the Alpha development phase, with a new logo.',
       icon: 'ri-server-fill',
       status: 'past',
