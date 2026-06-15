@@ -4,7 +4,7 @@
 
       <p class="doc-label">{{ lang() === 'en' ? 'Legal notice' : 'Mentions légales' }}</p>
       <h1 class="doc-title">{{ lang() === 'en' ? 'Legal notice' : 'Mentions légales' }}</h1>
-      <span class="legal-update">{{ lang() === 'en' ? 'Last updated: 22 April 2026' : 'Dernière mise à jour : 22 Avril 2026' }}</span>
+      <span class="legal-update">{{ lang() === 'en' ? 'Last updated: 15 June 2026' : 'Dernière mise à jour : 15 Juin 2026' }}</span>
 
         <h2>{{ lang() === 'en' ? '1. Publisher' : '1. Éditeur du site' }}</h2>
         <p>
@@ -121,13 +121,19 @@
       <p><em>© 2017-{{ currentYear }} Tyrolium.</em></p>
 
       <h2>{{ lang() === 'en' ? '7. Credits & Third-party copyrights' : '7. Crédits & Copyright tiers' }}</h2>
-      <p>{{ lang() === 'en' ? 'All logos used belong to their respective creators. Only Tyrolium logos belong to us.' : 'Tous les logos utilisés appartiennent à leur créateur respectif. Seuls les logos de Tyrolium nous appartiennent.' }}</p>
+      <p>
+        @if (lang() === 'en') {
+          All logos, trademarks and trade names of third parties mentioned below are cited for informational and identification purposes only, in accordance with the provisions of the French Intellectual Property Code relating to the lawful and fair use of a third-party trademark to indicate the destination of a product or service (in particular <strong>Article L713-6</strong>). These mentions do not imply any partnership, endorsement or commercial relationship with the entities listed, unless expressly stated in the Partners section. All logos and trademarks belong to their respective owners.
+        } @else {
+          Tous les logos, marques et dénominations sociales des tiers mentionnés ci-dessous sont cités à titre informatif et d'identification uniquement, conformément aux dispositions du Code de la propriété intellectuelle relatives à l'usage licite et loyal d'une marque tierce pour indiquer la destination d'un produit ou d'un service (notamment l'<strong>article L713-6</strong>). Ces mentions ne constituent en aucun cas un partenariat, une approbation ou une relation commerciale avec les entités citées, sauf mention expresse dans la section Partenaires. Tous les logos et marques appartiennent à leurs titulaires respectifs.
+        }
+      </p>
       <ul class="legal-list legal-list--col">
         <li>© {{ currentYear }} Google LLC</li>
         <li>© {{ currentYear }} Meta</li>
         <li>© {{ currentYear }} Twitter, Inc.</li>
         <li>© {{ currentYear }} Discord</li>
-        <li>© {{ currentYear }} LinkedIn Corporation </li>
+        <li>© {{ currentYear }} LinkedIn Corporation</li>
         <li>© {{ currentYear }} GitHub, Inc.</li>
         <li>© {{ currentYear }} Twitch Interactive, Inc.</li>
         <li>© {{ currentYear }} TikTok</li>
@@ -136,6 +142,13 @@
         <li>© {{ currentYear }} Overwolf</li>
         <li>© {{ currentYear }} Rockstar Games, Inc.</li>
         <li>© {{ currentYear }} Cfx.re</li>
+        <li>© {{ currentYear }} AMD</li>
+        <li>© {{ currentYear }} WordPress Foundation</li>
+        <li>© {{ currentYear }} Stripe, Inc.</li>
+        <li>© {{ currentYear }} PayPal, Inc.</li>
+        <li>© {{ currentYear }} Shopify Inc.</li>
+        <li>© {{ currentYear }} CLS Habitat</li>
+        <li>© {{ currentYear }} Oracle Corporation</li>
         <li>© {{ currentYear }} Human Booster</li>
         <li>© {{ currentYear }} Simplon</li>
         <li>© {{ currentYear }} Ynov Connect</li>
@@ -144,7 +157,6 @@
         <li>© {{ currentYear }} Région Grand-Est</li>
         <li>© {{ currentYear }} French Tech St-Étienne/Lyon</li>
         <li>© {{ currentYear }} Proxmox Server Solutions GmbH</li>
-        <li>© {{ currentYear }} Stripe, Inc.</li>
         <li>© {{ currentYear }} OVH</li>
         <li>© {{ currentYear }} Tebex</li>
         <li>© {{ currentYear }} Bâtir Positif</li>
