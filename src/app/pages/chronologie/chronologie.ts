@@ -14,6 +14,7 @@ export interface TimelineEvent {
   icon: string;
   status: EventStatus;
   tags?: string[];
+  tagsEn?: string[];
 }
 
 @Component({
@@ -40,6 +41,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-rocket-2-fill',
       status: 'past',
       tags: ['Minecraft', 'Origine'],
+      tagsEn: ['Minecraft', 'Origin'],
     },
     {
       date: '12 juillet 2017',
@@ -51,6 +53,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-lightbulb-fill',
       status: 'past',
       tags: ['Identité', 'Nom'],
+      tagsEn: ['Identity', 'Name'],
     },
     {
       date: '5 mars 2018',
@@ -62,6 +65,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-server-fill',
       status: 'past',
       tags: ['TyroServ', 'Bêta'],
+      tagsEn: ['TyroServ', 'Beta'],
     },
     {
       date: '26 septembre 2018',
@@ -73,6 +77,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-broadcast-fill',
       status: 'past',
       tags: ['TyroServ', 'Bêta'],
+      tagsEn: ['TyroServ', 'Beta'],
     },
     {
       date: '29 juillet 2019',
@@ -84,6 +89,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-building-2-fill',
       status: 'past',
       tags: ['Corporate', 'Entreprise'],
+      tagsEn: ['Corporate', 'Company'],
     },
     {
       date: '1er août 2019',
@@ -95,6 +101,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-image-fill',
       status: 'past',
       tags: ['Design', 'Logo'],
+      tagsEn: ['Design', 'Logo'],
     },
     {
       date: '17 octobre 2019',
@@ -106,6 +113,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-code-box-fill',
       status: 'past',
       tags: ['Minecraft', 'Dev', 'TyroMod'],
+      tagsEn: ['Minecraft', 'Dev', 'TyroMod'],
     },
     {
       date: '15 novembre 2019',
@@ -117,6 +125,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-film-fill',
       status: 'past',
       tags: ['Wonderlium', 'Geek'],
+      tagsEn: ['Wonderlium', 'Geek'],
     },
     {
       date: '25 novembre 2019',
@@ -128,6 +137,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-youtube-fill',
       status: 'past',
       tags: ['Wonderlium', 'Vidéo'],
+      tagsEn: ['Wonderlium', 'Video'],
     },
     {
       date: '5 décembre 2019',
@@ -139,6 +149,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-music-fill',
       status: 'past',
       tags: ['TyroMusic', 'Musique'],
+      tagsEn: ['TyroMusic', 'Music'],
     },
     {
       date: '22 mars 2020',
@@ -150,6 +161,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-global-fill',
       status: 'past',
       tags: ['Site', 'Web'],
+      tagsEn: ['Website', 'Web'],
     },
     {
       date: '23 mars 2020',
@@ -161,6 +173,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-briefcase-fill',
       status: 'past',
       tags: ['Freenium', 'Freelance'],
+      tagsEn: ['Freenium', 'Freelance'],
     },
     {
       date: '25 mars 2020',
@@ -172,6 +185,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-palette-fill',
       status: 'past',
       tags: ['TyroMusic', 'Design'],
+      tagsEn: ['TyroMusic', 'Design'],
     },
     {
       date: '30 mars 2020',
@@ -183,6 +197,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-youtube-fill',
       status: 'past',
       tags: ['TyroServ', 'Trailer'],
+      tagsEn: ['TyroServ', 'Trailer'],
     },
     {
       date: '26 avril 2020',
@@ -194,6 +209,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-server-fill',
       status: 'past',
       tags: ['TyroServ', 'Lancement'],
+      tagsEn: ['TyroServ', 'Launch'],
     },
     {
       date: '29 avril 2020',
@@ -205,6 +221,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-group-fill',
       status: 'past',
       tags: ['TyroServ', 'Milestone'],
+      tagsEn: ['TyroServ', 'Milestone'],
     },
     {
       date: '5 mai 2020',
@@ -216,6 +233,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-newspaper-fill',
       status: 'past',
       tags: ['Gamenium', 'Gaming'],
+      tagsEn: ['Gamenium', 'Gaming'],
     },
     {
       date: '18 mai 2020',
@@ -227,6 +245,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-gamepad-fill',
       status: 'past',
       tags: ['TyroStudio', 'Jeux-vidéo'],
+      tagsEn: ['TyroStudio', 'Video Games'],
     },
     {
       date: '24 mai 2020',
@@ -238,6 +257,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-global-fill',
       status: 'past',
       tags: ['Wonderlium', 'Site'],
+      tagsEn: ['Wonderlium', 'Website'],
     },
     {
       date: '27 août 2020',
@@ -249,6 +269,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-store-fill',
       status: 'past',
       tags: ['TyroShop', 'Boutique'],
+      tagsEn: ['TyroShop', 'Shop'],
     },
     {
       date: '28 août 2020',
@@ -260,6 +281,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-image-fill',
       status: 'past',
       tags: ['TyroStudio', 'Logo'],
+      tagsEn: ['TyroStudio', 'Logo'],
     },
     {
       date: '31 août 2020',
@@ -271,6 +293,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-youtube-fill',
       status: 'past',
       tags: ['Wonderlium', 'Vidéo'],
+      tagsEn: ['Wonderlium', 'Video'],
     },
     {
       date: '4 septembre 2020',
@@ -282,6 +305,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-trophy-fill',
       status: 'past',
       tags: ['TyroServ', 'Milestone'],
+      tagsEn: ['TyroServ', 'Milestone'],
     },
     {
       date: '21 janvier 2021',
@@ -293,6 +317,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-close-circle-fill',
       status: 'past',
       tags: ['Freenium', 'Fermeture'],
+      tagsEn: ['Freenium', 'Closure'],
     },
     {
       date: '23 janvier 2021',
@@ -304,6 +329,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-store-fill',
       status: 'past',
       tags: ['TyroShop', 'Logo'],
+      tagsEn: ['TyroShop', 'Logo'],
     },
     {
       date: '21 février 2021',
@@ -315,6 +341,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-server-fill',
       status: 'past',
       tags: ['TyroServ', 'S1', 'Fermeture'],
+      tagsEn: ['TyroServ', 'S1', 'Closure'],
     },
     {
       date: '14 mai 2021',
@@ -326,6 +353,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-git-branch-fill',
       status: 'past',
       tags: ['TyroServ', 'Open-Source'],
+      tagsEn: ['TyroServ', 'Open-Source'],
     },
     {
       date: '25 mai 2021',
@@ -337,6 +365,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-broadcast-fill',
       status: 'past',
       tags: ['TyroServ', 'S2', 'Annonce'],
+      tagsEn: ['TyroServ', 'S2', 'Announcement'],
     },
     {
       date: '28 mai 2021',
@@ -348,6 +377,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-server-fill',
       status: 'past',
       tags: ['TyroServ', 'S2'],
+      tagsEn: ['TyroServ', 'S2'],
     },
     {
       date: '2 juin 2021',
@@ -359,6 +389,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-newspaper-fill',
       status: 'past',
       tags: ['Gamenium', 'Lancement'],
+      tagsEn: ['Gamenium', 'Launch'],
     },
     {
       date: '21 juillet 2021',
@@ -370,6 +401,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-discord-fill',
       status: 'past',
       tags: ['TyroDiscord', 'Discord'],
+      tagsEn: ['TyroDiscord', 'Discord'],
     },
     {
       date: '25 juillet 2021',
@@ -381,50 +413,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-robot-fill',
       status: 'past',
       tags: ['TyroDiscord', 'Bot'],
-    },
-    {
-      date: '20 août 2021',
-      dateEn: 'August 20, 2021',
-      title: 'Trailer du nouveau logo',
-      titleEn: 'New logo trailer',
-      description: 'Trailer diffusé sur tous les réseaux de Tyrolium, dévoilant pour la première fois le nouveau logo de l\'entreprise.',
-      descriptionEn: 'Trailer shared across all Tyrolium channels, revealing the company\'s new logo for the first time.',
-      icon: 'ri-youtube-fill',
-      status: 'past',
-      tags: ['Identité', 'Trailer'],
-    },
-    {
-      date: '21 août 2021',
-      dateEn: 'August 21, 2021',
-      title: 'Nouveau logo · Tyrolium Entertainment → Tyrolium',
-      titleEn: 'New logo · Tyrolium Entertainment → Tyrolium',
-      description: 'Après trois ans, Tyrolium adopte un logo moderne et passe de "Tyrolium Entertainment" à simplement "Tyrolium".',
-      descriptionEn: 'After three years, Tyrolium adopts a modern logo and renames from "Tyrolium Entertainment" to simply "Tyrolium".',
-      icon: 'ri-palette-fill',
-      status: 'past',
-      tags: ['Identité', 'Rebranding', 'Logo'],
-    },
-    {
-      date: '23 août 2021',
-      dateEn: 'August 23, 2021',
-      title: 'TyroMusic devient Sélémusium',
-      titleEn: 'TyroMusic becomes Sélémusium',
-      description: 'TyroMusic change entièrement de nom pour devenir Sélémusium, avec une toute nouvelle charte graphique.',
-      descriptionEn: 'TyroMusic fully rebrands as Sélémusium, with a brand new visual identity.',
-      icon: 'ri-music-fill',
-      status: 'past',
-      tags: ['Sélémusium', 'Rebranding'],
-    },
-    {
-      date: '24 août 2021',
-      dateEn: 'August 24, 2021',
-      title: 'Lancement des prestations',
-      titleEn: 'Services launch',
-      description: 'Lancement des prestations de Tyrolium : création de sites Web et services liés à Minecraft.',
-      descriptionEn: 'Launch of Tyrolium\'s professional services: web development and Minecraft-related services.',
-      icon: 'ri-tools-fill',
-      status: 'past',
-      tags: ['Prestations', 'Web', 'Minecraft'],
+      tagsEn: ['TyroDiscord', 'Bot'],
     },
     {
       date: '10 août 2021',
@@ -436,6 +425,55 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-palette-fill',
       status: 'past',
       tags: ['Design', 'Logo'],
+      tagsEn: ['Design', 'Logo'],
+    },
+    {
+      date: '20 août 2021',
+      dateEn: 'August 20, 2021',
+      title: 'Trailer du nouveau logo',
+      titleEn: 'New logo trailer',
+      description: 'Trailer diffusé sur tous les réseaux de Tyrolium, dévoilant pour la première fois le nouveau logo de l\'entreprise.',
+      descriptionEn: 'Trailer shared across all Tyrolium channels, revealing the company\'s new logo for the first time.',
+      icon: 'ri-youtube-fill',
+      status: 'past',
+      tags: ['Identité', 'Trailer'],
+      tagsEn: ['Identity', 'Trailer'],
+    },
+    {
+      date: '21 août 2021',
+      dateEn: 'August 21, 2021',
+      title: 'Nouveau logo · Tyrolium Entertainment → Tyrolium',
+      titleEn: 'New logo · Tyrolium Entertainment → Tyrolium',
+      description: 'Après trois ans, Tyrolium adopte un logo moderne et passe de "Tyrolium Entertainment" à simplement "Tyrolium".',
+      descriptionEn: 'After three years, Tyrolium adopts a modern logo and renames from "Tyrolium Entertainment" to simply "Tyrolium".',
+      icon: 'ri-palette-fill',
+      status: 'past',
+      tags: ['Identité', 'Rebranding', 'Logo'],
+      tagsEn: ['Identity', 'Rebranding', 'Logo'],
+    },
+    {
+      date: '23 août 2021',
+      dateEn: 'August 23, 2021',
+      title: 'TyroMusic devient Sélémusium',
+      titleEn: 'TyroMusic becomes Sélémusium',
+      description: 'TyroMusic change entièrement de nom pour devenir Sélémusium, avec une toute nouvelle charte graphique.',
+      descriptionEn: 'TyroMusic fully rebrands as Sélémusium, with a brand new visual identity.',
+      icon: 'ri-music-fill',
+      status: 'past',
+      tags: ['Sélémusium', 'Rebranding'],
+      tagsEn: ['Sélémusium', 'Rebranding'],
+    },
+    {
+      date: '24 août 2021',
+      dateEn: 'August 24, 2021',
+      title: 'Lancement des prestations',
+      titleEn: 'Services launch',
+      description: 'Lancement des prestations de Tyrolium : création de sites Web et services liés à Minecraft.',
+      descriptionEn: 'Launch of Tyrolium\'s professional services: web development and Minecraft-related services.',
+      icon: 'ri-tools-fill',
+      status: 'past',
+      tags: ['Prestations', 'Web', 'Minecraft'],
+      tagsEn: ['Services', 'Web', 'Minecraft'],
     },
     {
       date: '14 novembre 2021',
@@ -447,6 +485,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-pulse-fill',
       status: 'past',
       tags: ['Infrastructure', 'Status'],
+      tagsEn: ['Infrastructure', 'Status'],
     },
     {
       date: '22 novembre 2021',
@@ -458,6 +497,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-global-fill',
       status: 'past',
       tags: ['Sélémusium', 'Site'],
+      tagsEn: ['Sélémusium', 'Website'],
     },
     {
       date: '4 janvier 2022',
@@ -469,6 +509,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-global-fill',
       status: 'past',
       tags: ['Site', 'Web', 'Refonte'],
+      tagsEn: ['Website', 'Web', 'Redesign'],
     },
     {
       date: '8 janvier 2022',
@@ -480,6 +521,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-team-fill',
       status: 'past',
       tags: ['Duo-Gramme', 'Réseaux Sociaux'],
+      tagsEn: ['Duo-Gramme', 'Social Media'],
     },
     {
       date: '24 mars 2022',
@@ -491,6 +533,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-cloud-fill',
       status: 'past',
       tags: ['SolidServ', 'Hébergement'],
+      tagsEn: ['SolidServ', 'Hosting'],
     },
     {
       date: '2 mai 2022',
@@ -502,6 +545,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-discord-fill',
       status: 'past',
       tags: ['TyroDiscord', 'Site'],
+      tagsEn: ['TyroDiscord', 'Website'],
     },
     {
       date: '7 mai 2022',
@@ -513,6 +557,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-server-fill',
       status: 'past',
       tags: ['SolidServ', 'Lancement'],
+      tagsEn: ['SolidServ', 'Launch'],
     },
     {
       date: '20 mai 2022',
@@ -524,6 +569,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-palette-fill',
       status: 'past',
       tags: ['Sélémusium', 'Logo'],
+      tagsEn: ['Sélémusium', 'Logo'],
     },
     {
       date: '20 mai 2022',
@@ -535,6 +581,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-book-open-fill',
       status: 'past',
       tags: ['TyroStudent', 'Formation'],
+      tagsEn: ['TyroStudent', 'Training'],
     },
     {
       date: '9 juillet 2022',
@@ -546,6 +593,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-cake-fill',
       status: 'past',
       tags: ['5 Ans', 'Anniversaire'],
+      tagsEn: ['5 Years', 'Anniversary'],
     },
     {
       date: '9 juillet 2022',
@@ -557,6 +605,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-server-fill',
       status: 'past',
       tags: ['TyroServ', 'S3', 'Annonce'],
+      tagsEn: ['TyroServ', 'S3', 'Announcement'],
     },
     {
       date: '9 juillet 2022',
@@ -568,6 +617,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-music-fill',
       status: 'past',
       tags: ['Sélémusium', 'Artomyx'],
+      tagsEn: ['Sélémusium', 'Artomyx'],
     },
     {
       date: '9 juillet 2022',
@@ -579,6 +629,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-user-fill',
       status: 'past',
       tags: ['Useritium', 'Annonce'],
+      tagsEn: ['Useritium', 'Announcement'],
     },
     {
       date: '9 juillet 2022',
@@ -590,6 +641,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-gift-fill',
       status: 'past',
       tags: ['5 Ans', 'Site'],
+      tagsEn: ['5 Years', 'Website'],
     },
     {
       date: '11 juillet 2022',
@@ -601,6 +653,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-music-fill',
       status: 'past',
       tags: ['Sélémusium', 'Artomyx', 'Album'],
+      tagsEn: ['Sélémusium', 'Artomyx', 'Album'],
     },
     {
       date: '13 juillet 2022',
@@ -612,6 +665,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-film-fill',
       status: 'past',
       tags: ['Animation', 'Communication'],
+      tagsEn: ['Animation', 'Communication'],
     },
     {
       date: '15 juillet 2022',
@@ -623,6 +677,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-film-fill',
       status: 'past',
       tags: ['Wonderlium', 'Reboot'],
+      tagsEn: ['Wonderlium', 'Reboot'],
     },
     {
       date: '15 juillet 2022',
@@ -634,6 +689,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-youtube-fill',
       status: 'past',
       tags: ['Wonderlium', 'Vidéo'],
+      tagsEn: ['Wonderlium', 'Video'],
     },
     {
       date: '27 septembre 2022',
@@ -645,6 +701,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-megaphone-fill',
       status: 'past',
       tags: ['Influnias', 'Agence'],
+      tagsEn: ['Influnias', 'Agency'],
     },
     {
       date: '13 janvier 2023',
@@ -656,6 +713,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-restart-fill',
       status: 'past',
       tags: ['Corporate', 'Restructuration'],
+      tagsEn: ['Corporate', 'Restructuring'],
     },
     {
       date: 'Avril 2023',
@@ -667,6 +725,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-live-fill',
       status: 'past',
       tags: ['Vturias', 'VTuber'],
+      tagsEn: ['Vturias', 'VTuber'],
     },
     {
       date: '22 mai 2023',
@@ -678,6 +737,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-book-open-fill',
       status: 'past',
       tags: ['Formation', 'Dev', 'DevOps'],
+      tagsEn: ['Training', 'Dev', 'DevOps'],
     },
     {
       date: '9 juillet 2023',
@@ -689,6 +749,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-cake-fill',
       status: 'past',
       tags: ['6 Ans', 'Anniversaire'],
+      tagsEn: ['6 Years', 'Anniversary'],
     },
     {
       date: '11 août 2023',
@@ -700,6 +761,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-server-fill',
       status: 'past',
       tags: ['TyroServ', 'S2.5'],
+      tagsEn: ['TyroServ', 'S2.5'],
     },
     {
       date: '2 octobre 2023',
@@ -711,6 +773,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-building-fill',
       status: 'past',
       tags: ['Corporate', 'Locaux'],
+      tagsEn: ['Corporate', 'Office'],
     },
     {
       date: 'Novembre 2023',
@@ -722,6 +785,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-contacts-fill',
       status: 'past',
       tags: ['NexiumiaCRM', 'CRM'],
+      tagsEn: ['NexiumiaCRM', 'CRM'],
     },
     {
       date: '21 janvier 2024',
@@ -733,6 +797,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-live-fill',
       status: 'past',
       tags: ['Vturias', 'Lancement'],
+      tagsEn: ['Vturias', 'Launch'],
     },
     {
       date: 'Avril 2024',
@@ -744,6 +809,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-sparkling-fill',
       status: 'past',
       tags: ['Avra', 'Entreprise', 'Abonnement'],
+      tagsEn: ['Avra', 'Business', 'Subscription'],
     },
     {
       date: '9 juillet 2024',
@@ -755,6 +821,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-server-fill',
       status: 'past',
       tags: ['TyroServ', 'S3', 'Trailer', '7 Ans'],
+      tagsEn: ['TyroServ', 'S3', 'Trailer', '7 Years'],
     },
     {
       date: '25 juillet 2024',
@@ -766,6 +833,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-user-fill',
       status: 'past',
       tags: ['Useritium', 'V2', 'Lancement'],
+      tagsEn: ['Useritium', 'V2', 'Launch'],
     },
     {
       date: '16 octobre 2024',
@@ -777,6 +845,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-building-fill',
       status: 'past',
       tags: ['Corporate', 'Locaux'],
+      tagsEn: ['Corporate', 'Office'],
     },
     {
       date: '21 décembre 2024',
@@ -788,6 +857,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-newspaper-fill',
       status: 'past',
       tags: ['Gamenium', 'Bêta', 'Lancement'],
+      tagsEn: ['Gamenium', 'Beta', 'Launch'],
     },
     {
       date: '11 février 2025',
@@ -799,6 +869,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-newspaper-fill',
       status: 'past',
       tags: ['Gamenium', 'Lancement', 'v1'],
+      tagsEn: ['Gamenium', 'Launch', 'v1'],
     },
     {
       date: 'Mars 2025',
@@ -810,6 +881,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-palette-fill',
       status: 'past',
       tags: ['TyroStudio', 'Logo', 'Design'],
+      tagsEn: ['TyroStudio', 'Logo', 'Design'],
     },
     {
       date: 'Avril 2025',
@@ -821,6 +893,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-close-circle-fill',
       status: 'past',
       tags: ['Avra', 'Fermeture'],
+      tagsEn: ['Avra', 'Closure'],
     },
     {
       date: '9 juillet 2025',
@@ -832,6 +905,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-cake-fill',
       status: 'past',
       tags: ['8 Ans', 'Anniversaire'],
+      tagsEn: ['8 Years', 'Anniversary'],
     },
     {
       date: '15 avril 2026',
@@ -843,6 +917,19 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-gamepad-fill',
       status: 'past',
       tags: ['TyroCiel', 'Rebranding', 'Loriciel'],
+      tagsEn: ['TyroCiel', 'Rebranding', 'Loriciel'],
+    },
+    {
+      date: 'Juin 2026',
+      dateEn: 'June 2026',
+      title: 'Tyrolium se présente en tant que holding',
+      titleEn: 'Tyrolium positions itself as a holding',
+      description: 'Changement de positionnement : Tyrolium abandonne la désignation "entreprise multisectorielle" et se présente officiellement en tant que holding technologique.',
+      descriptionEn: 'Repositioning: Tyrolium drops the "multi-sector company" label and officially presents itself as a technology holding.',
+      icon: 'ri-building-2-fill',
+      status: 'past',
+      tags: ['Corporate', 'Identité'],
+      tagsEn: ['Corporate', 'Identity'],
     },
     {
       date: 'Juillet 2026',
@@ -854,6 +941,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       icon: 'ri-palette-fill',
       status: 'future',
       tags: ['Design', 'Branding', '9 Ans'],
+      tagsEn: ['Design', 'Branding', '9 Years'],
     },
   ];
 

@@ -45,7 +45,7 @@
             <p class="tl-card-desc">{{ lang() === 'en' ? event.descriptionEn : event.description }}</p>
             @if (event.tags?.length) {
               <div class="tl-tags">
-                @for (tag of event.tags; track tag) {
+                @for (tag of (lang() === 'en' ? (event.tagsEn ?? event.tags) : event.tags); track tag) {
                   <span class="tl-tag">{{ tag }}</span>
                 }
               </div>
