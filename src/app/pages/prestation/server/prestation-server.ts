@@ -15,7 +15,7 @@ export class PrestationServer {
   readonly solidServProject = computed<ITyroUiNavbarMenuItem>(() => ({
     name: 'Powered by SolidServ',
     description: this.lang() === 'en'
-      ? 'Our hosting offers are operated via SolidServ, our infrastructure dedicated to communities and demanding tech projects. Reliability, performance and support at the heart of every offer.'
+      ? 'Our hosting offers are operated via our subsidiary SolidServ, our infrastructure dedicated to communities and demanding tech projects. Reliability, performance and support at the heart of every offer.'
       : "Nos offres d'hébergement sont opérées via notre filiale SolidServ, notre infrastructure dédiée aux communautés et aux projets tech exigeants. Fiabilité, performance et accompagnement au cœur de chaque offre.",
     image: 'assets/tyrolium-ui/projects/SolidServ.png',
     link: 'https://solidserv.fr',
