@@ -7,8 +7,8 @@
     <h1 class="eq-hero-title">{{ lang() === 'en' ? 'Who we are' : 'Qui sommes-nous' }}</h1>
     <p class="eq-hero-desc">
       {{ lang() === 'en'
-        ? 'Behind every product, every feature, every line of code — a passionate team that builds Tyrolium one day at a time.'
-        : "Derrière chaque produit, chaque fonctionnalité, chaque ligne de code — une équipe passionnée qui construit Tyrolium jour après jour." }}
+        ? 'Behind every product, every feature, every line of code - a passionate team that builds Tyrolium one day at a time.'
+        : "Derrière chaque produit, chaque fonctionnalité, chaque ligne de code - une équipe passionnée qui construit Tyrolium jour après jour." }}
     </p>
   </div>
   <div class="eq-hero-wave">
@@ -42,8 +42,8 @@
           <p class="eq-founder-role">{{ lang() === 'en' ? founder.roleEn : founder.role }}</p>
           <p class="eq-founder-bio">
             {{ lang() === 'en'
-              ? 'Founder of Tyrolium in 2017, Maxime built the group from a Minecraft server into a growing tech holding. Visionary, entrepreneur and developer — he drives the strategy and culture of the entire Tyrolium ecosystem.'
-              : "Fondateur de Tyrolium en 2017, Maxime a fait grandir le groupe d'un serveur Minecraft à une holding technologique en pleine croissance. Visionnaire, entrepreneur et développeur — il impulse la stratégie et la culture de tout l'écosystème Tyrolium." }}
+              ? 'Founder of Tyrolium in 2017, Maxime built the group from a Minecraft server into a growing tech holding. Visionary, entrepreneur and developer - he drives the strategy and culture of the entire Tyrolium ecosystem.'
+              : "Fondateur de Tyrolium en 2017, Maxime a fait grandir le groupe d'un serveur Minecraft à une holding technologique en pleine croissance. Visionnaire, entrepreneur et développeur - il impulse la stratégie et la culture de tout l'écosystème Tyrolium." }}
           </p>
           <div class="eq-founder-tags">
             <span class="eq-tag"><i class="ri-calendar-line"></i> {{ lang() === 'en' ? 'Since 2017' : 'Depuis 2017' }}</span>
@@ -65,19 +65,26 @@
       </p>
     </div>
 
-    <div class="eq-grid">
-      @for (member of team; track member.lastName; let i = $index) {
-        <div class="eq-card eq-animate" [style.--delay]="(i * 60) + 'ms'">
-          <div class="eq-card-photo-wrap">
-            <img class="eq-card-photo" [src]="member.photo" [alt]="member.firstName + ' ' + member.lastName">
-          </div>
-          <div class="eq-card-info">
-            <h3 class="eq-card-name">{{ member.firstName }} {{ member.lastName }}</h3>
-            <p class="eq-card-role">{{ lang() === 'en' ? member.roleEn : member.role }}</p>
-          </div>
+    @for (pole of poles; track pole.key) {
+      @if (membersOf(pole.key).length > 0) {
+        <div class="eq-section-head eq-animate">
+          <div class="eq-section-pill">{{ lang() === 'en' ? pole.labelEn : pole.label }}</div>
+        </div>
+        <div class="eq-grid">
+          @for (member of membersOf(pole.key); track member.lastName; let i = $index) {
+            <div class="eq-card eq-animate" [style.--delay]="(i * 60) + 'ms'">
+              <div class="eq-card-photo-wrap">
+                <img class="eq-card-photo" [src]="member.photo" [alt]="member.firstName + ' ' + member.lastName">
+              </div>
+              <div class="eq-card-info">
+                <h3 class="eq-card-name">{{ member.firstName }} {{ member.lastName }}</h3>
+                <p class="eq-card-role">{{ lang() === 'en' ? member.roleEn : member.role }}</p>
+              </div>
+            </div>
+          }
         </div>
       }
-    </div>
+    }
 
   </div>
 </div>
@@ -87,7 +94,7 @@
   [label]="lang() === 'en' ? 'Join us' : 'Nous rejoindre'"
   [content]="lang() === 'en' ? 'We are always looking for passionate people. Check out our open positions and apply.' : 'Nous cherchons toujours des personnes passionnées. Consultez nos offres ouvertes et candidatez.'"
   [btn]="lang() === 'en' ? 'See open positions' : 'Voir les offres'"
-  [btnIcon]="'<i class=\'ri-briefcase-fill\'></i>'"
+  [btnIcon]="'<i class=\'ri-briefcase-line\'></i>'"
   [btnLink]="'https://jobs.tyrolium.fr'"
   [subbtn]="lang() === 'en' ? 'Contact us' : 'Nous contacter'"
   [subLink]="'/contact'"
