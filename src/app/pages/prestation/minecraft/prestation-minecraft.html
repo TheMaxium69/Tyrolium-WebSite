@@ -151,23 +151,31 @@
       <div class="tech-category">
         <h4><i class="ri-code-s-slash-line"></i> {{ lang() === 'en' ? 'Languages' : 'Langages' }}</h4>
         <div class="tech-pills">
-          <span>Java</span><span>C</span><span>C++</span><span>Assembleur</span>
+          <span>Java</span><span>Kotlin</span><span>Groovy</span><span>Python</span>
+          <span>Lua</span><span>TypeScript</span><span>Bash / Shell</span>
+          <span>C</span><span>C++</span><span>Assembleur</span><span>JSON</span>
         </div>
       </div>
 
       <div class="tech-category">
         <h4><i class="ri-gamepad-line"></i> APIs & Modding</h4>
         <div class="tech-pills">
-          <span>Forge</span><span>Fabric</span><span>Bukkit</span><span>Spigot</span>
-          <span>Paper</span><span>Purpur</span>
+          <span>Forge</span><span>NeoForge</span><span>Fabric</span><span>Quilt</span>
+          <span>Bukkit</span><span>Spigot</span><span>Paper</span><span>Purpur</span>
+          <span>Sponge</span><span>Velocity</span><span>BungeeCord</span><span>Cauldron</span>
+          <span>Geyser</span> <span>ProtocolLib</span><span>PacketEvents</span><span>LuckPerms API</span>
+          <span>Vault API</span><span>PlaceholderAPI</span><span>WorldEdit API</span>
         </div>
       </div>
 
       <div class="tech-category">
         <h4><i class="ri-tools-line"></i> {{ lang() === 'en' ? 'Tools & Infra' : 'Outils & Infra' }}</h4>
         <div class="tech-pills">
-          <span>Docker</span><span>Linux</span><span>Git</span><span>Maven</span><span>Gradle</span>
-          <span>IntelliJ IDEA</span>
+          <span>Docker</span><span>Pterodactyl</span><span>Linux</span><span>Debian</span><span>Ubuntu</span><span>SSH</span>
+          <span>Git</span><span>GitHub</span><span>GitLab</span><span>GitHub Actions</span>
+          <span>Maven</span><span>Gradle</span><span>JVM / JDK</span>
+          <span>IntelliJ IDEA</span><span>VS Code</span><span>Eclipse</span>
+          <span>MySQL</span><span>MariaDB</span><span>Redis</span>
         </div>
       </div>
 
@@ -180,7 +188,7 @@
 <tyro-ui-cta
         [title]="lang() === 'en' ? 'Ready to open<br>your server?' : 'Prêt à ouvrir<br>votre serveur ?'"
         [label]="'Minecraft'"
-        [content]="lang() === 'en' ? 'Tell us about your project and we\'ll build your server from A to Z, backed by 7 years of experience.' : 'Décrivez-nous votre projet et on monte votre serveur de A à Z, en s\'appuyant sur 7 ans d\'expérience.'"
+        [content]="lang() === 'en' ? 'Tell us about your project and we\'ll build your server from A to Z, backed by '+ (currentYear-2017) +' years of experience.' : 'Décrivez-nous votre projet et on monte votre serveur de A à Z, en s\'appuyant sur '+ (currentYear-2017) +' ans d\'expérience.'"
         [btn]="lang() === 'en' ? 'Contact us' : 'Nous contacter'"
         [btnIcon]="`<i class='ri-mail-send-line'></i>`"
         [btnRouterLink]="'/contact'"
