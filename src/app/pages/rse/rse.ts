@@ -18,8 +18,8 @@ export class Rse {
       icon: 'ri-flag-2-fill',
       title: 'Souveraineté numérique',
       titleEn: 'Digital sovereignty',
-      desc: "Nos serveurs, nos données, notre code : tout reste sur le territoire français. Chez Tyrolium, refuser la dépendance aux géants étrangers n'est pas une posture — c'est une conviction.",
-      descEn: "Our servers, our data, our code — everything stays on French soil. At Tyrolium, refusing dependency on foreign tech giants is not a stance, it's a conviction.",
+      desc: "Nos serveurs, nos données, notre code : tout reste sur le territoire français. Chez Tyrolium, refuser la dépendance aux géants étrangers n'est pas une posture - c'est une conviction.",
+      descEn: "Our servers, our data, our code - everything stays on French soil. At Tyrolium, refusing dependency on foreign tech giants is not a stance, it's a conviction.",
     },
     {
       icon: 'ri-award-fill',

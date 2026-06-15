@@ -138,7 +138,7 @@
                       <span class="sv-card__tag-badge">{{ s.tag }}</span>
                     }
                   </div>
-                  <p class="sv-card__desc">{{ s.description }}</p>
+                  <p class="sv-card__desc">{{ lang() === 'en' ? s.descriptionEn : s.description }}</p>
                   <div class="sv-card__footer">
                     <span class="sv-card__info"><i class="ri-map-pin-2-line"></i>{{ s.lieu }}</span>
                     <span class="sv-card__info"><i class="ri-calendar-line"></i>{{ s.date }}</span>
@@ -167,7 +167,7 @@
                   <span class="sv-card__tag-badge">{{ s.tag }}</span>
                 }
               </div>
-              <p class="sv-card__desc">{{ s.description }}</p>
+              <p class="sv-card__desc">{{ lang() === 'en' ? s.descriptionEn : s.description }}</p>
               <div class="sv-card__footer">
                 <span class="sv-card__info"><i class="ri-map-pin-2-line"></i>{{ s.lieu }}</span>
                 <span class="sv-card__info"><i class="ri-calendar-line"></i>{{ s.date }}</span>
