@@ -853,7 +853,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       descriptionEn: 'For Tyrolium\'s 9th anniversary, a complete visual identity overhaul: new design system, new logos and new brand guidelines for Tyrolium and all its subsidiaries.',
       icon: 'ri-palette-fill',
       status: 'future',
-      tags: ['Design', 'Branding', '9 Ans', 'À venir'],
+      tags: ['Design', 'Branding', '9 Ans'],
     },
   ];
 
