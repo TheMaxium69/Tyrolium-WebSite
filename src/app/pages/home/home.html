@@ -98,7 +98,7 @@
 
         <a routerLink="/project" class="home-more-card">
             <div class="home-more-card__inner">
-                <i class="ri-stack-line"></i> <h3>{{ lang() === 'en' ? 'All Entities' : 'Toutes nos entités' }}</h3>
+                <i class="ri-stack-line"></i> <h3>{{ lang() === 'en' ? 'All our entities' : 'Toutes nos entités' }}</h3>
                 <p>{{ lang() === 'en' ? 'Discover all the structures of the group' : 'Découvrez l\'ensemble des structures du groupe' }}</p>
                 <span class="btn-outline-small">{{ lang() === 'en' ? 'View all' : 'Voir tout' }} <i class="ri-arrow-right-line"></i></span>
             </div>
@@ -182,7 +182,7 @@
       <div class="stat-item">
         <span class="stat-number">+8M</span>
         <span class="stat-label">{{ lang() === 'en' ? 'Users reached' : 'Utilisateurs touchés' }}</span>
-        <span class="stat-desc">{{ lang() === 'en' ? 'Across all our projects and platforms' : 'À travers l\'ensemble de nos projets' }}</span>
+        <span class="stat-desc">{{ lang() === 'en' ? 'Across all our projects' : 'À travers l\'ensemble de nos projets' }}</span>
       </div>
 
     </div>
@@ -240,7 +240,7 @@
         <div class="timeline-dot"></div>
         <div class="timeline-content">
           <span class="timeline-year">2026</span>
-          <h3>{{ lang() === 'en' ? 'Entering the gaming universe' : 'Notre entrée dans l\'univers du gaming' }}</h3>
+          <h3>{{ lang() === 'en' ? 'Our entry into the gaming universe' : 'Notre entrée dans l\'univers du gaming' }}</h3>
           <p>{{ lang() === 'en' ? 'Creation and development of our own video game studio to produce innovative gaming experiences.' : 'Création et développement de notre propre studio de jeu-vidéo pour produire des expériences gaming innovantes.' }}</p>
         </div>
       </div>
@@ -269,6 +269,6 @@
     [btn]="lang() === 'en' ? 'Contact us' : 'Contactez-nous'"
     [btnIcon]="`<i class='ri-mail-send-line'></i>`"
     [btnRouterLink]="'/contact'"
-    [subbtn]="lang() === 'en' ? 'See our projects' : 'Voir nos filiales'"
+    [subbtn]="lang() === 'en' ? 'See our subsidiaries' : 'Voir nos filiales'"
     [subRouterLink]="'/project'"
 ></tyro-ui-cta>
