@@ -27,9 +27,9 @@ const GROUPS: ServerGroup[] = [
   { name: 'VPS',             nameEn: 'VPS',             prefix: 'vps',   icon: '/assets/tyrolium-ui/server/vps.png',   description: 'Il s\'agit de VPS hébergés dans un data center.', descriptionEn: 'VPS instances hosted in data centers.' },
   { name: 'Cloud',           nameEn: 'Cloud',           prefix: 'cloud', icon: '/assets/tyrolium-ui/server/cloud.png', description: 'Il s\'agit de serveurs conçus pour héberger exclusivement des sites web.', descriptionEn: 'Servers designed exclusively for web hosting.' },
   { name: 'Proxy',           nameEn: 'Proxy',           prefix: 'proxy', icon: '/assets/tyrolium-ui/server/proxy.png', description: 'Il s\'agit de serveurs proxy qui permettent de rediriger le trafic vers les sauvegardes.', descriptionEn: 'Proxy servers that redirect traffic to backups.' },
-  { name: 'Serveur dédié',   nameEn: 'Dedicated',      prefix: 'serv',  icon: '/assets/tyrolium-ui/server/serv.png',  description: 'Il s\'agit de serveurs dédiés hébergés dans un data center.', descriptionEn: 'Dedicated servers hosted in data centers.' },
+  { name: 'Serveur dédié',   nameEn: 'Dedicated Server', prefix: 'serv',  icon: '/assets/tyrolium-ui/server/serv.png',  description: 'Il s\'agit de serveurs dédiés hébergés dans un data center.', descriptionEn: 'Dedicated servers hosted in data centers.' },
   { name: 'Base de données',  nameEn: 'Database',       prefix: 'db',    icon: '/assets/tyrolium-ui/server/db.png',    description: 'Il s\'agit de serveurs conçus pour héberger exclusivement des bases de données.', descriptionEn: 'Servers designed exclusively for databases.' },
-  { name: 'VPN',             nameEn: 'VPN',             prefix: 'vpn',   icon: '/assets/tyrolium-ui/server/vpn.png',   description: 'Il s\'agit de serveurs utilisés pour les VPN, souvent pour notre sécurité.', descriptionEn: 'Servers used for VPNs, mostly for security.' },
+  { name: 'VPN',             nameEn: 'VPN',             prefix: 'vpn',   icon: '/assets/tyrolium-ui/server/vpn.png',   description: 'Il s\'agit de serveurs utilisés pour les VPN, souvent pour notre sécurité.', descriptionEn: 'Servers used for VPNs, mostly for our security.'},
 ];
 
 const PROJECT_LOGOS: Record<string, string> = {
@@ -51,7 +51,7 @@ const SERVERS: ServerEntry[] = [
   { name:'int804',      alias:'',              description:'Serveur de SolidServ V2',                               lieu:'Décines-Charpieu - France',     url:'int804.tyrolium.fr',   tag:'SolidServ',   group:'int',   date:'24/11/2023' },
   { name:'int805',      alias:'',              description:'Serveur de SolidServ V2.5',                             lieu:'Décines-Charpieu - France',     url:'int805.tyrolium.fr',   tag:'SolidServ',   group:'int',   date:'05/04/2026' },
   // ── VPS ──────────────────────────────────────────────────────────────
-  { name:'vps201',      alias:'',              description:'Serveur pour TyroServ S1 & S3 et les bots discord',     lieu:'Gravelines - France',           url:'vps201.tyrolium.fr',   tag:'TyroServ',    group:'vps',   date:'04/02/2020' },
+  { name:'vps201',      alias:'',              description:'Serveur pour TyroServ S1 & S3 et les bots Discord',     lieu:'Gravelines - France',           url:'vps201.tyrolium.fr',   tag:'TyroServ',    group:'vps',   date:'04/02/2020' },
   { name:'vps202',      alias:'',              description:'Serveur de Test',                                       lieu:'Gravelines - France',           url:'vps202.tyrolium.fr',   tag:'',            group:'vps',   date:'01/04/2021' },
   { name:'vps203',      alias:'',              description:'VPS utilisé pour la création de VPN',                   lieu:'Tokyo - Japon',                 url:'vps203.tyrolium.fr',   tag:'',            group:'vps',   date:'14/11/2021' },
   { name:'vps204',      alias:'tyroserv-vps',  description:'Serveur Officiel de la S2.5 de TyroServ',              lieu:'Strasbourg - France',           url:'vps204.tyrolium.fr',   tag:'TyroServ',    group:'vps',   date:'16/05/2023' },
@@ -81,7 +81,7 @@ const SERVERS: ServerEntry[] = [
   { name:'vps244',      alias:'',              description:'Serveur de client (10572)',                              lieu:'Strasbourg - France',           url:'vps244.tyrolium.fr',   tag:'',            group:'vps',   date:'04/03/2025' },
   { name:'vps245',      alias:'',              description:'Serveur de client (10573)',                              lieu:'Strasbourg - France',           url:'vps245.tyrolium.fr',   tag:'',            group:'vps',   date:'10/03/2025' },
   // ── VPS INT801 ────────────────────────────────────────────────────────
-  { name:'vps290',      alias:'',              description:'Serveur de redirection de paquet',                      lieu:'Décines-Charpieu - France',     url:'vps290.tyrolium.fr',   tag:'Tyrolium',    group:'vps',   date:'18/11/2023' },
+  { name:'vps290',      alias:'',              description:'Serveur de redirection de paquets',                      lieu:'Décines-Charpieu - France',     url:'vps290.tyrolium.fr',   tag:'Tyrolium',    group:'vps',   date:'18/11/2023' },
   // ── VPS SERV302 ───────────────────────────────────────────────────────
   { name:'vps501',      alias:'',              description:'Serveur de client (10001)',                                   lieu:'Strasbourg - France',           url:'vps501.tyrolium.fr',   tag:'',            group:'vps',   date:'22/04/2022' },
   { name:'vps502',      alias:'',              description:'Serveur de client (10002)',                                   lieu:'Strasbourg - France',           url:'vps502.tyrolium.fr',   tag:'',            group:'vps',   date:'22/04/2022' },
@@ -174,16 +174,16 @@ const SERVERS: ServerEntry[] = [
   { name:'vps589',      alias:'',              description:'Serveur de client (10089)',                                   lieu:'Strasbourg - France',           url:'vps589.tyrolium.fr',   tag:'',            group:'vps',   date:'22/04/2022' },
   // ── Cloud ─────────────────────────────────────────────────────────────
   { name:'cloud101',    alias:'',              description:'Serveur pour le site officiel de Tyrolium',             lieu:'Gravelines - France',           url:'cloud101.tyrolium.fr', tag:'Tyrolium',    group:'cloud', date:'18/01/2020' },
-  { name:'cloud102',    alias:'',              description:'Serveur pour les sites projet de Tyrolium (Gamenium, Useritium, etc..)', lieu:'Gravelines - France', url:'cloud102.tyrolium.fr', tag:'Tyrolium', group:'cloud', date:'06/06/2022' },
+  { name:'cloud102',    alias:'',              description:'Serveur pour les sites projets de Tyrolium (Gamenium, Useritium, etc.)', lieu:'Gravelines - France', url:'cloud102.tyrolium.fr', tag:'Tyrolium', group:'cloud', date:'06/06/2022' },
   // ── Proxy ─────────────────────────────────────────────────────────────
   { name:'proxy601',    alias:'',              description:'Proxy de redirection en cas de panne de serveur',       lieu:'Strasbourg - France',           url:'vps201.tyrolium.fr',   tag:'Tyrolium',    group:'proxy', date:'04/02/2020' },
-  { name:'proxy602',    alias:'',              description:'Proxy de redirection des vps interne',                  lieu:'Lyon - France',                 url:'proxy602.tyrolium.fr', tag:'Tyrolium',    group:'proxy', date:'26/11/2023' },
+  { name:'proxy602',    alias:'',              description:'Proxy de redirection des VPS internes',                  lieu:'Lyon - France',                 url:'proxy602.tyrolium.fr', tag:'Tyrolium',    group:'proxy', date:'26/11/2023' },
   // ── Serveurs dédiés ───────────────────────────────────────────────────
   { name:'serv301',     alias:'ionos-serv',    description:'Serveur de Test Interne à SolidServ',                   lieu:'Frankfurt am Main - Allemagne', url:'serv301.tyrolium.fr',  tag:'SolidServ',   group:'serv',  date:'27/04/2022' },
   { name:'serv302',     alias:'ovh-serv',      description:'Serveur de SolidServ V1',                               lieu:'Strasbourg - France',           url:'serv302.tyrolium.fr',  tag:'SolidServ',   group:'serv',  date:'22/04/2022' },
   // ── Bases de données ──────────────────────────────────────────────────
   { name:'database701', alias:'',              description:'Base de données liée à Tyrolium.fr et Sélémusium.xyz',  lieu:'Gravelines - France',           url:'cloud101.tyrolium.fr', tag:'Tyrolium',    group:'db',    date:'18/01/2020' },
-  { name:'database702', alias:'',              description:'Base de données liée au bot discord',                   lieu:'Gravelines - France',           url:'vps201.tyrolium.fr',   tag:'Tyrolium',    group:'db',    date:'04/02/2020' },
+  { name:'database702', alias:'',              description:'Base de données liée au bot Discord',                   lieu:'Gravelines - France',           url:'vps201.tyrolium.fr',   tag:'Tyrolium',    group:'db',    date:'04/02/2020' },
   { name:'database703', alias:'',              description:'Base de données liée à TyroServ (Log)',                 lieu:'Gravelines - France',           url:'vps204.tyrolium.fr',   tag:'TyroServ',    group:'db',    date:'16/05/2023' },
   { name:'database704', alias:'',              description:'Base de données liée à TyroServ (User)',                lieu:'Gravelines - France',           url:'vps204.tyrolium.fr',   tag:'TyroServ',    group:'db',    date:'16/05/2023' },
   { name:'database705', alias:'',              description:'Base de données liée à Useritium',                      lieu:'Gravelines - France',           url:'cloud102.tyrolium.fr', tag:'Tyrolium',    group:'db',    date:'06/06/2022' },

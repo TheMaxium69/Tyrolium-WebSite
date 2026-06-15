@@ -36,10 +36,10 @@ export class Mediakit {
     { name: 'TyroServ',    slug: 'tyroserv',    description: 'Serveur Minecraft',       descriptionEn: 'Minecraft Server',     logo: 'assets/tyrolium-ui/projects/TyroServ.png' },
     { name: 'SolidServ',   slug: 'solidserv',   description: 'Hébergement de serveur',  descriptionEn: 'Server hosting',       logo: 'assets/tyrolium-ui/projects/SolidServ.png' },
     { name: 'TyroCiel',    slug: 'tyrociel',    description: 'Studio de jeu-vidéo',     descriptionEn: 'Video game studio',    logo: 'assets/tyrolium-ui/projects/TyroCiel.png' },
-    { name: 'Influnias',   slug: 'influnias',   description: "Agence d'influenceur",    descriptionEn: 'Influencer agency',    logo: 'assets/tyrolium-ui/projects/Influnias.png' },
+    { name: 'Influnias',   slug: 'influnias',   description: "Agence d'influenceurs",   descriptionEn: 'Influencer agency',    logo: 'assets/tyrolium-ui/projects/Influnias.png' },
     {
       name: 'Vturias', slug: 'vturias',
-      description: 'Agence de Vtubeur',    descriptionEn: 'VTuber agency',
+      description: 'Agence de VTubers',     descriptionEn: 'VTuber agency',
       logo: 'assets/tyrolium-ui/projects/Vturias.png',
       parent: 'Influnias', parentEn: 'Influnias',
       gradient: 'linear-gradient(135deg,#f472b6 0%,#a78bfa 50%,#7dd3fc 100%)',
