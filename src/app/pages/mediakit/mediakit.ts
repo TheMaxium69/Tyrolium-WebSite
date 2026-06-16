@@ -26,6 +26,36 @@ export class Mediakit {
   readonly lang = inject(TyroUiLangService).lang;
 
   exportingCombo: Record<string, boolean> = {};
+  exportingSquare: Record<string, boolean> = {};
+
+  async exportSquareLogo(slug: string, logoUrl: string, filename: string) {
+    this.exportingSquare[slug] = true;
+    try {
+      const img = new Image();
+      await new Promise<void>((resolve, reject) => {
+        img.onload = () => resolve();
+        img.onerror = reject;
+        img.src = logoUrl;
+      });
+      const size = Math.max(img.naturalWidth, img.naturalHeight);
+      const canvas = document.createElement('canvas');
+      canvas.width = size;
+      canvas.height = size;
+      const ctx = canvas.getContext('2d')!;
+      ctx.drawImage(img, (size - img.naturalWidth) / 2, (size - img.naturalHeight) / 2);
+      canvas.toBlob(blob => {
+        if (!blob) return;
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = filename;
+        a.click();
+        URL.revokeObjectURL(url);
+      }, 'image/png');
+    } finally {
+      this.exportingSquare[slug] = false;
+    }
+  }
 
   logoBlack(logo: string): string {
     return logo.replace('.png', '-Black.png');
