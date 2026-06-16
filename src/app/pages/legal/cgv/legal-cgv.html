@@ -213,9 +213,20 @@
         @if (lang() === 'en') {
           Cosmetic items (skins, effects, pets, etc.) are purely aesthetic and confer no competitive advantage.
           They are linked to the purchasing player's account and are non-transferable.
+          <strong>All purchases are deterministic: no random mechanism (lootbox, random draw or similar) exists on TyroServ.</strong> Each item purchased corresponds exactly to the item described and displayed at the time of purchase.
         } @else {
           Les articles cosmétiques (skins, effets, pets, etc.) sont purement esthétiques et ne confèrent aucun avantage compétitif.
           Ils sont liés au compte du joueur acheteur et sont non transférables.
+          <strong>Tous les achats sont déterministes : aucun mécanisme aléatoire (lootbox, tirage au sort ou similaire) n'existe sur TyroServ.</strong> Chaque article acheté correspond exactement à l'article décrit et affiché au moment de l'achat.
+        }
+      </p>
+
+      <p><strong>{{ lang() === 'en' ? 'Purchases by minors' : 'Achats par des mineurs' }}</strong></p>
+      <p>
+        @if (lang() === 'en') {
+          Purchases made on TyroServ by a minor require prior authorisation from the holder of parental authority. By completing a purchase, the buyer declares either that they are of legal age or that they have obtained the required parental authorisation. In the event of a purchase made by a minor without parental authorisation, Tyrolium cannot be held liable; any refund request must be submitted by the legal representative to <a href="mailto:juridique@tyrolium.fr">juridique&#64;tyrolium.fr</a>.
+        } @else {
+          Les achats effectués sur TyroServ par un mineur nécessitent l'autorisation préalable du titulaire de l'autorité parentale. En finalisant un achat, l'acheteur déclare soit être majeur, soit avoir obtenu l'autorisation parentale requise. En cas d'achat réalisé par un mineur sans autorisation parentale, Tyrolium ne saurait être tenu responsable ; toute demande de remboursement devra être formulée par le représentant légal à <a href="mailto:juridique@tyrolium.fr">juridique&#64;tyrolium.fr</a>.
         }
       </p>
 
@@ -517,6 +528,36 @@
           Conformément à l'article 20 du RGPD et aux dispositions du DSA, les clients de NexiumiaCRM peuvent demander à tout moment un export de leurs données depuis les paramètres du compte ou en contactant <a href="mailto:juridique@tyrolium.fr">juridique&#64;tyrolium.fr</a>. Les données sont fournies dans un format structuré, couramment utilisé et lisible par machine (JSON ou CSV) dans un délai de 30 jours suivant la demande.
         }
       </p>
+
+      <p><strong>{{ lang() === 'en' ? 'Data processing agreement (GDPR Art. 28)' : 'Accord de sous-traitance des données (RGPD art. 28)' }}</strong></p>
+      <p>
+        @if (lang() === 'en') {
+          In using NexiumiaCRM, the Client acts as <strong>data controller</strong> and Tyrolium acts as <strong>data processor</strong> within the meaning of Article 28 of the GDPR. By accepting these GTS, the Client formally agrees to the following data processing terms, which constitute the Data Processing Agreement (DPA) required by law:
+        } @else {
+          En utilisant NexiumiaCRM, le Client agit en tant que <strong>responsable du traitement</strong> et Tyrolium agit en tant que <strong>sous-traitant</strong> au sens de l'article 28 du RGPD. En acceptant les présentes CGV, le Client accepte formellement les conditions de traitement des données suivantes, qui constituent l'accord de sous-traitance (DPA) requis par la loi :
+        }
+      </p>
+      <ul>
+        @if (lang() === 'en') {
+          <li>Tyrolium processes personal data solely on the documented instructions of the Client and for the sole purpose of providing the NexiumiaCRM service</li>
+          <li>Tyrolium ensures that persons authorised to process data are bound by an appropriate confidentiality obligation</li>
+          <li>Tyrolium implements appropriate technical and organisational security measures (Article 32 GDPR)</li>
+          <li>Tyrolium does not engage any external further sub-processor for data processing; the hosting infrastructure is operated directly by Tyrolium under its own <strong>SolidServ</strong> brand, with servers located in France</li>
+          <li>Tyrolium assists the Client in responding to requests for the exercise of data subjects' rights (access, rectification, erasure, etc.)</li>
+          <li>Tyrolium notifies the Client of any personal data breach within <strong>72 hours</strong> of becoming aware of it</li>
+          <li>Upon termination of the service, Tyrolium deletes all personal data within 30 days, unless legal retention obligations apply</li>
+          <li>Tyrolium makes available to the Client all information necessary to demonstrate compliance with Article 28 GDPR obligations</li>
+        } @else {
+          <li>Tyrolium traite les données personnelles uniquement sur instruction documentée du Client et aux seules fins de la fourniture du service NexiumiaCRM</li>
+          <li>Tyrolium s'assure que les personnes autorisées à traiter les données sont soumises à une obligation de confidentialité appropriée</li>
+          <li>Tyrolium met en œuvre des mesures de sécurité techniques et organisationnelles appropriées (art. 32 RGPD)</li>
+          <li>Tyrolium ne fait appel à aucun sous-traitant ultérieur externe pour le traitement des données ; l'infrastructure d'hébergement est assurée directement par Tyrolium via sa propre marque <strong>SolidServ</strong>, dont les serveurs sont localisés en France</li>
+          <li>Tyrolium aide le Client à donner suite aux demandes d'exercice des droits des personnes concernées (accès, rectification, effacement, etc.)</li>
+          <li>Tyrolium notifie au Client toute violation de données personnelles dans un délai de <strong>72 heures</strong> après en avoir pris connaissance</li>
+          <li>À l'issue du service, Tyrolium supprime toutes les données personnelles dans un délai de 30 jours, sauf obligation légale de conservation</li>
+          <li>Tyrolium met à la disposition du Client toutes les informations nécessaires pour démontrer le respect des obligations de l'article 28 RGPD</li>
+        }
+      </ul>
 
       <hr class="legal-divider">
 
