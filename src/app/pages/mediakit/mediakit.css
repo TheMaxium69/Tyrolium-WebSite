@@ -754,9 +754,10 @@
 
 /* ─── Logo Black ────────────────────────────────────────────────────────── */
 
-.mk-logo-preview--white {
-  background: #ffffff !important;
+.mk-logo-preview--fixed-light {
+  background: #f6f7fb !important;
 }
+
 
 /* ─── Combo export wrapper ──────────────────────────────────────────────── */
 
@@ -764,6 +765,10 @@
   padding: 20px 24px;
   border-radius: 10px;
   background: transparent;
+}
+
+.mk-logo-grid-spacer {
+  grid-column: 3;
 }
 
 .mk-dl-btn:disabled {

@@ -106,34 +106,6 @@
           </div>
         </div>
 
-        <!-- White -->
-        <div class="mk-logo-card mk-logo-card--white">
-          <div class="mk-logo-card-badge mk-logo-card-badge--light">White</div>
-          <div class="mk-logo-preview mk-logo-preview--gradient" [style.background]="brandGradient">
-            <img [src]="logoWhite(tyrolium.logo)" [alt]="tyrolium.name + ' logo white'">
-          </div>
-          <div class="mk-logo-card-footer">
-            <span class="mk-logo-card-name">{{ tyrolium.name }} · White</span>
-            <a class="mk-dl-btn" [href]="logoWhite(tyrolium.logo)" [download]="tyrolium.slug + '-logo-white.png'">
-              <i class="ri-download-2-line"></i> PNG
-            </a>
-          </div>
-        </div>
-
-        <!-- Black -->
-        <div class="mk-logo-card mk-logo-card--black">
-          <div class="mk-logo-card-badge">Black</div>
-          <div class="mk-logo-preview mk-logo-preview--white">
-            <img [src]="logoBlack(tyrolium.logo)" [alt]="tyrolium.name + ' logo black'">
-          </div>
-          <div class="mk-logo-card-footer">
-            <span class="mk-logo-card-name">{{ tyrolium.name }} · Black</span>
-            <a class="mk-dl-btn" [href]="logoBlack(tyrolium.logo)" [download]="tyrolium.slug + '-logo-black.png'">
-              <i class="ri-download-2-line"></i> PNG
-            </a>
-          </div>
-        </div>
-
         <!-- Typo · Light -->
         <div class="mk-logo-card mk-logo-card--combo-light">
           <div class="mk-logo-card-badge">Typo · Light</div>
@@ -168,6 +140,74 @@
             <span class="mk-logo-card-name">Typo · Dark</span>
             <button class="mk-dl-btn" (click)="exportCombo(tyrolium.slug, tyroliumComboDark, 'dark')" [disabled]="exportingCombo[tyrolium.slug + '-dark']">
               <i class="ri-download-2-line"></i> {{ exportingCombo[tyrolium.slug + '-dark'] ? '…' : 'PNG' }}
+            </button>
+          </div>
+        </div>
+
+        <!-- White -->
+        <div class="mk-logo-card mk-logo-card--white">
+          <div class="mk-logo-card-badge mk-logo-card-badge--light">White</div>
+          <div class="mk-logo-preview mk-logo-preview--gradient" [style.background]="brandGradient">
+            <img [src]="logoWhite(tyrolium.logo)" [alt]="tyrolium.name + ' logo white'">
+          </div>
+          <div class="mk-logo-card-footer">
+            <span class="mk-logo-card-name">{{ tyrolium.name }} · White</span>
+            <a class="mk-dl-btn" [href]="logoWhite(tyrolium.logo)" [download]="tyrolium.slug + '-logo-white.png'">
+              <i class="ri-download-2-line"></i> PNG
+            </a>
+          </div>
+        </div>
+
+        <!-- Typo · Light Logo White -->
+        <div class="mk-logo-card mk-logo-card--combo-dark">
+          <div class="mk-logo-card-badge mk-logo-card-badge--light">Typo · Light Logo White</div>
+          <div class="mk-logo-preview mk-logo-preview--combo-dark">
+            <div class="mk-navbar-combo mk-combo-export-wrap" #tyroliumComboLightWhite>
+              <img [src]="logoWhite(tyrolium.logo)" [alt]="tyrolium.name" class="mk-combo-logo">
+              <div class="mk-combo-text">
+                <span class="mk-combo-name mk-combo-name--dark">{{ tyrolium.name }}</span>
+              </div>
+            </div>
+          </div>
+          <div class="mk-logo-card-footer">
+            <span class="mk-logo-card-name">Typo · Light Logo White</span>
+            <button class="mk-dl-btn" (click)="exportCombo(tyrolium.slug, tyroliumComboLightWhite, 'light-white')" [disabled]="exportingCombo[tyrolium.slug + '-light-white']">
+              <i class="ri-download-2-line"></i> {{ exportingCombo[tyrolium.slug + '-light-white'] ? '…' : 'PNG' }}
+            </button>
+          </div>
+        </div>
+
+        <div class="mk-logo-grid-spacer"></div>
+
+        <!-- Black -->
+        <div class="mk-logo-card mk-logo-card--black">
+          <div class="mk-logo-card-badge">Black</div>
+          <div class="mk-logo-preview mk-logo-preview--fixed-light">
+            <img [src]="logoBlack(tyrolium.logo)" [alt]="tyrolium.name + ' logo black'">
+          </div>
+          <div class="mk-logo-card-footer">
+            <span class="mk-logo-card-name">{{ tyrolium.name }} · Black</span>
+            <a class="mk-dl-btn" [href]="logoBlack(tyrolium.logo)" [download]="tyrolium.slug + '-logo-black.png'">
+              <i class="ri-download-2-line"></i> PNG
+            </a>
+          </div>
+        </div>
+
+        <!-- Typo · Dark Logo Black -->
+        <div class="mk-logo-card mk-logo-card--combo-light">
+          <div class="mk-logo-card-badge">Typo · Dark Logo Black</div>
+          <div class="mk-logo-preview mk-logo-preview--combo-light">
+            <div class="mk-navbar-combo mk-combo-export-wrap" #tyroliumComboDarkBlack>
+              <img [src]="logoBlack(tyrolium.logo)" [alt]="tyrolium.name" class="mk-combo-logo">
+              <div class="mk-combo-text">
+                <span class="mk-combo-name mk-combo-name--light">{{ tyrolium.name }}</span>
+              </div>
+            </div>
+          </div>
+          <div class="mk-logo-card-footer">
+            <span class="mk-logo-card-name">Typo · Dark Logo Black</span>
+            <button class="mk-dl-btn" (click)="exportCombo(tyrolium.slug, tyroliumComboDarkBlack, 'dark-black')" [disabled]="exportingCombo[tyrolium.slug + '-dark-black']">
+              <i class="ri-download-2-line"></i> {{ exportingCombo[tyrolium.slug + '-dark-black'] ? '…' : 'PNG' }}
             </button>
           </div>
         </div>
@@ -221,34 +261,6 @@
             </div>
           </div>
 
-          <!-- White -->
-          <div class="mk-logo-card mk-logo-card--white">
-            <div class="mk-logo-card-badge mk-logo-card-badge--light">White</div>
-            <div class="mk-logo-preview mk-logo-preview--gradient" [style.background]="getGradient(project)">
-              <img [src]="logoWhite(project.logo)" [alt]="project.name + ' logo white'">
-            </div>
-            <div class="mk-logo-card-footer">
-              <span class="mk-logo-card-name">{{ project.name }} · White</span>
-              <a class="mk-dl-btn" [href]="logoWhite(project.logo)" [download]="project.slug + '-logo-white.png'">
-                <i class="ri-download-2-line"></i> PNG
-              </a>
-            </div>
-          </div>
-
-          <!-- Black -->
-          <div class="mk-logo-card mk-logo-card--black">
-            <div class="mk-logo-card-badge">Black</div>
-            <div class="mk-logo-preview mk-logo-preview--white">
-              <img [src]="logoBlack(project.logo)" [alt]="project.name + ' logo black'">
-            </div>
-            <div class="mk-logo-card-footer">
-              <span class="mk-logo-card-name">{{ project.name }} · Black</span>
-              <a class="mk-dl-btn" [href]="logoBlack(project.logo)" [download]="project.slug + '-logo-black.png'">
-                <i class="ri-download-2-line"></i> PNG
-              </a>
-            </div>
-          </div>
-
           <!-- Typo · Light -->
           <div class="mk-logo-card mk-logo-card--combo-light">
             <div class="mk-logo-card-badge">Typo · Light</div>
@@ -285,6 +297,76 @@
               <span class="mk-logo-card-name">Typo · Dark</span>
               <button class="mk-dl-btn" (click)="exportCombo(project.slug, projectComboDark, 'dark')" [disabled]="exportingCombo[project.slug + '-dark']">
                 <i class="ri-download-2-line"></i> {{ exportingCombo[project.slug + '-dark'] ? '…' : 'PNG' }}
+              </button>
+            </div>
+          </div>
+
+          <!-- White -->
+          <div class="mk-logo-card mk-logo-card--white">
+            <div class="mk-logo-card-badge mk-logo-card-badge--light">White</div>
+            <div class="mk-logo-preview mk-logo-preview--gradient" [style.background]="getGradient(project)">
+              <img [src]="logoWhite(project.logo)" [alt]="project.name + ' logo white'">
+            </div>
+            <div class="mk-logo-card-footer">
+              <span class="mk-logo-card-name">{{ project.name }} · White</span>
+              <a class="mk-dl-btn" [href]="logoWhite(project.logo)" [download]="project.slug + '-logo-white.png'">
+                <i class="ri-download-2-line"></i> PNG
+              </a>
+            </div>
+          </div>
+
+          <!-- Typo · Light Logo White -->
+          <div class="mk-logo-card mk-logo-card--combo-dark">
+            <div class="mk-logo-card-badge mk-logo-card-badge--light">Typo · Light Logo White</div>
+            <div class="mk-logo-preview mk-logo-preview--combo-dark">
+              <div class="mk-navbar-combo mk-combo-export-wrap" #projectComboLightWhite>
+                <img [src]="logoWhite(project.logo)" [alt]="project.name" class="mk-combo-logo">
+                <div class="mk-combo-text">
+                  <span class="mk-combo-group mk-combo-group--dark">Tyrolium</span>
+                  <span class="mk-combo-name mk-combo-name--dark">{{ project.name }}</span>
+                </div>
+              </div>
+            </div>
+            <div class="mk-logo-card-footer">
+              <span class="mk-logo-card-name">Typo · Light Logo White</span>
+              <button class="mk-dl-btn" (click)="exportCombo(project.slug, projectComboLightWhite, 'light-white')" [disabled]="exportingCombo[project.slug + '-light-white']">
+                <i class="ri-download-2-line"></i> {{ exportingCombo[project.slug + '-light-white'] ? '…' : 'PNG' }}
+              </button>
+            </div>
+          </div>
+
+          <div class="mk-logo-grid-spacer"></div>
+
+          <!-- Black -->
+          <div class="mk-logo-card mk-logo-card--black">
+            <div class="mk-logo-card-badge">Black</div>
+            <div class="mk-logo-preview mk-logo-preview--fixed-light">
+              <img [src]="logoBlack(project.logo)" [alt]="project.name + ' logo black'">
+            </div>
+            <div class="mk-logo-card-footer">
+              <span class="mk-logo-card-name">{{ project.name }} · Black</span>
+              <a class="mk-dl-btn" [href]="logoBlack(project.logo)" [download]="project.slug + '-logo-black.png'">
+                <i class="ri-download-2-line"></i> PNG
+              </a>
+            </div>
+          </div>
+
+          <!-- Typo · Dark Logo Black -->
+          <div class="mk-logo-card mk-logo-card--combo-light">
+            <div class="mk-logo-card-badge">Typo · Dark Logo Black</div>
+            <div class="mk-logo-preview mk-logo-preview--combo-light">
+              <div class="mk-navbar-combo mk-combo-export-wrap" #projectComboDarkBlack>
+                <img [src]="logoBlack(project.logo)" [alt]="project.name" class="mk-combo-logo">
+                <div class="mk-combo-text">
+                  <span class="mk-combo-group mk-combo-group--light">Tyrolium</span>
+                  <span class="mk-combo-name mk-combo-name--light">{{ project.name }}</span>
+                </div>
+              </div>
+            </div>
+            <div class="mk-logo-card-footer">
+              <span class="mk-logo-card-name">Typo · Dark Logo Black</span>
+              <button class="mk-dl-btn" (click)="exportCombo(project.slug, projectComboDarkBlack, 'dark-black')" [disabled]="exportingCombo[project.slug + '-dark-black']">
+                <i class="ri-download-2-line"></i> {{ exportingCombo[project.slug + '-dark-black'] ? '…' : 'PNG' }}
               </button>
             </div>
           </div>

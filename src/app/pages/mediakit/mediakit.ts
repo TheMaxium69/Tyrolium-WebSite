@@ -35,7 +35,7 @@ export class Mediakit {
     return logo.replace('.png', '-White.png');
   }
 
-  async exportCombo(slug: string, el: HTMLElement, variant: 'light' | 'dark') {
+  async exportCombo(slug: string, el: HTMLElement, variant: string) {
     const key = `${slug}-${variant}`;
     this.exportingCombo[key] = true;
     try {
