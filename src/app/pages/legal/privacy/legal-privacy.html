@@ -161,22 +161,24 @@
         }
       </p>
 
-      <table class="legal-table">
-        <thead>
-          <tr>
-            <td><strong>{{ lang() === 'en' ? 'Sub-processor' : 'Sous-traitant' }}</strong></td>
-            <td><strong>{{ lang() === 'en' ? 'Purpose' : 'Finalité' }}</strong></td>
-            <td><strong>{{ lang() === 'en' ? 'Location' : 'Localisation' }}</strong></td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Stripe Payments Europe, Ltd.</strong></td>
-            <td>{{ lang() === 'en' ? 'Secure payment processing' : 'Traitement sécurisé des paiements' }}</td>
-            <td>{{ lang() === 'en' ? 'Ireland (EU)' : 'Irlande (UE)' }}</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="legal-table-wrap">
+        <table class="legal-table">
+          <thead>
+            <tr>
+              <td><strong>{{ lang() === 'en' ? 'Sub-processor' : 'Sous-traitant' }}</strong></td>
+              <td><strong>{{ lang() === 'en' ? 'Purpose' : 'Finalité' }}</strong></td>
+              <td><strong>{{ lang() === 'en' ? 'Location' : 'Localisation' }}</strong></td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Stripe Payments Europe, Ltd.</strong></td>
+              <td>{{ lang() === 'en' ? 'Secure payment processing' : 'Traitement sécurisé des paiements' }}</td>
+              <td>{{ lang() === 'en' ? 'Ireland (EU)' : 'Irlande (UE)' }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       <p>
         @if (lang() === 'en') {
@@ -257,32 +259,34 @@
         }
       </p>
 
-      <table class="legal-table">
-        <thead>
-          <tr>
-            <td><strong>{{ lang() === 'en' ? 'Cookie' : 'Cookie' }}</strong></td>
-            <td><strong>{{ lang() === 'en' ? 'Purpose' : 'Finalité' }}</strong></td>
-            <td><strong>{{ lang() === 'en' ? 'Duration' : 'Durée' }}</strong></td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Session token</td>
-            <td>{{ lang() === 'en' ? 'User authentication (Useritium)' : 'Authentification utilisateur (Useritium)' }}</td>
-            <td>{{ lang() === 'en' ? 'Session / 30 days' : 'Session / 30 jours' }}</td>
-          </tr>
-          <tr>
-            <td>{{ lang() === 'en' ? 'Language preference' : 'Préférence de langue' }}</td>
-            <td>{{ lang() === 'en' ? 'Saves language choice (FR/EN)' : 'Mémorise le choix de langue (FR/EN)' }}</td>
-            <td>1 {{ lang() === 'en' ? 'year' : 'an' }}</td>
-          </tr>
-          <tr>
-            <td>{{ lang() === 'en' ? 'Theme preference' : 'Préférence de thème' }}</td>
-            <td>{{ lang() === 'en' ? 'Saves dark/light mode' : 'Mémorise le mode sombre/clair' }}</td>
-            <td>1 {{ lang() === 'en' ? 'year' : 'an' }}</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="legal-table-wrap">
+        <table class="legal-table">
+          <thead>
+            <tr>
+              <td><strong>{{ lang() === 'en' ? 'Cookie' : 'Cookie' }}</strong></td>
+              <td><strong>{{ lang() === 'en' ? 'Purpose' : 'Finalité' }}</strong></td>
+              <td><strong>{{ lang() === 'en' ? 'Duration' : 'Durée' }}</strong></td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Session token</td>
+              <td>{{ lang() === 'en' ? 'User authentication (Useritium)' : 'Authentification utilisateur (Useritium)' }}</td>
+              <td>{{ lang() === 'en' ? 'Session / 30 days' : 'Session / 30 jours' }}</td>
+            </tr>
+            <tr>
+              <td>{{ lang() === 'en' ? 'Language preference' : 'Préférence de langue' }}</td>
+              <td>{{ lang() === 'en' ? 'Saves language choice (FR/EN)' : 'Mémorise le choix de langue (FR/EN)' }}</td>
+              <td>1 {{ lang() === 'en' ? 'year' : 'an' }}</td>
+            </tr>
+            <tr>
+              <td>{{ lang() === 'en' ? 'Theme preference' : 'Préférence de thème' }}</td>
+              <td>{{ lang() === 'en' ? 'Saves dark/light mode' : 'Mémorise le mode sombre/clair' }}</td>
+              <td>1 {{ lang() === 'en' ? 'year' : 'an' }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       <hr class="legal-divider">
 

@@ -98,6 +98,16 @@
 
 /* ── Table ────────────────────────────────────────────────────────────────── */
 
+.legal-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0.75rem 0;
+}
+
+.legal-table-wrap .legal-table {
+  margin: 0;
+}
+
 .legal-table {
   width: 100%;
   border-collapse: collapse;
