@@ -79,6 +79,20 @@ export class Mediakit {
     }
   }
 
+  async exportGradient(slug: string, el: HTMLElement) {
+    const key = `${slug}-gradient`;
+    this.exportingCombo[key] = true;
+    try {
+      const dataUrl = await toPng(el, { pixelRatio: 3 });
+      const a = document.createElement('a');
+      a.href = dataUrl;
+      a.download = `${slug}-logo-gradient.png`;
+      a.click();
+    } finally {
+      this.exportingCombo[key] = false;
+    }
+  }
+
   readonly tyrolium: MkProject = {
     name: 'Tyrolium',
     slug: 'tyrolium',

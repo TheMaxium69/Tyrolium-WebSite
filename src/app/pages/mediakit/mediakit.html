@@ -179,14 +179,16 @@
 
         <!-- Gradient -->
         <div class="mk-logo-card mk-logo-card--white">
-          <div class="mk-logo-card-badge mk-logo-card-badge--light">Gradient</div>
-          <div class="mk-logo-preview mk-logo-preview--gradient" [style.background]="brandGradient">
-            <img [src]="logoWhite(tyrolium.logo)" [alt]="tyrolium.name + ' logo white'">
+          <div class="mk-logo-card-badge">Gradient</div>
+          <div class="mk-logo-preview mk-logo-preview--light">
+            <div class="mk-gradient-export-wrap" [style.background]="brandGradient" #tyroliumComboGradient>
+              <img [src]="logoWhite(tyrolium.logo)" [alt]="tyrolium.name" class="mk-gradient-export-logo">
+            </div>
           </div>
           <div class="mk-logo-card-footer">
-            <span class="mk-logo-card-name">{{ tyrolium.name }} Gradient</span>
-            <button class="mk-dl-btn" (click)="exportSquareLogo(tyrolium.slug + '-gradient', logoWhite(tyrolium.logo), tyrolium.slug + '-logo-white.png')" [disabled]="exportingSquare[tyrolium.slug + '-gradient']">
-              <i class="ri-download-2-line"></i> {{ exportingSquare[tyrolium.slug + '-gradient'] ? '…' : 'PNG' }}
+            <span class="mk-logo-card-name">{{ tyrolium.name }} + Gradient</span>
+            <button class="mk-dl-btn" (click)="exportGradient(tyrolium.slug, tyroliumComboGradient)" [disabled]="exportingCombo[tyrolium.slug + '-gradient']">
+              <i class="ri-download-2-line"></i> {{ exportingCombo[tyrolium.slug + '-gradient'] ? '…' : 'PNG' }}
             </button>
           </div>
         </div>
@@ -349,14 +351,16 @@
 
           <!-- Gradient -->
           <div class="mk-logo-card mk-logo-card--white">
-            <div class="mk-logo-card-badge mk-logo-card-badge--light">Gradient</div>
-            <div class="mk-logo-preview mk-logo-preview--gradient" [style.background]="getGradient(project)">
-              <img [src]="logoWhite(project.logo)" [alt]="project.name + ' logo white'">
+            <div class="mk-logo-card-badge">Gradient</div>
+            <div class="mk-logo-preview mk-logo-preview--light">
+              <div class="mk-gradient-export-wrap" [style.background]="getGradient(project)" #projectComboGradient>
+                <img [src]="logoWhite(project.logo)" [alt]="project.name" class="mk-gradient-export-logo">
+              </div>
             </div>
             <div class="mk-logo-card-footer">
-              <span class="mk-logo-card-name">{{ project.name }} Gradient</span>
-              <button class="mk-dl-btn" (click)="exportSquareLogo(project.slug + '-gradient', logoWhite(project.logo), project.slug + '-logo-white.png')" [disabled]="exportingSquare[project.slug + '-gradient']">
-                <i class="ri-download-2-line"></i> {{ exportingSquare[project.slug + '-gradient'] ? '…' : 'PNG' }}
+              <span class="mk-logo-card-name">{{ project.name }} + Gradient</span>
+              <button class="mk-dl-btn" (click)="exportGradient(project.slug, projectComboGradient)" [disabled]="exportingCombo[project.slug + '-gradient']">
+                <i class="ri-download-2-line"></i> {{ exportingCombo[project.slug + '-gradient'] ? '…' : 'PNG' }}
               </button>
             </div>
           </div>

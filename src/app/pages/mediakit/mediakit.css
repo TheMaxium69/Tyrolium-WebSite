@@ -443,6 +443,13 @@
   border-color: rgba(255, 255, 255, 0.25);
 }
 
+[data-theme="dark"] .mk-logo-card--classic .mk-logo-card-badge,
+[data-theme="dark"] .mk-logo-card--white .mk-logo-card-badge:not(.mk-logo-card-badge--light) {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
 /* ─── Preview areas ─────────────────────────────────────────────────────── */
 
 .mk-logo-preview {
@@ -642,7 +649,6 @@
   width: 40px;
   height: 40px;
   object-fit: contain;
-  filter: brightness(0) invert(1);
 }
 
 .mk-project-header-meta {
@@ -750,6 +756,24 @@
 
 .mk-footer-note a:hover {
   text-decoration: underline;
+}
+
+/* ─── Gradient export icon ──────────────────────────────────────────────── */
+
+.mk-gradient-export-wrap {
+  width: 120px;
+  height: 120px;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+.mk-gradient-export-logo {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
 }
 
 /* ─── Logo Black ────────────────────────────────────────────────────────── */
