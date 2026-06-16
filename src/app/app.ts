@@ -1,35 +1,16 @@
 import { Component, inject, computed } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ITyroUiNavbarPages, TyroUiFooter, TyroUiNavbar, TyroUiLangService } from 'tyrolium-ui';
+import { ITyroUiNavbarPages, TyroUiFooter, TyroUiNavbar, TyroUiLangService, TyroUiEasterEgg } from 'tyrolium-ui';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, TyroUiNavbar, TyroUiFooter],
+  imports: [RouterOutlet, TyroUiNavbar, TyroUiFooter, TyroUiEasterEgg],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
 export class App {
 
   private readonly langService = inject(TyroUiLangService);
-
-  /*
-  *
-  * GLOBAL VARIABLE
-  *
-  * */
-
-  public APP_ENV = 'DEV';
-  public currentUser: any = [];
-
-  public debugLoginUser() {
-    if (this.currentUser.length === 0) {
-      this.currentUser = [{id: 1, name: 'Maxime Tournier', email: 'maxime.tournier@tyrolium.fr', urlPictureProfil: 'https://avatars.githubusercontent.com/u/63310746?v=4'}];
-    } else {
-      this.currentUser = [];
-    }
-    console.log(this.currentUser);
-  }
-
 
   /*
   *
