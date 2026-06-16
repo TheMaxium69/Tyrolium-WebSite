@@ -4,7 +4,7 @@
 
       <p class="doc-label">{{ lang() === 'en' ? 'Legal notice' : 'Mentions légales' }}</p>
       <h1 class="doc-title">{{ lang() === 'en' ? 'Legal notice' : 'Mentions légales' }}</h1>
-      <span class="legal-update">{{ lang() === 'en' ? 'Last updated: 15 June 2026' : 'Dernière mise à jour : 15 Juin 2026' }}</span>
+      <span class="legal-update">{{ lang() === 'en' ? 'Last updated: 16 June 2026' : 'Dernière mise à jour : 16 Juin 2026' }}</span>
 
         <h2>{{ lang() === 'en' ? '1. Publisher' : '1. Éditeur du site' }}</h2>
         <p>
@@ -49,6 +49,13 @@
         <strong>{{ lang() === 'en' ? 'Management contact:' : 'Contact de la direction :' }}</strong>
         <a href="mailto:maxime.tournier@tyrolium.fr">maxime.tournier&#64;tyrolium.fr</a> -
         <a href="tel:+33611112669">+33 6 11 11 26 69</a>
+      </p>
+      <p>
+        @if (lang() === 'en') {
+          <strong>DSA single point of contact (Regulation (EU) 2022/2065):</strong> <a href="mailto:juridique@tyrolium.fr">juridique&#64;tyrolium.fr</a> - accessible to users and public authorities for any matter related to the Digital Services Act. This contact is distinct from the GDPR data protection contact and is intended specifically for DSA-related requests.
+        } @else {
+          <strong>Point de contact unique DSA (Règlement (UE) 2022/2065) :</strong> <a href="mailto:juridique@tyrolium.fr">juridique&#64;tyrolium.fr</a> - accessible aux utilisateurs et aux autorités publiques pour toute question relative au règlement sur les services numériques. Ce contact est distinct du contact de protection des données RGPD et est destiné exclusivement aux demandes liées au DSA.
+        }
       </p>
 
       <h2>{{ lang() === 'en' ? '4. Hosting' : '4. Hébergement' }}</h2>
@@ -219,6 +226,14 @@
           des tribunaux compétents de France.
         }
       </p>
+      <p>
+        @if (lang() === 'en') {
+          Tyrolium's digital services are also subject to Regulation (EU) 2022/2065 of the European Parliament and of the Council of 19 October 2022 on a Single Market for Digital Services (Digital Services Act - DSA). As a provider of digital services in the European Union, Tyrolium complies with the obligations applicable to intermediary services of its size category.
+        } @else {
+          Les services numériques de Tyrolium sont également soumis au Règlement (UE) 2022/2065 du Parlement européen et du Conseil du 19 octobre 2022 relatif à un marché unique des services numériques (Digital Services Act - DSA). En tant que fournisseur de services numériques dans l'Union européenne, Tyrolium se conforme aux obligations applicables aux services intermédiaires de sa catégorie de taille.
+        }
+      </p>
+
 
     </div>
   </div>

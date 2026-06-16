@@ -4,7 +4,7 @@
 
       <p class="doc-label">{{ lang() === 'en' ? 'TOS' : 'CGU' }}</p>
       <h1 class="doc-title">{{ lang() === 'en' ? 'Terms of Service' : 'Conditions Générales d\'Utilisation' }}</h1>
-      <span class="legal-update">{{ lang() === 'en' ? 'Last updated: 22 April 2026' : 'Dernière mise à jour : 22 Avril 2026' }}</span>
+      <span class="legal-update">{{ lang() === 'en' ? 'Last updated: 16 June 2026' : 'Dernière mise à jour : 16 Juin 2026' }}</span>
 
       <h2>{{ lang() === 'en' ? '1. Purpose' : '1. Objet' }}</h2>
       <p>
@@ -98,8 +98,49 @@
           des nouvelles conditions.
         }
       </p>
+      <p>
+        @if (lang() === 'en') {
+          In accordance with Article 14 of Regulation (EU) 2022/2065 (DSA), Tyrolium gives users a minimum notice period of <strong>15 days</strong> before any material amendment to these TOS comes into force, enabling users to terminate their use of the services before the amendments apply if they do not wish to accept them.
+        } @else {
+          Conformément à l'article 14 du Règlement (UE) 2022/2065 (DSA), Tyrolium accorde aux utilisateurs un préavis minimum de <strong>15 jours</strong> avant l'entrée en vigueur de toute modification substantielle des présentes CGU, permettant à l'utilisateur de mettre fin à son utilisation des services avant l'application des modifications s'il ne souhaite pas les accepter.
+        }
+      </p>
 
-      <h2>{{ lang() === 'en' ? '8. Contact' : '8. Contact' }}</h2>
+      <h2>{{ lang() === 'en' ? '8. Reporting illegal content (DSA)' : '8. Signalement de contenus illicites (DSA)' }}</h2>
+      <p>
+        @if (lang() === 'en') {
+          In accordance with Article 16 of Regulation (EU) 2022/2065 (DSA), any user may notify Tyrolium of the presence of content deemed illegal on any of its platforms. Reports must be sent to <a href="mailto:juridique@tyrolium.fr">juridique&#64;tyrolium.fr</a> (subject: "DSA - Illegal content report"), including: a description of the content, its precise location (URL or identifier), the legal basis for the illegality claim, and the reporter's contact details.
+        } @else {
+          Conformément à l'article 16 du Règlement (UE) 2022/2065 (DSA), tout utilisateur peut notifier à Tyrolium la présence d'un contenu présumé illicite sur l'une de ses plateformes. Les signalements doivent être adressés à <a href="mailto:juridique@tyrolium.fr">juridique&#64;tyrolium.fr</a> (objet : « DSA - Signalement de contenu illicite »), en précisant : la description du contenu, sa localisation précise (URL ou identifiant), le fondement juridique de l'illicéité alléguée, et les coordonnées du signalant.
+        }
+      </p>
+      <p>
+        @if (lang() === 'en') {
+          Tyrolium undertakes to process each notification diligently, to inform the reporter of the decision made and its reasons, and to provide information on the available internal appeals mechanisms.
+        } @else {
+          Tyrolium s'engage à traiter chaque notification avec diligence, à informer le signalant de la décision prise et de ses motifs, et à lui indiquer les voies de recours internes disponibles.
+        }
+      </p>
+
+      <h2>{{ lang() === 'en' ? '9. Internal complaints system (DSA)' : '9. Système interne de traitement des réclamations (DSA)' }}</h2>
+      <p>
+        @if (lang() === 'en') {
+          In accordance with Article 17 of the DSA, Tyrolium operates an internal complaints-handling system accessible to any user who considers that a decision concerning their content or access to services has been taken unfairly. Complaints must be sent to <a href="mailto:juridique@tyrolium.fr">juridique&#64;tyrolium.fr</a> within <strong>30 days</strong> of notification of the disputed decision. Tyrolium undertakes to review each complaint impartially and to provide a reasoned response within a reasonable time.
+        } @else {
+          Conformément à l'article 17 du DSA, Tyrolium dispose d'un système interne de traitement des réclamations accessible à tout utilisateur qui estime qu'une décision concernant son contenu ou son accès aux services a été prise de manière injustifiée. Les réclamations doivent être adressées à <a href="mailto:juridique@tyrolium.fr">juridique&#64;tyrolium.fr</a> dans un délai de <strong>30 jours</strong> à compter de la notification de la décision contestée. Tyrolium s'engage à examiner chaque réclamation de manière impartiale et à fournir une réponse motivée dans un délai raisonnable.
+        }
+      </p>
+
+      <h2>{{ lang() === 'en' ? '10. Out-of-court dispute resolution (DSA)' : '10. Règlement extrajudiciaire des litiges (DSA)' }}</h2>
+      <p>
+        @if (lang() === 'en') {
+          In accordance with Article 21 of the DSA, if the internal complaints procedure has not led to a satisfactory resolution, users may have recourse to a certified out-of-court dispute resolution body. In France, the competent supervisory authority is the <strong>ARCOM</strong> (Autorité de régulation de la communication audiovisuelle et numérique - <a href="https://www.arcom.fr" target="_blank" rel="noopener">arcom.fr</a>). This right of recourse is exercised free of charge for the user.
+        } @else {
+          Conformément à l'article 21 du DSA, si la procédure de réclamation interne n'a pas abouti à une résolution satisfaisante, les utilisateurs peuvent avoir recours à un organe certifié de règlement extrajudiciaire des litiges. En France, l'autorité de surveillance compétente est l'<strong>ARCOM</strong> (Autorité de régulation de la communication audiovisuelle et numérique - <a href="https://www.arcom.fr" target="_blank" rel="noopener">arcom.fr</a>). Ce droit de recours s'exerce gratuitement pour l'utilisateur.
+        }
+      </p>
+
+      <h2>{{ lang() === 'en' ? '11. Contact' : '11. Contact' }}</h2>
       <p>
         {{ lang() === 'en' ? 'For any questions regarding these TOS:' : 'Pour toute question relative aux présentes CGU :' }}
         <a href="mailto:juridique@tyrolium.fr">juridique&#64;tyrolium.fr</a>

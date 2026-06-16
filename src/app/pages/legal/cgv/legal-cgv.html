@@ -4,7 +4,7 @@
 
       <p class="doc-label">{{ lang() === 'en' ? 'Terms of Sale' : 'CGV' }}</p>
       <h1 class="doc-title">{{ lang() === 'en' ? 'General Terms of Sale' : 'Conditions Générales de Vente' }}</h1>
-      <span class="legal-update">{{ lang() === 'en' ? 'Last updated: 2 June 2026' : 'Dernière mise à jour : 2 Juin 2026' }}</span>
+      <span class="legal-update">{{ lang() === 'en' ? 'Last updated: 16 June 2026' : 'Dernière mise à jour : 16 Juin 2026' }}</span>
 
       <!-- SOMMAIRE -->
       <nav class="legal-toc">
@@ -16,6 +16,7 @@
           <li><a (click)="scrollTo('server-solidserv')">{{ lang() === 'en' ? 'Server - SolidServ' : 'Serveur SolidServ' }}</a></li>
           <li><a (click)="scrollTo('goodie-tyrolium-vturias')">{{ lang() === 'en' ? 'Goodies - Tyrolium & Vturias' : 'Goodies Tyrolium & Vturias' }}</a></li>
           <li><a (click)="scrollTo('abonnement-nexiumiacrm')">{{ lang() === 'en' ? 'Subscription - NexiumiaCRM' : 'Abonnement NexiumiaCRM' }}</a></li>
+          <li><a (click)="scrollTo('resolution-litiges')">{{ lang() === 'en' ? 'Dispute resolution & ADR' : 'Résolution des litiges et ADR' }}</a></li>
         </ol>
       </nav>
 
@@ -71,6 +72,13 @@
           Les présentes CGV sont soumises au droit français. Tout litige fera l'objet d'une tentative de résolution amiable ;
           à défaut, les tribunaux compétents de France seront saisis.
           Contact : <a href="mailto:juridique@tyrolium.fr">juridique&#64;tyrolium.fr</a>
+        }
+      </p>
+      <p>
+        @if (lang() === 'en') {
+          As a provider of digital services in the European Union, Tyrolium also complies with the obligations of Regulation (EU) 2022/2065 (Digital Services Act - DSA) applicable to intermediary services of its size category.
+        } @else {
+          En tant que fournisseur de services numériques dans l'Union européenne, Tyrolium se conforme également aux obligations du Règlement (UE) 2022/2065 (Digital Services Act - DSA) applicables aux services intermédiaires de sa catégorie de taille.
         }
       </p>
 
@@ -319,6 +327,15 @@
         }
       </p>
 
+      <p><strong>{{ lang() === 'en' ? 'Liability as hosting provider (DSA)' : 'Responsabilité en tant qu\'hébergeur (DSA)' }}</strong></p>
+      <p>
+        @if (lang() === 'en') {
+          As an infrastructure hosting provider within the meaning of Article 6 of Regulation (EU) 2022/2065 (DSA), SolidServ benefits from a conditional liability exemption: it cannot be held liable for the content stored by its clients, provided that it acts expeditiously upon receiving a notification of allegedly illegal content and promptly removes or disables access to it. Any person wishing to report illegal content hosted on SolidServ must send their notification to <a href="mailto:juridique@tyrolium.fr">juridique&#64;tyrolium.fr</a> (subject: "DSA - Illegal content hosted by SolidServ"), specifying the content, its precise location and the grounds for alleged illegality. SolidServ undertakes to process each notification diligently and to take all necessary measures.
+        } @else {
+          En tant que prestataire d'hébergement d'infrastructure au sens de l'article 6 du Règlement (UE) 2022/2065 (DSA), SolidServ bénéficie d'une exonération de responsabilité conditionnelle : il ne peut être tenu responsable des contenus stockés par ses clients, à condition d'agir promptement dès réception d'une notification relative à un contenu présumé illicite et d'en supprimer ou d'en désactiver l'accès sans délai. Toute personne souhaitant signaler un contenu illicite hébergé sur SolidServ doit adresser sa notification à <a href="mailto:juridique@tyrolium.fr">juridique&#64;tyrolium.fr</a> (objet : « DSA - Contenu illicite hébergé chez SolidServ »), en précisant le contenu, sa localisation précise et le fondement de l'illicéité alléguée. SolidServ s'engage à traiter chaque notification avec diligence et à prendre toutes les mesures nécessaires.
+        }
+      </p>
+
       <p><strong>{{ lang() === 'en' ? 'Termination' : 'Résiliation' }}</strong></p>
       <p>
         @if (lang() === 'en') {
@@ -489,6 +506,47 @@
           Les données saisies par le Client dans NexiumiaCRM restent la propriété exclusive du Client.
           Tyrolium traite ces données uniquement pour assurer la fourniture du service et dans le respect du RGPD.
           Les données sont hébergées sur des serveurs situés en France opérés par SolidServ.
+        }
+      </p>
+
+      <p><strong>{{ lang() === 'en' ? 'Data portability' : 'Portabilité des données' }}</strong></p>
+      <p>
+        @if (lang() === 'en') {
+          In accordance with Article 20 of the GDPR and the provisions of the DSA, NexiumiaCRM clients may request an export of their data at any time from the account settings or by contacting <a href="mailto:juridique@tyrolium.fr">juridique&#64;tyrolium.fr</a>. Data is provided in a structured, commonly used and machine-readable format (JSON or CSV) within 30 days of the request.
+        } @else {
+          Conformément à l'article 20 du RGPD et aux dispositions du DSA, les clients de NexiumiaCRM peuvent demander à tout moment un export de leurs données depuis les paramètres du compte ou en contactant <a href="mailto:juridique@tyrolium.fr">juridique&#64;tyrolium.fr</a>. Les données sont fournies dans un format structuré, couramment utilisé et lisible par machine (JSON ou CSV) dans un délai de 30 jours suivant la demande.
+        }
+      </p>
+
+      <hr class="legal-divider">
+
+      <!-- ─── 7. RÉSOLUTION DES LITIGES ───────────────────────── -->
+
+      <h2 id="resolution-litiges">{{ lang() === 'en' ? '7. Dispute resolution & ADR (DSA)' : '7. Résolution des litiges et ADR (DSA)' }}</h2>
+
+      <p>
+        @if (lang() === 'en') {
+          Any dispute relating to these GTS will first be submitted to an amicable resolution attempt by contacting <a href="mailto:juridique@tyrolium.fr">juridique&#64;tyrolium.fr</a>. If no amicable solution is reached within 30 days, the parties may refer the matter to the competent courts of France.
+        } @else {
+          Tout litige relatif aux présentes CGV fera d'abord l'objet d'une tentative de résolution amiable en contactant <a href="mailto:juridique@tyrolium.fr">juridique&#64;tyrolium.fr</a>. À défaut d'accord amiable dans un délai de 30 jours, les parties pourront saisir les tribunaux compétents de France.
+        }
+      </p>
+
+      <p><strong>{{ lang() === 'en' ? 'Online Dispute Resolution (ODR - European Commission)' : 'Règlement en ligne des litiges (ODR - Commission européenne)' }}</strong></p>
+      <p>
+        @if (lang() === 'en') {
+          In accordance with Article 14 of Regulation (EU) No 524/2013, Tyrolium informs consumers that the European Commission has established an Online Dispute Resolution (ODR) platform, accessible at <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>. This platform allows consumers to resolve disputes relating to online purchases without going to court.
+        } @else {
+          Conformément à l'article 14 du Règlement (UE) n° 524/2013, Tyrolium informe les consommateurs que la Commission européenne a mis en place une plateforme de Règlement en Ligne des Litiges (RLL), accessible à l'adresse <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>. Cette plateforme permet aux consommateurs de résoudre des litiges relatifs à des achats en ligne sans recourir aux tribunaux.
+        }
+      </p>
+
+      <p><strong>{{ lang() === 'en' ? 'Certified mediator (ADR)' : 'Médiateur certifié (ADR)' }}</strong></p>
+      <p>
+        @if (lang() === 'en') {
+          In accordance with Articles L612-1 et seq. of the French Consumer Code and the DSA, Tyrolium offers its consumer clients access to an Alternative Dispute Resolution (ADR) process. For B2C disputes relating to digital services, the competent supervisory authority under the DSA is the <strong>ARCOM</strong> (<a href="https://www.arcom.fr" target="_blank" rel="noopener">arcom.fr</a>). For commercial disputes, the parties undertake to attempt mediation before any court proceedings.
+        } @else {
+          Conformément aux articles L612-1 et suivants du Code de la consommation et au DSA, Tyrolium offre à ses clients consommateurs l'accès à un processus de Règlement Alternatif des Litiges (RAL). Pour les litiges B2C relatifs aux services numériques, l'autorité de surveillance compétente au titre du DSA est l'<strong>ARCOM</strong> (<a href="https://www.arcom.fr" target="_blank" rel="noopener">arcom.fr</a>). Pour les litiges commerciaux, les parties s'engagent à tenter une médiation avant toute action judiciaire.
         }
       </p>
 
