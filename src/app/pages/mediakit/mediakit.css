@@ -384,7 +384,7 @@
   gap: 1.25rem;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .mk-logo-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -502,6 +502,7 @@
   flex-shrink: 0;
 }
 
+
 .mk-combo-text {
   display: flex;
   flex-direction: column;
@@ -514,13 +515,11 @@
   font-size: 0.6rem;
   text-transform: uppercase;
   letter-spacing: 0.22em;
-  color: #6b7280;
   line-height: 1;
 }
 
-[data-theme="dark"] .mk-combo-group {
-  color: #9ca3af;
-}
+.mk-combo-group--light { color: #6b7280; }
+.mk-combo-group--dark  { color: #9ca3af; }
 
 .mk-combo-name {
   font-family: 'Inter', sans-serif;
@@ -528,12 +527,20 @@
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  color: #111827;
   line-height: 1;
 }
 
-[data-theme="dark"] .mk-combo-name {
-  color: #f3f4f6;
+.mk-combo-name--light { color: #111827; }
+.mk-combo-name--dark  { color: #f3f4f6; }
+
+/* ─── Combo preview backgrounds (forcés, indépendants du thème) ─────────── */
+
+.mk-logo-preview--combo-light {
+  background: #f6f7fb !important;
+}
+
+.mk-logo-preview--combo-dark {
+  background: #111827 !important;
 }
 
 /* ─── Logo card footer ──────────────────────────────────────────────────── */
@@ -576,6 +583,8 @@
   background: linear-gradient(135deg, #0000FF 0%, #0033CC 100%);
   padding: 0.4rem 0.9rem;
   border-radius: 99px;
+  border: none;
+  cursor: pointer;
   text-decoration: none;
   white-space: nowrap;
   transition: opacity 0.15s ease, transform 0.15s ease;
@@ -741,6 +750,26 @@
 
 .mk-footer-note a:hover {
   text-decoration: underline;
+}
+
+/* ─── Logo Black ────────────────────────────────────────────────────────── */
+
+.mk-logo-preview--white {
+  background: #ffffff !important;
+}
+
+/* ─── Combo export wrapper ──────────────────────────────────────────────── */
+
+.mk-combo-export-wrap {
+  padding: 20px 24px;
+  border-radius: 10px;
+  background: transparent;
+}
+
+.mk-dl-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
 }
 
 /* ─── Mobile ────────────────────────────────────────────────────────────── */

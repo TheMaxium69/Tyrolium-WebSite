@@ -1,6 +1,7 @@
 import { Component, ViewEncapsulation, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TyroUiLangService } from 'tyrolium-ui';
+import { toPng } from 'html-to-image';
 
 export interface MkProject {
   name: string;
@@ -23,6 +24,30 @@ export interface MkProject {
 export class Mediakit {
 
   readonly lang = inject(TyroUiLangService).lang;
+
+  exportingCombo: Record<string, boolean> = {};
+
+  logoBlack(logo: string): string {
+    return logo.replace('.png', '-Black.png');
+  }
+
+  logoWhite(logo: string): string {
+    return logo.replace('.png', '-White.png');
+  }
+
+  async exportCombo(slug: string, el: HTMLElement, variant: 'light' | 'dark') {
+    const key = `${slug}-${variant}`;
+    this.exportingCombo[key] = true;
+    try {
+      const dataUrl = await toPng(el, { pixelRatio: 3, style: { background: 'transparent' } });
+      const a = document.createElement('a');
+      a.href = dataUrl;
+      a.download = `${slug}-typo-${variant}.png`;
+      a.click();
+    } finally {
+      this.exportingCombo[key] = false;
+    }
+  }
 
   readonly tyrolium: MkProject = {
     name: 'Tyrolium',
