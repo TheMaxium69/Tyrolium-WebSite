@@ -771,6 +771,18 @@
   grid-column: 3;
 }
 
+@media (max-width: 1100px) {
+  .mk-logo-grid-spacer {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 560px) {
+  .mk-logo-grid-spacer {
+    display: none;
+  }
+}
+
 .mk-dl-btn:disabled {
   opacity: 0.55;
   cursor: not-allowed;

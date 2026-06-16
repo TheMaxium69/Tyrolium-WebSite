@@ -42,7 +42,7 @@ export class Mediakit {
       const dataUrl = await toPng(el, { pixelRatio: 3, style: { background: 'transparent' } });
       const a = document.createElement('a');
       a.href = dataUrl;
-      a.download = `${slug}-typo-${variant}.png`;
+      a.download = `${slug}-${variant}.png`;
       a.click();
     } finally {
       this.exportingCombo[key] = false;
