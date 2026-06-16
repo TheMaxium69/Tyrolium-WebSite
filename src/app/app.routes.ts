@@ -20,6 +20,7 @@ import { LegalLayout } from './pages/legal/legal-layout';
 import { LegalTerms } from './pages/legal/terms/legal-terms';
 import { LegalCgu } from './pages/legal/cgu/legal-cgu';
 import { LegalCgv } from './pages/legal/cgv/legal-cgv';
+import { LegalPrivacy } from './pages/legal/privacy/legal-privacy';
 import {TyroUiNotFound} from "tyrolium-ui";
 
 export const routes: Routes = [
@@ -51,9 +52,10 @@ export const routes: Routes = [
     component: LegalLayout,
     children: [
       { path: '',      redirectTo: 'terms', pathMatch: 'full' },
-      { path: 'terms', component: LegalTerms },
-      { path: 'cgu',   component: LegalCgu },
-      { path: 'cgv',   component: LegalCgv },
+      { path: 'terms',   component: LegalTerms },
+      { path: 'cgu',    component: LegalCgu },
+      { path: 'cgv',    component: LegalCgv },
+      { path: 'privacy', component: LegalPrivacy },
     ],
   },
   { path: '**', component: TyroUiNotFound }

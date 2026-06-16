@@ -1,0 +1,362 @@
+<section class="section">
+  <div class="container">
+    <div class="legal-doc">
+
+      <p class="doc-label">{{ lang() === 'en' ? 'Privacy' : 'Confidentialité' }}</p>
+      <h1 class="doc-title">{{ lang() === 'en' ? 'Privacy Policy' : 'Politique de confidentialité' }}</h1>
+      <span class="legal-update">{{ lang() === 'en' ? 'Last updated: 16 June 2026' : 'Dernière mise à jour : 16 Juin 2026' }}</span>
+
+      <!-- SOMMAIRE -->
+      <nav class="legal-toc">
+        <p class="legal-toc-title">{{ lang() === 'en' ? 'Table of contents' : 'Sommaire' }}</p>
+        <ol class="legal-toc-list">
+          <li><a (click)="scrollTo('responsable')">{{ lang() === 'en' ? 'Data controller' : 'Responsable du traitement' }}</a></li>
+          <li><a (click)="scrollTo('donnees')">{{ lang() === 'en' ? 'Data collected & purposes' : 'Données collectées et finalités' }}</a></li>
+          <li><a (click)="scrollTo('base-legale')">{{ lang() === 'en' ? 'Legal basis & retention' : 'Base légale et durées de conservation' }}</a></li>
+          <li><a (click)="scrollTo('sous-traitants')">{{ lang() === 'en' ? 'Sub-processors & recipients' : 'Sous-traitants et destinataires' }}</a></li>
+          <li><a (click)="scrollTo('transferts')">{{ lang() === 'en' ? 'International transfers' : 'Transferts internationaux' }}</a></li>
+          <li><a (click)="scrollTo('securite')">{{ lang() === 'en' ? 'Data security' : 'Sécurité des données' }}</a></li>
+          <li><a (click)="scrollTo('cookies')">{{ lang() === 'en' ? 'Cookies' : 'Cookies' }}</a></li>
+          <li><a (click)="scrollTo('droits')">{{ lang() === 'en' ? 'Your rights' : 'Vos droits' }}</a></li>
+          <li><a (click)="scrollTo('contact-cnil')">{{ lang() === 'en' ? 'Contact & CNIL' : 'Contact et CNIL' }}</a></li>
+        </ol>
+      </nav>
+
+      <hr class="legal-divider">
+
+      <!-- ─── 1. RESPONSABLE DU TRAITEMENT ────────────────────── -->
+
+      <h2 id="responsable">{{ lang() === 'en' ? '1. Data controller' : '1. Responsable du traitement' }}</h2>
+
+      <p>
+        @if (lang() === 'en') {
+          The data controller within the meaning of the General Data Protection Regulation (GDPR - Regulation (EU) 2016/679) and the French Data Protection Act (Loi Informatique et Libertés) is:
+        } @else {
+          Le responsable du traitement au sens du Règlement Général sur la Protection des Données (RGPD - Règlement (UE) 2016/679) et de la loi Informatique et Libertés est :
+        }
+      </p>
+      <p>
+        <strong>Tyrolium</strong><br>
+        {{ lang() === 'en' ? 'SIRET' : 'SIRET' }} : 91027536100012<br>
+        252 Avenue Jean Jaurès - 69150 Décines-Charpieu, France<br>
+        {{ lang() === 'en' ? 'Contact:' : 'Contact :' }} <a href="mailto:juridique@tyrolium.fr">juridique&#64;tyrolium.fr</a>
+      </p>
+      <p>
+        @if (lang() === 'en') {
+          Tyrolium has not designated a Data Protection Officer (DPO), as this is not required for a structure of its size and the nature of the data processed. All data protection requests are handled directly by <a href="mailto:juridique@tyrolium.fr">juridique&#64;tyrolium.fr</a>.
+        } @else {
+          Tyrolium n'a pas désigné de Délégué à la Protection des Données (DPO), cette désignation n'étant pas obligatoire pour une structure de sa taille et au regard de la nature des données traitées. Toute demande relative à la protection des données est traitée directement par <a href="mailto:juridique@tyrolium.fr">juridique&#64;tyrolium.fr</a>.
+        }
+      </p>
+
+      <hr class="legal-divider">
+
+      <!-- ─── 2. DONNÉES COLLECTÉES ET FINALITÉS ───────────────── -->
+
+      <h2 id="donnees">{{ lang() === 'en' ? '2. Data collected & purposes' : '2. Données collectées et finalités' }}</h2>
+
+      <p><strong>{{ lang() === 'en' ? 'User accounts (Useritium)' : 'Comptes utilisateurs (Useritium)' }}</strong></p>
+      <p>
+        @if (lang() === 'en') {
+          When creating an account on Useritium (our single sign-on system), we collect: email address, username, encrypted password, account creation date and last connection date. This data is used to manage authentication and provide access to Tyrolium services.
+        } @else {
+          Lors de la création d'un compte sur Useritium (notre système d'authentification unique), nous collectons : adresse e-mail, nom d'utilisateur, mot de passe chiffré, date de création du compte et date de dernière connexion. Ces données servent à gérer l'authentification et à fournir l'accès aux services Tyrolium.
+        }
+      </p>
+
+      <p><strong>{{ lang() === 'en' ? 'Purchases & subscriptions' : 'Achats et abonnements' }}</strong></p>
+      <p>
+        @if (lang() === 'en') {
+          For purchases made on TyroServ, SolidServ and NexiumiaCRM, we collect: email address, billing details (name, address), purchase history and invoices. Payment card data is processed exclusively by our payment provider Stripe - Tyrolium does not store any banking information.
+        } @else {
+          Pour les achats réalisés sur TyroServ, SolidServ et NexiumiaCRM, nous collectons : adresse e-mail, informations de facturation (nom, adresse), historique des achats et factures. Les données de carte bancaire sont traitées exclusivement par notre prestataire de paiement Stripe - Tyrolium ne stocke aucune information bancaire.
+        }
+      </p>
+
+      <p><strong>{{ lang() === 'en' ? 'Hosting data - SolidServ' : 'Données hébergées - SolidServ' }}</strong></p>
+      <p>
+        @if (lang() === 'en') {
+          SolidServ stores the data and files uploaded by clients to their servers (game servers, VPS, dedicated servers). This data remains the exclusive property of the client. Tyrolium acts as a data processor on behalf of the client for this data.
+        } @else {
+          SolidServ stocke les données et fichiers déposés par les clients sur leurs serveurs (serveurs de jeu, VPS, serveurs dédiés). Ces données restent la propriété exclusive du client. Tyrolium agit en tant que sous-traitant pour le compte du client concernant ces données.
+        }
+      </p>
+
+      <p><strong>{{ lang() === 'en' ? 'CRM data - NexiumiaCRM' : 'Données CRM - NexiumiaCRM' }}</strong></p>
+      <p>
+        @if (lang() === 'en') {
+          Data entered by the client into NexiumiaCRM (contacts, interactions, notes, etc.) is processed by Tyrolium strictly in the context of providing the service. This data belongs to the client. Tyrolium acts as a data processor.
+        } @else {
+          Les données saisies par le client dans NexiumiaCRM (contacts, interactions, notes, etc.) sont traitées par Tyrolium uniquement dans le cadre de la fourniture du service. Ces données appartiennent au client. Tyrolium agit en tant que sous-traitant.
+        }
+      </p>
+
+      <p><strong>{{ lang() === 'en' ? 'Contact forms' : 'Formulaires de contact' }}</strong></p>
+      <p>
+        @if (lang() === 'en') {
+          When you use our contact form, we collect: your name, email address and the content of your message. This data is used solely to respond to your request and is not used for any commercial prospecting.
+        } @else {
+          Lorsque vous utilisez notre formulaire de contact, nous collectons : votre nom, votre adresse e-mail et le contenu de votre message. Ces données servent uniquement à traiter votre demande et ne sont utilisées à aucune fin de prospection commerciale.
+        }
+      </p>
+
+      <p><strong>{{ lang() === 'en' ? 'Site browsing' : 'Navigation sur le site' }}</strong></p>
+      <p>
+        @if (lang() === 'en') {
+          Tyrolium does not use any web analytics tool (Google Analytics, Matomo, etc.). No browsing data is collected or shared with third parties for advertising or statistical purposes.
+        } @else {
+          Tyrolium n'utilise aucun outil d'analyse d'audience (Google Analytics, Matomo, etc.). Aucune donnée de navigation n'est collectée ni partagée avec des tiers à des fins publicitaires ou statistiques.
+        }
+      </p>
+
+      <hr class="legal-divider">
+
+      <!-- ─── 3. BASE LÉGALE ET DURÉES DE CONSERVATION ─────────── -->
+
+      <h2 id="base-legale">{{ lang() === 'en' ? '3. Legal basis & retention periods' : '3. Base légale et durées de conservation' }}</h2>
+
+      <p>
+        @if (lang() === 'en') {
+          All personal data processed by Tyrolium is based on <strong>the performance of a contract</strong> (Article 6.1.b GDPR): data is collected and processed because it is necessary for the provision of the requested service.
+        } @else {
+          L'ensemble des données personnelles traitées par Tyrolium repose sur <strong>l'exécution du contrat</strong> (article 6.1.b RGPD) : les données sont collectées et traitées car elles sont nécessaires à la fourniture du service demandé.
+        }
+      </p>
+      <p>
+        @if (lang() === 'en') {
+          Contact form data is processed on the basis of <strong>legitimate interest</strong> (Article 6.1.f GDPR): responding to a request submitted by the user.
+        } @else {
+          Les données issues des formulaires de contact sont traitées sur la base de <strong>l'intérêt légitime</strong> (article 6.1.f RGPD) : répondre à une demande soumise par l'utilisateur.
+        }
+      </p>
+
+      <p><strong>{{ lang() === 'en' ? 'Retention periods' : 'Durées de conservation' }}</strong></p>
+      <ul>
+        @if (lang() === 'en') {
+          <li><strong>User accounts:</strong> duration of the account, then 3 years after deletion (legitimate interest for potential disputes)</li>
+          <li><strong>Invoices & purchase history:</strong> 10 years from the date of issue (French Commercial Code, Article L123-22)</li>
+          <li><strong>SolidServ / NexiumiaCRM hosted data:</strong> duration of subscription, then 30 days before permanent deletion</li>
+          <li><strong>Contact form data:</strong> 3 years after last contact</li>
+          <li><strong>Server logs:</strong> 12 months (Legal obligation - LCEN Article 6)</li>
+        } @else {
+          <li><strong>Comptes utilisateurs :</strong> durée du compte, puis 3 ans après sa suppression (intérêt légitime pour d'éventuels litiges)</li>
+          <li><strong>Factures et historique d'achats :</strong> 10 ans à compter de la date d'émission (Code de commerce, art. L123-22)</li>
+          <li><strong>Données hébergées SolidServ / NexiumiaCRM :</strong> durée de l'abonnement, puis 30 jours avant suppression définitive</li>
+          <li><strong>Données formulaires de contact :</strong> 3 ans après le dernier contact</li>
+          <li><strong>Journaux serveur (logs) :</strong> 12 mois (obligation légale - LCEN art. 6)</li>
+        }
+      </ul>
+
+      <hr class="legal-divider">
+
+      <!-- ─── 4. SOUS-TRAITANTS ET DESTINATAIRES ────────────────── -->
+
+      <h2 id="sous-traitants">{{ lang() === 'en' ? '4. Sub-processors & recipients' : '4. Sous-traitants et destinataires' }}</h2>
+
+      <p>
+        @if (lang() === 'en') {
+          Tyrolium uses only one external sub-processor for data processing:
+        } @else {
+          Tyrolium fait appel à un seul sous-traitant externe pour le traitement des données :
+        }
+      </p>
+
+      <table class="legal-table">
+        <thead>
+          <tr>
+            <td><strong>{{ lang() === 'en' ? 'Sub-processor' : 'Sous-traitant' }}</strong></td>
+            <td><strong>{{ lang() === 'en' ? 'Purpose' : 'Finalité' }}</strong></td>
+            <td><strong>{{ lang() === 'en' ? 'Location' : 'Localisation' }}</strong></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Stripe Payments Europe, Ltd.</strong></td>
+            <td>{{ lang() === 'en' ? 'Secure payment processing' : 'Traitement sécurisé des paiements' }}</td>
+            <td>{{ lang() === 'en' ? 'Ireland (EU)' : 'Irlande (UE)' }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        @if (lang() === 'en') {
+          Stripe is certified PCI-DSS and GDPR-compliant. Tyrolium never has direct access to your payment card details. For more information on how Stripe handles your data, please consult their privacy policy at <a href="https://stripe.com/fr/privacy" target="_blank" rel="noopener">stripe.com/privacy</a>.
+        } @else {
+          Stripe est certifié PCI-DSS et conforme au RGPD. Tyrolium n'a jamais accès directement à vos coordonnées bancaires. Pour plus d'informations sur la façon dont Stripe traite vos données, consultez leur politique de confidentialité sur <a href="https://stripe.com/fr/privacy" target="_blank" rel="noopener">stripe.com/privacy</a>.
+        }
+      </p>
+      <p>
+        @if (lang() === 'en') {
+          Infrastructure hosting is provided by <strong>SolidServ</strong>, Tyrolium's own subsidiary. All servers are located in France. No other third party has access to personal data processed by Tyrolium.
+        } @else {
+          L'hébergement de l'infrastructure est assuré par <strong>SolidServ</strong>, filiale propre de Tyrolium. Tous les serveurs sont localisés en France. Aucun autre tiers n'a accès aux données personnelles traitées par Tyrolium.
+        }
+      </p>
+
+      <hr class="legal-divider">
+
+      <!-- ─── 5. TRANSFERTS INTERNATIONAUX ─────────────────────── -->
+
+      <h2 id="transferts">{{ lang() === 'en' ? '5. International transfers' : '5. Transferts internationaux' }}</h2>
+
+      <p>
+        @if (lang() === 'en') {
+          Tyrolium does not transfer personal data outside the European Union. All data is hosted on servers located in France (SolidServ). Our only external sub-processor, Stripe Payments Europe Ltd., is established in Ireland and therefore subject to the GDPR, with no transfer outside the EU for data collected by Tyrolium.
+        } @else {
+          Tyrolium ne transfère aucune donnée personnelle en dehors de l'Union européenne. Toutes les données sont hébergées sur des serveurs situés en France (SolidServ). Notre unique sous-traitant externe, Stripe Payments Europe Ltd., est établi en Irlande et donc soumis au RGPD, sans transfert hors UE pour les données collectées par Tyrolium.
+        }
+      </p>
+
+      <hr class="legal-divider">
+
+      <!-- ─── 6. SÉCURITÉ DES DONNÉES ──────────────────────────── -->
+
+      <h2 id="securite">{{ lang() === 'en' ? '6. Data security' : '6. Sécurité des données' }}</h2>
+
+      <p>
+        @if (lang() === 'en') {
+          Tyrolium implements appropriate technical and organisational measures to protect personal data against accidental or unlawful destruction, loss, alteration, disclosure or unauthorised access, in accordance with Article 32 of the GDPR. These measures include in particular:
+        } @else {
+          Tyrolium met en œuvre des mesures techniques et organisationnelles appropriées pour protéger les données personnelles contre la destruction, la perte, l'altération, la divulgation ou l'accès non autorisé, accidentels ou illicites, conformément à l'article 32 du RGPD. Ces mesures comprennent notamment :
+        }
+      </p>
+      <ul>
+        @if (lang() === 'en') {
+          <li>Encryption of passwords (hashing with bcrypt or equivalent)</li>
+          <li>HTTPS encryption for all data in transit</li>
+          <li>Restricted access to data on a need-to-know basis</li>
+          <li>Daily automatic backups retained for 7 days (SolidServ)</li>
+          <li>Servers located in secure data centres in France</li>
+        } @else {
+          <li>Chiffrement des mots de passe (hachage avec bcrypt ou équivalent)</li>
+          <li>Chiffrement HTTPS pour toutes les données en transit</li>
+          <li>Accès aux données restreint aux seules personnes habilitées</li>
+          <li>Sauvegardes automatiques quotidiennes conservées 7 jours (SolidServ)</li>
+          <li>Serveurs hébergés dans des datacentres sécurisés en France</li>
+        }
+      </ul>
+      <p>
+        @if (lang() === 'en') {
+          In the event of a personal data breach likely to result in a risk to the rights and freedoms of natural persons, Tyrolium undertakes to notify the CNIL within 72 hours in accordance with Article 33 of the GDPR, and to inform affected individuals without undue delay if the breach presents a high risk to them.
+        } @else {
+          En cas de violation de données personnelles susceptible d'entraîner un risque pour les droits et libertés des personnes physiques, Tyrolium s'engage à notifier la CNIL dans les 72 heures conformément à l'article 33 du RGPD, et à informer les personnes concernées sans délai excessif si la violation présente un risque élevé pour elles.
+        }
+      </p>
+
+      <hr class="legal-divider">
+
+      <!-- ─── 7. COOKIES ────────────────────────────────────────── -->
+
+      <h2 id="cookies">{{ lang() === 'en' ? '7. Cookies' : '7. Cookies' }}</h2>
+
+      <p>
+        @if (lang() === 'en') {
+          Tyrolium uses only <strong>strictly necessary cookies</strong>, i.e. those essential for the operation of the services. No advertising, tracking or third-party analytics cookies are deposited on your device. In accordance with Article 82 of the French Data Protection Act and the guidelines of the CNIL, strictly necessary cookies do not require prior consent.
+        } @else {
+          Tyrolium utilise uniquement des <strong>cookies strictement nécessaires</strong>, c'est-à-dire indispensables au fonctionnement des services. Aucun cookie publicitaire, de traçage ou d'analyse tiers n'est déposé sur votre appareil. Conformément à l'article 82 de la loi Informatique et Libertés et aux recommandations de la CNIL, les cookies strictement nécessaires ne requièrent pas de consentement préalable.
+        }
+      </p>
+
+      <table class="legal-table">
+        <thead>
+          <tr>
+            <td><strong>{{ lang() === 'en' ? 'Cookie' : 'Cookie' }}</strong></td>
+            <td><strong>{{ lang() === 'en' ? 'Purpose' : 'Finalité' }}</strong></td>
+            <td><strong>{{ lang() === 'en' ? 'Duration' : 'Durée' }}</strong></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Session token</td>
+            <td>{{ lang() === 'en' ? 'User authentication (Useritium)' : 'Authentification utilisateur (Useritium)' }}</td>
+            <td>{{ lang() === 'en' ? 'Session / 30 days' : 'Session / 30 jours' }}</td>
+          </tr>
+          <tr>
+            <td>{{ lang() === 'en' ? 'Language preference' : 'Préférence de langue' }}</td>
+            <td>{{ lang() === 'en' ? 'Saves language choice (FR/EN)' : 'Mémorise le choix de langue (FR/EN)' }}</td>
+            <td>1 {{ lang() === 'en' ? 'year' : 'an' }}</td>
+          </tr>
+          <tr>
+            <td>{{ lang() === 'en' ? 'Theme preference' : 'Préférence de thème' }}</td>
+            <td>{{ lang() === 'en' ? 'Saves dark/light mode' : 'Mémorise le mode sombre/clair' }}</td>
+            <td>1 {{ lang() === 'en' ? 'year' : 'an' }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="legal-divider">
+
+      <!-- ─── 8. VOS DROITS ─────────────────────────────────────── -->
+
+      <h2 id="droits">{{ lang() === 'en' ? '8. Your rights' : '8. Vos droits' }}</h2>
+
+      <p>
+        @if (lang() === 'en') {
+          In accordance with the GDPR (Articles 15 to 22) and the French Data Protection Act, you have the following rights over your personal data:
+        } @else {
+          Conformément au RGPD (articles 15 à 22) et à la loi Informatique et Libertés, vous disposez des droits suivants sur vos données personnelles :
+        }
+      </p>
+      <ul>
+        @if (lang() === 'en') {
+          <li><strong>Right of access (Art. 15):</strong> obtain a copy of the personal data we hold about you</li>
+          <li><strong>Right to rectification (Art. 16):</strong> correct inaccurate or incomplete data</li>
+          <li><strong>Right to erasure (Art. 17):</strong> request deletion of your data, subject to legal retention obligations</li>
+          <li><strong>Right to restriction (Art. 18):</strong> limit the processing of your data in certain situations</li>
+          <li><strong>Right to portability (Art. 20):</strong> receive your data in a structured, machine-readable format</li>
+          <li><strong>Right to object (Art. 21):</strong> object to processing based on legitimate interest</li>
+          <li><strong>Right to lodge a complaint (Art. 77):</strong> lodge a complaint with the CNIL if you consider that your rights have not been respected</li>
+        } @else {
+          <li><strong>Droit d'accès (art. 15) :</strong> obtenir une copie des données personnelles que nous détenons à votre sujet</li>
+          <li><strong>Droit de rectification (art. 16) :</strong> corriger des données inexactes ou incomplètes</li>
+          <li><strong>Droit à l'effacement (art. 17) :</strong> demander la suppression de vos données, sous réserve des obligations légales de conservation</li>
+          <li><strong>Droit à la limitation (art. 18) :</strong> limiter le traitement de vos données dans certaines situations</li>
+          <li><strong>Droit à la portabilité (art. 20) :</strong> recevoir vos données dans un format structuré et lisible par machine</li>
+          <li><strong>Droit d'opposition (art. 21) :</strong> vous opposer au traitement basé sur l'intérêt légitime</li>
+          <li><strong>Droit de réclamation (art. 77) :</strong> déposer une réclamation auprès de la CNIL si vous estimez que vos droits n'ont pas été respectés</li>
+        }
+      </ul>
+      <p>
+        @if (lang() === 'en') {
+          To exercise any of these rights, send your request to <a href="mailto:juridique@tyrolium.fr">juridique&#64;tyrolium.fr</a>. We undertake to respond within <strong>one month</strong> of receipt of the request (Article 12 GDPR). In the event of a complex or high-volume request, this period may be extended by two additional months, of which you will be informed.
+        } @else {
+          Pour exercer l'un de ces droits, adressez votre demande à <a href="mailto:juridique@tyrolium.fr">juridique&#64;tyrolium.fr</a>. Nous nous engageons à vous répondre dans un délai d'<strong>un mois</strong> à compter de la réception de la demande (article 12 RGPD). En cas de demande complexe ou en grand nombre, ce délai peut être prolongé de deux mois supplémentaires, dont vous serez informé.
+        }
+      </p>
+
+      <hr class="legal-divider">
+
+      <!-- ─── 9. CONTACT ET CNIL ─────────────────────────────────── -->
+
+      <h2 id="contact-cnil">{{ lang() === 'en' ? '9. Contact & CNIL' : '9. Contact et CNIL' }}</h2>
+
+      <p>
+        @if (lang() === 'en') {
+          For any question relating to this privacy policy or to exercise your rights, contact us at:
+          <a href="mailto:juridique@tyrolium.fr">juridique&#64;tyrolium.fr</a>
+        } @else {
+          Pour toute question relative à la présente politique de confidentialité ou pour exercer vos droits, contactez-nous à :
+          <a href="mailto:juridique@tyrolium.fr">juridique&#64;tyrolium.fr</a>
+        }
+      </p>
+      <p>
+        @if (lang() === 'en') {
+          If you consider, after contacting us, that your rights have not been respected, you have the right to lodge a complaint with the <strong>CNIL</strong> (Commission Nationale de l'Informatique et des Libertés), the French supervisory authority:
+        } @else {
+          Si vous estimez, après nous avoir contacté, que vos droits n'ont pas été respectés, vous avez le droit de déposer une réclamation auprès de la <strong>CNIL</strong> (Commission Nationale de l'Informatique et des Libertés), autorité de contrôle française :
+        }
+      </p>
+      <p>
+        <strong>CNIL</strong><br>
+        3 Place de Fontenoy - TSA 80715 - 75334 Paris Cedex 07<br>
+        {{ lang() === 'en' ? 'Website:' : 'Site web :' }} <a href="https://www.cnil.fr" target="_blank" rel="noopener">cnil.fr</a><br>
+        {{ lang() === 'en' ? 'Online complaint:' : 'Plainte en ligne :' }} <a href="https://www.cnil.fr/fr/plaintes" target="_blank" rel="noopener">cnil.fr/fr/plaintes</a>
+      </p>
+
+      <hr class="legal-divider">
+
+      <p><em>© 2017-{{ currentYear }} Tyrolium. {{ lang() === 'en' ? 'All rights reserved.' : 'Tous droits réservés.' }}</em></p>
+
+    </div>
+  </div>
+</section>

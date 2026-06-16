@@ -14,14 +14,16 @@ export class LegalLayout {
   public subnavPages = computed<ITyroUiNavbarPages[]>(() =>
     this.lang() === 'en'
       ? [
-          { label: 'Legal notice', link: '/legal/terms' },
-          { label: 'TOS',          link: '/legal/cgu' },
+          { label: 'Legal notice',  link: '/legal/terms' },
+          { label: 'TOS',           link: '/legal/cgu' },
           { label: 'Terms of Sale', link: '/legal/cgv' },
+          { label: 'Privacy',       link: '/legal/privacy' },
         ]
       : [
-          { label: 'Mentions légales', link: '/legal/terms' },
-          { label: 'CGU',              link: '/legal/cgu' },
-          { label: 'CGV',              link: '/legal/cgv' },
+          { label: 'Mentions légales',        link: '/legal/terms' },
+          { label: 'CGU',                     link: '/legal/cgu' },
+          { label: 'CGV',                     link: '/legal/cgv' },
+          { label: 'Confidentialité',         link: '/legal/privacy' },
         ]
   );
 }
