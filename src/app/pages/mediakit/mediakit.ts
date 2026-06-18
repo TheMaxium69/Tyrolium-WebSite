@@ -3,6 +3,14 @@ import { CommonModule } from '@angular/common';
 import { TyroUiLangService } from 'tyrolium-ui';
 import { toPng } from 'html-to-image';
 
+export interface MkWallpaper {
+  name: string;
+  nameEn: string;
+  slug: string;
+  thumb?: string;
+  versions: { label: string; url: string }[];
+}
+
 export interface MkProject {
   name: string;
   slug: string;
@@ -168,6 +176,32 @@ export class Mediakit {
       setTimeout(() => { if (this.copied === hex) this.copied = ''; }, 1800);
     });
   }
+
+  readonly wallpapers: MkWallpaper[] = [
+    {
+      name: 'Fond d\'écran Gradient',
+      nameEn: 'Gradient Wallpaper',
+      slug: 'wallpaper-gradient',
+      thumb: 'assets/wallpapers/gradient-1080p.png',
+      versions: [
+        { label: '4K', url: '#' },
+        { label: '1440p', url: '#' },
+        { label: '1080p', url: '#' },
+        { label: 'Mobile', url: '#' },
+      ],
+    },
+    {
+      name: 'Fond d\'écran Glass',
+      nameEn: 'Glass Wallpaper',
+      slug: 'wallpaper-glass',
+      thumb: 'assets/wallpapers/glass-1080p.png',
+      versions: [
+        { label: '4K', url: '#' },
+        { label: '1440p', url: '#' },
+        { label: '1080p', url: '#' },
+      ],
+    },
+  ];
 
   readonly brandGradient = 'linear-gradient(135deg, #0000FF 0%, #BF0000 100%)';
 
