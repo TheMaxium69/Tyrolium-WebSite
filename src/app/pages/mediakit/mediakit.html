@@ -243,6 +243,39 @@
       </div>
     </div>
 
+    <!-- ─── Fonds d'écran ───────────────────────────────────────────────────── -->
+    <div class="mk-block">
+      <div class="mk-block-label">
+        <i class="ri-image-2-line"></i>
+        {{ lang() === 'en' ? 'Wallpapers' : 'Fonds d\'écran' }}
+      </div>
+      <div class="mk-wallpaper-grid">
+        @for (wp of wallpapers; track wp.slug) {
+          <div class="mk-wallpaper-card">
+            <div class="mk-wallpaper-preview">
+              @if (wp.thumb) {
+                <img [src]="wp.thumb" [alt]="lang() === 'en' ? wp.nameEn : wp.name" class="mk-wallpaper-thumb">
+              } @else {
+                <div class="mk-wallpaper-placeholder" [style.background]="brandGradient">
+                  <i class="ri-image-2-line"></i>
+                </div>
+              }
+            </div>
+            <div class="mk-wallpaper-info">
+              <span class="mk-wallpaper-name">{{ lang() === 'en' ? wp.nameEn : wp.name }}</span>
+              <div class="mk-wallpaper-versions">
+                @for (v of wp.versions; track v.label) {
+                  <a class="mk-dl-btn mk-wallpaper-version-btn" [href]="v.url" [attr.download]="v.filename">
+                    <i class="ri-download-2-line"></i> {{ v.label }}
+                  </a>
+                }
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+
     <!-- ════════════════════════════════════════════════════════════════════════ -->
     <!-- ── FILIALES ─────────────────────────────────────────────────────────── -->
     <!-- ════════════════════════════════════════════════════════════════════════ -->
@@ -430,41 +463,6 @@
         </div>
       </div>
     }
-
-    <!-- ─── Fonds d'écran ───────────────────────────────────────────────────── -->
-    <div class="mk-divider"></div>
-
-    <div class="mk-block">
-      <div class="mk-block-label">
-        <i class="ri-image-2-line"></i>
-        {{ lang() === 'en' ? 'Wallpapers' : 'Fonds d\'écran' }}
-      </div>
-      <div class="mk-wallpaper-grid">
-        @for (wp of wallpapers; track wp.slug) {
-          <div class="mk-wallpaper-card">
-            <div class="mk-wallpaper-preview">
-              @if (wp.thumb) {
-                <img [src]="wp.thumb" [alt]="lang() === 'en' ? wp.nameEn : wp.name" class="mk-wallpaper-thumb">
-              } @else {
-                <div class="mk-wallpaper-placeholder" [style.background]="brandGradient">
-                  <i class="ri-image-2-line"></i>
-                </div>
-              }
-            </div>
-            <div class="mk-wallpaper-info">
-              <span class="mk-wallpaper-name">{{ lang() === 'en' ? wp.nameEn : wp.name }}</span>
-              <div class="mk-wallpaper-versions">
-                @for (v of wp.versions; track v.label) {
-                  <a class="mk-dl-btn mk-wallpaper-version-btn" [href]="v.url" [attr.download]="v.filename">
-                    <i class="ri-download-2-line"></i> {{ v.label }}
-                  </a>
-                }
-              </div>
-            </div>
-          </div>
-        }
-      </div>
-    </div>
 
     <!-- ─── Footer ─────────────────────────────────────────────────────────── -->
     <div class="mk-footer-note">
