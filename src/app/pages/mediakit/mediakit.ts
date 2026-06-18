@@ -114,9 +114,12 @@ export class Mediakit {
   };
 
   readonly projects: MkProject[] = [
-    { name: 'TyroServ',    slug: 'tyroserv',    description: 'Serveur Minecraft',       descriptionEn: 'Minecraft Server',     logo: 'assets/tyrolium-ui/projects/TyroServ.png' },
     { name: 'SolidServ',   slug: 'solidserv',   description: 'Hébergeur de serveurs',  descriptionEn: 'Server hosting',       logo: 'assets/tyrolium-ui/projects/SolidServ.png' },
+    { name: 'TyroServ',    slug: 'tyroserv',    description: 'Serveur Minecraft',       descriptionEn: 'Minecraft Server',     logo: 'assets/tyrolium-ui/projects/TyroServ.png' },
     { name: 'TyroCiel',    slug: 'tyrociel',    description: 'Studio de jeu-vidéo',     descriptionEn: 'Video game studio',    logo: 'assets/tyrolium-ui/projects/TyroCiel.png' },
+    { name: 'Gamenium',    slug: 'gamenium',    description: "Site d'actu jeu-vidéo",  descriptionEn: 'Gaming news site',     logo: 'assets/tyrolium-ui/projects/Gamenium.png' },
+    { name: 'Useritium',   slug: 'useritium',   description: 'Comptes utilisateurs',   descriptionEn: 'User accounts',        logo: 'assets/tyrolium-ui/projects/Useritium.png' },
+    { name: 'NexiumiaCRM', slug: 'nexiumiacrm', description: 'CRM',                    descriptionEn: 'CRM',                  logo: 'assets/tyrolium-ui/projects/NexiumiaCRM.png' },
     { name: 'Influnias',   slug: 'influnias',   description: "Agence d'influenceurs",   descriptionEn: 'Influencer agency',    logo: 'assets/tyrolium-ui/projects/Influnias.png' },
     {
       name: 'Vturias', slug: 'vturias',
@@ -125,9 +128,6 @@ export class Mediakit {
       parent: 'Influnias', parentEn: 'Influnias',
       gradient: 'linear-gradient(135deg,#f472b6 0%,#a78bfa 50%,#7dd3fc 100%)',
     },
-    { name: 'Gamenium',    slug: 'gamenium',    description: "Site d'actu jeu-vidéo",  descriptionEn: 'Gaming news site',     logo: 'assets/tyrolium-ui/projects/Gamenium.png' },
-    { name: 'NexiumiaCRM', slug: 'nexiumiacrm', description: 'CRM',                    descriptionEn: 'CRM',                  logo: 'assets/tyrolium-ui/projects/NexiumiaCRM.png' },
-    { name: 'Useritium',   slug: 'useritium',   description: 'Comptes utilisateurs',   descriptionEn: 'User accounts',        logo: 'assets/tyrolium-ui/projects/Useritium.png' },
   ];
 
   readonly gradientColors = [
