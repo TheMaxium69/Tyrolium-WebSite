@@ -226,6 +226,20 @@
           </div>
         </div>
 
+        <!-- Photo de profil -->
+        <div class="mk-logo-card mk-logo-card--classic">
+          <div class="mk-logo-card-badge">{{ lang() === 'en' ? 'Social media' : 'Réseaux sociaux' }}</div>
+          <div class="mk-logo-preview mk-logo-preview--light mk-logo-preview--pp">
+            <img [src]="logoPP(tyrolium.logo)" [alt]="tyrolium.name + ' photo de profil'" class="mk-pp-img">
+          </div>
+          <div class="mk-logo-card-footer">
+            <span class="mk-logo-card-name">{{ tyrolium.name }} {{ lang() === 'en' ? 'Social media' : 'Réseaux sociaux' }}</span>
+            <a class="mk-dl-btn" [href]="logoPP(tyrolium.logo)" [download]="tyrolium.slug + '-social.png'">
+              <i class="ri-download-2-line"></i> PNG
+            </a>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -399,6 +413,20 @@
             </div>
           </div>
 
+          <!-- Photo de profil -->
+          <div class="mk-logo-card mk-logo-card--classic">
+            <div class="mk-logo-card-badge">{{ lang() === 'en' ? 'Social media' : 'Réseaux sociaux' }}</div>
+            <div class="mk-logo-preview mk-logo-preview--light mk-logo-preview--pp">
+              <img [src]="logoPP(project.logo)" [alt]="project.name + ' photo de profil'" class="mk-pp-img">
+            </div>
+            <div class="mk-logo-card-footer">
+              <span class="mk-logo-card-name">{{ project.name }} {{ lang() === 'en' ? 'Social media' : 'Réseaux sociaux' }}</span>
+              <a class="mk-dl-btn" [href]="logoPP(project.logo)" [download]="project.slug + '-social.png'">
+                <i class="ri-download-2-line"></i> PNG
+              </a>
+            </div>
+          </div>
+
         </div>
       </div>
     }
@@ -427,7 +455,7 @@
               <span class="mk-wallpaper-name">{{ lang() === 'en' ? wp.nameEn : wp.name }}</span>
               <div class="mk-wallpaper-versions">
                 @for (v of wp.versions; track v.label) {
-                  <a class="mk-dl-btn mk-wallpaper-version-btn" [href]="v.url" target="_blank" rel="noopener">
+                  <a class="mk-dl-btn mk-wallpaper-version-btn" [href]="v.url" [attr.download]="v.filename">
                     <i class="ri-download-2-line"></i> {{ v.label }}
                   </a>
                 }

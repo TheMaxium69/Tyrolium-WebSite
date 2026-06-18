@@ -8,7 +8,7 @@ export interface MkWallpaper {
   nameEn: string;
   slug: string;
   thumb?: string;
-  versions: { label: string; url: string }[];
+  versions: { label: string; url: string; filename: string }[];
 }
 
 export interface MkProject {
@@ -71,6 +71,10 @@ export class Mediakit {
 
   logoWhite(logo: string): string {
     return logo.replace('.png', '-White.png');
+  }
+
+  logoPP(logo: string): string {
+    return logo.replace('/projects/', '/projects/social/').replace('.png', '-PP.png');
   }
 
   async exportCombo(slug: string, el: HTMLElement, variant: string) {
@@ -182,23 +186,23 @@ export class Mediakit {
       name: 'Fond d\'écran Gradient',
       nameEn: 'Gradient Wallpaper',
       slug: 'wallpaper-gradient',
-      thumb: 'assets/wallpapers/gradient-1080p.png',
+      thumb: 'assets/wallpapers/TyroliumWallpaper-Gradient-1080p.png',
       versions: [
-        { label: '4K', url: '#' },
-        { label: '1440p', url: '#' },
-        { label: '1080p', url: '#' },
-        { label: 'Mobile', url: '#' },
+        { label: '4K',     url: 'assets/wallpapers/TyroliumWallpaper-Gradient-4K.png',     filename: 'tyrolium-gradient-4k.png' },
+        { label: '1440p',  url: 'assets/wallpapers/TyroliumWallpaper-Gradient-1440p.png',  filename: 'tyrolium-gradient-1440p.png' },
+        { label: '1080p',  url: 'assets/wallpapers/TyroliumWallpaper-Gradient-1080p.png',  filename: 'tyrolium-gradient-1080p.png' },
+        { label: 'Mobile', url: 'assets/wallpapers/TyroliumWallpaper-Gradient-Mobile.png', filename: 'tyrolium-gradient-mobile.png' },
       ],
     },
     {
       name: 'Fond d\'écran Glass',
       nameEn: 'Glass Wallpaper',
       slug: 'wallpaper-glass',
-      thumb: 'assets/wallpapers/glass-1080p.png',
+      thumb: 'assets/wallpapers/TyroliumWallpaper-Glass-1080p.png',
       versions: [
-        { label: '4K', url: '#' },
-        { label: '1440p', url: '#' },
-        { label: '1080p', url: '#' },
+        { label: '4K',    url: 'assets/wallpapers/TyroliumWallpaper-Glass-4K.png',    filename: 'tyrolium-glass-4k.png' },
+        { label: '1440p', url: 'assets/wallpapers/TyroliumWallpaper-Glass-1440p.png', filename: 'tyrolium-glass-1440p.png' },
+        { label: '1080p', url: 'assets/wallpapers/TyroliumWallpaper-Glass-1080p.png', filename: 'tyrolium-glass-1080p.png' },
       ],
     },
   ];

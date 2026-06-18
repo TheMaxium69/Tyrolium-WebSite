@@ -783,6 +783,31 @@
   background: #f6f7fb !important;
 }
 
+/* ─── Profile picture ───────────────────────────────────────────────────── */
+
+.mk-logo-preview--pp {
+  background: #f6f7fb;
+}
+
+[data-theme="dark"] .mk-logo-preview--pp {
+  background: #161b27;
+}
+
+.mk-pp-img {
+  width: 110px !important;
+  height: 110px !important;
+  max-width: 110px !important;
+  max-height: 110px !important;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+}
+
+.mk-logo-card:hover .mk-pp-img {
+  transform: scale(1.05);
+}
+
 
 /* ─── Combo export wrapper ──────────────────────────────────────────────── */
 
