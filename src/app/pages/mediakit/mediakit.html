@@ -479,10 +479,16 @@
       </div>
       <div class="mk-anim-footer">
         <span class="mk-anim-meta">Syne · 700–800 · 10s cycle</span>
-        <button class="mk-dl-btn" (click)="downloadAnimation()" [disabled]="downloadingAnim">
-          <i class="ri-download-2-line"></i>
-          {{ downloadingAnim ? (lang() === 'en' ? 'Recording…' : 'Enregistrement…') : 'WEBM' }}
-        </button>
+        <div class="mk-anim-btns">
+          <button class="mk-dl-btn" (click)="downloadAnimation('light')" [disabled]="downloadingAnimLight">
+            <i class="ri-download-2-line"></i>
+            {{ downloadingAnimLight ? (lang() === 'en' ? 'Recording…' : 'Enregistrement…') : 'WEBM Light' }}
+          </button>
+          <button class="mk-dl-btn" (click)="downloadAnimation('dark')" [disabled]="downloadingAnimDark">
+            <i class="ri-download-2-line"></i>
+            {{ downloadingAnimDark ? (lang() === 'en' ? 'Recording…' : 'Enregistrement…') : 'WEBM Dark' }}
+          </button>
+        </div>
       </div>
 
       <!-- Useritium glitch -->

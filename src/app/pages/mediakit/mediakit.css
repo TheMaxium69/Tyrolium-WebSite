@@ -993,6 +993,13 @@
   flex-wrap: wrap;
 }
 
+.mk-anim-btns {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+
 .mk-anim-meta {
   font-family: 'Inter', monospace;
   font-size: 0.75rem;

@@ -35,20 +35,24 @@ export class Mediakit {
 
   exportingCombo: Record<string, boolean> = {};
   exportingSquare: Record<string, boolean> = {};
-  downloadingAnim = false;
+  downloadingAnimLight = false;
+  downloadingAnimDark = false;
   downloadingGlitch = false;
 
-
-  async downloadAnimation() {
-    if (this.downloadingAnim) return;
-    this.downloadingAnim = true;
+  async downloadAnimation(variant: 'light' | 'dark') {
+    if (variant === 'light' && this.downloadingAnimLight) return;
+    if (variant === 'dark' && this.downloadingAnimDark) return;
+    if (variant === 'light') this.downloadingAnimLight = true;
+    else this.downloadingAnimDark = true;
 
     await document.fonts.ready;
 
     const W = 1200, H = 300, FPS = 30;
     const cycleDuration = 8;
-    const totalDuration = 16; // 2 cycles
+    const totalDuration = 16;
     const totalFrames = totalDuration * FPS;
+    const bg = variant === 'dark' ? '#ffffff' : '#0a0a0f';
+    const textColor = variant === 'dark' ? '#111111' : '#ffffff';
 
     const canvas = document.createElement('canvas');
     canvas.width = W;
@@ -80,10 +84,11 @@ export class Mediakit {
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = 'tyrolium-animation.webm';
+      a.download = variant === 'dark' ? 'tyrolium-animation-dark.webm' : 'tyrolium-animation-light.webm';
       a.click();
       URL.revokeObjectURL(url);
-      this.downloadingAnim = false;
+      if (variant === 'light') this.downloadingAnimLight = false;
+      else this.downloadingAnimDark = false;
     };
 
     recorder.start();
@@ -94,7 +99,7 @@ export class Mediakit {
 
       const t = frame / FPS;
       ctx.clearRect(0, 0, W, H);
-      ctx.fillStyle = '#0a0a0f';
+      ctx.fillStyle = bg;
       ctx.fillRect(0, 0, W, H);
       ctx.textBaseline = 'alphabetic';
 
@@ -107,7 +112,7 @@ export class Mediakit {
       let x = (W - widths.reduce((a, b) => a + b, 0)) / 2;
       for (let i = 0; i < letters.length; i++) {
         ctx.font = `${weights[i]} ${fontSize}px Syne, sans-serif`;
-        ctx.fillStyle = '#ffffff';
+        ctx.fillStyle = textColor;
         ctx.fillText(letters[i], x, H / 2 + fontSize * 0.35);
         x += widths[i];
       }
@@ -158,7 +163,7 @@ export class Mediakit {
       const blob = new Blob(chunks, { type: mimeType });
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
-      a.href = url; a.download = 'useritium-glitch.webm'; a.click();
+      a.href = url; a.download = 'useritium-animation.webm'; a.click();
       URL.revokeObjectURL(url);
       this.downloadingGlitch = false;
     };
