@@ -54,19 +54,32 @@ app-header {
 .header-heading {
   margin: 0;
   color: #ffffff;
-
-  /*font-family: 'Syne', sans-serif;*/
-  /*font-weight: 800;*/
-  /*line-height: 1;*/
-  /*letter-spacing: -0.03em;*/
-
   font-family: 'Syne', sans-serif;
-  font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1;
-
-  /* Responsive : 3rem sur mobile → 10rem sur grand écran */
   font-size: clamp(3rem, 12vw, 10rem);
+}
+
+.hh-l {
+  display: inline-block;
+  animation: hh-wave 10s ease-in-out infinite;
+}
+
+.hh-l:nth-child(1) { animation-delay: 0s; }
+.hh-l:nth-child(2) { animation-delay: 0.12s; }
+.hh-l:nth-child(3) { animation-delay: 0.24s; }
+.hh-l:nth-child(4) { animation-delay: 0.36s; }
+.hh-l:nth-child(5) { animation-delay: 0.48s; }
+.hh-l:nth-child(6) { animation-delay: 0.60s; }
+.hh-l:nth-child(7) { animation-delay: 0.72s; }
+.hh-l:nth-child(8) { animation-delay: 0.84s; }
+
+@keyframes hh-wave {
+  0%   { font-weight: 700; }
+  15%  { font-weight: 400; }
+  30%  { font-weight: 800; }
+  45%  { font-weight: 700; }
+  100% { font-weight: 700; }
 }
 
 /* ── Sous-titre ──────────────────────────────────────────────────────────── */
