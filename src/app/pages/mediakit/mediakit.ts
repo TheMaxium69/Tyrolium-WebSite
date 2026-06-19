@@ -118,7 +118,7 @@ export class Mediakit implements AfterViewInit, OnDestroy {
       description: 'Holding technologique',
       descriptionEn: 'Tech holding',
       url: 'tyrolium.fr',
-      heroBg: 'linear-gradient(155deg, #120820 0%, #1c0808 100%)',
+      heroBg: 'linear-gradient(155deg, #00061a 0%, #002080 55%, #000d33 100%)',
       typo: 'Syne · Inter',
       bentoLayout: 0,
     },
