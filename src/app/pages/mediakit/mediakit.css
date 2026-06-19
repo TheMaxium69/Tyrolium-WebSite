@@ -1610,8 +1610,8 @@
 }
 
 .bento-proj-logo {
-  width: 160px;
-  height: 160px;
+  width: 320px;
+  height: 320px;
   object-fit: contain;
   position: relative;
   z-index: 1;
