@@ -71,19 +71,8 @@
 
     <!-- ── Couleurs ── -->
     <div class="mk-block">
-      <div class="mk-block-label"><i class="ri-palette-line"></i> {{ lang() === 'en' ? 'Gradient colours' : 'Couleurs du dégradé' }}</div>
-      <div class="mk-colors-row">
-        @for (c of gradientColors; track c.hex) {
-          <button class="mk-color-chip" [style.background]="c.hex" (click)="copyHex(c.hex)" [title]="'Copy ' + c.hex">
-            <span class="mk-color-chip-info">
-              <span class="mk-color-chip-hex">{{ copied === c.hex ? (lang() === 'en' ? 'Copied ✓' : 'Copié ✓') : c.hex }}</span>
-              <span class="mk-color-chip-name">{{ lang() === 'en' ? c.nameEn : c.name }}</span>
-              <span class="mk-color-chip-role">{{ lang() === 'en' ? c.roleEn : c.role }}</span>
-            </span>
-          </button>
-        }
-      </div>
-      <div class="mk-block-label" style="margin-top: 2rem"><i class="ri-brush-line"></i> {{ lang() === 'en' ? 'UI colours' : 'Couleurs UI' }}</div>
+      <!-- Couleurs UI -->
+      <div class="mk-block-label"><i class="ri-brush-line"></i> {{ lang() === 'en' ? 'UI colours' : 'Couleurs UI' }}</div>
       <div class="mk-colors-row">
         @for (c of uiColors; track c.hex) {
           <button class="mk-color-chip" [style.background]="c.hex" (click)="copyHex(c.hex)" [title]="'Copy ' + c.hex">
@@ -91,6 +80,37 @@
               <span class="mk-color-chip-hex">{{ copied === c.hex ? (lang() === 'en' ? 'Copied ✓' : 'Copié ✓') : c.hex }}</span>
               <span class="mk-color-chip-name">{{ lang() === 'en' ? c.nameEn : c.name }}</span>
               <span class="mk-color-chip-role">{{ c.role }}</span>
+            </span>
+          </button>
+        }
+      </div>
+
+      <!-- Dégradé -->
+      <div class="mk-block-label" style="margin-top: 2rem"><i class="ri-contrast-2-line"></i> {{ lang() === 'en' ? 'Gradient' : 'Dégradé' }}</div>
+      <div class="mk-colors-row">
+        <div class="mk-color-chip" style="background: linear-gradient(135deg, rgb(0, 0, 255) 0%, rgb(191, 0, 0) 100%);">
+          <span class="mk-color-chip-info">
+            <span class="mk-color-chip-name">{{ lang() === 'en' ? 'Web site' : 'Site web' }}</span>
+            <span class="mk-color-chip-role">{{ lang() === 'en' ? 'Gradient' : 'Dégradé' }}</span>
+          </span>
+        </div>
+        <div class="mk-color-chip" style="background-image: url('assets/tyrolium-ui/projects/other/gradient-logo.png'); background-size: cover; background-position: center;">
+          <span class="mk-color-chip-info">
+            <span class="mk-color-chip-name">Logo</span>
+            <span class="mk-color-chip-role">{{ lang() === 'en' ? 'Gradient' : 'Dégradé' }}</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- Couleurs du dégradé -->
+      <div class="mk-block-label" style="margin-top: 2rem"><i class="ri-palette-line"></i> {{ lang() === 'en' ? 'Gradient colours' : 'Couleurs du dégradé' }}</div>
+      <div class="mk-colors-row">
+        @for (c of gradientColors; track c.hex) {
+          <button class="mk-color-chip" [style.background]="c.hex" (click)="copyHex(c.hex)" [title]="'Copy ' + c.hex">
+            <span class="mk-color-chip-info">
+              <span class="mk-color-chip-hex">{{ copied === c.hex ? (lang() === 'en' ? 'Copied ✓' : 'Copié ✓') : c.hex }}</span>
+              <span class="mk-color-chip-name">{{ lang() === 'en' ? c.nameEn : c.name }}</span>
+              <span class="mk-color-chip-role">{{ lang() === 'en' ? c.roleEn : c.role }}</span>
             </span>
           </button>
         }
