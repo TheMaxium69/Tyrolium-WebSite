@@ -2,6 +2,7 @@ import { Component, ViewEncapsulation, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TyroUiLangService } from 'tyrolium-ui';
 import { toPng } from 'html-to-image';
+import { Bento } from './bento/bento';
 
 export interface MkWallpaper {
   name: string;
@@ -26,7 +27,7 @@ export interface MkProject {
   selector: 'app-mediakit',
   templateUrl: './mediakit.html',
   styleUrls: ['./mediakit.css'],
-  imports: [CommonModule],
+  imports: [CommonModule, Bento],
   encapsulation: ViewEncapsulation.None,
 })
 export class Mediakit {

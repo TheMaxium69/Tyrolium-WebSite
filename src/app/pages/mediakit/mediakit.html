@@ -37,6 +37,7 @@
       <button class="mk-qn-btn" (click)="scrollTo('mk-wallpapers')"><i class="ri-image-2-line"></i> {{ lang() === 'en' ? 'Wallpapers' : 'Fonds d\'écran' }}</button>
       <button class="mk-qn-btn" (click)="scrollTo('mk-filiales')"><i class="ri-building-line"></i> {{ lang() === 'en' ? 'Subsidiaries' : 'Filiales' }}</button>
       <button class="mk-qn-btn" (click)="scrollTo('mk-animations')"><i class="ri-movie-line"></i> {{ lang() === 'en' ? 'Animation' : 'Animation' }}</button>
+      <button class="mk-qn-btn" (click)="scrollTo('mk-bento')"><i class="ri-layout-grid-line"></i> Bento</button>
     </nav>
 
     <!-- ── Section header ── -->
@@ -519,6 +520,13 @@
           {{ downloadingGlitch ? (lang() === 'en' ? 'Recording…' : 'Enregistrement…') : 'WEBM' }}
         </button>
       </div>
+    </div>
+
+    <!-- ─── Bento ────────────────────────────────────────────────────────────── -->
+    <div class="mk-divider"></div>
+    <div class="mk-block" id="mk-bento">
+      <div class="mk-block-label"><i class="ri-layout-grid-line"></i> {{ lang() === 'en' ? 'Bento - Social media' : 'Bento - Réseaux sociaux' }}</div>
+      <app-bento></app-bento>
     </div>
 
     <!-- ─── Footer ─────────────────────────────────────────────────────────── -->
