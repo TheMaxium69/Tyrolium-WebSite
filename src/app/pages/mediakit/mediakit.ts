@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, ViewChild, ElementRef, AfterViewInit, OnDestroy, inject } from '@angular/core';
+import { Component, ViewEncapsulation, ViewChild, ViewChildren, QueryList, ElementRef, AfterViewInit, OnDestroy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TyroUiLangService } from 'tyrolium-ui';
 import { toPng } from 'html-to-image';
@@ -35,18 +35,39 @@ export class Mediakit implements AfterViewInit, OnDestroy {
 
   @ViewChild('bentoFrame') bentoFrameRef!: ElementRef<HTMLElement>;
   @ViewChild('bentoOuter') bentoOuterRef!: ElementRef<HTMLElement>;
+  @ViewChildren('projBentoFrame') projBentoFrames!: QueryList<ElementRef<HTMLElement>>;
+  @ViewChildren('projBentoOuter') projBentoOuters!: QueryList<ElementRef<HTMLElement>>;
 
   bentoExporting = false;
+  exportingProjectBento: Record<number, boolean> = {};
   private bentoRo?: ResizeObserver;
+  private projBentoRo?: ResizeObserver;
 
   ngAfterViewInit() {
     this.bentoRo = new ResizeObserver(() => this.updateBentoScale());
     this.bentoRo.observe(this.bentoOuterRef.nativeElement);
     this.updateBentoScale();
+
+    const outers = this.projBentoOuters.toArray();
+    const frames = this.projBentoFrames.toArray();
+    const applyScale = (el: HTMLElement, frameEl: HTMLElement) => {
+      frameEl.style.transform = `scale(${el.clientWidth / 1080})`;
+    };
+    this.projBentoRo = new ResizeObserver(entries => {
+      entries.forEach(e => {
+        const i = outers.findIndex(o => o.nativeElement === e.target);
+        if (i >= 0 && frames[i]) applyScale(e.target as HTMLElement, frames[i].nativeElement);
+      });
+    });
+    outers.forEach((o, i) => {
+      this.projBentoRo!.observe(o.nativeElement);
+      if (frames[i]) applyScale(o.nativeElement, frames[i].nativeElement);
+    });
   }
 
   ngOnDestroy() {
     this.bentoRo?.disconnect();
+    this.projBentoRo?.disconnect();
   }
 
   private updateBentoScale() {
@@ -70,6 +91,126 @@ export class Mediakit implements AfterViewInit, OnDestroy {
       this.bentoExporting = false;
     }
   }
+
+  async exportProjectBento(index: number) {
+    if (this.exportingProjectBento[index]) return;
+    this.exportingProjectBento[index] = true;
+    try {
+      const frame = this.projBentoFrames.toArray()[index];
+      const dataUrl = await toPng(frame.nativeElement, {
+        width: 1080, height: 1080, pixelRatio: 2,
+        style: { transform: 'none' },
+      });
+      const a = document.createElement('a');
+      a.href = dataUrl;
+      a.download = `${this.bentoProjects[index].slug}-bento.png`;
+      a.click();
+    } finally {
+      this.exportingProjectBento[index] = false;
+    }
+  }
+
+  readonly bentoProjects = [
+    {
+      name: 'Tyrolium',
+      slug: 'tyrolium',
+      logo: 'assets/tyrolium-ui/projects/Tyrolium.png',
+      description: 'Holding technologique',
+      descriptionEn: 'Tech holding',
+      url: 'tyrolium.fr',
+      heroBg: 'linear-gradient(155deg, #120820 0%, #1c0808 100%)',
+      typo: 'Syne · Inter',
+      bentoLayout: 0,
+    },
+    {
+      name: 'SolidServ',
+      slug: 'solidserv',
+      logo: 'assets/tyrolium-ui/projects/SolidServ.png',
+      description: 'Hébergeur de serveurs',
+      descriptionEn: 'Server hosting',
+      url: 'solidserv.fr',
+      heroBg: 'linear-gradient(155deg, #001a44 0%, #003388 50%, #0055cc 100%)',
+      typo: 'Syne · Inter',
+      bentoLayout: 1,
+    },
+    {
+      name: 'TyroCiel',
+      slug: 'tyrociel',
+      logo: 'assets/tyrolium-ui/projects/TyroCiel.png',
+      description: 'Studio de jeu-vidéo',
+      descriptionEn: 'Video game studio',
+      url: 'tyrociel.fr',
+      heroBg: 'linear-gradient(155deg, #0d0026 0%, #3300aa 50%, #6600ff 100%)',
+      typo: 'Syne · Inter',
+      bentoLayout: 2,
+    },
+    {
+      name: 'TyroServ',
+      slug: 'tyroserv',
+      logo: 'assets/tyrolium-ui/projects/TyroServ.png',
+      description: 'Serveur Minecraft',
+      descriptionEn: 'Minecraft server',
+      url: 'tyroserv.fr',
+      heroBg: 'linear-gradient(155deg, #001a0d 0%, #005522 50%, #00aa44 100%)',
+      typo: 'Syne · Inter',
+      bentoLayout: 3,
+    },
+    {
+      name: 'Gamenium',
+      slug: 'gamenium',
+      logo: 'assets/tyrolium-ui/projects/Gamenium.png',
+      description: "Site d'actu jeu‑vidéo",
+      descriptionEn: 'Gaming news site',
+      url: 'gamenium.fr',
+      heroBg: 'linear-gradient(155deg, #1a0800 0%, #882200 50%, #dd4400 100%)',
+      typo: 'Syne · Inter',
+      bentoLayout: 4,
+    },
+    {
+      name: 'Useritium',
+      slug: 'useritium',
+      logo: 'assets/tyrolium-ui/projects/Useritium.png',
+      description: 'Comptes utilisateurs',
+      descriptionEn: 'User accounts',
+      url: 'useritium.fr',
+      heroBg: 'linear-gradient(155deg, #06080f 0%, #0d1a3a 50%, #1a2a55 100%)',
+      typo: 'Syne · Inter',
+      bentoLayout: 5,
+    },
+    {
+      name: 'NexiumiaCRM',
+      slug: 'nexiumiacrm',
+      logo: 'assets/tyrolium-ui/projects/NexiumiaCRM.png',
+      description: 'CRM',
+      descriptionEn: 'CRM',
+      url: 'nexiumiacrm.fr',
+      heroBg: 'linear-gradient(155deg, #000820 0%, #001166 50%, #2200cc 100%)',
+      typo: 'Syne · Inter',
+      bentoLayout: 6,
+    },
+    {
+      name: 'Influnias',
+      slug: 'influnias',
+      logo: 'assets/tyrolium-ui/projects/Influnias.png',
+      description: "Agence d'influenceurs",
+      descriptionEn: 'Influencer agency',
+      url: 'influnias.fr',
+      heroBg: 'linear-gradient(155deg, #1a0011 0%, #880044 50%, #cc0077 100%)',
+      typo: 'Syne · Inter',
+      bentoLayout: 7,
+    },
+    {
+      name: 'Vturias',
+      slug: 'vturias',
+      logo: 'assets/tyrolium-ui/projects/Vturias.png',
+      description: 'Agence de VTubers',
+      descriptionEn: 'VTuber agency',
+      url: 'vturias.fr',
+      heroBg: 'linear-gradient(155deg, #2d0a3a 0%, #a742cc 50%, #f472b6 100%)',
+      typo: 'Syne · Inter',
+      bentoLayout: 8,
+    },
+  ];
 
   scrollTo(id: string) {
     const el = document.getElementById(id);

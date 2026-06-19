@@ -1540,3 +1540,310 @@
   font-size: 0.75rem;
   color: #9ca3af;
 }
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   PROJECT BENTOS
+══════════════════════════════════════════════════════════════════════════════ */
+
+.mk-bento-proj-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-top: 1.5rem;
+}
+
+.mk-bento-proj-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.mk-bento-proj-label {
+  font-family: 'Syne', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+[data-theme="dark"] .mk-bento-proj-label { color: #f1f5f9; }
+
+/* ── Frame ───────────────────────────────────────────────────────────────── */
+
+.bento-proj-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1080px;
+  height: 1080px;
+  transform-origin: top left;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 14px;
+  padding: 20px;
+  background: #080a10;
+  border-radius: 20px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* ── Card base ───────────────────────────────────────────────────────────── */
+
+.bento-proj-card {
+  border-radius: 22px;
+  background: #12141d;
+  border: 1px solid rgba(255,255,255,0.08);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 34px;
+  box-sizing: border-box;
+}
+
+/* ── Hero card ───────────────────────────────────────────────────────────── */
+
+.bento-proj-card--hero {
+  border: none;
+}
+
+.bento-proj-logo {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 6px 24px rgba(0,0,0,0.5));
+}
+
+.bento-proj-hero-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 54px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+/* ── White logo card ─────────────────────────────────────────────────────── */
+
+.bento-proj-card--white {
+  background: #06080f;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.bento-proj-logo-variant {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+}
+
+.bento-proj-variant-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  position: absolute;
+  bottom: 28px;
+  left: 34px;
+}
+
+/* ── Black logo card ─────────────────────────────────────────────────────── */
+
+.bento-proj-card--black {
+  background: #f5f5f5;
+  border-color: rgba(0,0,0,0.07);
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.bento-proj-card--black .bento-proj-variant-label {
+  color: rgba(0,0,0,0.3);
+}
+
+/* ── Typography card ─────────────────────────────────────────────────────── */
+
+.bento-proj-card--typo {
+  background: #f8f8f8;
+  border-color: rgba(0,0,0,0.07);
+  align-items: center;
+  justify-content: center;
+}
+
+.bento-proj-typo-combo {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.bento-proj-typo-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.bento-proj-typo-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bento-proj-typo-group {
+  font-family: 'Noto Sans Display', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: #6b7280;
+  line-height: 1;
+}
+
+.bento-proj-typo-name {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #111827;
+  line-height: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 180px;
+}
+
+/* ── Description card ────────────────────────────────────────────────────── */
+
+.bento-proj-card--desc {
+  background: #0e1018;
+  justify-content: flex-end;
+}
+
+.bento-proj-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.35;
+}
+
+/* ── URL card ────────────────────────────────────────────────────────────── */
+
+.bento-proj-card--url {
+  border: none;
+  background: linear-gradient(155deg, #0400d4 0%, #9900aa 50%, #cc0000 100%);
+  justify-content: space-between;
+}
+
+.bento-proj-url {
+  font-family: 'Syne', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  text-shadow: 0 0 24px rgba(255,255,255,0.35);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.bento-proj-url-icon {
+  font-size: 54px;
+  color: #ffffff;
+  align-self: flex-end;
+  filter: drop-shadow(0 0 18px rgba(255,255,255,0.5));
+  position: relative;
+  z-index: 1;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   9 LAYOUTS  (hero=2×2, 5 cards=1×1 each — fills 3×3 grid perfectly)
+   hero TL (layouts 0-2) / TR (3-4) / BL (5-6) / BR (7-8)
+══════════════════════════════════════════════════════════════════════════════ */
+
+/* Layout 0 — hero TL */
+.bento-layout-0 .bento-proj-card--hero  { grid-column: 1/3; grid-row: 1/3; }
+.bento-layout-0 .bento-proj-card--white { grid-column: 3;   grid-row: 1; }
+.bento-layout-0 .bento-proj-card--black { grid-column: 3;   grid-row: 2; }
+.bento-layout-0 .bento-proj-card--desc  { grid-column: 1;   grid-row: 3; }
+.bento-layout-0 .bento-proj-card--url   { grid-column: 2;   grid-row: 3; }
+.bento-layout-0 .bento-proj-card--typo  { grid-column: 3;   grid-row: 3; }
+
+/* Layout 1 — hero TL */
+.bento-layout-1 .bento-proj-card--hero  { grid-column: 1/3; grid-row: 1/3; }
+.bento-layout-1 .bento-proj-card--typo  { grid-column: 3;   grid-row: 1; }
+.bento-layout-1 .bento-proj-card--url   { grid-column: 3;   grid-row: 2; }
+.bento-layout-1 .bento-proj-card--white { grid-column: 1;   grid-row: 3; }
+.bento-layout-1 .bento-proj-card--black { grid-column: 2;   grid-row: 3; }
+.bento-layout-1 .bento-proj-card--desc  { grid-column: 3;   grid-row: 3; }
+
+/* Layout 2 — hero TL */
+.bento-layout-2 .bento-proj-card--hero  { grid-column: 1/3; grid-row: 1/3; }
+.bento-layout-2 .bento-proj-card--desc  { grid-column: 3;   grid-row: 1; }
+.bento-layout-2 .bento-proj-card--white { grid-column: 3;   grid-row: 2; }
+.bento-layout-2 .bento-proj-card--black { grid-column: 1;   grid-row: 3; }
+.bento-layout-2 .bento-proj-card--typo  { grid-column: 2;   grid-row: 3; }
+.bento-layout-2 .bento-proj-card--url   { grid-column: 3;   grid-row: 3; }
+
+/* Layout 3 — hero TR */
+.bento-layout-3 .bento-proj-card--white { grid-column: 1;   grid-row: 1; }
+.bento-layout-3 .bento-proj-card--black { grid-column: 1;   grid-row: 2; }
+.bento-layout-3 .bento-proj-card--hero  { grid-column: 2/4; grid-row: 1/3; }
+.bento-layout-3 .bento-proj-card--desc  { grid-column: 1;   grid-row: 3; }
+.bento-layout-3 .bento-proj-card--url   { grid-column: 2;   grid-row: 3; }
+.bento-layout-3 .bento-proj-card--typo  { grid-column: 3;   grid-row: 3; }
+
+/* Layout 4 — hero TR */
+.bento-layout-4 .bento-proj-card--typo  { grid-column: 1;   grid-row: 1; }
+.bento-layout-4 .bento-proj-card--desc  { grid-column: 1;   grid-row: 2; }
+.bento-layout-4 .bento-proj-card--hero  { grid-column: 2/4; grid-row: 1/3; }
+.bento-layout-4 .bento-proj-card--white { grid-column: 1;   grid-row: 3; }
+.bento-layout-4 .bento-proj-card--black { grid-column: 2;   grid-row: 3; }
+.bento-layout-4 .bento-proj-card--url   { grid-column: 3;   grid-row: 3; }
+
+/* Layout 5 — hero BL */
+.bento-layout-5 .bento-proj-card--white { grid-column: 1;   grid-row: 1; }
+.bento-layout-5 .bento-proj-card--black { grid-column: 2;   grid-row: 1; }
+.bento-layout-5 .bento-proj-card--typo  { grid-column: 3;   grid-row: 1; }
+.bento-layout-5 .bento-proj-card--hero  { grid-column: 1/3; grid-row: 2/4; }
+.bento-layout-5 .bento-proj-card--desc  { grid-column: 3;   grid-row: 2; }
+.bento-layout-5 .bento-proj-card--url   { grid-column: 3;   grid-row: 3; }
+
+/* Layout 6 — hero BL */
+.bento-layout-6 .bento-proj-card--typo  { grid-column: 1;   grid-row: 1; }
+.bento-layout-6 .bento-proj-card--white { grid-column: 2;   grid-row: 1; }
+.bento-layout-6 .bento-proj-card--desc  { grid-column: 3;   grid-row: 1; }
+.bento-layout-6 .bento-proj-card--hero  { grid-column: 1/3; grid-row: 2/4; }
+.bento-layout-6 .bento-proj-card--black { grid-column: 3;   grid-row: 2; }
+.bento-layout-6 .bento-proj-card--url   { grid-column: 3;   grid-row: 3; }
+
+/* Layout 7 — hero BR */
+.bento-layout-7 .bento-proj-card--white { grid-column: 1;   grid-row: 1; }
+.bento-layout-7 .bento-proj-card--black { grid-column: 2;   grid-row: 1; }
+.bento-layout-7 .bento-proj-card--url   { grid-column: 3;   grid-row: 1; }
+.bento-layout-7 .bento-proj-card--typo  { grid-column: 1;   grid-row: 2; }
+.bento-layout-7 .bento-proj-card--desc  { grid-column: 1;   grid-row: 3; }
+.bento-layout-7 .bento-proj-card--hero  { grid-column: 2/4; grid-row: 2/4; }
+
+/* Layout 8 — hero BR */
+.bento-layout-8 .bento-proj-card--typo  { grid-column: 1;   grid-row: 1; }
+.bento-layout-8 .bento-proj-card--url   { grid-column: 2;   grid-row: 1; }
+.bento-layout-8 .bento-proj-card--white { grid-column: 3;   grid-row: 1; }
+.bento-layout-8 .bento-proj-card--desc  { grid-column: 1;   grid-row: 2; }
+.bento-layout-8 .bento-proj-card--black { grid-column: 1;   grid-row: 3; }
+.bento-layout-8 .bento-proj-card--hero  { grid-column: 2/4; grid-row: 2/4; }

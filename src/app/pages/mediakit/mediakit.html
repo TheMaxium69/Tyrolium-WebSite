@@ -616,6 +616,67 @@
           </button>
         </div>
       </div>
+
+      <!-- ── Project bentos ── -->
+      <div class="mk-bento-proj-list">
+        @for (proj of bentoProjects; track proj.slug; let i = $index) {
+          <div class="mk-bento-proj-item">
+            <div class="mk-bento-proj-label">{{ proj.name }}</div>
+            <div class="bento-outer" #projBentoOuter>
+              <div class="bento-proj-frame bento-layout-{{ proj.bentoLayout }}" #projBentoFrame>
+
+                <!-- Hero -->
+                <div class="bento-proj-card bento-proj-card--hero" [style.background]="proj.heroBg">
+                  <img [src]="proj.logo" [alt]="proj.name" class="bento-proj-logo">
+                  <span class="bento-proj-hero-name">{{ proj.name }}</span>
+                </div>
+
+                <!-- Logo White -->
+                <div class="bento-proj-card bento-proj-card--white">
+                  <img [src]="logoWhite(proj.logo)" [alt]="proj.name + ' White'" class="bento-proj-logo-variant">
+                  <span class="bento-proj-variant-label">White</span>
+                </div>
+
+                <!-- Logo Black -->
+                <div class="bento-proj-card bento-proj-card--black">
+                  <img [src]="logoBlack(proj.logo)" [alt]="proj.name + ' Black'" class="bento-proj-logo-variant">
+                  <span class="bento-proj-variant-label">Black</span>
+                </div>
+
+                <!-- Typo -->
+                <div class="bento-proj-card bento-proj-card--typo">
+                  <div class="bento-proj-typo-combo">
+                    <img [src]="proj.logo" [alt]="proj.name" class="bento-proj-typo-logo">
+                    <div class="bento-proj-typo-text">
+                      <span class="bento-proj-typo-group">Tyrolium</span>
+                      <span class="bento-proj-typo-name">{{ proj.name }}</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Description -->
+                <div class="bento-proj-card bento-proj-card--desc">
+                  <span class="bento-proj-desc">{{ lang() === 'en' ? proj.descriptionEn : proj.description }}</span>
+                </div>
+
+                <!-- URL -->
+                <div class="bento-proj-card bento-proj-card--url">
+                  <span class="bento-proj-url">{{ proj.url }}</span>
+                  <i class="ri-arrow-right-up-line bento-proj-url-icon"></i>
+                </div>
+
+              </div>
+            </div>
+            <div class="bento-export-bar">
+              <span class="bento-export-hint">1080×1080 · PNG</span>
+              <button class="mk-dl-btn" (click)="exportProjectBento(i)" [disabled]="exportingProjectBento[i]">
+                <i class="ri-image-line"></i>
+                {{ exportingProjectBento[i] ? (lang() === 'en' ? 'Exporting…' : 'Export…') : 'PNG' }}
+              </button>
+            </div>
+          </div>
+        }
+      </div>
     </div>
 
     <!-- ─── Footer ─────────────────────────────────────────────────────────── -->
