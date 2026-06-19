@@ -35,6 +35,178 @@ export class Mediakit {
 
   exportingCombo: Record<string, boolean> = {};
   exportingSquare: Record<string, boolean> = {};
+  downloadingAnim = false;
+  downloadingGlitch = false;
+
+
+  async downloadAnimation() {
+    if (this.downloadingAnim) return;
+    this.downloadingAnim = true;
+
+    await document.fonts.ready;
+
+    const W = 1200, H = 300, FPS = 30;
+    const cycleDuration = 8;
+    const totalDuration = 16; // 2 cycles
+    const totalFrames = totalDuration * FPS;
+
+    const canvas = document.createElement('canvas');
+    canvas.width = W;
+    canvas.height = H;
+    const ctx = canvas.getContext('2d')!;
+
+    const letters = ['T', 'y', 'r', 'o', 'l', 'i', 'u', 'm'];
+    const delays = [0, 0.12, 0.24, 0.36, 0.48, 0.60, 0.72, 0.84];
+    const fontSize = 140;
+
+    const getWeight = (t: number, delay: number): number => {
+      const local = ((t - delay) % cycleDuration + cycleDuration) % cycleDuration;
+      const p = local / cycleDuration;
+      if (p < 0.15) return 700 + (400 - 700) * (p / 0.15);
+      if (p < 0.30) return 400 + (800 - 400) * ((p - 0.15) / 0.15);
+      if (p < 0.45) return 800 + (700 - 800) * ((p - 0.30) / 0.15);
+      return 700;
+    };
+
+    const mimeType = MediaRecorder.isTypeSupported('video/webm;codecs=vp9')
+      ? 'video/webm;codecs=vp9' : 'video/webm';
+    const stream = canvas.captureStream(FPS);
+    const recorder = new MediaRecorder(stream, { mimeType, videoBitsPerSecond: 8_000_000 });
+    const chunks: BlobPart[] = [];
+
+    recorder.ondataavailable = e => { if (e.data.size > 0) chunks.push(e.data); };
+    recorder.onstop = () => {
+      const blob = new Blob(chunks, { type: mimeType });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'tyrolium-animation.webm';
+      a.click();
+      URL.revokeObjectURL(url);
+      this.downloadingAnim = false;
+    };
+
+    recorder.start();
+
+    let frame = 0;
+    const drawNext = () => {
+      if (frame >= totalFrames) { recorder.stop(); return; }
+
+      const t = frame / FPS;
+      ctx.clearRect(0, 0, W, H);
+      ctx.fillStyle = '#0a0a0f';
+      ctx.fillRect(0, 0, W, H);
+      ctx.textBaseline = 'alphabetic';
+
+      const weights = letters.map((_, i) => Math.round(getWeight(t, delays[i])));
+      const widths = letters.map((l, i) => {
+        ctx.font = `${weights[i]} ${fontSize}px Syne, sans-serif`;
+        return ctx.measureText(l).width;
+      });
+
+      let x = (W - widths.reduce((a, b) => a + b, 0)) / 2;
+      for (let i = 0; i < letters.length; i++) {
+        ctx.font = `${weights[i]} ${fontSize}px Syne, sans-serif`;
+        ctx.fillStyle = '#ffffff';
+        ctx.fillText(letters[i], x, H / 2 + fontSize * 0.35);
+        x += widths[i];
+      }
+
+      frame++;
+      setTimeout(drawNext, 1000 / FPS);
+    };
+
+    drawNext();
+  }
+
+  async downloadGlitch() {
+    if (this.downloadingGlitch) return;
+    this.downloadingGlitch = true;
+    await document.fonts.ready;
+
+    const W = 1200, H = 300, FPS = 30;
+    const totalDuration = 12;
+    const totalFrames = totalDuration * FPS;
+    const glitchStart = 0.86 * 6; // 86% of 6s cycle = where glitch fires
+
+    const canvas = document.createElement('canvas');
+    canvas.width = W; canvas.height = H;
+    const ctx = canvas.getContext('2d')!;
+    const text = 'Useritium';
+    const fontSize = 120;
+
+    const drawGradientText = (x: number, y: number, offsetX = 0, alpha = 1, clipY1 = 0, clipY2 = H) => {
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.rect(0, clipY1, W, clipY2 - clipY1);
+      ctx.clip();
+      const grad = ctx.createLinearGradient(x + offsetX, 0, x + offsetX + ctx.measureText(text).width, 0);
+      grad.addColorStop(0, '#7aaeff');
+      grad.addColorStop(0.45, '#ffffff');
+      grad.addColorStop(1, '#ff8888');
+      ctx.fillStyle = grad;
+      ctx.fillText(text, x + offsetX, y);
+      ctx.restore();
+    };
+
+    const mimeType = MediaRecorder.isTypeSupported('video/webm;codecs=vp9') ? 'video/webm;codecs=vp9' : 'video/webm';
+    const stream = canvas.captureStream(FPS);
+    const recorder = new MediaRecorder(stream, { mimeType, videoBitsPerSecond: 8_000_000 });
+    const chunks: BlobPart[] = [];
+    recorder.ondataavailable = e => { if (e.data.size > 0) chunks.push(e.data); };
+    recorder.onstop = () => {
+      const blob = new Blob(chunks, { type: mimeType });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'useritium-glitch.webm'; a.click();
+      URL.revokeObjectURL(url);
+      this.downloadingGlitch = false;
+    };
+    recorder.start();
+
+    let frame = 0;
+    const drawNext = () => {
+      if (frame >= totalFrames) { recorder.stop(); return; }
+      const t = frame / FPS;
+      const cycle = t % 6;
+      const p = cycle / 6;
+
+      ctx.clearRect(0, 0, W, H);
+      ctx.fillStyle = '#06080f';
+      ctx.fillRect(0, 0, W, H);
+      ctx.font = `800 ${fontSize}px Syne, sans-serif`;
+      ctx.textBaseline = 'alphabetic';
+      const tw = ctx.measureText(text).width;
+      const tx = (W - tw) / 2;
+      const ty = H / 2 + fontSize * 0.35;
+
+      const inGlitch1 = p >= 0.90 && p < 0.99;
+      const inGlitch2 = p >= 0.86 && p < 0.95;
+
+      // base layer
+      drawGradientText(tx, ty);
+
+      // glitch layer 1 (clip top 20–40%)
+      if (inGlitch1) {
+        const ph = (p - 0.90) / 0.09;
+        const offsets = [-4, 4, -2, 2, 0];
+        const oi = Math.floor(ph * offsets.length);
+        drawGradientText(tx, ty, offsets[oi] ?? 0, 0.6, H * 0.20, H * 0.40);
+      }
+
+      // glitch layer 2 (clip 55–75%)
+      if (inGlitch2) {
+        const ph = (p - 0.86) / 0.09;
+        const offsets = [4, -4, 2, -2, 0];
+        const oi = Math.floor(ph * offsets.length);
+        drawGradientText(tx, ty, offsets[oi] ?? 0, 0.5, H * 0.55, H * 0.75);
+      }
+
+      frame++;
+      setTimeout(drawNext, 1000 / FPS);
+    };
+    drawNext();
+  }
 
   async exportSquareLogo(slug: string, logoUrl: string, filename: string) {
     this.exportingSquare[slug] = true;
@@ -81,7 +253,7 @@ export class Mediakit {
     const key = `${slug}-${variant}`;
     this.exportingCombo[key] = true;
     try {
-      const dataUrl = await toPng(el, { pixelRatio: 3, style: { background: 'transparent' } });
+      const dataUrl = await toPng(el, { pixelRatio: 8, style: { background: 'transparent' } });
       const a = document.createElement('a');
       a.href = dataUrl;
       a.download = `${slug}-${variant}.png`;
@@ -95,7 +267,7 @@ export class Mediakit {
     const key = `${slug}-${variant}`;
     this.exportingCombo[key] = true;
     try {
-      const dataUrl = await toPng(el, { pixelRatio: 3 });
+      const dataUrl = await toPng(el, { pixelRatio: 6 });
       const a = document.createElement('a');
       a.href = dataUrl;
       a.download = `${slug}-logo-${variant}.png`;

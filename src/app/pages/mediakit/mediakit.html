@@ -464,6 +464,46 @@
       </div>
     }
 
+    <!-- ─── Identité animée ──────────────────────────────────────────────────── -->
+    <div class="mk-divider"></div>
+    <div class="mk-block">
+      <div class="mk-block-label"><i class="ri-movie-line"></i> {{ lang() === 'en' ? 'Animated identity' : 'Identité animée' }}</div>
+
+      <!-- Tyrolium wave -->
+      <h3 class="mk-anim-subtitle">Tyrolium · {{ lang() === 'en' ? 'Weight wave' : 'Vague typographique' }}</h3>
+      <p class="mk-anim-desc">{{ lang() === 'en' ? 'Font-weight wave animation on the Tyrolium wordmark - Syne typeface, weight oscillation 700→400→800→700.' : 'Animation de vague sur le poids typographique du logotype Tyrolium - police Syne, oscillation 700→400→800→700.' }}</p>
+      <div class="mk-anim-preview">
+        <h2 class="mk-anim-title">
+          <span class="mk-anim-l">T</span><span class="mk-anim-l">y</span><span class="mk-anim-l">r</span><span class="mk-anim-l">o</span><span class="mk-anim-l">l</span><span class="mk-anim-l">i</span><span class="mk-anim-l">u</span><span class="mk-anim-l">m</span>
+        </h2>
+      </div>
+      <div class="mk-anim-footer">
+        <span class="mk-anim-meta">Syne · 700–800 · 10s cycle</span>
+        <button class="mk-dl-btn" (click)="downloadAnimation()" [disabled]="downloadingAnim">
+          <i class="ri-download-2-line"></i>
+          {{ downloadingAnim ? (lang() === 'en' ? 'Recording…' : 'Enregistrement…') : 'WEBM' }}
+        </button>
+      </div>
+
+      <!-- Useritium glitch -->
+      <h3 class="mk-anim-subtitle mk-anim-subtitle--gap">Useritium · {{ lang() === 'en' ? 'Chromatic glitch' : 'Glitch chromatique' }}</h3>
+      <p class="mk-anim-desc">{{ lang() === 'en' ? 'Chromatic glitch animation on the Useritium wordmark - Syne 800, gradient blue→white→red, subtle offset layers.' : 'Animation glitch chromatique du logotype Useritium - Syne 800, dégradé bleu→blanc→rouge, couches décalées subtiles.' }}</p>
+      <div class="mk-anim-preview mk-anim-preview--us">
+        <div class="mk-us-bg-blob mk-us-bg-blob--blue"></div>
+        <div class="mk-us-bg-blob mk-us-bg-blob--red"></div>
+        <h2 class="mk-anim-title mk-anim-title--glitch">
+          <span class="mk-us-glitch" data-text="Useritium">Useritium</span>
+        </h2>
+      </div>
+      <div class="mk-anim-footer">
+        <span class="mk-anim-meta">Syne · 800 · Glitch · 6s cycle</span>
+        <button class="mk-dl-btn" (click)="downloadGlitch()" [disabled]="downloadingGlitch">
+          <i class="ri-download-2-line"></i>
+          {{ downloadingGlitch ? (lang() === 'en' ? 'Recording…' : 'Enregistrement…') : 'WEBM' }}
+        </button>
+      </div>
+    </div>
+
     <!-- ─── Footer ─────────────────────────────────────────────────────────── -->
     <div class="mk-footer-note">
       <i class="ri-information-line"></i>
