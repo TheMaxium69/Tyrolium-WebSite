@@ -30,6 +30,15 @@
 <div class="mk-page-body">
   <div class="mk-container">
 
+    <!-- ── Nav rapide ── -->
+    <nav class="mk-quicknav">
+      <button class="mk-qn-btn" (click)="scrollTo('mk-typo')"><i class="ri-text"></i> {{ lang() === 'en' ? 'Typo & Colors' : 'Typo & Couleurs' }}</button>
+      <button class="mk-qn-btn" (click)="scrollTo('mk-logos')"><i class="ri-image-line"></i> Tyrolium</button>
+      <button class="mk-qn-btn" (click)="scrollTo('mk-wallpapers')"><i class="ri-image-2-line"></i> {{ lang() === 'en' ? 'Wallpapers' : 'Fonds d\'écran' }}</button>
+      <button class="mk-qn-btn" (click)="scrollTo('mk-filiales')"><i class="ri-building-line"></i> {{ lang() === 'en' ? 'Subsidiaries' : 'Filiales' }}</button>
+      <button class="mk-qn-btn" (click)="scrollTo('mk-animations')"><i class="ri-movie-line"></i> {{ lang() === 'en' ? 'Animation' : 'Animation' }}</button>
+    </nav>
+
     <!-- ── Section header ── -->
     <div class="mk-section-head">
       <div class="mk-section-pill">{{ lang() === 'en' ? 'General' : 'Général' }}</div>
@@ -42,7 +51,7 @@
     </div>
 
     <!-- ── Typographies ── -->
-    <div class="mk-block">
+    <div class="mk-block" id="mk-typo">
       <div class="mk-block-label"><i class="ri-text"></i> {{ lang() === 'en' ? 'Typography' : 'Typographies' }}</div>
       <div class="mk-typo-grid">
         @for (f of fonts; track f.name) {
@@ -88,7 +97,7 @@
     </div>
 
     <!-- ── Tyrolium logos ── -->
-    <div class="mk-block">
+    <div class="mk-block" id="mk-logos">
       <div class="mk-block-label"><i class="ri-image-line"></i> {{ lang() === 'en' ? 'Tyrolium Logos' : 'Logos Tyrolium' }}</div>
       <div class="mk-logo-grid">
 
@@ -244,7 +253,7 @@
     </div>
 
     <!-- ─── Fonds d'écran ───────────────────────────────────────────────────── -->
-    <div class="mk-block">
+    <div class="mk-block" id="mk-wallpapers">
       <div class="mk-block-label">
         <i class="ri-image-2-line"></i>
         {{ lang() === 'en' ? 'Wallpapers' : 'Fonds d\'écran' }}
@@ -279,6 +288,8 @@
     <!-- ════════════════════════════════════════════════════════════════════════ -->
     <!-- ── FILIALES ─────────────────────────────────────────────────────────── -->
     <!-- ════════════════════════════════════════════════════════════════════════ -->
+
+    <div id="mk-filiales"></div>
 
     @for (project of projects; track project.slug) {
       <div class="mk-divider"></div>
@@ -466,7 +477,7 @@
 
     <!-- ─── Identité animée ──────────────────────────────────────────────────── -->
     <div class="mk-divider"></div>
-    <div class="mk-block">
+    <div class="mk-block" id="mk-animations">
       <div class="mk-block-label"><i class="ri-movie-line"></i> {{ lang() === 'en' ? 'Animated identity' : 'Identité animée' }}</div>
 
       <!-- Tyrolium wave -->

@@ -33,6 +33,14 @@ export class Mediakit {
 
   readonly lang = inject(TyroUiLangService).lang;
 
+  scrollTo(id: string) {
+    const el = document.getElementById(id);
+    if (el) {
+      const top = el.getBoundingClientRect().top + window.pageYOffset - 90;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  }
+
   exportingCombo: Record<string, boolean> = {};
   exportingSquare: Record<string, boolean> = {};
   downloadingAnimLight = false;
