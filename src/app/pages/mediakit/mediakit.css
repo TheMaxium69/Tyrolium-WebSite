@@ -1749,7 +1749,7 @@
 
 .bento-proj-url {
   font-family: 'Syne', sans-serif;
-  font-size: 20px;
+  font-size: 28px;
   font-weight: 800;
   color: #ffffff;
   letter-spacing: -0.01em;
@@ -1770,6 +1770,10 @@
   position: relative;
   z-index: 1;
 }
+
+/* Gamenium (layout-4) + NexiumiaCRM (layout-6) — URL plus courte */
+.bento-layout-4 .bento-proj-url,
+.bento-layout-6 .bento-proj-url { font-size: 18px; }
 
 /* ══════════════════════════════════════════════════════════════════════════════
    9 LAYOUTS  (hero=2×2, 5 cards=1×1 each — fills 3×3 grid perfectly)
