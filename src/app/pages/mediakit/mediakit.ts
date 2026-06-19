@@ -1,8 +1,7 @@
-import { Component, ViewEncapsulation, inject } from '@angular/core';
+import { Component, ViewEncapsulation, ViewChild, ElementRef, AfterViewInit, OnDestroy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TyroUiLangService } from 'tyrolium-ui';
 import { toPng } from 'html-to-image';
-import { Bento } from './bento/bento';
 
 export interface MkWallpaper {
   name: string;
@@ -27,12 +26,50 @@ export interface MkProject {
   selector: 'app-mediakit',
   templateUrl: './mediakit.html',
   styleUrls: ['./mediakit.css'],
-  imports: [CommonModule, Bento],
+  imports: [CommonModule],
   encapsulation: ViewEncapsulation.None,
 })
-export class Mediakit {
+export class Mediakit implements AfterViewInit, OnDestroy {
 
   readonly lang = inject(TyroUiLangService).lang;
+
+  @ViewChild('bentoFrame') bentoFrameRef!: ElementRef<HTMLElement>;
+  @ViewChild('bentoOuter') bentoOuterRef!: ElementRef<HTMLElement>;
+
+  bentoExporting = false;
+  private bentoRo?: ResizeObserver;
+
+  ngAfterViewInit() {
+    this.bentoRo = new ResizeObserver(() => this.updateBentoScale());
+    this.bentoRo.observe(this.bentoOuterRef.nativeElement);
+    this.updateBentoScale();
+  }
+
+  ngOnDestroy() {
+    this.bentoRo?.disconnect();
+  }
+
+  private updateBentoScale() {
+    const w = this.bentoOuterRef.nativeElement.clientWidth;
+    this.bentoFrameRef.nativeElement.style.transform = `scale(${w / 1080})`;
+  }
+
+  async exportBento() {
+    if (this.bentoExporting) return;
+    this.bentoExporting = true;
+    try {
+      const dataUrl = await toPng(this.bentoFrameRef.nativeElement, {
+        width: 1080, height: 1080, pixelRatio: 2,
+        style: { transform: 'none' },
+      });
+      const a = document.createElement('a');
+      a.href = dataUrl;
+      a.download = 'global-bento.png';
+      a.click();
+    } finally {
+      this.bentoExporting = false;
+    }
+  }
 
   scrollTo(id: string) {
     const el = document.getElementById(id);

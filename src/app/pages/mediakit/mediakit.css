@@ -1195,3 +1195,348 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ── Wrapper ─────────────────────────────────────────────────────────────── */
+
+.bento-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.bento-outer {
+  width: 100%;
+  aspect-ratio: 1;
+  position: relative;
+}
+
+/* ── Frame 1080×1080
+   Grid 4×4 :
+   col 1-2 row 1-2 → Tyrolium hero
+   col 3   row 1-2 → SolidServ
+   col 4   row 1-2 → TyroCiel
+   col 1-2 row 3   → Influnias
+   col 3   row 3   → Useritium
+   col 4   row 3   → TyroServ
+   col 1   row 4   → Gamenium (blanc)
+   col 2   row 4   → NexiumiaCRM
+   col 3   row 4   → Vturias (blanc)
+   col 4   row 4   → Redirect
+──────────────────────────────────────────────────────────────────────────── */
+
+.bento-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1080px;
+  height: 1080px;
+  transform-origin: top left;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 12px;
+  padding: 20px;
+  background: #080a10;
+  border-radius: 20px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.bento-bg-noise {
+  position: absolute;
+  inset: 0;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Card base ───────────────────────────────────────────────────────────── */
+
+.bento-card {
+  border-radius: 18px;
+  background: #12141d;
+  border: 1px solid rgba(255,255,255,0.08);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 26px;
+  box-sizing: border-box;
+}
+
+/* ── Glows ───────────────────────────────────────────────────────────────── */
+
+.bento-glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(60px);
+}
+
+.bento-glow--hero    { width: 340px; height: 340px; background: rgba(80,0,255,0.45);   top: -80px;  right: -80px; }
+.bento-glow--blue    { width: 260px; height: 260px; background: rgba(30,100,255,0.35); top: -60px;  left: -40px; }
+.bento-glow--purple  { width: 260px; height: 260px; background: rgba(120,40,255,0.35); bottom: -60px; right: -40px; }
+.bento-glow--pink    { width: 300px; height: 300px; background: rgba(220,40,140,0.3);  top: -80px;  right: -60px; }
+.bento-glow--blue-sm { width: 160px; height: 160px; background: rgba(30,100,255,0.3);  top: -30px;  right: -30px; }
+.bento-glow--green-sm{ width: 160px; height: 160px; background: rgba(20,180,80,0.25);  bottom: -40px; left: -30px; }
+.bento-glow--indigo-sm{ width: 160px; height: 160px; background: rgba(80,60,220,0.3); top: -30px;  right: -30px; }
+.bento-glow--hero-sm { width: 200px; height: 200px; background: rgba(80,0,255,0.4);   bottom: -50px; left: -50px; }
+
+/* ── Tyrolium hero — col 1-2, row 1-2 ───────────────────────────────────── */
+
+.bento-card--hero {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+  background: linear-gradient(155deg, #0400d4 0%, #6600cc 40%, #cc0000 100%);
+  padding: 32px;
+  border: none;
+}
+
+.bento-hero-logo {
+  width: 86px;
+  height: 86px;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 0 20px rgba(255,255,255,0.3));
+}
+
+.bento-hero-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+  z-index: 1;
+}
+
+.bento-hero-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.bento-hero-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 58px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+}
+
+.bento-hero-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.5;
+  max-width: 300px;
+  margin-top: 8px;
+}
+
+/* ── SolidServ — col 3, row 1-2 ─────────────────────────────────────────── */
+
+.bento-card--solidserv {
+  grid-column: 3;
+  grid-row: 1 / 3;
+  background: #0b1220;
+}
+
+/* ── TyroCiel — col 4, row 1-2 ──────────────────────────────────────────── */
+
+.bento-card--tyrociel {
+  grid-column: 4;
+  grid-row: 1 / 3;
+  background: #0e0a1c;
+}
+
+/* ── SolidServ + TyroCiel logos & text ───────────────────────────────────── */
+
+.bento-logo--lg {
+  width: 78px;
+  height: 78px;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 4px 16px rgba(0,0,0,0.5));
+}
+
+.bento-sub-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  position: relative;
+  z-index: 1;
+}
+
+.bento-sub-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.025em;
+  line-height: 1;
+}
+
+.bento-sub-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.4;
+}
+
+/* ── Influnias — col 1-2, row 3 ─────────────────────────────────────────── */
+
+.bento-card--influnias {
+  grid-column: 1 / 3;
+  grid-row: 3;
+  background: #160a14;
+  flex-direction: row;
+  align-items: center;
+  gap: 22px;
+}
+
+.bento-card--influnias .bento-logo--lg {
+  width: 78px;
+  height: 78px;
+  flex-shrink: 0;
+}
+
+.bento-wide-text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.bento-wide-text .bento-sub-name { font-size: 32px; }
+
+/* ── Useritium — col 3, row 3 ────────────────────────────────────────────── */
+
+.bento-card--useritium {
+  grid-column: 3;
+  grid-row: 3;
+  background: #0c1020;
+}
+
+/* ── TyroServ — col 4, row 3 ─────────────────────────────────────────────── */
+
+.bento-card--tyroserv {
+  grid-column: 4;
+  grid-row: 3;
+  background: #0a1410;
+}
+
+/* ── Small logo & text ───────────────────────────────────────────────────── */
+
+.bento-logo--sm {
+  width: 68px;
+  height: 68px;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+}
+
+.bento-sm-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: relative;
+  z-index: 1;
+}
+
+.bento-sm-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.bento-sm-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.42);
+  line-height: 1.3;
+}
+
+/* ── Gamenium — col 1, row 4 — blanc ────────────────────────────────────── */
+
+.bento-card--gamenium {
+  grid-column: 1;
+  grid-row: 4;
+}
+
+/* ── NexiumiaCRM — col 2, row 4 ──────────────────────────────────────────── */
+
+.bento-card--nexiumia {
+  grid-column: 2;
+  grid-row: 4;
+  background: #0d0c1e;
+}
+
+/* ── Vturias — col 3, row 4 — blanc ─────────────────────────────────────── */
+
+.bento-card--vturias {
+  grid-column: 3;
+  grid-row: 4;
+}
+
+
+/* ── Redirect — col 4, row 4 ─────────────────────────────────────────────── */
+
+.bento-card--redirect {
+  grid-column: 4;
+  grid-row: 4;
+  background: linear-gradient(155deg, #0400d4 0%, #9900aa 50%, #cc0000 100%);
+  border: none;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.bento-redirect-url {
+  font-family: 'Syne', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 0 28px rgba(255,255,255,0.45);
+}
+
+.bento-redirect-icon {
+  font-size: 52px;
+  color: #ffffff;
+  position: relative;
+  z-index: 1;
+  align-self: flex-end;
+  filter: drop-shadow(0 0 20px rgba(255,255,255,0.6));
+}
+
+/* ── Export bar ──────────────────────────────────────────────────────────── */
+
+.bento-export-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.bento-export-hint {
+  font-family: 'Inter', monospace;
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
