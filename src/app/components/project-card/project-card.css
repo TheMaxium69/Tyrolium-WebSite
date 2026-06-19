@@ -232,6 +232,11 @@
   color: #111827;
   letter-spacing: -0.015em;
   margin: 0;
+  transition: font-weight 0.8s ease;
+}
+
+.project-card:hover .project-card__title-row h3 {
+  font-weight: 800;
 }
 
 .project-card__body p {
