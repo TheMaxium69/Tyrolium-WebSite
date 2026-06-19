@@ -58,6 +58,7 @@ app-header {
   letter-spacing: -0.02em;
   line-height: 1;
   font-size: clamp(3rem, 12vw, 10rem);
+  white-space: nowrap;
 }
 
 .hh-l {
