@@ -21,7 +21,7 @@ import { LegalTerms } from './pages/legal/terms/legal-terms';
 import { LegalCgu } from './pages/legal/cgu/legal-cgu';
 import { LegalCgv } from './pages/legal/cgv/legal-cgv';
 import { LegalPrivacy } from './pages/legal/privacy/legal-privacy';
-import {TyroUiNotFound} from "tyrolium-ui";
+import {TyroUiForbidden, TyroUiNotFound} from "tyrolium-ui";
 
 export const routes: Routes = [
   { path: '', component: Home },
@@ -58,5 +58,6 @@ export const routes: Routes = [
       { path: 'privacy', component: LegalPrivacy },
     ],
   },
+  { path: '403', component: TyroUiForbidden },
   { path: '**', component: TyroUiNotFound }
 ];
