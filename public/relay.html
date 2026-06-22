@@ -10,6 +10,11 @@
   Hébergée sur tyrolium.fr, intégrée en iframe invisible sur les autres sites.
   Communication via postMessage.
 
+  Stockage : document.cookie (SameSite=None; Secure) au lieu de localStorage.
+  Chrome 115+ partitionne le localStorage des iframes cross-origin — les cookies
+  SameSite=None contournent ce cloisonnement et restent accessibles en third-party.
+  Safari (ITP) bloque les cookies third-party : pas de sync cross-domaine sur Safari.
+
   Pour ajouter un domaine :
   1. Ajouter ici dans ALLOWED
   2. Ajouter dans projects/tyrolium-ui/src/lib/configs/tyro-ui-domains.ts
@@ -21,8 +26,8 @@
     'tyrolium-lang',
     'tyrolium-token',
     'tyrolium-user',
-    'tyrolium-logout',    // timestamp de la dernière déconnexion
-    'tyrolium-login-at',  // timestamp du dernier login (pour comparer avec logout)
+    'tyrolium-logout',
+    'tyrolium-login-at',
   ];
   var ALLOWED = [
     'https://tyrolium.fr',
@@ -41,44 +46,76 @@
     return ALLOWED.indexOf(origin) !== -1 || origin.indexOf('http://192.168.1.81') === 0;
   }
 
-  // Écoute les changements et suppressions depuis d'autres onglets (même origine tyrolium.fr)
-  window.addEventListener('storage', function (e) {
-    if (!e.key || SYNC_KEYS.indexOf(e.key) === -1) return;
-    // e.newValue est null quand la clé est supprimée → on envoie '' pour signaler la suppression
-    window.parent.postMessage({
-      type: 'tyro-relay-changed',
-      key: e.key,
-      value: e.newValue !== null ? e.newValue : ''
-    }, '*');
-  });
+  // --- Helpers cookie (SameSite=None; Secure pour accès cross-site) ---
 
-  // Écoute les ordres du site parent
+  function getCookie(name) {
+    var escaped = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    var match = document.cookie.match(new RegExp('(?:^|; )' + escaped + '=([^;]*)'));
+    return match ? decodeURIComponent(match[1]) : null;
+  }
+
+  function setCookie(name, value) {
+    document.cookie = name + '=' + encodeURIComponent(value) + '; SameSite=None; Secure; path=/; max-age=2592000';
+  }
+
+  function removeCookie(name) {
+    document.cookie = name + '=; SameSite=None; Secure; path=/; max-age=0';
+  }
+
+  function getAllState() {
+    var data = {};
+    SYNC_KEYS.forEach(function (k) {
+      var v = getCookie(k);
+      if (v !== null) data[k] = v;
+    });
+    return data;
+  }
+
+  // --- Polling pour détecter les changements depuis d'autres onglets ---
+  // Remplace l'event `storage` qui ne fire plus en contexte cross-origin partitionné.
+
+  var lastSeen = {};
+  SYNC_KEYS.forEach(function (k) { lastSeen[k] = getCookie(k); });
+
+  setInterval(function () {
+    SYNC_KEYS.forEach(function (key) {
+      var current = getCookie(key);
+      if (current !== lastSeen[key]) {
+        lastSeen[key] = current;
+        window.parent.postMessage({
+          type: 'tyro-relay-changed',
+          key: key,
+          value: current !== null ? current : ''
+        }, '*');
+      }
+    });
+  }, 1500);
+
+  // --- Écoute les ordres du site parent ---
+
   window.addEventListener('message', function (e) {
     if (!isAllowed(e.origin)) return;
     var d = e.data;
     if (!d) return;
+
     if (d.type === 'tyro-relay-set' && d.key && d.value) {
       if (SYNC_KEYS.indexOf(d.key) !== -1) {
-        localStorage.setItem(d.key, d.value);
+        setCookie(d.key, d.value);
+        lastSeen[d.key] = d.value;
       }
     } else if (d.type === 'tyro-relay-remove' && d.key) {
       if (SYNC_KEYS.indexOf(d.key) !== -1) {
-        localStorage.removeItem(d.key);
+        removeCookie(d.key);
+        lastSeen[d.key] = null;
       }
     } else if (d.type === 'tyro-relay-refresh') {
-      var fresh = {};
-      SYNC_KEYS.forEach(function (k) { var v = localStorage.getItem(k); if (v) fresh[k] = v; });
-      window.parent.postMessage({ type: 'tyro-relay-init', data: fresh }, '*');
+      window.parent.postMessage({ type: 'tyro-relay-init', data: getAllState() }, '*');
     }
   });
 
-  // Au chargement : envoie toutes les valeurs stockées au parent
-  var data = {};
-  SYNC_KEYS.forEach(function (k) {
-    var v = localStorage.getItem(k);
-    if (v) data[k] = v;
-  });
-  window.parent.postMessage({ type: 'tyro-relay-init', data: data }, '*');
+  // --- Au chargement : envoie toutes les valeurs stockées au parent ---
+
+  window.parent.postMessage({ type: 'tyro-relay-init', data: getAllState() }, '*');
 })();
 </script>
 </body>
