@@ -1,0 +1,42 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # ==========================================
+  # 1. FORCER LE HTTPS (Optimisé OVH)
+  # ==========================================
+  # Vérifie si le HTTPS est désactivé ou si le reverse proxy OVH n'est pas en HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # ==========================================
+  # 2. EXCLUSION DE DOSSIERS SPÉCIFIQUES
+  # ==========================================
+  # Remplace ces chemins par les dossiers à laisser en comportement natif Apache
+  # Retire ces lignes si tu n'as pas de dossiers à exclure sur un site spécifique
+  RewriteRule ^(Download|generate-pp|Contenu/Image)($|/) - [L]
+
+  # ==========================================
+  # 3. ROUTAGE ANGULAR
+  # ==========================================
+  # Si le chemin demandé correspond à un fichier existant (-f) ou un dossier existant (-d)
+  # (Cela permet à tes assets, scripts, et styles de se charger normalement)
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Sinon, on renvoie tout le reste vers le point d'entrée d'Angular
+  # Si ton site n'est pas à la racine, modifie "/index.html" en "/ton-sous-dossier/index.html"
+  RewriteRule ^ /index.html [L]
+</IfModule>
+
+# ==========================================
+# 4. SÉCURITÉ ET FALLBACK (404 & 403)
+# ==========================================
+# Désactiver le listing des répertoires (génère une erreur 403 si on tente de lister un dossier)
+Options -Indexes
+
+# Si une erreur 404 (Introuvable) ou 403 (Interdit) survient côté Apache,
+# on renvoie le visiteur sur l'index d'Angular.
+ErrorDocument 404 /index.html
+ErrorDocument 403 /index.html
