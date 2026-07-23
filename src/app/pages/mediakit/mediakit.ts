@@ -1,7 +1,14 @@
 import { Component, ViewEncapsulation, ViewChild, ViewChildren, QueryList, ElementRef, AfterViewInit, OnDestroy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TyroUiLangService } from 'tyrolium-ui';
+import { TyroUiLangService, NavbarMenuCategory, ITyroUiNavbarMenuItem } from 'tyrolium-ui';
 import { toPng } from 'html-to-image';
+
+export interface MkMenuIcon {
+  slug: string;
+  icon: string;
+  name: string;
+  nameEn?: string;
+}
 
 export interface MkWallpaper {
   name: string;
@@ -37,6 +44,7 @@ export class Mediakit implements AfterViewInit, OnDestroy {
   @ViewChild('bentoOuter') bentoOuterRef!: ElementRef<HTMLElement>;
   @ViewChildren('projBentoFrame') projBentoFrames!: QueryList<ElementRef<HTMLElement>>;
   @ViewChildren('projBentoOuter') projBentoOuters!: QueryList<ElementRef<HTMLElement>>;
+  @ViewChildren('iconGlyph') iconGlyphs!: QueryList<ElementRef<HTMLElement>>;
 
   bentoExporting = false;
   exportingProjectBento: Record<number, boolean> = {};
@@ -426,6 +434,52 @@ export class Mediakit implements AfterViewInit, OnDestroy {
       }, 'image/png');
     } finally {
       this.exportingSquare[slug] = false;
+    }
+  }
+
+  exportingIcon: Record<string, boolean> = {};
+
+  private slugifyName(name: string): string {
+    return name
+      .normalize('NFD').replace(/[̀-ͯ]/g, '')
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '');
+  }
+
+  readonly menuIcons: MkMenuIcon[] = (() => {
+    const seen = new Set<string>();
+    const result: MkMenuIcon[] = [];
+    const collect = (items: ITyroUiNavbarMenuItem[]) => {
+      for (const item of items) {
+        if (item.icon && !seen.has(item.icon)) {
+          seen.add(item.icon);
+          result.push({
+            slug: this.slugifyName(item.name),
+            icon: item.icon,
+            name: item.name,
+            nameEn: item.nameEn,
+          });
+        }
+        if (item.subItems?.length) collect(item.subItems);
+      }
+    };
+    for (const cat of NavbarMenuCategory) collect(cat.items);
+    return result;
+  })();
+
+  async exportIcon(index: number, slug: string) {
+    if (this.exportingIcon[slug]) return;
+    this.exportingIcon[slug] = true;
+    try {
+      const el = this.iconGlyphs.toArray()[index].nativeElement;
+      const dataUrl = await toPng(el, { pixelRatio: 8, style: { background: 'transparent' } });
+      const a = document.createElement('a');
+      a.href = dataUrl;
+      a.download = slug.startsWith('tyrolium-') ? `${slug}.png` : `tyrolium-${slug}.png`;
+      a.click();
+    } finally {
+      this.exportingIcon[slug] = false;
     }
   }
 

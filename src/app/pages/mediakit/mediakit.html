@@ -36,6 +36,7 @@
       <button class="mk-qn-btn" (click)="scrollTo('mk-logos')"><i class="ri-image-line"></i> Tyrolium</button>
       <button class="mk-qn-btn" (click)="scrollTo('mk-wallpapers')"><i class="ri-image-2-line"></i> {{ lang() === 'en' ? 'Wallpapers' : 'Fonds d\'écran' }}</button>
       <button class="mk-qn-btn" (click)="scrollTo('mk-filiales')"><i class="ri-building-line"></i> {{ lang() === 'en' ? 'Subsidiaries' : 'Filiales' }}</button>
+      <button class="mk-qn-btn" (click)="scrollTo('mk-icons')"><i class="ri-apps-2-line"></i> {{ lang() === 'en' ? 'App icons' : 'Icônes app' }}</button>
       <button class="mk-qn-btn" (click)="scrollTo('mk-animations')"><i class="ri-movie-line"></i> {{ lang() === 'en' ? 'Animation' : 'Animation' }}</button>
       <button class="mk-qn-btn" (click)="scrollTo('mk-bento')"><i class="ri-layout-grid-line"></i> Bento</button>
     </nav>
@@ -495,6 +496,34 @@
         </div>
       </div>
     }
+
+    <!-- ─── Icônes du menu applications ──────────────────────────────────────── -->
+    <div class="mk-divider"></div>
+    <div class="mk-block" id="mk-icons">
+      <div class="mk-block-label"><i class="ri-apps-2-line"></i> {{ lang() === 'en' ? 'App menu icons' : 'Icônes du menu applications' }}</div>
+      <p class="mk-section-desc" style="margin-bottom: 1.5rem">
+        {{ lang() === 'en'
+          ? 'Icons used in the app-switcher menu (navbar), with the same brand gradient - exportable as transparent PNG.'
+          : "Icônes utilisées dans le menu d'applications de la navbar, avec le même dégradé de marque - exportables en PNG transparent." }}
+      </p>
+      <div class="mk-icon-grid">
+        @for (mi of menuIcons; track mi.icon; let i = $index) {
+          <div class="mk-icon-card">
+            <div class="mk-icon-preview">
+              <div class="mk-icon-export-wrap" #iconGlyph>
+                <i [class]="mi.icon + ' mk-icon-glyph'"></i>
+              </div>
+            </div>
+            <div class="mk-icon-card-footer">
+              <span class="mk-logo-card-name">{{ lang() === 'en' ? (mi.nameEn ?? mi.name) : mi.name }}</span>
+              <button class="mk-dl-btn" (click)="exportIcon(i, mi.slug)" [disabled]="exportingIcon[mi.slug]">
+                <i class="ri-download-2-line"></i> {{ exportingIcon[mi.slug] ? '…' : 'PNG' }}
+              </button>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
 
     <!-- ─── Identité animée ──────────────────────────────────────────────────── -->
     <div class="mk-divider"></div>
