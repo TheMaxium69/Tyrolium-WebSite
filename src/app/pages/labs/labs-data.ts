@@ -304,7 +304,7 @@ export const LABS: Lab[] = [
     tech: ['Angular', 'PHP', 'TypeScript'],
     github: 'https://github.com/TheMaxium69/Tyrolium-Ip',
     link: 'https://ip.tyrolium.fr',
-    version: 'V1.0',
+    version: 'V3.0',
     contributors: ['Maxime Tournier'],
     features: [
       'Détection instantanée de l\'IP publique',
@@ -336,7 +336,7 @@ export const LABS: Lab[] = [
     tech: ['Angular', 'PHP', 'LibreSpeed'],
     github: 'https://github.com/TheMaxium69/Tyrolium-SpeedTest',
     link: 'https://speedtest.tyrolium.fr',
-    version: 'V1.0',
+    version: 'V2.0',
     contributors: ['Maxime Tournier'],
     features: [
       'Mesure débit descendant / montant',
