@@ -613,14 +613,25 @@ export class Mediakit implements AfterViewInit, OnDestroy {
       ],
     },
     {
-      name: 'Fond d\'écran Glass',
-      nameEn: 'Glass Wallpaper',
-      slug: 'wallpaper-glass',
-      thumb: 'assets/wallpapers/TyroliumWallpaper-Glass-1080p.png',
+      name: 'Fond d\'écran Glass Sombre',
+      nameEn: 'Glass Dark Wallpaper',
+      slug: 'wallpaper-glass-dark',
+      thumb: 'assets/wallpapers/TyroliumWallpaper-Glass-Dark-1080p.png',
       versions: [
-        { label: '4K',    url: 'assets/wallpapers/TyroliumWallpaper-Glass-4K.png',    filename: 'tyrolium-glass-4k.png' },
-        { label: '1440p', url: 'assets/wallpapers/TyroliumWallpaper-Glass-1440p.png', filename: 'tyrolium-glass-1440p.png' },
-        { label: '1080p', url: 'assets/wallpapers/TyroliumWallpaper-Glass-1080p.png', filename: 'tyrolium-glass-1080p.png' },
+        { label: '4K',    url: 'assets/wallpapers/TyroliumWallpaper-Glass-Dark-4K.png',    filename: 'tyrolium-glass-dark-4k.png' },
+        { label: '1440p', url: 'assets/wallpapers/TyroliumWallpaper-Glass-Dark-1440p.png', filename: 'tyrolium-glass-dark-1440p.png' },
+        { label: '1080p', url: 'assets/wallpapers/TyroliumWallpaper-Glass-Dark-1080p.png', filename: 'tyrolium-glass-dark-1080p.png' },
+      ],
+    },
+    {
+      name: 'Fond d\'écran Glass Clair',
+      nameEn: 'Glass White Wallpaper',
+      slug: 'wallpaper-glass-white',
+      thumb: 'assets/wallpapers/TyroliumWallpaper-Glass-White-1080p.png',
+      versions: [
+        { label: '4K',    url: 'assets/wallpapers/TyroliumWallpaper-Glass-White-4K.png',    filename: 'tyrolium-glass-white-4k.png' },
+        { label: '1440p', url: 'assets/wallpapers/TyroliumWallpaper-Glass-White-1440p.png', filename: 'tyrolium-glass-white-1440p.png' },
+        { label: '1080p', url: 'assets/wallpapers/TyroliumWallpaper-Glass-White-1080p.png', filename: 'tyrolium-glass-white-1080p.png' },
       ],
     },
     {
