@@ -2,8 +2,7 @@
    [class.project-card--sub]="isSubProject"
    [class.project-card--h]="horizontal"
    [href]="project.link"
-   [target]="project.link.startsWith('http') ? '_blank' : '_self'"
-   [attr.rel]="project.link.startsWith('http') ? 'noopener noreferrer' : null">
+   target="_self">
 
   <div class="project-card__visual">
     <div class="project-card__logo-wrap">
