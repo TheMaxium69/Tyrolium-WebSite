@@ -323,15 +323,6 @@
   background: rgba(5, 51, 200, 0.04);
 }
 
-.lo-github-link--primary {
-  background: linear-gradient(135deg, #0533c8, #bf0000);
-  color: #ffffff;
-  border-color: transparent;
-}
-
-.lo-github-link--primary i { color: rgba(255,255,255,0.7); }
-.lo-github-link--primary:hover { opacity: 0.88; background: linear-gradient(135deg, #0533c8, #bf0000); }
-
 /* ─── Used by ───────────────────────────────────────────────────────────── */
 
 .lo-used-list {
