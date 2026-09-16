@@ -186,5 +186,25 @@
       </div>
     }
 
+    <!-- Export -->
+    <div class="sv-export">
+      <div class="sv-export__text">
+        <h3 class="sv-export__title">{{ lang() === 'en' ? 'Export the server list' : 'Exporter la liste des serveurs' }}</h3>
+        <p class="sv-export__desc">
+          {{ lang() === 'en'
+            ? 'Download the full list of servers as JSON or CSV.'
+            : 'Téléchargez la liste complète des serveurs au format JSON ou CSV.' }}
+        </p>
+      </div>
+      <div class="sv-export__actions">
+        <button class="sv-export__btn" (click)="exportJson()">
+          <i class="ri-file-code-line"></i> JSON
+        </button>
+        <button class="sv-export__btn" (click)="exportCsv()">
+          <i class="ri-file-excel-2-line"></i> CSV
+        </button>
+      </div>
+    </div>
+
   </div>
 </div>

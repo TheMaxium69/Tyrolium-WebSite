@@ -74,6 +74,10 @@ const SERVERS: ServerEntry[] = [
   { name:'vps220', alias:'',              description:'Serveur de Repository de Tyrolium',                     descriptionEn:'Tyrolium repository server',                      lieu:'Décines-Charpieu - France',     url:'vps220.tyrolium.fr',   tag:'Tyrolium',    group:'vps',   date:'25/11/2023' },
   { name:'vps221', alias:'',              description:'Serveur de client (10567)',                              descriptionEn:'Client server (10567)',                            lieu:'Décines-Charpieu - France',     url:'vps221.tyrolium.fr',   tag:'',            group:'vps',   date:'02/12/2023' },
   { name:'vps222', alias:'',              description:'Serveur de client (10568)',                              descriptionEn:'Client server (10568)',                            lieu:'Décines-Charpieu - France',     url:'vps222.tyrolium.fr',   tag:'',            group:'vps',   date:'21/12/2023' },
+  { name:'vps223', alias:'',              description:'Serveur pour les API de TyroServ',                       descriptionEn:'Server for TyroServ APIs',                         lieu:'Décines-Charpieu - France',     url:'vps223.tyrolium.fr',   tag:'TyroServ',    group:'vps',   date:'—' },
+  { name:'vps224', alias:'',              description:'Serveur de l\'ERP interne',                              descriptionEn:'Internal ERP server',                              lieu:'Décines-Charpieu - France',     url:'vps224.tyrolium.fr',   tag:'Tyrolium',    group:'vps',   date:'31/08/2026' },
+  { name:'vps225', alias:'',              description:'Serveur de client (10574)',                              descriptionEn:'Client server (10574)',                            lieu:'Décines-Charpieu - France',     url:'vps225.tyrolium.fr',   tag:'',            group:'vps',   date:'03/09/2026' },
+  { name:'vps226', alias:'',              description:'Serveur de client (10575)',                              descriptionEn:'Client server (10575)',                            lieu:'Décines-Charpieu - France',     url:'vps226.tyrolium.fr',   tag:'',            group:'vps',   date:'05/09/2026' },
   // ── VPS ──────────────────────────────────────────────────────────────
   { name:'vps240', alias:'',              description:'Serveur pour TyroServ',                                 descriptionEn:'Server for TyroServ',                             lieu:'Gravelines - France',           url:'vps240.tyrolium.fr',   tag:'TyroServ',    group:'vps',   date:'10/01/2025' },
   { name:'vps241', alias:'',              description:'Serveur de client (10569)',                              descriptionEn:'Client server (10569)',                            lieu:'Francfort - Allemagne',         url:'vps241.tyrolium.fr',   tag:'',            group:'vps',   date:'22/01/2025' },
@@ -81,6 +85,9 @@ const SERVERS: ServerEntry[] = [
   { name:'vps243', alias:'',              description:'Serveur de client (10571)',                              descriptionEn:'Client server (10571)',                            lieu:'Strasbourg - France',           url:'vps243.tyrolium.fr',   tag:'',            group:'vps',   date:'05/02/2025' },
   { name:'vps244', alias:'',              description:'Serveur de client (10572)',                              descriptionEn:'Client server (10572)',                            lieu:'Strasbourg - France',           url:'vps244.tyrolium.fr',   tag:'',            group:'vps',   date:'04/03/2025' },
   { name:'vps245', alias:'',              description:'Serveur de client (10573)',                              descriptionEn:'Client server (10573)',                            lieu:'Strasbourg - France',           url:'vps245.tyrolium.fr',   tag:'',            group:'vps',   date:'10/03/2025' },
+  { name:'vps246', alias:'',              description:'Serveur de client (10576)',                              descriptionEn:'Client server (10576)',                            lieu:'Strasbourg - France',           url:'vps246.tyrolium.fr',   tag:'',            group:'vps',   date:'—' },
+  { name:'vps247', alias:'',              description:'Serveur de client (10577)',                              descriptionEn:'Client server (10577)',                            lieu:'Lyon - France',                 url:'vps247.tyrolium.fr',   tag:'',            group:'vps',   date:'31/01/2026' },
+  { name:'vps248', alias:'',              description:'Serveur de redirection de paquets',                     descriptionEn:'Packet redirection server',                        lieu:'Toronto - Canada',              url:'vps248.tyrolium.fr',   tag:'Tyrolium',    group:'vps',   date:'01/03/2026' },
   // ── VPS INT801 ────────────────────────────────────────────────────────
   { name:'vps290', alias:'',              description:'Serveur de redirection de paquets',                     descriptionEn:'Packet redirection server',                       lieu:'Décines-Charpieu - France',     url:'vps290.tyrolium.fr',   tag:'Tyrolium',    group:'vps',   date:'18/11/2023' },
   // ── VPS SERV302 ───────────────────────────────────────────────────────
@@ -179,6 +186,7 @@ const SERVERS: ServerEntry[] = [
   // ── Proxy ─────────────────────────────────────────────────────────────
   { name:'proxy601', alias:'', description:'Proxy de redirection en cas de panne de serveur', descriptionEn:'Redirection proxy in case of server failure', lieu:'Strasbourg - France', url:'vps201.tyrolium.fr',   tag:'Tyrolium', group:'proxy', date:'04/02/2020' },
   { name:'proxy602', alias:'', description:'Proxy de redirection des VPS internes',           descriptionEn:'Internal VPS redirection proxy',             lieu:'Lyon - France',        url:'proxy602.tyrolium.fr', tag:'Tyrolium', group:'proxy', date:'26/11/2023' },
+  { name:'proxy603', alias:'', description:'Proxy de redirection des VPS internes',           descriptionEn:'Internal VPS redirection proxy',             lieu:'Lyon - France',        url:'proxy603.tyrolium.fr', tag:'Tyrolium', group:'proxy', date:'03/09/2026' },
   // ── Serveurs dédiés ───────────────────────────────────────────────────
   { name:'serv301', alias:'ionos-serv', description:'Serveur de Test Interne à SolidServ', descriptionEn:'Internal test server at SolidServ', lieu:'Frankfurt am Main - Allemagne', url:'serv301.tyrolium.fr', tag:'SolidServ', group:'serv', date:'27/04/2022' },
   { name:'serv302', alias:'ovh-serv',   description:'Serveur de SolidServ V1',             descriptionEn:'SolidServ V1 server',               lieu:'Strasbourg - France',           url:'serv302.tyrolium.fr', tag:'SolidServ', group:'serv', date:'22/04/2022' },
@@ -195,6 +203,8 @@ const SERVERS: ServerEntry[] = [
   { name:'vpn403', alias:'', description:'VPN situé au Japon',                                    descriptionEn:'VPN located in Japan',                            lieu:'Tokyo - Japon',             url:'vps203.tyrolium.fr',  tag:'',         group:'vpn', date:'14/11/2021' },
   { name:'vpn404', alias:'', description:'VPN de connexion à l\'intranet de Tyrolium',            descriptionEn:'VPN for connecting to the Tyrolium intranet',     lieu:'Décines-Charpieu - France', url:'vps290.tyrolium.fr',  tag:'Tyrolium', group:'vpn', date:'18/11/2023' },
   { name:'vpn405', alias:'', description:'VPN de connexion à l\'intranet de Tyrolium',            descriptionEn:'VPN for connecting to the Tyrolium intranet',     lieu:'Décines-Charpieu - France', url:'int804.tyrolium.fr',  tag:'Tyrolium', group:'vpn', date:'25/08/2024' },
+  { name:'vpn406', alias:'', description:'VPN de connexion à l\'intranet de Tyrolium',            descriptionEn:'VPN for connecting to the Tyrolium intranet',     lieu:'Décines-Charpieu - France', url:'int804.tyrolium.fr',  tag:'Tyrolium', group:'vpn', date:'—' },
+  { name:'vpn407', alias:'', description:'VPN situé au Canada',                                    descriptionEn:'VPN located in Canada',                            lieu:'Toronto - Canada',          url:'vps248.tyrolium.fr',  tag:'',         group:'vpn', date:'01/03/2026' },
 ];
 
 @Component({
@@ -254,5 +264,30 @@ export class Server {
 
   onSearch(value: string) {
     this.search.set(value);
+  }
+
+  exportJson() {
+    this.downloadFile(JSON.stringify(SERVERS, null, 2), 'tyrolium-servers.json', 'application/json');
+  }
+
+  exportCsv() {
+    const headers = ['name', 'alias', 'description', 'descriptionEn', 'lieu', 'url', 'tag', 'group', 'date'] as const;
+    const rows = SERVERS.map(s => headers.map(h => this.csvEscape(s[h])).join(','));
+    const csv = [headers.join(','), ...rows].join('\n');
+    this.downloadFile(csv, 'tyrolium-servers.csv', 'text/csv');
+  }
+
+  private csvEscape(value: string): string {
+    return /[",\n]/.test(value) ? `"${value.replace(/"/g, '""')}"` : value;
+  }
+
+  private downloadFile(content: string, filename: string, mimeType: string) {
+    const blob = new Blob([content], { type: mimeType });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    a.click();
+    URL.revokeObjectURL(url);
   }
 }
