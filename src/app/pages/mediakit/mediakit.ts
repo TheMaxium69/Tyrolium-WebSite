@@ -601,15 +601,26 @@ export class Mediakit implements AfterViewInit, OnDestroy {
 
   readonly wallpapers: MkWallpaper[] = [
     {
-      name: 'Fond d\'écran Gradient',
-      nameEn: 'Gradient Wallpaper',
-      slug: 'wallpaper-gradient',
-      thumb: 'assets/wallpapers/TyroliumWallpaper-Gradient-1080p.png',
+      name: 'Fond d\'écran Gradient Sombre',
+      nameEn: 'Gradient Dark Wallpaper',
+      slug: 'wallpaper-gradient-dark',
+      thumb: 'assets/wallpapers/TyroliumWallpaper-Gradient-Dark-1080p.png',
       versions: [
-        { label: '4K',     url: 'assets/wallpapers/TyroliumWallpaper-Gradient-4K.png',     filename: 'tyrolium-gradient-4k.png' },
-        { label: '1440p',  url: 'assets/wallpapers/TyroliumWallpaper-Gradient-1440p.png',  filename: 'tyrolium-gradient-1440p.png' },
-        { label: '1080p',  url: 'assets/wallpapers/TyroliumWallpaper-Gradient-1080p.png',  filename: 'tyrolium-gradient-1080p.png' },
-        { label: 'Mobile', url: 'assets/wallpapers/TyroliumWallpaper-Gradient-Mobile.png', filename: 'tyrolium-gradient-mobile.png' },
+        { label: '4K',     url: 'assets/wallpapers/TyroliumWallpaper-Gradient-Dark-4K.png',     filename: 'tyrolium-gradient-dark-4k.png' },
+        { label: '1440p',  url: 'assets/wallpapers/TyroliumWallpaper-Gradient-Dark-1440p.png',  filename: 'tyrolium-gradient-dark-1440p.png' },
+        { label: '1080p',  url: 'assets/wallpapers/TyroliumWallpaper-Gradient-Dark-1080p.png',  filename: 'tyrolium-gradient-dark-1080p.png' },
+        { label: 'Mobile', url: 'assets/wallpapers/TyroliumWallpaper-Gradient-Dark-Mobile.png', filename: 'tyrolium-gradient-dark-mobile.png' },
+      ],
+    },
+    {
+      name: 'Fond d\'écran Gradient Clair',
+      nameEn: 'Gradient White Wallpaper',
+      slug: 'wallpaper-gradient-white',
+      thumb: 'assets/wallpapers/TyroliumWallpaper-Gradient-White-1080p.png',
+      versions: [
+        { label: '4K',     url: 'assets/wallpapers/TyroliumWallpaper-Gradient-White-4K.png',     filename: 'tyrolium-gradient-white-4k.png' },
+        { label: '1440p',  url: 'assets/wallpapers/TyroliumWallpaper-Gradient-White-1440p.png',  filename: 'tyrolium-gradient-white-1440p.png' },
+        { label: '1080p',  url: 'assets/wallpapers/TyroliumWallpaper-Gradient-White-1080p.png',  filename: 'tyrolium-gradient-white-1080p.png' },
       ],
     },
     {
