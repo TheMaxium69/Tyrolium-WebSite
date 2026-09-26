@@ -4,7 +4,7 @@
 
       <p class="doc-label">{{ lang() === 'en' ? 'Legal notice' : 'Mentions légales' }}</p>
       <h1 class="doc-title">{{ lang() === 'en' ? 'Legal notice' : 'Mentions légales' }}</h1>
-      <span class="legal-update">{{ lang() === 'en' ? 'Last updated: 16 June 2026' : 'Dernière mise à jour : 16 juin 2026' }}</span>
+      <span class="legal-update">{{ lang() === 'en' ? 'Last updated: 26 September 2026' : 'Dernière mise à jour : 26 septembre 2026' }}</span>
 
         <h2>{{ lang() === 'en' ? '1. Publisher' : '1. Éditeur du site' }}</h2>
         <p>
@@ -12,14 +12,15 @@
                 The websites <strong>tyrolium.fr</strong>, <strong>tyroserv.fr</strong>, <strong>solidserv.fr</strong>,
                 <strong>tyrociel.fr</strong>, <strong>gamenium.fr</strong>, <strong>influnias.fr</strong>, <strong>vturias.fr</strong>,
                 <strong>nexiumiacrm.fr</strong> and <strong>useritium.fr</strong> are published by
-                <strong>Tyrolium</strong>, a for-profit company founded in 2017 by <strong>Maxime Tournier</strong>.
+                <strong>Tyrolium</strong>, trade name of the sole proprietorship Maxime Tournier EI.
+                <br> Founded in 2017 by <strong>Maxime Tournier</strong>.
                 <br> CEO & Publication director: Maxime Tournier.
             } @else {
                 Les sites <strong>tyrolium.fr</strong>, <strong>tyroserv.fr</strong>, <strong>solidserv.fr</strong>,
                 <strong>tyrociel.fr</strong>, <strong>gamenium.fr</strong>, <strong>influnias.fr</strong>, <strong>vturias.fr</strong>,
                 <strong>nexiumiacrm.fr</strong> et <strong>useritium.fr</strong> sont édités par
-                <strong>Tyrolium</strong>, entreprise à but lucratif
-                        fondée en 2017 par <strong>Maxime Tournier</strong>.
+                <strong>Tyrolium</strong>, nom commercial de l'entreprise individuelle Maxime Tournier EI.
+                <br> Fondée en 2017 par <strong>Maxime Tournier</strong>.
                 <br> PDG et Directeur de la publication : Maxime Tournier.
             }
         </p>
@@ -35,6 +36,8 @@
       <h2>{{ lang() === 'en' ? '2. Administrative information' : '2. Informations administratives' }}</h2>
       <table class="legal-table">
         <tbody>
+          <tr><td><strong>{{ lang() === 'en' ? 'Legal form' : 'Forme juridique' }}</strong></td><td>{{ lang() === 'en' ? 'Sole proprietorship (EI) - Maxime Tournier EI' : 'Entreprise individuelle (EI) - Maxime Tournier EI' }}</td></tr>
+          <tr><td><strong>{{ lang() === 'en' ? 'Registration' : 'Immatriculation' }}</strong></td><td>{{ lang() === 'en' ? 'French National Business Register (RNE) - SIREN 910 275 361' : 'Registre national des entreprises (RNE) - SIREN 910 275 361' }}</td></tr>
           <tr><td><strong>SIRET</strong></td><td>91027536100012</td></tr>
           <tr><td><strong>{{ lang() === 'en' ? 'VAT number' : 'Numéro TVA' }}</strong></td><td>FR33910275361</td></tr>
           <tr><td><strong>{{ lang() === 'en' ? 'Activity (NAF/APE code)' : 'Activité (Code NAF/APE)' }}</strong></td><td>{{ lang() === 'en' ? 'Computer programming (6201Z)' : 'Programmation informatique (6201Z)' }}</td></tr>
@@ -64,11 +67,24 @@
       <h2>{{ lang() === 'en' ? '4. Hosting' : '4. Hébergement' }}</h2>
       <p>
         @if (lang() === 'en') {
-          The site is hosted by <strong>SolidServ</strong>, infrastructure operated by Tyrolium. Servers are located in France.
+          The site is hosted by <strong>SolidServ</strong>, infrastructure owned and operated by Tyrolium (Maxime Tournier EI).
+          Servers are located in France, on Tyrolium's premises: 252, Avenue Jean Jaurès - 69150 Décines-Charpieu -
+          <a href="tel:+33743775045">+33 7 43 77 50 45</a>.
         } @else {
-          Le site est hébergé par <strong>SolidServ</strong>, infrastructure opérée par Tyrolium.
-          Les serveurs sont localisés en France.
+          Le site est hébergé par <strong>SolidServ</strong>, infrastructure détenue et opérée par Tyrolium (Maxime Tournier EI).
+          Les serveurs sont localisés en France, dans les locaux de Tyrolium : 252, Avenue Jean Jaurès - 69150 Décines-Charpieu -
+          <a href="tel:+33743775045">+33 7 43 77 50 45</a>.
         }
+      </p>
+      <table class="legal-table">
+        <tbody>
+          <tr><td><strong>int804</strong></td><td>{{ lang() === 'en' ? 'Bare metal server - data storage (Décines-Charpieu)' : 'Serveur bare metal - stockage des données (Décines-Charpieu)' }}</td></tr>
+          <tr><td><strong>cloud101</strong></td><td>{{ lang() === 'en' ? 'Network relay (Gravelines) to int804' : 'Relais réseau (Gravelines) vers int804' }} - tyrolium.fr</td></tr>
+          <tr><td><strong>cloud102</strong></td><td>{{ lang() === 'en' ? 'Network relay (Gravelines) to int804' : 'Relais réseau (Gravelines) vers int804' }} - tyroserv.fr, solidserv.fr, tyrociel.fr, gamenium.fr, influnias.fr, vturias.fr, nexiumiacrm.fr, useritium.fr</td></tr>
+        </tbody>
+      </table>
+      <p>
+        <a routerLink="/server">{{ lang() === 'en' ? 'See all our servers →' : 'Voir l\'ensemble de nos serveurs →' }}</a>
       </p>
 
       <h2>{{ lang() === 'en' ? '5. Intellectual property' : '5. Propriété intellectuelle' }}</h2>
@@ -123,10 +139,10 @@
       <p>{{ lang() === 'en' ? 'TyroServ minerals protected:' : 'Minéraux TyroServ protégés :' }}</p>
       <ul class="legal-list legal-list--col">
         <li>Tyrolium ®</li>
-        <li>Rhodonium ®</li>
-        <li>Aventurium ®</li>
-        <li>Yellorium ®</li>
-        <li>Volcanium ®</li>
+        <li>Rhodonium ™</li>
+        <li>Aventurium ™</li>
+        <li>Yellorium ™</li>
+        <li>Volcanium ™</li>
       </ul>
       <p><em>© 2017-{{ currentYear }} Tyrolium.</em></p>
 
