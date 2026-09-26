@@ -3,6 +3,7 @@ import { Header } from '../../components/header/header';
 import { TyroUiCTA, NavbarMenuCategory, ITyroUiNavbarMenuItem, TyroUiLangService } from 'tyrolium-ui';
 import { ProjectCard } from '../../components/project-card/project-card';
 import { RouterLink } from "@angular/router";
+import { SERVERS } from '../server/server';
 
 @Component({
   selector: 'app-home',
@@ -16,4 +17,6 @@ export class Home {
 
   readonly featuredProjects: ITyroUiNavbarMenuItem[] =
     (NavbarMenuCategory.find(c => c.label === 'Filiales')?.items ?? [])
+
+  readonly totalServers = SERVERS.length;
 }

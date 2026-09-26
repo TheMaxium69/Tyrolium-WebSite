@@ -4,7 +4,7 @@
 
       <p class="doc-label">{{ lang() === 'en' ? 'Privacy' : 'Confidentialité' }}</p>
       <h1 class="doc-title">{{ lang() === 'en' ? 'Privacy Policy' : 'Politique de confidentialité' }}</h1>
-      <span class="legal-update">{{ lang() === 'en' ? 'Last updated: 16 June 2026' : 'Dernière mise à jour : 16 juin 2026' }}</span>
+      <span class="legal-update">{{ lang() === 'en' ? 'Last updated: 26 September 2026' : 'Dernière mise à jour : 26 septembre 2026' }}</span>
 
       <!-- SOMMAIRE -->
       <nav class="legal-toc">
@@ -206,6 +206,13 @@
           Tyrolium does not transfer personal data outside the European Union. All data is hosted on servers located in France (SolidServ). Our only external sub-processor, Stripe Payments Europe Ltd., is established in Ireland and therefore subject to the GDPR, with no transfer outside the EU for data collected by Tyrolium.
         } @else {
           Tyrolium ne transfère aucune donnée personnelle en dehors de l'Union européenne. Toutes les données sont hébergées sur des serveurs situés en France (SolidServ). Notre unique sous-traitant externe, Stripe Payments Europe Ltd., est établi en Irlande et donc soumis au RGPD, sans transfert hors UE pour les données collectées par Tyrolium.
+        }
+      </p>
+      <p>
+        @if (lang() === 'en') {
+          <strong>Binding commitment:</strong> Tyrolium will never sell or rent your personal data, and hosts the data it collects exclusively in France (payment data processed by Stripe in the EU excepted). These commitments are also written into our <a routerLink="/legal/cgv" fragment="engagements-donnees">General Terms of Sale</a> and are contractually binding.
+        } @else {
+          <strong>Engagement contractuel :</strong> Tyrolium ne vendra ni ne louera jamais vos données personnelles, et héberge les données qu'elle collecte exclusivement en France (hors données de paiement traitées par Stripe dans l'UE). Ces engagements figurent également dans nos <a routerLink="/legal/cgv" fragment="engagements-donnees">Conditions Générales de Vente</a> et ont une valeur contractuelle.
         }
       </p>
 

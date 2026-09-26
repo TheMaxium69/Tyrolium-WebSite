@@ -4,7 +4,7 @@
 
       <p class="doc-label">{{ lang() === 'en' ? 'Terms of Sale' : 'CGV' }}</p>
       <h1 class="doc-title">{{ lang() === 'en' ? 'General Terms of Sale' : 'Conditions Générales de Vente' }}</h1>
-      <span class="legal-update">{{ lang() === 'en' ? 'Last updated: 16 June 2026' : 'Dernière mise à jour : 16 juin 2026' }}</span>
+      <span class="legal-update">{{ lang() === 'en' ? 'Last updated: 26 September 2026' : 'Dernière mise à jour : 26 septembre 2026' }}</span>
 
       <!-- SOMMAIRE -->
       <nav class="legal-toc">
@@ -60,6 +60,25 @@
           <strong>Définitions :</strong> « Tyrolium » désigne l'entreprise et l'ensemble de ses marques.
           « Client » désigne toute personne procédant à l'achat d'un produit ou service.
           « Prestation » ou « Service » désigne tout produit numérique ou physique vendu par Tyrolium.
+        }
+      </p>
+
+      <p id="engagements-donnees">
+        @if (lang() === 'en') {
+          <strong>Tyrolium's data commitments:</strong> Tyrolium contractually undertakes towards the Client to
+          (i) never sell, rent or otherwise transfer for consideration the Client's personal data to any third party; and
+          (ii) host the personal data it collects exclusively on French territory. The only exceptions are payment data
+          processed by Stripe Payments Europe Ltd. (Ireland, EU) and services the Client expressly chooses to have hosted
+          in another location. Any breach of these commitments constitutes a failure to perform this contract, entitling
+          the Client to all remedies provided by law, including legal action.
+        } @else {
+          <strong>Engagements de Tyrolium sur les données :</strong> Tyrolium s'engage contractuellement envers le Client à
+          (i) ne jamais vendre, louer ni céder à titre onéreux les données personnelles du Client à un tiers ; et
+          (ii) héberger les données personnelles qu'elle collecte exclusivement sur le territoire français. Seules exceptions :
+          les données de paiement traitées par Stripe Payments Europe Ltd. (Irlande, UE) et les services que le Client choisit
+          expressément de faire héberger dans une autre localisation. Tout manquement à ces engagements constitue une
+          inexécution du présent contrat, ouvrant droit pour le Client à l'ensemble des recours prévus par la loi, y compris
+          l'action en justice.
         }
       </p>
 

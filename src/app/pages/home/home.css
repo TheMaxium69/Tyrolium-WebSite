@@ -296,7 +296,7 @@ section .title {
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  gap: 1.5rem;
   text-align: center;
 }
 
@@ -304,6 +304,23 @@ section .title {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
+  padding: 1rem 0.5rem;
+  border-radius: 16px;
+}
+
+.stat-item--link {
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.stat-item--link:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-3px);
+}
+
+.stat-item--link:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 2px;
 }
 
 .stat-number {
@@ -313,6 +330,7 @@ section .title {
   color: #ffffff;
   letter-spacing: -0.03em;
   line-height: 1;
+  white-space: nowrap;
 }
 
 .stat-label {

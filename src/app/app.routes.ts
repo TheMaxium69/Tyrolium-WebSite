@@ -7,6 +7,7 @@ import { Partenaires } from './pages/partenaires/partenaires';
 import { Chronologie } from './pages/chronologie/chronologie';
 import { Equipe } from './pages/equipe/equipe';
 import { Rse } from './pages/rse/rse';
+import { Vision } from './pages/vision/vision';
 import { Labs } from './pages/labs/labs';
 import { LabsOne } from './pages/labs/labs-one/labs-one';
 import { Server } from './pages/server/server';
@@ -34,6 +35,7 @@ export const routes: Routes = [
   { path: 'partenaires', component: Partenaires },
   { path: 'chronologie', component: Chronologie },
   { path: 'equipe', component: Equipe },
+  { path: 'vision', component: Vision },
   { path: 'rse', component: Rse },
   {
     path: 'prestation',

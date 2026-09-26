@@ -161,28 +161,28 @@
   <div class="container">
     <div class="stats-grid">
 
-      <div class="stat-item">
+      <a class="stat-item stat-item--link" routerLink="/chronologie">
         <span class="stat-number">2017</span>
         <span class="stat-label">{{ lang() === 'en' ? 'Founded in' : 'Fondée en' }}</span>
         <span class="stat-desc">{{ lang() === 'en' ? 'The starting point of the Tyrolium adventure' : 'Le point de départ de l\'aventure Tyrolium' }}</span>
-      </div>
+      </a>
 
-      <div class="stat-item">
-        <span class="stat-number">+1 500</span>
+      <a class="stat-item stat-item--link" routerLink="/prestation">
+        <span class="stat-number">{{ lang() === 'en' ? '1,100+' : '+1 100' }}</span>
         <span class="stat-label">{{ lang() === 'en' ? 'Clients supported' : 'Clients accompagnés' }}</span>
-        <span class="stat-desc">{{ lang() === 'en' ? 'Websites, servers & training' : 'Sites web, serveurs & formations' }}</span>
-      </div>
+        <span class="stat-desc">{{ lang() === 'en' ? 'Services & SolidServ subscribers' : 'Prestations & abonnés SolidServ' }}</span>
+      </a>
+
+      <a class="stat-item stat-item--link" routerLink="/server">
+        <span class="stat-number">{{ totalServers }}</span>
+        <span class="stat-label">{{ lang() === 'en' ? 'Servers operated' : 'Serveurs opérés' }}</span>
+        <span class="stat-desc">{{ lang() === 'en' ? 'Tyrolium & SolidServ infrastructure' : 'Infrastructure Tyrolium & SolidServ' }}</span>
+      </a>
 
       <div class="stat-item">
-        <span class="stat-number">8</span>
-        <span class="stat-label">{{ lang() === 'en' ? 'Active subsidiaries' : 'Filiales actives' }}</span>
-        <span class="stat-desc">{{ lang() === 'en' ? 'A continuously growing group' : 'Un groupe en pleine expansion' }}</span>
-      </div>
-
-      <div class="stat-item">
-        <span class="stat-number">+8M</span>
-        <span class="stat-label">{{ lang() === 'en' ? 'Users reached' : 'Utilisateurs touchés' }}</span>
-        <span class="stat-desc">{{ lang() === 'en' ? 'Across all our projects' : 'À travers l\'ensemble de nos projets' }}</span>
+        <span class="stat-number">{{ lang() === 'en' ? '21.8%' : '21,8 %' }}</span>
+        <span class="stat-label">{{ lang() === 'en' ? 'Conversion rate' : 'Taux de conversion' }}</span>
+        <span class="stat-desc">{{ lang() === 'en' ? 'TyroServ players who made a purchase' : 'Joueurs TyroServ passés à la boutique' }}</span>
       </div>
 
     </div>

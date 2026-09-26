@@ -44,7 +44,7 @@ const PROJECT_LOGOS: Record<string, string> = {
   'TyroCiel':    '/assets/tyrolium-ui/projects/TyroCiel.png',
 };
 
-const SERVERS: ServerEntry[] = [
+export const SERVERS: ServerEntry[] = [
   // ── Serveurs Internes ──────────────────────────────────────────────────
   { name:'int801', alias:'server-dell',   description:'Serveur de Proxy et VPN à Tyrolium',  descriptionEn:'Proxy and VPN server at Tyrolium',        lieu:'Décines-Charpieu - France',     url:'int801.tyrolium.fr',   tag:'Tyrolium',    group:'int',   date:'20/10/2023' },
   { name:'int802', alias:'server-lenovo', description:'Serveur de Test Interne à Tyrolium',  descriptionEn:'Internal test server at Tyrolium',        lieu:'Décines-Charpieu - France',     url:'int802.tyrolium.fr',   tag:'Tyrolium',    group:'int',   date:'22/10/2023' },
