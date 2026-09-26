@@ -43,7 +43,7 @@
 
     <article class="eo-main">
       @for (block of study.blocks; track $index) {
-        @if (block.type !== 'testimonial' || t(block.quote, block.quoteEn)) {
+        @if ((block.type !== 'testimonial' || t(block.quote, block.quoteEn)) && (block.type !== 'voices' || block.voices?.length)) {
         <section class="eo-block" [class.eo-block--story]="block.type === 'story'" [class.eo-block--testimonial]="block.type === 'testimonial'">
 
           @if (block.label) {
@@ -195,6 +195,63 @@
                   <span class="eo-story__name">{{ block.author }}</span>
                   <span class="eo-story__role">{{ t(block.authorRole, block.authorRoleEn) }}</span>
                 </div>
+              </div>
+            }
+
+            @case ('gallery') {
+              @for (p of tl(block.paragraphs, block.paragraphsEn); track $index) {
+                <p class="eo-text">{{ p }}</p>
+              }
+              <div class="eo-gallery">
+                @for (ph of block.photos; track ph.src; let first = $first) {
+                  <figure class="eo-gallery__item" [class.eo-gallery__item--wide]="first">
+                    <img [src]="ph.src" [alt]="t(ph.caption, ph.captionEn)" loading="lazy">
+                    <figcaption>{{ t(ph.caption, ph.captionEn) }}</figcaption>
+                  </figure>
+                }
+              </div>
+            }
+
+            @case ('voices') {
+              @for (p of tl(block.paragraphs, block.paragraphsEn); track $index) {
+                <p class="eo-text">{{ p }}</p>
+              }
+              <div class="eo-voices">
+                @for (v of block.voices; track v.name) {
+                  <figure class="eo-voice">
+                    <div class="eo-voice__head">
+                      @if (v.photo) {
+                        <img class="eo-voice__photo" [src]="v.photo" [alt]="v.name">
+                      } @else {
+                        <span class="eo-voice__photo eo-voice__photo--empty"><i class="ri-user-fill"></i></span>
+                      }
+                      <div class="eo-voice__id">
+                        <span class="eo-voice__name">{{ v.name }}</span>
+                        <span class="eo-voice__role">{{ t(v.role, v.roleEn) }}</span>
+                      </div>
+                    </div>
+                    <div class="eo-voice__tags">
+                      @if (v.tag) {
+                        <span class="eo-voice__tag">{{ t(v.tag, v.tagEn) }}</span>
+                      }
+                      @if (v.recruited === false) {
+                        <span class="eo-voice__tag eo-voice__tag--muted">{{ lang() === 'en' ? 'Not hired' : 'Non recruté' }}</span>
+                      }
+                    </div>
+                    @if (v.audio) {
+                      <audio class="eo-voice__audio" controls preload="none" [src]="v.audio"></audio>
+                    }
+                    @if (t(v.quote, v.quoteEn)) {
+                      <blockquote class="eo-voice__quote">{{ lang() === 'en' ? '“' : '« ' }}{{ t(v.quote, v.quoteEn) }}{{ lang() === 'en' ? '”' : ' »' }}</blockquote>
+                    }
+                    @if (t(v.transcript, v.transcriptEn)) {
+                      <details class="eo-voice__details">
+                        <summary>{{ lang() === 'en' ? 'Full transcript (translated from French)' : 'Lire la transcription complète' }}</summary>
+                        <p class="eo-voice__transcript">{{ t(v.transcript, v.transcriptEn) }}</p>
+                      </details>
+                    }
+                  </figure>
+                }
               </div>
             }
 

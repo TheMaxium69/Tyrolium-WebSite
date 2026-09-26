@@ -23,7 +23,7 @@ export interface CaseCompareRow {
 }
 
 export interface CaseBlock {
-  type: 'text' | 'compare' | 'features' | 'story' | 'stats' | 'bars' | 'steps' | 'showcase' | 'testimonial';
+  type: 'text' | 'compare' | 'features' | 'story' | 'stats' | 'bars' | 'steps' | 'showcase' | 'testimonial' | 'voices' | 'gallery';
   label?: string;
   labelEn?: string;
   title?: string;
@@ -51,6 +51,30 @@ export interface CaseBlock {
   linkLabel?: string;
   linkLabelEn?: string;
   linkRouter?: string;
+  /** voices : témoignages (audio + transcription). Bloc masqué tant que la liste est vide */
+  voices?: CaseVoice[];
+  /** gallery : photos (la première est affichée en grand) */
+  photos?: { src: string; caption: string; captionEn?: string }[];
+}
+
+export interface CaseVoice {
+  name: string;
+  role: string;
+  roleEn?: string;
+  /** ex. 'TyroStage S2 · Human Booster' */
+  tag?: string;
+  tagEn?: string;
+  /** false = passé par la formation sans être recruté */
+  recruited?: boolean;
+  photo?: string;
+  /** fichier audio servi par le site, ex. 'assets/etudes/audio/kevin.mp3' */
+  audio?: string;
+  /** citation courte mise en avant */
+  quote?: string;
+  quoteEn?: string;
+  /** transcription complète (dépliable) : masquée tant qu'elle est vide */
+  transcript?: string;
+  transcriptEn?: string;
 }
 
 export interface CaseFact {
@@ -529,6 +553,280 @@ export const CASE_STUDIES: CaseStudy[] = [
       btn: 'Devenir partenaire',
       btnEn: 'Become a partner',
       btnIcon: 'ri-shake-hands-line',
+      routerLink: '/contact',
+    },
+  },
+  {
+    slug: 'tyrostage',
+    brand: 'TyroStage',
+    logo: 'assets/tyrolium-ui/projects/Tyrolium-White.png',
+    partnerCombo: { logo: 'assets/tyrolium-ui/projects/Tyrolium-White.png', group: 'Tyrolium', name: 'TyroStage' },
+    gradient: 'linear-gradient(135deg, #0000FF 0%, #5b0fb0 50%, #BF0000 100%)',
+    category: 'Recrutement · Formation',
+    categoryEn: 'Recruitment · Training',
+    period: 'Saisons 1 à 6',
+    periodEn: 'Seasons 1 to 6',
+    dataAsOf: 'septembre 2026',
+    dataAsOfEn: 'September 2026',
+    title: 'Nous ne lisons pas les CV. Nous regardons les gens travailler.',
+    titleEn: 'We don\'t read CVs. We watch people work.',
+    summary: "TyroStage, c'est notre méthode de recrutement : repérer les talents pendant nos formations en école, sur des semaines de pratique réelle, plutôt que sur un CV et un entretien d'une heure.",
+    summaryEn: 'TyroStage is our recruitment method: spotting talent during our school training sessions, over weeks of real practice, rather than from a CV and a one-hour interview.',
+    headline: { value: '19', title: 'stagiaires formés sur 6 saisons', titleEn: 'interns trained over 6 seasons' },
+    heroStats: [
+      { value: '6',   title: 'Saisons TyroStage', titleEn: 'TyroStage seasons' },
+      { value: '19',  title: 'Stagiaires accueillis', titleEn: 'Interns welcomed' },
+      { value: '2',   title: 'Écoles partenaires', titleEn: 'Partner schools' },
+      { value: '0',   title: 'Recrutement sur la base du diplôme', titleEn: 'Hires based on a diploma' },
+    ],
+    facts: [
+      { label: 'Programme', labelEn: 'Programme', value: 'TyroStage' },
+      { label: 'Écoles', labelEn: 'Schools', value: 'Human Booster, IPSSI' },
+      { label: 'Format', labelEn: 'Format', value: 'Formation en école, puis stage en groupe', valueEn: 'School training, then group internship' },
+      { label: 'Par saison', labelEn: 'Per season', value: '3 à 5 stagiaires, souvent un groupe d\'amis', valueEn: '3 to 5 interns, often a group of friends' },
+      { label: 'Critère n°1', labelEn: 'Criterion #1', value: 'La soif d\'apprendre', valueEn: 'Hunger to learn' },
+    ],
+    blocks: [
+      {
+        type: 'text',
+        label: 'Le constat',
+        labelEn: 'The problem',
+        title: 'Un CV dit ce qu\'on a fait. Pas ce qu\'on vaut.',
+        titleEn: 'A CV says what you have done. Not what you are worth.',
+        paragraphs: [
+          "Dans la tech, le diplôme certifie un parcours. Il ne garantit ni la passion, ni la résilience face à un problème qui résiste. Et un entretien d'une heure en dit encore moins : on y juge surtout la capacité à bien parler de soi.",
+          "Nous avons pris le problème à l'envers. Plutôt que de lire des CV, nous observons des gens travailler, pendant des semaines, sur de vrais problèmes.",
+        ],
+        paragraphsEn: [
+          'In tech, a diploma certifies a path. It guarantees neither passion nor resilience against a problem that will not give in. And a one-hour interview says even less: it mostly judges how well someone talks about themselves.',
+          'We flipped the problem. Instead of reading CVs, we watch people work, for weeks, on real problems.',
+        ],
+      },
+      {
+        type: 'features',
+        label: 'Le terrain',
+        labelEn: 'The ground',
+        title: 'La formation comme une vraie entreprise.',
+        titleEn: 'Training run like a real company.',
+        paragraphs: [
+          "Le fondateur de Tyrolium est aussi formateur en développement et en administration système dans des écoles supérieures. Ses cours ne sont pas de la théorie : chaque promotion fonctionne comme une mini-entreprise, avec des clients, des responsabilités et un patron, le formateur.",
+        ],
+        paragraphsEn: [
+          "Tyrolium's founder is also a trainer in development and system administration at higher-education schools. His courses are not theory: each class runs as a mini-company, with clients, responsibilities and a boss, the trainer.",
+        ],
+        items: [
+          { icon: 'ri-stack-fill', title: 'Des produits réels', titleEn: 'Real products', desc: "Les exercices reprennent des produits que nous avons développés. Une fois l'exercice rendu, on montre la version sortie par Tyrolium.", descEn: 'Exercises are based on products we have built. Once the exercise is handed in, we show the version Tyrolium actually shipped.' },
+          { icon: 'ri-timer-flash-fill', title: 'Des délais serrés', titleEn: 'Tight deadlines', desc: "Des échéances parfois difficiles à tenir, comme sur le terrain. C'est sous la pression qu'on voit vraiment les gens.", descEn: 'Deadlines that are sometimes hard to meet, like in the field. Pressure is where you really see people.' },
+          { icon: 'ri-user-voice-fill', title: 'Un client à convaincre', titleEn: 'A client to convince', desc: 'À chaque présentation de projet, le formateur joue le rôle du client : exigences, retours, changements de dernière minute.', descEn: 'At every project presentation, the trainer plays the client: demands, feedback, last-minute changes.' },
+          { icon: 'ri-eye-fill', title: 'Des semaines d\'observation', titleEn: 'Weeks of observation', desc: "Là où un entretien dure une heure, la formation montre chacun pendant des semaines : code, déploiement, débogage, travail d'équipe.", descEn: 'Where an interview lasts an hour, training shows everyone for weeks: code, deployment, debugging, teamwork.' },
+        ],
+      },
+      {
+        type: 'steps',
+        label: 'La méthode',
+        labelEn: 'The method',
+        title: 'Du cours au contrat, en cinq étapes.',
+        titleEn: 'From class to contract, in five steps.',
+        items: [
+          { title: 'Comprendre chaque objectif', titleEn: 'Understand each goal', desc: "Dès le début, le formateur demande à chacun ce qu'il vise. Ça sert à adapter la pédagogie, et à repérer les projets qui rejoignent ceux de Tyrolium.", descEn: "From day one, the trainer asks everyone what they are aiming for. It helps tailor the teaching, and spot goals that align with Tyrolium's." },
+          { title: 'Observer en situation réelle', titleEn: 'Observe in real conditions', desc: 'Pendant toute la formation : la curiosité, la logique, la résilience, et la façon de traiter les autres.', descEn: 'Throughout the training: curiosity, logic, resilience, and how people treat others.' },
+          { title: 'Former un groupe', titleEn: 'Build a group', desc: "Une fois l'intervention terminée, 3 à 5 personnes sur une promotion de 15 à 30 rejoignent l'aventure, souvent un groupe qui s'apprécie déjà. Tout le monde sait que nous recrutons : la proposition vient de nous, ou d'un étudiant qui ose demander.", descEn: 'Once the course is over, 3 to 5 people out of a class of 15 to 30 join the adventure, often a group who already get along. Everyone knows we are hiring: the offer comes from us, or from a student bold enough to ask.' },
+          { title: 'Une saison TyroStage', titleEn: 'A TyroStage season', desc: "Chaque groupe forme une saison : un vrai stage sur les projets du groupe, qui leur permet de valider leur diplôme.", descEn: "Each group becomes a season: a real internship on the group's projects, which lets them complete their degree." },
+          { title: 'Recruter, ou lancer', titleEn: 'Hire, or launch', desc: "À la fin, on garde généralement une personne, rarement deux, selon la suite de leurs études et leur envie de start-up. D'autres lancent leur activité, accompagnés par Tyrolium.", descEn: 'At the end, we usually keep one person, rarely two, depending on their further studies and appetite for a start-up. Others launch their own business, supported by Tyrolium.' },
+        ],
+      },
+      {
+        type: 'features',
+        label: 'Ce que nous cherchons',
+        labelEn: 'What we look for',
+        title: 'La soif avant le niveau.',
+        titleEn: 'Hunger before skill level.',
+        paragraphs: [
+          "Nous ne cherchons pas des brutes techniques. La technique, nous savons la transmettre : nous le faisons à chaque saison. Ce qui ne s'apprend pas, c'est le reste.",
+        ],
+        paragraphsEn: [
+          'We are not looking for technical prodigies. Technique is something we know how to teach: we do it every season. What cannot be taught is everything else.',
+        ],
+        items: [
+          { icon: 'ri-fire-fill', title: 'La soif', titleEn: 'Hunger', desc: "L'envie d'apprendre, de comprendre, d'aller plus loin que ce qu'on demande.", descEn: 'The drive to learn, to understand, to go further than what is asked.' },
+          { icon: 'ri-bug-fill', title: 'La résilience', titleEn: 'Resilience', desc: 'Être capable de passer huit heures d\'affilée sur le même bug, sans lâcher.', descEn: 'Being able to spend eight hours straight on the same bug, without giving up.' },
+          { icon: 'ri-heart-3-fill', title: 'La bienveillance', titleEn: 'Kindness', desc: 'Aider les autres, respecter l\'équipe. Non négociable.', descEn: 'Helping others, respecting the team. Non-negotiable.' },
+          { icon: 'ri-gamepad-fill', title: 'La passion', titleEn: 'Passion', desc: 'Une culture geek sincère. La tech comme passion, pas comme simple emploi.', descEn: 'A genuine geek culture. Tech as a passion, not just a job.' },
+          { icon: 'ri-compass-3-fill', title: 'Une vision commune', titleEn: 'A shared vision', desc: 'Partager notre façon de voir la technologie, et l\'envie d\'une structure à taille humaine plutôt qu\'un grand groupe.', descEn: 'Sharing our view of technology, and wanting a human-sized company rather than a large corporation.' },
+          { icon: 'ri-history-fill', title: 'Le respect de l\'histoire', titleEn: 'Respect for our history', desc: 'Comprendre d\'où vient Tyrolium, et ce que Minecraft représente pour nous.', descEn: 'Understanding where Tyrolium comes from, and what Minecraft means to us.' },
+        ],
+      },
+      {
+        type: 'compare',
+        label: 'La différence',
+        labelEn: 'The difference',
+        title: 'CV et entretien, ou TyroStage.',
+        titleEn: 'CV and interview, or TyroStage.',
+        columns: [
+          { name: 'CV et entretien', nameEn: 'CV and interview' },
+          { name: 'TyroStage', nameEn: 'TyroStage', highlight: true },
+        ],
+        rows: [
+          { label: 'Observation sur plusieurs semaines', labelEn: 'Observation over several weeks', values: [false, true] },
+          { label: 'Compétences vues en situation réelle', labelEn: 'Skills seen in real situations', values: [false, true] },
+          { label: 'Comportement sous pression', labelEn: 'Behaviour under pressure', values: [false, true] },
+          { label: 'Travail en équipe observé', labelEn: 'Teamwork observed', values: [false, true] },
+          { label: 'Accessible sans diplôme prestigieux', labelEn: 'Open without a prestigious degree', values: [false, true] },
+        ],
+      },
+      {
+        type: 'stats',
+        label: 'Les saisons',
+        labelEn: 'The seasons',
+        title: 'Six saisons, deux écoles.',
+        titleEn: 'Six seasons, two schools.',
+        items: [
+          { value: 'S1', title: '3 stagiaires · Human Booster', titleEn: '3 interns · Human Booster' },
+          { value: 'S2', title: '4 stagiaires · Human Booster', titleEn: '4 interns · Human Booster' },
+          { value: 'S3', title: '1 stagiaire · Human Booster', titleEn: '1 intern · Human Booster' },
+          { value: 'S4', title: '3 stagiaires · Human Booster', titleEn: '3 interns · Human Booster' },
+          { value: 'S5', title: '5 stagiaires · Human Booster', titleEn: '5 interns · Human Booster' },
+          { value: 'S6', title: '4 stagiaires · IPSSI', titleEn: '4 interns · IPSSI' },
+        ],
+        note: '19 stagiaires au total : une personne a fait deux saisons, en S3 puis en S5.',
+        noteEn: '19 interns in total: one person did two seasons, S3 then S5.',
+      },
+      {
+        type: 'features',
+        label: 'Et après',
+        labelEn: 'What came next',
+        title: 'Où ils en sont aujourd\'hui.',
+        titleEn: 'Where they are today.',
+        paragraphs: [
+          "Recruter n'est pas le seul résultat. Chaque saison forme 3 à 5 personnes et leur permet de valider leur diplôme, qu'elles restent chez nous ou non.",
+        ],
+        paragraphsEn: [
+          'Hiring is not the only outcome. Each season trains 3 to 5 people and lets them complete their degree, whether they stay with us or not.',
+        ],
+        items: [
+          { icon: 'ri-code-s-slash-fill', title: 'Kevin · Saison 2', titleEn: 'Kevin · Season 2', desc: "Développeur web et Minecraft chez Tyrolium de 2023 à 2024. Et, au fil des années, un ami.", descEn: 'Web and Minecraft developer at Tyrolium from 2023 to 2024. And, over the years, a friend.' },
+          { icon: 'ri-gamepad-fill', title: 'Mathys · Saison 6', titleEn: 'Mathys · Season 6', desc: "Réalisateur de Rhodotales, le jeu de TyroCiel. Il a fondé son propre studio, partenaire de TyroCiel.", descEn: "Director of Rhodotales, TyroCiel's game. He founded his own studio, a TyroCiel partner." },
+          { icon: 'ri-rocket-2-fill', title: 'Adèle · Saison 5', titleEn: 'Adèle · Season 5', desc: 'Freelance. Nous lui avons transmis tout ce que nous savons, puis accompagnée dans le lancement de son activité.', descEn: 'Freelancer. We passed on everything we know, then supported her in launching her business.' },
+          { icon: 'ri-building-4-fill', title: 'Marilyne · Saison 1', titleEn: 'Marilyne · Season 1', desc: "Partie rejoindre un grand groupe du conseil numérique, avec une lettre de recommandation de Tyrolium.", descEn: 'Went on to join a major digital consulting group, with a recommendation letter from Tyrolium.' },
+        ],
+      },
+      {
+        type: 'gallery',
+        label: 'En images',
+        labelEn: 'In pictures',
+        title: 'Les saisons, dans nos locaux et ailleurs.',
+        titleEn: 'The seasons, at our offices and beyond.',
+        photos: [
+          { src: 'assets/etudes/tyrostage/groupe-s1-s2-cafe.jpg', caption: 'Saisons 1 et 2, au café', captionEn: 'Seasons 1 and 2, at the café' },
+          { src: 'assets/etudes/tyrostage/groupe-s2-s3-locaux-1.jpg', caption: 'Saisons 2 et 3, dans nos locaux', captionEn: 'Seasons 2 and 3, at our offices' },
+          { src: 'assets/etudes/tyrostage/groupe-s2-s3-locaux-2.jpg', caption: 'Saisons 2 et 3, dans nos locaux', captionEn: 'Seasons 2 and 3, at our offices' },
+          { src: 'assets/etudes/tyrostage/groupe-s5-locaux-1.jpg', caption: 'Saison 5, dans nos locaux', captionEn: 'Season 5, at our offices' },
+          { src: 'assets/etudes/tyrostage/groupe-s5-locaux-2.jpg', caption: 'Saison 5, dans nos locaux', captionEn: 'Season 5, at our offices' },
+          { src: 'assets/etudes/tyrostage/groupe-s5-locaux-3.jpg', caption: 'Saison 5, dans nos locaux', captionEn: 'Season 5, at our offices' },
+          { src: 'assets/etudes/tyrostage/groupe-s6-cafe.jpg', caption: 'Saison 6, au café', captionEn: 'Season 6, at the café' },
+        ],
+      },
+      {
+        // À compléter : ajouter les témoignages (audio + transcription). Bloc masqué tant que "voices" est vide.
+        // Exemple :
+        // { name: 'Prénom Nom', role: 'Développeur chez Tyrolium', roleEn: 'Developer at Tyrolium',
+        //   tag: 'TyroStage S2 · Human Booster', tagEn: 'TyroStage S2 · Human Booster', recruited: true,
+        //   photo: 'assets/teams/Prenom_Nom.jpg', audio: 'assets/etudes/audio/prenom.mp3',
+        //   transcript: '…', transcriptEn: '…' },
+        type: 'voices',
+        label: 'Leurs voix',
+        labelEn: 'Their voices',
+        title: 'Ce sont eux qui en parlent le mieux.',
+        titleEn: 'They tell it best.',
+        paragraphs: [
+          "Des stagiaires recrutés, d'autres partis ailleurs, et même des étudiants que nous n'avons pas recrutés : tous racontent leur expérience.",
+        ],
+        paragraphsEn: [
+          'Interns we hired, others who moved on, and even students we did not hire: they all share their experience.',
+        ],
+        voices: [
+          { name: 'Kevin Muziak', role: 'Développeur chez Tyrolium de 2023 à 2024', roleEn: 'Developer at Tyrolium, 2023–2024',
+            tag: 'TyroStage S2 · Human Booster', tagEn: 'TyroStage S2 · Human Booster', recruited: true,
+            photo: 'assets/etudes/tyrostage/kevin-muziak.jpg', audio: 'assets/etudes/tyrostage/kevin-muziak.m4a',
+            quote: "Ensemble, même avec peu ou pas d'expérience, on a pu faire des choses très élaborées, qui avaient du sens.",
+            quoteEn: "Together, even with little or no experience, we were able to build highly elaborate things that made sense.",
+            transcript: "Bonjour, je suis ici pour témoigner de mes activités passées avec Maxime Tournier au sein de l'entreprise Tyrolium. J'ai été recruté pour mon stage au sein de cette entreprise. Nous avons fait, entre autres, des sites web, et travaillé sur plusieurs projets internes, en apprenant diverses technologies et diverses manières de fonctionner. Nous avons découvert des outils internes créés par l'entreprise, par Maxime Tournier lui-même. Maxime a su faire preuve de patience, de pédagogie, et surtout nous montrer toutes ces petites techniques qu'il a apprises au fil de ses années d'expérience, dans le code comme ailleurs. Nous avons été capables d'être productifs alors que nous n'avions que quelques mois de développement web derrière nous, parfois seuls, parfois en petit ou moyen groupe. Nous avons vu qu'ensemble, même avec peu ou pas d'expérience, on pouvait faire des choses très élaborées, qui avaient du sens, et qui nous valorisaient vraiment une fois nos tâches quotidiennes, hebdomadaires et mensuelles terminées. C'était une très belle expérience, qui m'a beaucoup appris sur moi et sur le métier. Maxime est quelqu'un que je suis content d'avoir rencontré, et qui a beaucoup à apprendre et à faire découvrir aux autres.",
+            transcriptEn: "Hello, I'm here to talk about my past work with Maxime Tournier at Tyrolium. I was recruited for my internship at the company. Among other things, we built websites and worked on several internal projects, learning various technologies and ways of working. We discovered internal tools created by the company, by Maxime Tournier himself. Maxime showed patience and teaching skills, and above all shared all the little techniques he has picked up over his years of experience, in code and beyond. We managed to be productive with only a few months of web development behind us, sometimes alone, sometimes in small or medium groups. We saw that together, even with little or no experience, we could build highly elaborate things that made sense, and that truly rewarded us once our daily, weekly and monthly tasks were done. It was a wonderful experience that taught me a lot about myself and the job. Maxime is someone I'm glad I met, and who has a lot to teach and share with others." },
+          { name: 'Bastien Thiebaut', role: 'Développeur chez Tyrolium de 2024 à 2025', roleEn: 'Developer at Tyrolium, 2024–2025',
+            tag: 'TyroStage S5 · Human Booster', tagEn: 'TyroStage S5 · Human Booster', recruited: true,
+            photo: 'assets/etudes/tyrostage/bastien-thiebaut.jpg', audio: 'assets/etudes/tyrostage/bastien-thiebaut.m4a',
+            quote: "Maxime était toujours disponible pour nous aider. On n'était jamais délaissés.",
+            quoteEn: "Maxime was always available to help us. We were never left on our own.",
+            transcript: "Je m'appelle Bastien Thiebaut, j'ai 26 ans, je suis développeur web et ancien stagiaire de Tyrolium. J'ai rencontré Maxime pendant ma formation de développeur web : c'était tout simplement l'un de mes formateurs. Le courant est tout de suite passé. Pour valider ma formation, je devais trouver un stage en entreprise ; j'ai demandé à Maxime s'il cherchait un stagiaire, et c'était le cas. C'est comme ça que j'ai intégré Tyrolium, pour quatre mois. La collaboration était vraiment très agréable : toujours dans la bonne humeur, tout en gardant un vrai professionnalisme. Ce qui a rendu cette expérience si agréable, c'est que Maxime était toujours disponible pour nous aider. On n'était jamais délaissés. On travaillait principalement sur Discord et, dès qu'on avait un problème, on arrivait très vite à le joindre et à trouver une solution, que ce soit pour une consigne mal comprise ou un bug dans le code. Nous avons travaillé sur un projet assez gros pour des développeurs débutants : Gamenium, un projet interne. Même si c'était son projet et qu'il avait déjà beaucoup d'idées, il restait très ouvert au débat et à l'écoute de nos propositions. Il tenait aussi à ce qu'on obtienne notre diplôme : il nous a accordé beaucoup de temps en fin de stage, et je n'aurais peut-être pas été aussi bien préparé à l'examen final sans lui. Merci à lui. Maxime est avant tout un passionné, ça se ressent quand il explique les choses. Il est énormément à l'écoute, prend toujours en compte les avis avant de se prononcer, et ne compte pas ses heures. Je le remercie pour cette expérience à la fois professionnelle et très humaine.",
+            transcriptEn: "My name is Bastien Thiebaut, I'm 26, a web developer and a former Tyrolium intern. I met Maxime during my web developer training: he was simply one of my trainers. We clicked straight away. To complete my training, I needed to find a company internship; I asked Maxime if he was looking for an intern, and he was. That's how I joined Tyrolium, for four months. Working together was really enjoyable: always in a good mood, while staying genuinely professional. What made this experience so good was that Maxime was always available to help us. We were never left on our own. We mostly worked on Discord and, whenever we had a problem, we could reach him quickly and find a solution, whether it was a misunderstood instruction or a bug in the code. We worked on a fairly big project for beginner developers: Gamenium, an internal project. Even though it was his project and he already had lots of ideas, he stayed very open to debate and listened to our suggestions. He also cared about us getting our degree: he gave us a lot of time at the end of the internship, and I might not have been as well prepared for my final exam without him. Thanks to him. Maxime is above all passionate, and you can feel it when he explains things. He listens a lot, always takes opinions into account before deciding, and never counts his hours. I thank him for an experience that was both professional and deeply human." },
+          { name: 'Adèle Jausons', role: 'Développeuse chez Tyrolium de 2024 à 2025, aujourd\'hui freelance', roleEn: 'Developer at Tyrolium, 2024–2025, now a freelancer',
+            tag: 'TyroStage S5 · Human Booster', tagEn: 'TyroStage S5 · Human Booster', recruited: true,
+            photo: 'assets/etudes/tyrostage/adele-jausons.jpg', audio: 'assets/etudes/tyrostage/adele-jausons.m4a',
+            quote: "On ne m'a pas juste donné des petites tâches à faire dans mon coin : on m'a impliquée dans un projet, et accompagnée.",
+            quoteEn: "I wasn't just handed small tasks to do on my own: I was involved in a project, and supported.",
+            transcript: "Salut, moi c'est Adèle, je suis développeuse web et je vais vous parler de mon stage chez Tyrolium. Quand j'ai commencé, l'objectif était de passer de la théorie à la pratique. J'ai travaillé sur trois projets : un site vitrine, une application web complexe et ambitieuse mais passionnante, et un outil interne à Tyrolium. Ce que j'ai beaucoup aimé, c'est qu'on ne m'a pas juste donné des petites tâches à faire dans mon coin, du genre « fais-le et reviens quand tu as fini ». On m'a vraiment impliquée dans un projet et accompagnée : on m'a laissé de l'autonomie, tout en étant toujours présent si besoin. J'ai principalement travaillé à distance, ce qui aurait pu compliquer les choses, mais Maxime était toujours là pour répondre aux questions. Il est aussi très rodé côté communication et outils, y compris les outils clients pour montrer où en est le projet. C'était super pratique. J'ai vraiment adoré : un stage structuré, accompagné, organisé. Et pourtant nous étions pas mal de stagiaires, et Maxime s'occupait de tout seul. Techniquement, j'ai énormément progressé : lire du code, le comprendre, le modifier ; j'ai découvert de nouvelles technologies et je me suis beaucoup améliorée sur celles que je connaissais. J'ai suivi des projets de A à Z, et repris des projets existants. L'ambiance était hyper sympa. Maxime est avenant, bienveillant, à l'écoute, très professionnel, et il veut toujours comprendre : le client, le problème, ce qui se passe. Je trouve ça essentiel dans ce métier, et c'est ce qui fait que Tyrolium vaut le coup. Je recommande à 100 %, que ce soit pour un stage, un travail, un site ou autre. Allez-y les yeux fermés : moi, je ne regrette pas du tout.",
+            transcriptEn: "Hi, I'm Adèle, a web developer, and I'm going to talk about my internship at Tyrolium. When I started, the goal was to move from theory to practice. I worked on three projects: a showcase website, a complex, ambitious but fascinating web application, and an internal Tyrolium tool. What I really liked was that I wasn't just handed small tasks to do on my own, the \"do it and come back when you're done\" kind. I was truly involved in a project and supported: given autonomy, with someone always there if needed. I mostly worked remotely, which could have made things harder, but Maxime was always there to answer questions. He's also very well organised with communication and tools, including client tools to show how a project is progressing. It was really convenient. I absolutely loved it: a structured, well-supported, organised internship. And yet there were quite a few of us interns, and Maxime handled everything on his own. Technically, I made huge progress: reading code, understanding it, changing it; I discovered new technologies and got much better at the ones I knew. I followed projects from A to Z, and took over existing ones. The atmosphere was really friendly. Maxime is approachable, kind, attentive, very professional, and he always wants to understand: the client, the problem, what's going on. I think that's essential in this job, and it's what makes Tyrolium worth it. I recommend it 100%, whether for an internship, a job, a website or anything else. Go for it with your eyes closed: I don't regret it one bit." },
+          { name: 'Maxence Emery', role: 'Développeur et intégrateur, apprenant en formation', roleEn: 'Developer and integrator, former trainee',
+            tag: 'Human Booster', tagEn: 'Human Booster', recruited: false,
+            photo: 'assets/etudes/tyrostage/maxence-emery.jpg', audio: 'assets/etudes/tyrostage/maxence-emery.m4a',
+            quote: "Si ma présentation était bonne, c'est notamment grâce à lui et à son écoute attentive.",
+            quoteEn: "If my presentation went well, it was largely thanks to him and how closely he listened.",
+            transcript: "Je m'appelle Maxence Emery, je suis intégrateur WordPress. J'ai obtenu en février 2025 mon diplôme de développeur web et web mobile. J'ai rencontré Maxime Tournier pendant mes études : c'était l'un de mes professeurs. J'ai tout de suite été séduit par son approche : toujours extrêmement disponible et professionnel, il nous parlait de ses expériences et nous aidait chaque fois qu'il le pouvait. Il m'a été d'une aide précieuse en fin d'année. Je devais présenter mon dossier projet devant un jury, et il m'a permis de faire une sorte d'examen blanc avec lui, avec beaucoup de conseils et d'axes d'amélioration. J'ai énormément travaillé pour obtenir ce diplôme, mais si ma présentation était bonne, c'est notamment grâce à lui et à son écoute attentive. Je devais aussi déployer un site sur un serveur, ce qui était particulièrement compliqué avec les technologies imposées. Sans Maxime pour m'aiguiller, je ne suis pas sûr que j'aurais pu réaliser ce déploiement dans de bonnes conditions. Il a toujours été force de proposition. C'est un professeur d'une grande maturité malgré son jeune âge, et je suis très heureux de l'avoir eu.",
+            transcriptEn: "My name is Maxence Emery, I'm a WordPress integrator. In February 2025 I earned my web and mobile web developer diploma. I met Maxime Tournier during my studies: he was one of my teachers. I was immediately won over by his approach: always extremely available and professional, he shared his experience and helped us whenever he could. He was a huge help at the end of the year. I had to present my project file to a jury, and he let me do a kind of mock exam with him, with lots of advice and areas for improvement. I worked extremely hard for this diploma, but if my presentation went well, it was largely thanks to him and how closely he listened. I also had to deploy a website on a server, which was particularly tricky with the technologies we were required to use. Without Maxime guiding me, I'm not sure I could have done that deployment properly. He always came up with ideas. He's a teacher with great maturity despite his young age, and I'm very glad I had him." },
+        ],
+      },
+      {
+        type: 'features',
+        label: 'Nos règles',
+        labelEn: 'Our rules',
+        title: 'Former d\'abord. Recruter ensuite.',
+        titleEn: 'Teach first. Hire second.',
+        paragraphs: [
+          "Être à la fois formateur et recruteur impose des règles claires. Les voici, et nous les appliquons à chaque intervention.",
+        ],
+        paragraphsEn: [
+          'Being both trainer and recruiter requires clear rules. Here they are, and we apply them at every course.',
+        ],
+        items: [
+          { icon: 'ri-megaphone-fill', title: 'Transparence dès le premier jour', titleEn: 'Transparency from day one', desc: 'Les étudiants savent dès le début que Tyrolium recrute ses stagiaires ainsi.', descEn: 'Students know from the start that this is how Tyrolium recruits its interns.' },
+          { icon: 'ri-scales-3-fill', title: 'Des notes indépendantes', titleEn: 'Independent grades', desc: "Personne n'est noté par préférence. Le recrutement ne change rien à l'évaluation.", descEn: 'No one is graded by preference. Recruitment has no bearing on assessment.' },
+          { icon: 'ri-time-fill', title: 'Aucune proposition pendant le cours', titleEn: 'No offers during the course', desc: "Les propositions arrivent toujours après l'intervention, et nous refusons toute demande pendant.", descEn: 'Offers always come after the course, and we decline any request during it.' },
+          { icon: 'ri-hand-heart-fill', title: 'Aider aussi ceux qu\'on ne recrute pas', titleEn: 'Helping those we do not hire', desc: 'Conseils, mentorat, recommandations : la formation profite à toute la promotion.', descEn: 'Advice, mentoring, recommendations: the training benefits the whole class.' },
+        ],
+      },
+      {
+        type: 'features',
+        label: 'Gagnant-gagnant',
+        labelEn: 'Win-win',
+        title: 'Trois gagnants.',
+        titleEn: 'Three winners.',
+        items: [
+          { icon: 'ri-graduation-cap-fill', title: 'L\'étudiant', titleEn: 'The student', desc: 'Une formation concrète, un stage qui valide son diplôme, et une porte ouverte sur la suite.', descEn: 'Hands-on training, an internship that completes their degree, and an open door for what comes next.' },
+          { icon: 'ri-school-fill', title: 'L\'école', titleEn: 'The school', desc: 'Un formateur issu du terrain, et des débouchés réels pour ses étudiants.', descEn: 'A trainer from the field, and real opportunities for its students.' },
+          { icon: 'ri-team-fill', title: 'Tyrolium', titleEn: 'Tyrolium', desc: 'Des talents passionnés, qui connaissent déjà notre exigence et notre culture.', descEn: 'Passionate talent who already know our standards and our culture.' },
+        ],
+      },
+      {
+        type: 'features',
+        label: 'Les leçons',
+        labelEn: 'The lessons',
+        title: 'Ce que nous en retenons.',
+        titleEn: 'What we take away.',
+        items: [
+          { icon: 'ri-search-eye-fill', title: 'Observer vaut mieux que questionner', titleEn: 'Watching beats questioning', desc: 'Des semaines de travail réel révèlent plus qu\'un entretien parfaitement préparé.', descEn: 'Weeks of real work reveal more than a perfectly rehearsed interview.' },
+          { icon: 'ri-seedling-fill', title: 'La technique s\'apprend, pas la soif', titleEn: 'Skills can be taught, hunger cannot', desc: 'Recruter la motivation et former ensuite, c\'est notre pari, et il fonctionne.', descEn: 'Hiring for motivation and training afterwards is our bet, and it works.' },
+          { icon: 'ri-group-fill', title: 'Un groupe soudé apprend plus vite', titleEn: 'A close group learns faster', desc: 'Accueillir des personnes qui s\'apprécient déjà crée une dynamique immédiate.', descEn: 'Welcoming people who already get along creates instant momentum.' },
+        ],
+      },
+    ],
+    cta: {
+      title: 'Vous êtes une école ?',
+      titleEn: 'Are you a school?',
+      content: "Faites intervenir un formateur issu du terrain, et offrez à vos étudiants des projets réels et des débouchés concrets.",
+      contentEn: 'Bring in a trainer from the field, and give your students real projects and concrete opportunities.',
+      btn: 'Nous contacter',
+      btnEn: 'Contact us',
+      btnIcon: 'ri-graduation-cap-line',
       routerLink: '/contact',
     },
   },
