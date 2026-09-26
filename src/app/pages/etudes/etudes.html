@@ -46,7 +46,7 @@
             </div>
           </div>
           <div class="ec-card__body">
-            <span class="ec-card__meta">{{ study.brand }} · {{ lang() === 'en' ? study.categoryEn : study.category }} · {{ study.period }}</span>
+            <span class="ec-card__meta">{{ study.brand }} · {{ lang() === 'en' ? study.categoryEn : study.category }} · {{ lang() === 'en' ? (study.periodEn ?? study.period) : study.period }}</span>
             <h3 class="ec-card__title">{{ lang() === 'en' ? study.titleEn : study.title }}</h3>
             <p class="ec-card__desc">{{ lang() === 'en' ? study.summaryEn : study.summary }}</p>
           </div>
