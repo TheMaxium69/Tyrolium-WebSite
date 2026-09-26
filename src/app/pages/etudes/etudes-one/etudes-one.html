@@ -1,0 +1,200 @@
+@if (study) {
+
+<!-- ─── Hero ───────────────────────────────────────────────────────────── -->
+
+<div class="eo-hero" [style.background]="study.gradient">
+  <div class="eo-hero__noise"></div>
+  <div class="eo-container">
+
+    <a routerLink="/etudes-de-cas" class="eo-back">
+      <i class="ri-arrow-left-line"></i>
+      {{ lang() === 'en' ? 'All case studies' : 'Toutes les études de cas' }}
+    </a>
+
+    <img class="eo-hero__logo" [src]="study.logo" [alt]="study.brand">
+    <span class="eo-hero__meta">{{ lang() === 'en' ? 'Case study' : 'Étude de cas' }} · {{ t(study.category, study.categoryEn) }} · {{ study.period }}</span>
+    <h1 class="eo-hero__title">{{ t(study.title, study.titleEn) }}</h1>
+    <p class="eo-hero__desc">{{ t(study.summary, study.summaryEn) }}</p>
+
+    <div class="eo-hero__stats">
+      @for (s of study.heroStats; track s.title) {
+        <div class="eo-hero__stat">
+          <span class="eo-hero__stat-value">{{ t(s.value, s.valueEn) }}</span>
+          <span class="eo-hero__stat-label">{{ t(s.title, s.titleEn) }}</span>
+        </div>
+      }
+    </div>
+
+  </div>
+  <div class="eo-hero__wave">
+    <svg viewBox="0 24 150 28" preserveAspectRatio="none">
+      <defs><path id="eow" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/></defs>
+      <use href="#eow" x="48" y="0" fill="rgba(246,247,251,0.5)"/>
+      <use href="#eow" x="48" y="3" fill="rgba(246,247,251,0.35)"/>
+      <use href="#eow" x="48" y="7" fill="#f6f7fb"/>
+    </svg>
+  </div>
+</div>
+
+<!-- ─── Body ───────────────────────────────────────────────────────────── -->
+
+<div class="eo-body">
+  <div class="eo-container eo-layout">
+
+    <article class="eo-main">
+      @for (block of study.blocks; track $index) {
+        <section class="eo-block" [class.eo-block--story]="block.type === 'story'">
+
+          @if (block.label) {
+            <p class="eo-label">{{ t(block.label, block.labelEn) }}</p>
+          }
+          @if (block.title) {
+            <h2 class="eo-title">{{ t(block.title, block.titleEn) }}</h2>
+          }
+
+          @switch (block.type) {
+
+            @case ('story') {
+              <i class="ri-double-quotes-l eo-story__mark"></i>
+              @for (p of tl(block.paragraphs, block.paragraphsEn); track $index) {
+                <p class="eo-text">{{ p }}</p>
+              }
+              @if (block.author) {
+                <div class="eo-story__author">
+                  <span class="eo-story__name">{{ block.author }}</span>
+                  <span class="eo-story__role">{{ t(block.authorRole, block.authorRoleEn) }}</span>
+                </div>
+              }
+            }
+
+            @case ('stats') {
+              <div class="eo-stats">
+                @for (s of block.items; track $index) {
+                  <div class="eo-stat">
+                    <span class="eo-stat__value">{{ t(s.value, s.valueEn) }}</span>
+                    <span class="eo-stat__label">{{ t(s.title, s.titleEn) }}</span>
+                  </div>
+                }
+              </div>
+              @for (p of tl(block.paragraphs, block.paragraphsEn); track $index) {
+                <p class="eo-text">{{ p }}</p>
+              }
+              @if (block.note) {
+                <p class="eo-note"><i class="ri-information-line"></i> {{ t(block.note, block.noteEn) }}</p>
+              }
+            }
+
+            @case ('bars') {
+              <div class="eo-bars">
+                @for (b of block.items; track $index) {
+                  <div class="eo-bar">
+                    <div class="eo-bar__head">
+                      <span class="eo-bar__name">{{ t(b.title, b.titleEn) }}</span>
+                      <span class="eo-bar__value">{{ t(b.value, b.valueEn) }} · <strong>{{ b.pct }} %</strong></span>
+                    </div>
+                    <div class="eo-bar__track"><div class="eo-bar__fill" [style.width.%]="b.pct"></div></div>
+                  </div>
+                }
+              </div>
+              @if (block.note) {
+                <p class="eo-note eo-note--spaced"><i class="ri-information-line"></i> {{ t(block.note, block.noteEn) }}</p>
+              }
+            }
+
+            @case ('compare') {
+              @for (p of tl(block.paragraphs, block.paragraphsEn); track $index) {
+                <p class="eo-text">{{ p }}</p>
+              }
+              <div class="eo-compare-wrap">
+                <table class="eo-compare">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      @for (col of block.columns; track $index) {
+                        <th [class.eo-compare__hl]="col.highlight">{{ t(col.name, col.nameEn) }}</th>
+                      }
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @for (row of block.rows; track $index) {
+                      <tr>
+                        <td class="eo-compare__label">{{ t(row.label, row.labelEn) }}</td>
+                        @for (v of row.values; track $index; let i = $index) {
+                          <td [class.eo-compare__hl]="block.columns?.[i]?.highlight">
+                            @if (v) {
+                              <i class="ri-checkbox-circle-fill eo-yes" [attr.aria-label]="lang() === 'en' ? 'Yes' : 'Oui'"></i>
+                            } @else {
+                              <i class="ri-close-circle-fill eo-no" [attr.aria-label]="lang() === 'en' ? 'No' : 'Non'"></i>
+                            }
+                          </td>
+                        }
+                      </tr>
+                    }
+                  </tbody>
+                </table>
+              </div>
+            }
+
+            @case ('features') {
+              @for (p of tl(block.paragraphs, block.paragraphsEn); track $index) {
+                <p class="eo-text">{{ p }}</p>
+              }
+              <div class="eo-features">
+                @for (f of block.items; track $index) {
+                  <div class="eo-feature">
+                    <div class="eo-feature__icon"><i [class]="f.icon"></i></div>
+                    <div>
+                      <h3 class="eo-feature__title">{{ t(f.title, f.titleEn) }}</h3>
+                      <p class="eo-feature__desc">{{ t(f.desc, f.descEn) }}</p>
+                    </div>
+                  </div>
+                }
+              </div>
+            }
+
+            @default {
+              @for (p of tl(block.paragraphs, block.paragraphsEn); track $index) {
+                <p class="eo-text">{{ p }}</p>
+              }
+            }
+          }
+
+        </section>
+      }
+      <p class="eo-asof"><i class="ri-calendar-check-line"></i> {{ lang() === 'en' ? 'Figures as of ' + study.dataAsOfEn + '.' : 'Chiffres arrêtés en ' + study.dataAsOf + '.' }}</p>
+    </article>
+
+    <aside class="eo-aside">
+      <div class="eo-facts">
+        <p class="eo-label">{{ lang() === 'en' ? 'At a glance' : 'En bref' }}</p>
+        <dl>
+          @for (f of study.facts; track f.label) {
+            <div class="eo-fact">
+              <dt>{{ t(f.label, f.labelEn) }}</dt>
+              <dd>{{ t(f.value, f.valueEn) }}</dd>
+            </div>
+          }
+        </dl>
+        @if (study.link) {
+          <a class="eo-facts__link" [href]="study.link.url" target="_blank" rel="noopener">
+            {{ study.link.label }} <i class="ri-external-link-line"></i>
+          </a>
+        }
+      </div>
+    </aside>
+
+  </div>
+</div>
+
+<tyro-ui-cta
+  [title]="t(study.cta.title, study.cta.titleEn)"
+  [label]="lang() === 'en' ? 'Case study' : 'Étude de cas'"
+  [content]="t(study.cta.content, study.cta.contentEn)"
+  [btn]="t(study.cta.btn, study.cta.btnEn)"
+  [btnIcon]="'<i class=\'' + study.cta.btnIcon + '\'></i>'"
+  [btnRouterLink]="study.cta.routerLink"
+  [subbtn]="lang() === 'en' ? 'Contact us' : 'Nous contacter'"
+  [subRouterLink]="'/contact'"
+></tyro-ui-cta>
+
+}

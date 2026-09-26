@@ -10,6 +10,8 @@ import { Rse } from './pages/rse/rse';
 import { Vision } from './pages/vision/vision';
 import { Labs } from './pages/labs/labs';
 import { LabsOne } from './pages/labs/labs-one/labs-one';
+import { Etudes } from './pages/etudes/etudes';
+import { EtudesOne } from './pages/etudes/etudes-one/etudes-one';
 import { Server } from './pages/server/server';
 import { PrestationLayout } from './pages/prestation/prestation-layout';
 import { PrestationWeb } from './pages/prestation/web/prestation-web';
@@ -31,6 +33,8 @@ export const routes: Routes = [
   { path: 'mediakit', component: Mediakit },
   { path: 'labs', component: Labs },
   { path: 'labs/:slug', component: LabsOne },
+  { path: 'etudes-de-cas', component: Etudes },
+  { path: 'etudes-de-cas/:slug', component: EtudesOne },
   { path: 'server', component: Server },
   { path: 'partenaires', component: Partenaires },
   { path: 'chronologie', component: Chronologie },

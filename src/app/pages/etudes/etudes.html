@@ -1,0 +1,67 @@
+<!-- ─── Hero ─────────────────────────────────────────────────────────────── -->
+
+<div class="ec-hero">
+  <div class="ec-hero__noise"></div>
+  <div class="ec-container">
+    <span class="ec-eyebrow">
+      <i class="ri-file-chart-line"></i>
+      {{ lang() === 'en' ? 'Case studies' : 'Études de cas' }}
+    </span>
+    <h1 class="ec-hero__title">{{ lang() === 'en' ? 'Real projects.' : 'Des projets réels.' }}<br><span class="ec-hero__title-accent">{{ lang() === 'en' ? 'Real numbers.' : 'Des chiffres réels.' }}</span></h1>
+    <p class="ec-hero__desc">
+      {{ lang() === 'en'
+        ? 'How we build, launch and grow products - told with the figures, the choices and the setbacks.'
+        : 'Comment nous construisons, lançons et faisons grandir nos produits - racontés avec les chiffres, les choix et les galères.' }}
+    </p>
+  </div>
+  <div class="ec-hero__wave">
+    <svg viewBox="0 24 150 28" preserveAspectRatio="none">
+      <defs><path id="ecw" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/></defs>
+      <use href="#ecw" x="48" y="0" fill="rgba(246,247,251,0.5)"/>
+      <use href="#ecw" x="48" y="3" fill="rgba(246,247,251,0.35)"/>
+      <use href="#ecw" x="48" y="7" fill="#f6f7fb"/>
+    </svg>
+  </div>
+</div>
+
+<!-- ─── Grid ─────────────────────────────────────────────────────────────── -->
+
+<div class="ec-body">
+  <div class="ec-container">
+
+    <div class="ec-section-head">
+      <span class="label">{{ lang() === 'en' ? 'All case studies' : 'Toutes les études de cas' }}</span>
+      <h2 class="ec-section-title">{{ lang() === 'en' ? 'Behind the scenes of our successes' : 'Les coulisses de nos réussites' }}</h2>
+    </div>
+
+    <div class="ec-grid">
+      @for (study of studies; track study.slug) {
+        <a class="ec-card" [routerLink]="['/etudes-de-cas', study.slug]">
+          <div class="ec-card__header" [style.background]="study.gradient">
+            <div class="ec-hero__noise"></div>
+            <img class="ec-card__logo" [src]="study.logo" [alt]="study.brand">
+            <div class="ec-card__headline">
+              <span class="ec-card__headline-value">{{ lang() === 'en' ? (study.headline.valueEn ?? study.headline.value) : study.headline.value }}</span>
+              <span class="ec-card__headline-label">{{ lang() === 'en' ? study.headline.titleEn : study.headline.title }}</span>
+            </div>
+          </div>
+          <div class="ec-card__body">
+            <span class="ec-card__meta">{{ study.brand }} · {{ lang() === 'en' ? study.categoryEn : study.category }} · {{ study.period }}</span>
+            <h3 class="ec-card__title">{{ lang() === 'en' ? study.titleEn : study.title }}</h3>
+            <p class="ec-card__desc">{{ lang() === 'en' ? study.summaryEn : study.summary }}</p>
+          </div>
+          <div class="ec-card__footer">
+            <span class="ec-card__cta">{{ lang() === 'en' ? 'Read the case study' : "Lire l'étude de cas" }} <i class="ri-arrow-right-line"></i></span>
+          </div>
+        </a>
+      }
+
+      <div class="ec-card ec-card--soon">
+        <i class="ri-hourglass-2-line"></i>
+        <h3 class="ec-card__title">{{ lang() === 'en' ? 'More to come' : 'Bientôt' }}</h3>
+        <p class="ec-card__desc">{{ lang() === 'en' ? 'Other case studies are on the way.' : "D'autres études de cas arrivent." }}</p>
+      </div>
+    </div>
+
+  </div>
+</div>
