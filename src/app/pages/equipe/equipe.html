@@ -3,13 +3,18 @@
 <div class="eq-hero">
   <div class="eq-hero-noise"></div>
   <div class="eq-container">
-    <span class="eq-eyebrow"><i class="ri-group-fill"></i> {{ lang() === 'en' ? 'Our team' : 'Notre équipe' }}</span>
-    <h1 class="eq-hero-title">{{ lang() === 'en' ? 'Who we are' : 'Qui sommes-nous' }}</h1>
+    <span class="eq-eyebrow"><i class="ri-group-fill"></i> {{ lang() === 'en' ? 'Our people' : 'Nos talents' }}</span>
+    <h1 class="eq-hero-title">{{ lang() === 'en' ? 'The people behind Tyrolium' : 'Ceux qui construisent Tyrolium' }}</h1>
     <p class="eq-hero-desc">
       {{ lang() === 'en'
-        ? 'Behind every product, every feature, every line of code - a passionate team that builds Tyrolium one day at a time.'
-        : "Derrière chaque produit, chaque fonctionnalité, chaque ligne de code - une équipe passionnée qui construit Tyrolium jour après jour." }}
+        ? 'A founder, a core of historic members, trusted partners, and every person who has built Tyrolium since 2017.'
+        : "Un fondateur, un noyau de membres historiques, des partenaires de confiance, et toutes celles et ceux qui ont construit Tyrolium depuis 2017." }}
     </p>
+    <div class="eq-hero-stats">
+      <span><strong>{{ totalPeople }}</strong> {{ lang() === 'en' ? 'people since 2017' : 'personnes depuis 2017' }}</span>
+      <span><strong>6</strong> {{ lang() === 'en' ? 'TyroStage seasons' : 'saisons TyroStage' }}</span>
+      <span><strong>9</strong> {{ lang() === 'en' ? 'years of history' : "ans d'histoire" }}</span>
+    </div>
   </div>
   <div class="eq-hero-wave">
     <svg viewBox="0 24 150 28" preserveAspectRatio="none">
@@ -26,65 +31,214 @@
 <div class="eq-page-body">
   <div class="eq-container">
 
-    <!-- ── Fondateur ── -->
+    <!-- ── À la tête de Tyrolium ── -->
     <div class="eq-section-head eq-animate">
-      <div class="eq-section-pill">{{ lang() === 'en' ? 'Founder' : 'Fondateur' }}</div>
-      <h2 class="eq-section-title">{{ lang() === 'en' ? 'At the helm' : 'À la tête du groupe' }}</h2>
+      <div class="eq-section-pill">{{ lang() === 'en' ? 'Leadership' : 'Direction' }}</div>
+      <h2 class="eq-section-title">{{ lang() === 'en' ? 'At the helm' : 'À la tête de Tyrolium' }}</h2>
     </div>
 
     <div class="eq-founder-wrap eq-animate">
       <div class="eq-founder-card">
         <div class="eq-founder-photo-wrap">
-          <img class="eq-founder-photo" [src]="founder.photo" [alt]="founder.firstName + ' ' + founder.lastName">
+          <img class="eq-founder-photo" [src]="founder.photo" [alt]="founder.name">
         </div>
         <div class="eq-founder-info">
-          <h2 class="eq-founder-name">{{ founder.firstName }} {{ founder.lastName }}</h2>
+          <h2 class="eq-founder-name">{{ founder.name }}</h2>
           <p class="eq-founder-role">{{ lang() === 'en' ? founder.roleEn : founder.role }}</p>
-          <p class="eq-founder-bio">
-            {{ lang() === 'en'
-              ? 'Founder of Tyrolium in 2017, Maxime built the group from a Minecraft server into a growing tech holding. Visionary, entrepreneur and developer - he drives the strategy and culture of the entire Tyrolium ecosystem.'
-              : "Fondateur de Tyrolium en 2017, Maxime a fait grandir le groupe d'un serveur Minecraft à une holding technologique en pleine croissance. Visionnaire, entrepreneur et développeur - il impulse la stratégie et la culture de tout l'écosystème Tyrolium." }}
-          </p>
+          <p class="eq-founder-bio">{{ lang() === 'en' ? founder.bioEn : founder.bio }}</p>
           <div class="eq-founder-tags">
             <span class="eq-tag"><i class="ri-calendar-line"></i> {{ lang() === 'en' ? 'Since 2017' : 'Depuis 2017' }}</span>
             <span class="eq-tag"><i class="ri-building-2-line"></i> {{ lang() === 'en' ? '8 subsidiaries' : '8 filiales' }}</span>
-            <span class="eq-tag"><i class="ri-group-line"></i> {{ lang() === 'en' ? team.length + ' members' : team.length + ' membres' }}</span>
+            <span class="eq-tag"><i class="ri-graduation-cap-line"></i> {{ lang() === 'en' ? 'Trainer' : 'Formateur' }}</span>
           </div>
+        </div>
+      </div>
+
+      <div class="eq-founder-card eq-founder-card--second">
+        <div class="eq-founder-photo-wrap">
+          <img class="eq-founder-photo eq-founder-photo--second" [src]="cofounder.photo" [alt]="cofounder.name">
+        </div>
+        <div class="eq-founder-info">
+          <h2 class="eq-founder-name eq-founder-name--second">{{ cofounder.name }}</h2>
+          <p class="eq-founder-role">{{ lang() === 'en' ? cofounder.roleEn : cofounder.role }}</p>
+          <p class="eq-founder-bio">{{ lang() === 'en' ? cofounder.bioEn : cofounder.bio }}</p>
         </div>
       </div>
     </div>
 
-    <!-- ── Équipe ── -->
+    <!-- ── Le noyau ── -->
     <div class="eq-section-head eq-animate">
-      <div class="eq-section-pill">{{ lang() === 'en' ? 'Team' : 'Équipe' }}</div>
-      <h2 class="eq-section-title">{{ lang() === 'en' ? 'The crew' : 'L\'équipe' }}</h2>
+      <div class="eq-section-pill">{{ lang() === 'en' ? 'The core' : 'Le noyau' }}</div>
+      <h2 class="eq-section-title">{{ lang() === 'en' ? 'Day to day, or behind the scenes' : "Au quotidien, ou dans l'ombre" }}</h2>
       <p class="eq-section-desc">
         {{ lang() === 'en'
-          ? 'Diverse profiles, shared passion. Together we build, ship and grow.'
-          : 'Des profils variés, une passion commune. Ensemble on construit, on livre, on grandit.' }}
+          ? 'Historic members who still carry Tyrolium, in production as in advice. One for each pole of our circular model.'
+          : 'Des membres historiques qui portent toujours Tyrolium, en production comme en conseil. Un par pôle de notre modèle circulaire.' }}
+      </p>
+      <a class="eq-inline-link" routerLink="/vision">{{ lang() === 'en' ? 'Discover our model' : 'Découvrir notre modèle' }} <i class="ri-arrow-right-line"></i></a>
+    </div>
+
+    <div class="eq-grid eq-grid--core">
+      @for (p of core; track p.name; let i = $index) {
+        <div class="eq-card eq-animate" [style.--delay]="(i * 60) + 'ms'">
+          <div class="eq-card-photo-wrap">
+            @if (p.photo) {
+              <img class="eq-card-photo" [src]="p.photo" [alt]="p.name">
+            } @else {
+              <span class="eq-card-photo eq-initials">{{ initials(p.name) }}</span>
+            }
+          </div>
+          <div class="eq-card-info">
+            <h3 class="eq-card-name">{{ p.name }}</h3>
+            <p class="eq-card-role">{{ lang() === 'en' ? p.roleEn : p.role }}</p>
+            @if (p.bio) {
+              <p class="eq-card-bio">{{ lang() === 'en' ? p.bioEn : p.bio }}</p>
+            }
+            @if (p.tags?.length) {
+              <div class="eq-card-tags">
+                @for (t of (lang() === 'en' ? (p.tagsEn ?? p.tags) : p.tags); track t) {
+                  <span class="eq-mini-tag">{{ t }}</span>
+                }
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- ── Le réseau ── -->
+    <div class="eq-section-head eq-animate">
+      <div class="eq-section-pill">{{ lang() === 'en' ? 'The network' : 'Le réseau' }}</div>
+      <h2 class="eq-section-title">{{ lang() === 'en' ? 'Partners who grew up with us' : 'Des partenaires qui viennent de la maison' }}</h2>
+      <p class="eq-section-desc">
+        {{ lang() === 'en'
+          ? 'Former members who founded their own structure, and still work hand in hand with Tyrolium.'
+          : "D'anciens membres qui ont fondé leur propre structure, et qui travaillent toujours main dans la main avec Tyrolium." }}
       </p>
     </div>
 
-    @for (pole of poles; track pole.key) {
-      @if (membersOf(pole.key).length > 0) {
-        <div class="eq-section-head eq-animate">
-          <div class="eq-section-pill">{{ lang() === 'en' ? pole.labelEn : pole.label }}</div>
-        </div>
-        <div class="eq-grid">
-          @for (member of membersOf(pole.key); track member.lastName; let i = $index) {
-            <div class="eq-card eq-animate" [style.--delay]="(i * 60) + 'ms'">
-              <div class="eq-card-photo-wrap">
-                <img class="eq-card-photo" [src]="member.photo" [alt]="member.firstName + ' ' + member.lastName">
-              </div>
-              <div class="eq-card-info">
-                <h3 class="eq-card-name">{{ member.firstName }} {{ member.lastName }}</h3>
-                <p class="eq-card-role">{{ lang() === 'en' ? member.roleEn : member.role }}</p>
-              </div>
-            </div>
+    <div class="eq-network">
+      @for (p of network; track p.name; let i = $index) {
+        <div class="eq-network-card eq-animate" [style.--delay]="(i * 80) + 'ms'">
+          @if (p.photo) {
+            <img class="eq-network-photo" [src]="p.photo" [alt]="p.name">
+          } @else {
+            <span class="eq-network-photo eq-initials">{{ initials(p.name) }}</span>
           }
+          <div class="eq-network-body">
+            <h3 class="eq-card-name">{{ p.name }}</h3>
+            <p class="eq-founder-role eq-network-role">{{ lang() === 'en' ? p.roleEn : p.role }}</p>
+            <p class="eq-network-bio">{{ lang() === 'en' ? p.bioEn : p.bio }}</p>
+            <div class="eq-card-tags eq-card-tags--left">
+              @for (t of (lang() === 'en' ? (p.tagsEn ?? p.tags) : p.tags); track t) {
+                <span class="eq-mini-tag">{{ t }}</span>
+              }
+            </div>
+            @if (p.link) {
+              <a class="eq-inline-link" [routerLink]="p.link.url">{{ lang() === 'en' ? 'Read the case study' : "Lire l'étude de cas" }} <i class="ri-arrow-right-line"></i></a>
+            }
+          </div>
         </div>
       }
-    }
+
+      <a class="eq-network-card eq-network-card--brand eq-animate" href="https://vturias.fr" target="_blank" rel="noopener">
+        <span class="eq-network-photo eq-network-logo"><img src="assets/tyrolium-ui/projects/Vturias-White.png" alt="Vturias"></span>
+        <div class="eq-network-body">
+          <h3 class="eq-card-name">{{ lang() === 'en' ? 'Vturias talents' : 'Les talents Vturias' }}</h3>
+          <p class="eq-network-bio">
+            {{ lang() === 'en'
+              ? 'The VTubers supported by Vturias, our agency dedicated to virtual creators.'
+              : 'Les VTubers accompagnés par Vturias, notre agence dédiée aux créateurs virtuels.' }}
+          </p>
+          <span class="eq-inline-link">vturias.fr <i class="ri-external-link-line"></i></span>
+        </div>
+      </a>
+    </div>
+
+    <!-- ── Galerie ── -->
+    <div class="eq-section-head eq-animate">
+      <div class="eq-section-pill">{{ lang() === 'en' ? 'In pictures' : 'En images' }}</div>
+      <h2 class="eq-section-title">{{ lang() === 'en' ? 'Real people, real offices' : 'Des vraies personnes, de vrais locaux' }}</h2>
+    </div>
+
+    <div class="eq-gallery eq-animate">
+      @for (ph of photos; track ph.src; let first = $first) {
+        <figure class="eq-gallery-item" [class.eq-gallery-item--wide]="first">
+          <img [src]="ph.src" [alt]="lang() === 'en' ? ph.captionEn : ph.caption" loading="lazy">
+          <figcaption>{{ lang() === 'en' ? ph.captionEn : ph.caption }}</figcaption>
+        </figure>
+      }
+    </div>
+
+    <!-- ── Ils ont construit Tyrolium ── -->
+    <div class="eq-section-head eq-animate">
+      <div class="eq-section-pill">{{ lang() === 'en' ? 'Alumni' : 'Les anciens' }}</div>
+      <h2 class="eq-section-title">{{ lang() === 'en' ? 'They built Tyrolium' : 'Ils ont construit Tyrolium' }}</h2>
+      <p class="eq-section-desc">
+        {{ lang() === 'en'
+          ? 'Developers, designers, moderators: the people who left their mark on the group, many of them through TyroStage.'
+          : 'Développeurs, graphistes, modérateurs : celles et ceux qui ont marqué le groupe, beaucoup passés par TyroStage.' }}
+      </p>
+    </div>
+
+    <div class="eq-grid eq-grid--alumni">
+      @for (p of alumni; track p.name; let i = $index) {
+        <div class="eq-card eq-animate" [class.eq-card--featured]="p.featured" [style.--delay]="((i % 6) * 50) + 'ms'">
+          <div class="eq-card-photo-wrap">
+            @if (p.photo) {
+              <img class="eq-card-photo" [src]="p.photo" [alt]="p.name">
+            } @else {
+              <span class="eq-card-photo eq-initials">{{ initials(p.name) }}</span>
+            }
+          </div>
+          <div class="eq-card-info">
+            <h3 class="eq-card-name">{{ p.name }}</h3>
+            <p class="eq-card-role">{{ lang() === 'en' ? p.roleEn : p.role }}</p>
+            @if (p.bio) {
+              <p class="eq-card-bio">{{ lang() === 'en' ? p.bioEn : p.bio }}</p>
+            }
+            @if (p.tags?.length) {
+              <div class="eq-card-tags">
+                @for (t of (lang() === 'en' ? (p.tagsEn ?? p.tags) : p.tags); track t) {
+                  <span class="eq-mini-tag">{{ t }}</span>
+                }
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+
+    <a class="eq-banner eq-animate" routerLink="/etudes-de-cas/tyrostage">
+      <div class="eq-banner-icon"><i class="ri-graduation-cap-fill"></i></div>
+      <div class="eq-banner-body">
+        <span class="eq-banner-title">{{ lang() === 'en' ? 'Most of our talents came through our TyroStage programme' : 'La plupart de nos talents sont passés par notre programme TyroStage' }}</span>
+        <span class="eq-banner-desc">{{ lang() === 'en' ? 'Discover how we recruit: no CVs, weeks of real practice.' : 'Découvrez comment nous recrutons : pas de CV, des semaines de pratique réelle.' }}</span>
+      </div>
+      <i class="ri-arrow-right-line eq-banner-arrow"></i>
+    </a>
+
+    <!-- ── Contributeurs ── -->
+    <div class="eq-section-head eq-animate">
+      <div class="eq-section-pill">{{ lang() === 'en' ? 'Contributors' : 'Contributeurs' }}</div>
+      <h2 class="eq-section-title">{{ lang() === 'en' ? 'Thank you to all of them' : 'Merci à toutes et à tous' }}</h2>
+      <p class="eq-section-desc">
+        {{ lang() === 'en'
+          ? 'From moderators to builders, from testers to interns: everyone who lent a hand, even for a while.'
+          : "Du modérateur au builder, du testeur au stagiaire : toutes celles et ceux qui ont prêté main-forte, même un temps." }}
+      </p>
+    </div>
+
+    <ul class="eq-contributors eq-animate">
+      @for (c of contributors; track c.name + (c.pseudo ?? '')) {
+        <li class="eq-contributor">
+          <span class="eq-contributor-name">{{ c.name }}</span>
+          @if (c.pseudo) {
+            <span class="eq-contributor-pseudo">{{ c.pseudo }}</span>
+          }
+        </li>
+      }
+    </ul>
 
   </div>
 </div>
