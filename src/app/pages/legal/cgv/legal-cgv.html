@@ -4,7 +4,7 @@
 
       <p class="doc-label">{{ lang() === 'en' ? 'Terms of Sale' : 'CGV' }}</p>
       <h1 class="doc-title">{{ lang() === 'en' ? 'General Terms of Sale' : 'Conditions Générales de Vente' }}</h1>
-      <span class="legal-update">{{ lang() === 'en' ? 'Last updated: 26 September 2026' : 'Dernière mise à jour : 26 septembre 2026' }}</span>
+      <span class="legal-update">{{ lang() === 'en' ? 'Last updated: 27 September 2026' : 'Dernière mise à jour : 27 septembre 2026' }}</span>
 
       <!-- SOMMAIRE -->
       <nav class="legal-toc">
@@ -67,15 +67,15 @@
         @if (lang() === 'en') {
           <strong>Tyrolium's data commitments:</strong> Tyrolium contractually undertakes towards the Client to
           (i) never sell, rent or otherwise transfer for consideration the Client's personal data to any third party; and
-          (ii) host the personal data it collects exclusively on French territory. The only exceptions are payment data
-          processed by Stripe Payments Europe Ltd. (Ireland, EU) and services the Client expressly chooses to have hosted
+          (ii) host the personal data it collects exclusively on French territory. The only exceptions are card payment data
+          from our online stores, processed by Stripe Payments Europe Ltd. (Ireland, EU), and services the Client expressly chooses to have hosted
           in another location. Any breach of these commitments constitutes a failure to perform this contract, entitling
           the Client to all remedies provided by law, including legal action.
         } @else {
           <strong>Engagements de Tyrolium sur les données :</strong> Tyrolium s'engage contractuellement envers le Client à
           (i) ne jamais vendre, louer ni céder à titre onéreux les données personnelles du Client à un tiers ; et
           (ii) héberger les données personnelles qu'elle collecte exclusivement sur le territoire français. Seules exceptions :
-          les données de paiement traitées par Stripe Payments Europe Ltd. (Irlande, UE) et les services que le Client choisit
+          les données de paiement par carte de nos boutiques en ligne, traitées par Stripe Payments Europe Ltd. (Irlande, UE), et les services que le Client choisit
           expressément de faire héberger dans une autre localisation. Tout manquement à ces engagements constitue une
           inexécution du présent contrat, ouvrant droit pour le Client à l'ensemble des recours prévus par la loi, y compris
           l'action en justice.
@@ -252,10 +252,10 @@
       <p><strong>{{ lang() === 'en' ? 'Purchase & payment' : 'Achat et paiement' }}</strong></p>
       <p>
         @if (lang() === 'en') {
-          Purchases are made through the official TyroServ store. Payment is processed by secure third-party platforms.
+          Purchases are made through the official TyroServ store, operated by Tyrolium. Card payments are processed by our payment provider Stripe.
           Grades are activated on the server within a maximum of 24 hours after payment confirmation.
         } @else {
-          Les achats sont effectués via la boutique officielle TyroServ. Le paiement est traité par des plateformes tierces sécurisées.
+          Les achats sont effectués via la boutique officielle TyroServ, gérée par Tyrolium. Les paiements par carte sont traités par notre prestataire de paiement Stripe.
           Les grades sont activés sur le serveur dans un délai maximum de 24 heures après confirmation du paiement.
         }
       </p>
@@ -493,11 +493,13 @@
           <li>Subscriptions are billed monthly or annually, in advance</li>
           <li>They renew automatically unless cancelled before the renewal date</li>
           <li>An invoice is issued automatically by email for each payment</li>
+          <li>Card payments are processed by our payment provider Stripe; Tyrolium never stores card details</li>
           <li>Prices are stated excluding VAT; applicable VAT is added at checkout based on the Client's country</li>
         } @else {
           <li>Les abonnements sont facturés mensuellement ou annuellement, à l'avance</li>
           <li>Ils se renouvellent automatiquement sauf résiliation avant la date de renouvellement</li>
           <li>Une facture est émise automatiquement par e-mail à chaque paiement</li>
+          <li>Les paiements par carte sont traités par notre prestataire de paiement Stripe ; Tyrolium ne stocke aucune donnée de carte</li>
           <li>Les prix sont indiqués HT ; la TVA applicable est ajoutée au moment du paiement selon le pays du Client</li>
         }
       </ul>
@@ -561,7 +563,7 @@
           <li>Tyrolium processes personal data solely on the documented instructions of the Client and for the sole purpose of providing the NexiumiaCRM service</li>
           <li>Tyrolium ensures that persons authorised to process data are bound by an appropriate confidentiality obligation</li>
           <li>Tyrolium implements appropriate technical and organisational security measures (Article 32 GDPR)</li>
-          <li>Tyrolium does not engage any external sub-processor for data processing; the hosting infrastructure is operated directly by Tyrolium under its own <strong>SolidServ</strong> brand, with servers located in France</li>
+          <li>Tyrolium does not engage any external sub-processor to process the data stored in NexiumiaCRM; the hosting infrastructure is operated directly by Tyrolium under its own <strong>SolidServ</strong> brand, with servers located in France. The payment of the subscription itself is handled by Stripe, which has no access to the data stored in the CRM</li>
           <li>Tyrolium assists the Client in responding to requests for the exercise of data subjects' rights (access, rectification, erasure, etc.)</li>
           <li>Tyrolium notifies the Client of any personal data breach within <strong>72 hours</strong> of becoming aware of it</li>
           <li>Upon termination of the service, Tyrolium deletes all personal data within 30 days, unless legal retention obligations apply</li>
@@ -570,7 +572,7 @@
           <li>Tyrolium traite les données personnelles uniquement sur instruction documentée du Client et aux seules fins de la fourniture du service NexiumiaCRM</li>
           <li>Tyrolium s'assure que les personnes autorisées à traiter les données sont soumises à une obligation de confidentialité appropriée</li>
           <li>Tyrolium met en œuvre des mesures de sécurité techniques et organisationnelles appropriées (art. 32 RGPD)</li>
-          <li>Tyrolium ne fait appel à aucun sous-traitant ultérieur externe pour le traitement des données ; l'infrastructure d'hébergement est assurée directement par Tyrolium via sa propre marque <strong>SolidServ</strong>, dont les serveurs sont localisés en France</li>
+          <li>Tyrolium ne fait appel à aucun sous-traitant ultérieur externe pour le traitement des données stockées dans NexiumiaCRM ; l'infrastructure d'hébergement est assurée directement par Tyrolium via sa propre marque <strong>SolidServ</strong>, dont les serveurs sont localisés en France. Le paiement de l'abonnement lui-même est confié à Stripe, qui n'a aucun accès aux données du CRM</li>
           <li>Tyrolium aide le Client à donner suite aux demandes d'exercice des droits des personnes concernées (accès, rectification, effacement, etc.)</li>
           <li>Tyrolium notifie au Client toute violation de données personnelles dans un délai de <strong>72 heures</strong> après en avoir pris connaissance</li>
           <li>À l'issue du service, Tyrolium supprime toutes les données personnelles dans un délai de 30 jours, sauf obligation légale de conservation</li>

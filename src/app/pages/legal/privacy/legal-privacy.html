@@ -4,7 +4,7 @@
 
       <p class="doc-label">{{ lang() === 'en' ? 'Privacy' : 'Confidentialité' }}</p>
       <h1 class="doc-title">{{ lang() === 'en' ? 'Privacy Policy' : 'Politique de confidentialité' }}</h1>
-      <span class="legal-update">{{ lang() === 'en' ? 'Last updated: 26 September 2026' : 'Dernière mise à jour : 26 septembre 2026' }}</span>
+      <span class="legal-update">{{ lang() === 'en' ? 'Last updated: 27 September 2026' : 'Dernière mise à jour : 27 septembre 2026' }}</span>
 
       <!-- SOMMAIRE -->
       <nav class="legal-toc">
@@ -67,9 +67,15 @@
       <p><strong>{{ lang() === 'en' ? 'Purchases & subscriptions' : 'Achats et abonnements' }}</strong></p>
       <p>
         @if (lang() === 'en') {
-          For purchases made on TyroServ, SolidServ and NexiumiaCRM, we collect: email address, billing details (name, address), purchase history and invoices. Payment card data is processed exclusively by our payment provider Stripe - Tyrolium does not store any banking information.
+          For purchases and subscriptions, we collect: email address, billing details (name, address), purchase history and invoices. Payment depends on the type of purchase:
+          <br>- <strong>Services</strong> (websites, training, server setup, support): paid by <strong>bank transfer</strong>. Tyrolium only receives the payer's details that appear on the transfer.
+          <br>- <strong>Online stores</strong> (goodies, in-game items, online subscriptions): paid by card through our payment provider <strong>Stripe</strong>, which processes card data exclusively.
+          <br>Tyrolium never stores any payment card information.
         } @else {
-          Pour les achats réalisés sur TyroServ, SolidServ et NexiumiaCRM, nous collectons : adresse e-mail, informations de facturation (nom, adresse), historique des achats et factures. Les données de carte bancaire sont traitées exclusivement par notre prestataire de paiement Stripe - Tyrolium ne stocke aucune information bancaire.
+          Pour les achats et abonnements, nous collectons : adresse e-mail, informations de facturation (nom, adresse), historique des achats et factures. Le mode de paiement dépend du type d'achat :
+          <br>- <strong>Prestations de service</strong> (sites web, formations, mise en place de serveurs, accompagnement) : réglées par <strong>virement bancaire</strong>. Tyrolium ne reçoit que les coordonnées du payeur figurant sur le virement.
+          <br>- <strong>Boutiques en ligne</strong> (goodies, articles en jeu, abonnements en ligne) : réglées par carte via notre prestataire de paiement <strong>Stripe</strong>, qui traite seul les données de carte.
+          <br>Tyrolium ne stocke jamais aucune donnée de carte bancaire.
         }
       </p>
 
@@ -155,9 +161,9 @@
 
       <p>
         @if (lang() === 'en') {
-          Tyrolium uses only one external sub-processor for data processing:
+          Tyrolium uses only one external sub-processor, for payments made on its online stores:
         } @else {
-          Tyrolium fait appel à un seul sous-traitant externe pour le traitement des données :
+          Tyrolium fait appel à un seul sous-traitant externe, pour les paiements réalisés sur ses boutiques en ligne :
         }
       </p>
 
@@ -173,7 +179,7 @@
           <tbody>
             <tr>
               <td><strong>Stripe Payments Europe, Ltd.</strong></td>
-              <td>{{ lang() === 'en' ? 'Secure payment processing' : 'Traitement sécurisé des paiements' }}</td>
+              <td>{{ lang() === 'en' ? 'Card payment processing on our online stores' : 'Traitement des paiements par carte sur nos boutiques en ligne' }}</td>
               <td>{{ lang() === 'en' ? 'Ireland (EU)' : 'Irlande (UE)' }}</td>
             </tr>
           </tbody>
@@ -183,8 +189,10 @@
       <p>
         @if (lang() === 'en') {
           Stripe is certified PCI-DSS and GDPR-compliant. Tyrolium never has direct access to your payment card details. For more information on how Stripe handles your data, please consult their privacy policy at <a href="https://stripe.com/fr/privacy" target="_blank" rel="noopener">stripe.com/privacy</a>.
+          Service payments by bank transfer go through the payer's bank and ours, which act as independent data controllers under banking regulations; they are not sub-processors of Tyrolium.
         } @else {
           Stripe est certifié PCI-DSS et conforme au RGPD. Tyrolium n'a jamais accès directement à vos coordonnées bancaires. Pour plus d'informations sur la façon dont Stripe traite vos données, consultez leur politique de confidentialité sur <a href="https://stripe.com/fr/privacy" target="_blank" rel="noopener">stripe.com/privacy</a>.
+          Les paiements de prestations par virement transitent par la banque du payeur et la nôtre, qui agissent en tant que responsables de traitement indépendants au titre de la réglementation bancaire ; elles ne sont pas des sous-traitants de Tyrolium.
         }
       </p>
       <p>
