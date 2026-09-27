@@ -37,24 +37,34 @@
       <p class="section-count">8 {{ lang() === 'en' ? 'subsidiaries' : 'filiales' }}</p>
     </div>
 
-    <div class="projects-grid">
-      @for (project of mainProjects; track project.name) {
-        <app-project-card
-          [project]="project"
-          [expanded]="isExpanded(project.name)"
-          (toggleSub)="toggle(project.name)">
-        </app-project-card>
+    <p class="groups-intro">
+      {{ lang() === 'en' ? 'Three poles, one model.' : 'Trois pôles, un seul modèle.' }}
+      <a routerLink="/vision">{{ lang() === 'en' ? 'Discover our vision' : 'Découvrir notre vision' }} <i class="ri-arrow-right-line"></i></a>
+    </p>
 
-        @if (isExpanded(project.name)) {
-          @for (sub of project.subItems!; track sub.name) {
-            <app-project-card
-              [project]="sub"
-              [isSubProject]="true">
-            </app-project-card>
-          }
+    @for (group of groups; track group.key) {
+      <div class="group-head">
+        <span class="group-icon"><i [class]="group.icon"></i></span>
+        <div>
+          <h3 class="group-title">{{ lang() === 'en' ? group.labelEn : group.label }}</h3>
+          <p class="group-desc">{{ lang() === 'en' ? group.descEn : group.desc }}</p>
+        </div>
+      </div>
+
+      <div class="projects-grid">
+        @for (project of projectsOf(group.names, group.extra); track project.name) {
+          <app-project-card [project]="project" [noSubProject]="true" [class.pc-accent-vturias]="project.name === 'Vturias'"></app-project-card>
         }
-      }
-    </div>
+      </div>
+    }
+
+    @if (ungrouped.length) {
+      <div class="projects-grid group-extra">
+        @for (project of ungrouped; track project.name) {
+          <app-project-card [project]="project"></app-project-card>
+        }
+      </div>
+    }
 
   </div>
 </section>

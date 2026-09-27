@@ -118,6 +118,89 @@
 /* ── Projects grid ────────────────────────────────────────════════════════── */
 /* ══════════════════════════════════════════════════════════════════════════ */
 
+/* ─── Regroupement par pôle ──────────────────────────────────────────────── */
+
+.groups-intro {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin: -1rem 0 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+  align-items: center;
+}
+
+.groups-intro a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 600;
+  color: #0533c8;
+  text-decoration: none;
+}
+
+.groups-intro a:hover { color: #bf0000; }
+
+.group-head {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin: 3rem 0 1.25rem;
+}
+
+.groups-intro + .group-head { margin-top: 0; }
+
+.group-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #0000FF 0%, #BF0000 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 1.1rem;
+}
+
+.group-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #111827;
+  margin: 0 0 0.15rem;
+}
+
+.group-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+.group-extra { margin-top: 3rem; }
+
+:host-context([data-theme="dark"]) .groups-intro,
+:host-context([data-theme="dark"]) .group-desc { color: #9ca3af; }
+:host-context([data-theme="dark"]) .groups-intro a { color: #60a5fa; }
+:host-context([data-theme="dark"]) .group-title { color: #f3f4f6; }
+
+/* Clin d'œil Vturias : dégradé standard, bordure rose-bleu au survol */
+.pc-accent-vturias ::ng-deep .project-card:hover {
+  background:
+    linear-gradient(#ffffff, #ffffff) padding-box,
+    conic-gradient(from var(--border-angle), #7dd3fc 0%, #f472b6 40%, #f472b6 70%, #7dd3fc 100%) border-box;
+  box-shadow: 0 16px 48px rgba(124, 58, 237, 0.14);
+}
+
+:host-context([data-theme="dark"]) .pc-accent-vturias ::ng-deep .project-card:hover {
+  background:
+    linear-gradient(var(--page-card-bg), var(--page-card-bg)) padding-box,
+    conic-gradient(from var(--border-angle), #00b8ff 0%, #ff00a5 40%, #ff00a5 70%, #00b8ff 100%) border-box !important;
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
