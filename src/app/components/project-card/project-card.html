@@ -2,7 +2,8 @@
    [class.project-card--sub]="isSubProject"
    [class.project-card--h]="horizontal"
    [href]="project.link"
-   target="_self">
+   target="_self"
+   (click)="onClick($event)">
 
   <div class="project-card__visual">
     <div class="project-card__logo-wrap">

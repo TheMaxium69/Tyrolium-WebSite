@@ -1,4 +1,5 @@
 import { Component, inject, Input, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 import { ITyroUiNavbarMenuItem, TyroUiLangService } from 'tyrolium-ui';
 
 @Component({
@@ -14,4 +15,14 @@ export class ProjectCard {
   @Input() expanded = false;
   @Input() noSubProject = false;
   @Output() toggleSub = new EventEmitter<void>();
+
+  private readonly router = inject(Router);
+
+  /** Lien interne (ex. /prestation) : navigation Angular, sans recharger la page */
+  onClick(event: MouseEvent): void {
+    const link = this.project?.link ?? '';
+    if (!link.startsWith('/') || event.ctrlKey || event.metaKey || event.shiftKey || event.button !== 0) return;
+    event.preventDefault();
+    this.router.navigateByUrl(link);
+  }
 }

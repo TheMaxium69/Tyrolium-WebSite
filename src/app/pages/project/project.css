@@ -201,6 +201,21 @@
     conic-gradient(from var(--border-angle), #00b8ff 0%, #ff00a5 40%, #ff00a5 70%, #00b8ff 100%) border-box !important;
 }
 
+/* Mobile : les cartes ont leur style « survol » par défaut, Vturias garde ses couleurs */
+@media (max-width: 850px) {
+  .pc-accent-vturias ::ng-deep .project-card {
+    background:
+      linear-gradient(#ffffff, #ffffff) padding-box,
+      conic-gradient(from var(--border-angle), #00b8ff 0%, #ff00a5 40%, #ff00a5 70%, #00b8ff 100%) border-box;
+  }
+
+  :host-context([data-theme="dark"]) .pc-accent-vturias ::ng-deep .project-card {
+    background:
+      linear-gradient(var(--page-card-bg), var(--page-card-bg)) padding-box,
+      conic-gradient(from var(--border-angle), #00b8ff 0%, #ff00a5 40%, #ff00a5 70%, #00b8ff 100%) border-box !important;
+  }
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
