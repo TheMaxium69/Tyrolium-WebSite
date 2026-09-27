@@ -39,12 +39,22 @@ export class CaseStudyCard {
   readonly stats = input<CaseCardStat[]>([]);
   /** nom d'une personne des témoignages de l'étude, pour afficher sa citation */
   readonly voice = input<string>();
+  /** remplace le logo de l'étude (optionnel) */
+  readonly logoOverride = input<string>();
+  /** remplace le nom affiché après « Étude de cas » (optionnel) */
+  readonly brandOverride = input<string>();
+  readonly brandOverrideEn = input<string>();
 
   readonly study = computed(() => getCaseStudyBySlug(this.slug()));
 
   readonly logo = computed(() => {
     const s = this.study();
-    return s ? (s.partnerLogo ?? s.logo) : '';
+    return this.logoOverride() ?? (s ? (s.partnerLogo ?? s.logo) : '');
+  });
+
+  readonly brand = computed(() => {
+    const b = this.brandOverride();
+    return b ? this.t(b, this.brandOverrideEn()) : (this.study()?.brand ?? '');
   });
 
   readonly panelStat = computed<CaseCardStat | null>(() => {

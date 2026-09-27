@@ -3,7 +3,7 @@
 
     <div class="csc__panel" [style.background]="s.gradient">
       <div class="csc__noise"></div>
-      <img class="csc__logo" [src]="logo()" [alt]="s.brand">
+      <img class="csc__logo" [src]="logo()" [alt]="brand()">
       @if (panelStat(); as p) {
         <div class="csc__panel-stat">
           <span class="csc__panel-value">{{ t(p.value, p.valueEn) }}</span>
@@ -13,7 +13,7 @@
     </div>
 
     <div class="csc__body">
-      <span class="csc__eyebrow">{{ lang() === 'en' ? 'Case study' : 'Étude de cas' }} · {{ s.brand }}</span>
+      <span class="csc__eyebrow">{{ lang() === 'en' ? 'Case study' : 'Étude de cas' }} · {{ brand() }}</span>
       <h3 class="csc__title">{{ title() ? t(title(), titleEn()) : t(s.title, s.titleEn) }}</h3>
       <p class="csc__text">{{ text() ? t(text(), textEn()) : t(s.summary, s.summaryEn) }}</p>
 
