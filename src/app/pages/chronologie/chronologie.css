@@ -337,6 +337,23 @@
   justify-content: flex-end;
 }
 
+.tl-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.6rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #0533c8;
+  text-decoration: none;
+}
+
+.tl-card-link:hover { color: #bf0000; }
+
+[data-theme="dark"] .tl-card-link { color: #60a5fa; }
+[data-theme="dark"] .tl-card-link:hover { color: #ffffff; }
+
 .tl-tag {
   font-family: 'Inter', sans-serif;
   font-size: 0.65rem;

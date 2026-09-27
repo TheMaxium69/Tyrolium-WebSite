@@ -647,6 +647,16 @@
   }
 }
 
+/* ─── Nos preuves ───────────────────────────────────────────────────────── */
+
+.vs-proofs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 992px) { .vs-proofs { grid-template-columns: 1fr; } }
+
 /* ─── Mot du fondateur ──────────────────────────────────────────────────── */
 
 .vs-letter {

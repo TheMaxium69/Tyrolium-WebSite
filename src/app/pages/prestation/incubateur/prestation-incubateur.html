@@ -126,6 +126,33 @@
   </div>
 </section>
 
+<!-- ── Étude de cas ────────────────────────────────────────────────────── -->
+
+<section class="section bg-light">
+  <div class="container">
+    <p class="label label--accent">{{ lang() === 'en' ? 'They launched with us' : 'Ils se sont lancés avec nous' }}</p>
+    <h2 class="title">{{ lang() === 'en' ? 'From Tyrolium to their own business' : 'De Tyrolium à leur propre activité' }}</h2>
+    <div class="csc-grid">
+      <app-case-study-card
+        slug="cabinet-marthelot"
+        variant="compact"
+        title="Maëwan a fondé son cabinet."
+        titleEn="Maëwan founded his own firm."
+        text="Ancien de Tyrolium, il accompagne aujourd'hui les entrepreneurs avec le Cabinet Marthelot, dont nous sommes partenaires."
+        textEn="A Tyrolium alumnus, he now supports entrepreneurs with Cabinet Marthelot, our partner."
+      ></app-case-study-card>
+      <app-case-study-card
+        slug="tyrostage"
+        variant="compact"
+        title="Adèle et Mathys se sont lancés."
+        titleEn="Adèle and Mathys went solo."
+        text="Adèle est devenue freelance, Mathys a fondé son studio de jeu vidéo, partenaire de TyroCiel. TyroStage mène aussi à l'entrepreneuriat."
+        textEn="Adèle became a freelancer, Mathys founded his video game studio, a TyroCiel partner. TyroStage also leads to entrepreneurship."
+      ></app-case-study-card>
+    </div>
+  </div>
+</section>
+
 <!-- ── CTA ─────────────────────────────────────────────────────────────── -->
 
 <tyro-ui-cta
@@ -137,4 +164,5 @@
         [btnRouterLink]="'/contact'"
         [subbtn]="lang() === 'en' ? 'See our projects' : 'Voir nos projets'"
         [subRouterLink]="'/project'"
+        [notBack]="true"
 ></tyro-ui-cta>

@@ -1,5 +1,6 @@
 import { Component, ViewEncapsulation, inject, AfterViewInit, OnDestroy, NgZone } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { TyroUiLangService } from 'tyrolium-ui';
 
 export type EventStatus = 'past' | 'present' | 'future';
@@ -15,13 +16,15 @@ export interface TimelineEvent {
   status: EventStatus;
   tags?: string[];
   tagsEn?: string[];
+  /** lien vers une étude de cas */
+  caseStudy?: string;
 }
 
 @Component({
   selector: 'app-chronologie',
   templateUrl: './chronologie.html',
   styleUrls: ['./chronologie.css'],
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   encapsulation: ViewEncapsulation.None,
 })
 export class Chronologie implements AfterViewInit, OnDestroy {
@@ -210,6 +213,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
       status: 'past',
       tags: ['TyroServ', 'Lancement'],
       tagsEn: ['TyroServ', 'Launch'],
+      caseStudy: 'tyroserv',
     },
     {
       date: '29 avril 2020',

@@ -43,6 +43,9 @@
             </div>
             <h3 class="tl-card-title">{{ lang() === 'en' ? event.titleEn : event.title }}</h3>
             <p class="tl-card-desc">{{ lang() === 'en' ? event.descriptionEn : event.description }}</p>
+            @if (event.caseStudy) {
+              <a class="tl-card-link" [routerLink]="['/etudes-de-cas', event.caseStudy]">{{ lang() === 'en' ? 'Read the case study' : "Lire l'étude de cas" }} <i class="ri-arrow-right-line"></i></a>
+            }
             @if (event.tags?.length) {
               <div class="tl-tags">
                 @for (tag of (lang() === 'en' ? (event.tagsEn ?? event.tags) : event.tags); track tag) {

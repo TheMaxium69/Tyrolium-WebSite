@@ -1,0 +1,42 @@
+@if (study(); as s) {
+  <a class="csc" [class.csc--compact]="variant() === 'compact'" [routerLink]="['/etudes-de-cas', s.slug]">
+
+    <div class="csc__panel" [style.background]="s.gradient">
+      <div class="csc__noise"></div>
+      <img class="csc__logo" [src]="logo()" [alt]="s.brand">
+      @if (panelStat(); as p) {
+        <div class="csc__panel-stat">
+          <span class="csc__panel-value">{{ t(p.value, p.valueEn) }}</span>
+          <span class="csc__panel-label">{{ t(p.label, p.labelEn) }}</span>
+        </div>
+      }
+    </div>
+
+    <div class="csc__body">
+      <span class="csc__eyebrow">{{ lang() === 'en' ? 'Case study' : 'Étude de cas' }} · {{ s.brand }}</span>
+      <h3 class="csc__title">{{ title() ? t(title(), titleEn()) : t(s.title, s.titleEn) }}</h3>
+      <p class="csc__text">{{ text() ? t(text(), textEn()) : t(s.summary, s.summaryEn) }}</p>
+
+      @if (stats().length) {
+        <div class="csc__stats">
+          @for (st of stats(); track st.label) {
+            <div class="csc__stat">
+              <span class="csc__stat-value">{{ t(st.value, st.valueEn) }}</span>
+              <span class="csc__stat-label">{{ t(st.label, st.labelEn) }}</span>
+            </div>
+          }
+        </div>
+      }
+
+      @if (quote(); as q) {
+        <blockquote class="csc__quote">
+          {{ lang() === 'en' ? '“' : '« ' }}{{ t(q.quote, q.quoteEn) }}{{ lang() === 'en' ? '”' : ' »' }}
+          <cite>{{ q.name }} · {{ t(q.role, q.roleEn) }}</cite>
+        </blockquote>
+      }
+
+      <span class="csc__cta">{{ lang() === 'en' ? 'Read the case study' : "Lire l'étude de cas" }} <i class="ri-arrow-right-line"></i></span>
+    </div>
+
+  </a>
+}

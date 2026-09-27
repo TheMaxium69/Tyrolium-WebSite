@@ -183,6 +183,25 @@
   </div>
 </section>
 
+<!-- ── Étude de cas ────────────────────────────────────────────────────── -->
+
+<section class="section">
+  <div class="container">
+    <app-case-study-card
+      slug="tyroserv"
+      title="La preuve par TyroServ."
+      titleEn="The proof: TyroServ."
+      text="Nous ne vendons pas un savoir-faire théorique : nous l'avons fait. Launcher, anti-triche, boutique intégrée, communauté : tout ce que nous mettons en place pour vous, nous l'avons d'abord construit pour notre propre serveur."
+      textEn="We don't sell theoretical know-how: we've done it. Launcher, anti-cheat, built-in store, community: everything we set up for you, we first built for our own server."
+      [stats]="[
+        { value: '110 000', valueEn: '110,000', label: 'joueurs uniques', labelEn: 'unique players' },
+        { value: '21,8 %', valueEn: '21.8%', label: 'de conversion', labelEn: 'conversion rate' },
+        { value: '33 k€', valueEn: '€33k', label: 'en un seul mois', labelEn: 'in a single month' }
+      ]"
+    ></app-case-study-card>
+  </div>
+</section>
+
 <!-- ── CTA ─────────────────────────────────────────────────────────────── -->
 
 <tyro-ui-cta
@@ -194,5 +213,5 @@
         [btnRouterLink]="'/contact'"
         [subbtn]="'Discord'"
         [subLink]="'https://discord.com/invite/km8h5jHezt'"
-        [notBack]="true"
+        [notBack]="false"
 ></tyro-ui-cta>

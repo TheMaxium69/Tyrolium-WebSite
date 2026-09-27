@@ -1,12 +1,13 @@
 import { Component, ViewEncapsulation, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TyroUiCTA, TyroUiLangService } from 'tyrolium-ui';
+import { CaseStudyCard } from '../../components/case-study-card/case-study-card';
 
 @Component({
   selector: 'app-vision',
   templateUrl: './vision.html',
   styleUrls: ['./vision.css'],
-  imports: [TyroUiCTA, RouterLink],
+  imports: [TyroUiCTA, RouterLink, CaseStudyCard],
   encapsulation: ViewEncapsulation.None,
 })
 export class Vision {

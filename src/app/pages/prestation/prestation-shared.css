@@ -664,3 +664,12 @@
 :host-context([data-theme="dark"]) .ref-block { background: #1f2937; border-color: #374151; }
 :host-context([data-theme="dark"]) .ref-block__text p { color: #9ca3af; }
 :host-context([data-theme="dark"]) .ref-block__text strong { color: #f3f4f6; }
+
+/* ─── Grille de cartes « Étude de cas » ───────────────────────────────────── */
+.csc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+@media (max-width: 768px) { .csc-grid { grid-template-columns: 1fr; } }

@@ -123,6 +123,21 @@
   </div>
 </section>
 
+<!-- ── Étude de cas ────────────────────────────────────────────────────── -->
+
+<section class="section bg-light">
+  <div class="container">
+    <app-case-study-card
+      slug="tyroserv"
+      title="Notre infrastructure ne doit rien à personne."
+      titleEn="Our infrastructure owes nothing to anyone."
+      text="Nos serveurs ont été achetés cash grâce aux revenus de TyroServ, sans prêt ni investisseur. C'est ce qui nous permet de garder des prix bas, et vos données en France."
+      textEn="Our servers were bought outright with TyroServ's revenue, with no loan and no investor. That is what lets us keep prices low, and your data in France."
+      [panel]="{ value: '0 €', valueEn: '€0', label: 'levé auprès d\'investisseurs', labelEn: 'raised from investors' }"
+    ></app-case-study-card>
+  </div>
+</section>
+
 <!-- ── CTA ─────────────────────────────────────────────────────────────── -->
 
 <tyro-ui-cta
@@ -134,4 +149,5 @@
         [btnRouterLink]="'/contact'"
         [subbtn]="lang() === 'en' ? 'Visit SolidServ' : 'Voir SolidServ'"
         [subLink]="'https://solidserv.fr'"
+        [notBack]="true"
 ></tyro-ui-cta>

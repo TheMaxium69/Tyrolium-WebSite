@@ -1,4 +1,5 @@
 import { Component, inject } from '@angular/core';
+import { CaseStudyCard } from '../../../components/case-study-card/case-study-card';
 import { TyroUiCTA, TyroUiLangService } from "tyrolium-ui";
 import { RouterLink } from "@angular/router";
 
@@ -6,7 +7,7 @@ import { RouterLink } from "@angular/router";
     selector: 'app-prestation-web',
     templateUrl: './prestation-web.html',
     styleUrls: ['../prestation-shared.css', './prestation-web.css'],
-    imports: [TyroUiCTA, RouterLink]
+    imports: [CaseStudyCard, TyroUiCTA, RouterLink]
 })
 export class PrestationWeb {
     readonly lang = inject(TyroUiLangService).lang;

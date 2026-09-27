@@ -1,4 +1,5 @@
 import { Component, inject } from '@angular/core';
+import { CaseStudyCard } from '../../../components/case-study-card/case-study-card';
 import { TyroUiCTA, TyroUiLangService } from "tyrolium-ui";
 import { RouterLink } from "@angular/router";
 
@@ -6,7 +7,7 @@ import { RouterLink } from "@angular/router";
     selector: 'app-prestation-incubateur',
     templateUrl: './prestation-incubateur.html',
     styleUrls: ['../prestation-shared.css', './prestation-incubateur.css'],
-    imports: [TyroUiCTA, RouterLink]
+    imports: [CaseStudyCard, TyroUiCTA, RouterLink]
 })
 export class PrestationIncubateur {
     readonly lang = inject(TyroUiLangService).lang;

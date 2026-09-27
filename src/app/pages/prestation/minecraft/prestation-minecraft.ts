@@ -1,4 +1,5 @@
 import { Component, inject, computed } from '@angular/core';
+import { CaseStudyCard } from '../../../components/case-study-card/case-study-card';
 import { TyroUiCTA, NavbarMenuCategory, ITyroUiNavbarMenuItem, TyroUiLangService } from 'tyrolium-ui';
 import { ProjectCard } from '../../../components/project-card/project-card';
 import { RouterLink } from "@angular/router";
@@ -7,7 +8,7 @@ import { RouterLink } from "@angular/router";
   selector: 'app-prestation-minecraft',
   templateUrl: './prestation-minecraft.html',
   styleUrls: ['../prestation-shared.css', './prestation-minecraft.css'],
-  imports: [TyroUiCTA, ProjectCard, RouterLink],
+  imports: [CaseStudyCard, TyroUiCTA, ProjectCard, RouterLink],
 })
 export class PrestationMinecraft {
   readonly lang = inject(TyroUiLangService).lang;

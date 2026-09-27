@@ -262,6 +262,24 @@
     </section>
 
     <!-- ── Mot du fondateur ── -->
+    <!-- ── Nos preuves ── -->
+    <section class="vs-block">
+      <div class="vs-section-head">
+        <p class="vs-label">{{ lang() === 'en' ? 'Our proof' : 'Nos preuves' }}</p>
+        <h2 class="vs-section-title">{{ lang() === 'en' ? 'Facts, not promises.' : 'Des faits, pas des promesses.' }}</h2>
+        <p class="vs-body-text vs-lead">
+          {{ lang() === 'en'
+            ? 'Owning our servers, recruiting without diplomas, making technology accessible: every idea on this page has already been put to the test.'
+            : 'Posséder nos serveurs, recruter sans diplôme, rendre la technologie accessible : chaque idée de cette page a déjà été mise à l\'épreuve.' }}
+        </p>
+      </div>
+      <div class="vs-proofs">
+        <app-case-study-card slug="tyroserv" variant="compact"></app-case-study-card>
+        <app-case-study-card slug="tyrostage" variant="compact"></app-case-study-card>
+        <app-case-study-card slug="cabinet-marthelot" variant="compact"></app-case-study-card>
+      </div>
+    </section>
+
     <section class="vs-letter">
       <div class="vs-letter-head">
         <img class="vs-letter-photo" src="assets/teams/Maxime_Tournier.jpg" alt="Maxime Tournier">

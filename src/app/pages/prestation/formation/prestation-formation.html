@@ -198,6 +198,21 @@
   </div>
 </section>
 
+<!-- ── Étude de cas ────────────────────────────────────────────────────── -->
+
+<section class="section bg-light">
+  <div class="container">
+    <app-case-study-card
+      slug="tyrostage"
+      title="Des formations qui forment comme une vraie entreprise."
+      titleEn="Training that works like a real company."
+      text="Projets réels, délais serrés, client à convaincre : nos formations fonctionnent comme une mini-entreprise, et débouchent sur des stages. Six saisons de stagiaires en sont déjà sorties."
+      textEn="Real projects, tight deadlines, a client to convince: our training runs like a mini-company, and leads to internships. Six seasons of interns have already come out of it."
+      voice="Maxence Emery"
+    ></app-case-study-card>
+  </div>
+</section>
+
 <!-- ── CTA ─────────────────────────────────────────────────────────────── -->
 
 <tyro-ui-cta
@@ -209,5 +224,5 @@
         [btnRouterLink]="'/contact'"
         [subbtn]="lang() === 'en' ? 'Our achievements' : 'Nos réalisations'"
         [subRouterLink]="'/project'"
-        [notBack]="false"
+        [notBack]="true"
 ></tyro-ui-cta>
