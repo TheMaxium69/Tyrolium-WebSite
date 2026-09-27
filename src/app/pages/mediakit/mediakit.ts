@@ -45,16 +45,25 @@ export class Mediakit implements AfterViewInit, OnDestroy {
   @ViewChildren('projBentoFrame') projBentoFrames!: QueryList<ElementRef<HTMLElement>>;
   @ViewChildren('projBentoOuter') projBentoOuters!: QueryList<ElementRef<HTMLElement>>;
   @ViewChildren('iconGlyph') iconGlyphs!: QueryList<ElementRef<HTMLElement>>;
+  @ViewChild('modelFrame') modelFrameRef!: ElementRef<HTMLElement>;
+  @ViewChild('modelOuter') modelOuterRef!: ElementRef<HTMLElement>;
 
   bentoExporting = false;
   exportingProjectBento: Record<number, boolean> = {};
   private bentoRo?: ResizeObserver;
   private projBentoRo?: ResizeObserver;
+  modelExporting = false;
+  private modelRo?: ResizeObserver;
 
   ngAfterViewInit() {
     this.bentoRo = new ResizeObserver(() => this.updateBentoScale());
     this.bentoRo.observe(this.bentoOuterRef.nativeElement);
     this.updateBentoScale();
+
+    this.modelRo = new ResizeObserver(() => {
+      this.modelFrameRef.nativeElement.style.transform = `scale(${this.modelOuterRef.nativeElement.clientWidth / 1080})`;
+    });
+    this.modelRo.observe(this.modelOuterRef.nativeElement);
 
     const outers = this.projBentoOuters.toArray();
     const frames = this.projBentoFrames.toArray();
@@ -76,6 +85,50 @@ export class Mediakit implements AfterViewInit, OnDestroy {
   ngOnDestroy() {
     this.bentoRo?.disconnect();
     this.projBentoRo?.disconnect();
+    this.modelRo?.disconnect();
+  }
+
+  /** Export du schéma « modèle circulaire » (1080×1080, PNG) */
+  /** transparent : exporte sans le fond, les halos ni le grain (pour poser le schéma sur un autre visuel) */
+  async exportModel(transparent = false) {
+    if (this.modelExporting) return;
+    this.modelExporting = true;
+    try {
+      await this.inlineModelImages();
+      const options = {
+        width: 1080, height: 1080, pixelRatio: 2,
+        style: transparent
+          ? { transform: 'none', background: 'transparent', borderRadius: '0' }
+          : { transform: 'none' },
+        filter: (node: HTMLElement) => !transparent
+          || !(node.classList?.contains('model-glow') || node.classList?.contains('bento-bg-noise')),
+      };
+      // 1re passe « à blanc » : certains navigateurs (Safari) rendent les images vides au premier appel
+      await toPng(this.modelFrameRef.nativeElement, options);
+      const dataUrl = await toPng(this.modelFrameRef.nativeElement, options);
+      const name = this.lang() === 'en' ? 'tyrolium-circular-model' : 'tyrolium-modele-circulaire';
+      const a = document.createElement('a');
+      a.href = dataUrl;
+      a.download = `${name}${transparent ? '-transparent' : ''}.png`;
+      a.click();
+    } finally {
+      this.modelExporting = false;
+    }
+  }
+
+  /** remplace les <img> du schéma par des data URL pour que l'export ne dépende pas du chargement réseau */
+  private async inlineModelImages() {
+    const imgs = this.modelFrameRef.nativeElement.querySelectorAll('img');
+    await Promise.all([...imgs].map(async img => {
+      if (img.src.startsWith('data:')) return;
+      const blob = await (await fetch(img.src)).blob();
+      img.src = await new Promise<string>(resolve => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result as string);
+        reader.readAsDataURL(blob);
+      });
+      await img.decode();
+    }));
   }
 
   private updateBentoScale() {
