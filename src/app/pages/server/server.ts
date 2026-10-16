@@ -23,7 +23,7 @@ export interface ServerGroup {
   icon: string;
 }
 
-const GROUPS: ServerGroup[] = [
+export const GROUPS: ServerGroup[] = [
   { name: 'Serveur Interne', nameEn: 'Internal Server',  prefix: 'int',   icon: '/assets/tyrolium-ui/server/int.png',   description: 'Il s\'agit des serveurs hébergés dans les locaux de Tyrolium.', descriptionEn: 'Servers hosted in Tyrolium\'s own premises.' },
   { name: 'VPS',             nameEn: 'VPS',              prefix: 'vps',   icon: '/assets/tyrolium-ui/server/vps.png',   description: 'Il s\'agit de VPS hébergés dans un data center.', descriptionEn: 'VPS instances hosted in data centers.' },
   { name: 'Cloud',           nameEn: 'Cloud',            prefix: 'cloud', icon: '/assets/tyrolium-ui/server/cloud.png', description: 'Il s\'agit de serveurs conçus pour héberger exclusivement des sites web.', descriptionEn: 'Servers designed exclusively for web hosting.' },

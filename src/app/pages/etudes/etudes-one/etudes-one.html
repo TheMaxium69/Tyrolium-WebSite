@@ -319,6 +319,114 @@
               </div>
             }
 
+            @case ('server-fleet') {
+              @for (p of tl(block.paragraphs, block.paragraphsEn); track $index) {
+                <p class="eo-text">{{ p }}</p>
+              }
+              <div class="eo-fleet">
+                <div class="eo-fleet__groups">
+                  @for (g of block.serverGroups; track g.name) {
+                    <div class="eo-fleet__card">
+                      <div class="eo-fleet__card-head">
+                        <div class="eo-fleet__icon-wrap">
+                          <img [src]="g.icon" [alt]="t(g.name, g.nameEn)" loading="lazy">
+                        </div>
+                        <div class="eo-fleet__meta">
+                          <span class="eo-fleet__name">{{ t(g.name, g.nameEn) }}</span>
+                          <span class="eo-fleet__pct">{{ g.pct }} % {{ lang() === 'en' ? 'of fleet' : 'du parc' }}</span>
+                        </div>
+                        <span class="eo-fleet__count">{{ g.count }}</span>
+                      </div>
+                      <div class="eo-fleet__bar">
+                        <div class="eo-fleet__bar-fill" [style.width.%]="g.pct > 4 ? g.pct : 4"></div>
+                      </div>
+                    </div>
+                  }
+                </div>
+
+                @if (block.serverLocations?.length) {
+                  <div class="eo-fleet__locs">
+                    <div class="eo-fleet__locs-head">
+                      <span class="eo-fleet__locs-title">
+                        <i class="ri-earth-line"></i>
+                        {{ lang() === 'en' ? 'Locations (France & custom international deployments)' : 'Implantations (France & déploiements internationaux sur mesure)' }}
+                      </span>
+                    </div>
+                    <div class="eo-fleet__locs-grid">
+                      @for (loc of block.serverLocations; track loc.city) {
+                        <div class="eo-fleet__loc" [class.eo-fleet__loc--intl]="loc.international">
+                          <div class="eo-fleet__loc-top">
+                            <span class="eo-fleet__loc-city">{{ loc.city }}</span>
+                            <span class="eo-fleet__loc-count">{{ loc.count }}</span>
+                          </div>
+                          <div class="eo-fleet__loc-sub">
+                            <span class="eo-fleet__loc-country">{{ t(loc.country, loc.countryEn) }}</span>
+                            @if (loc.international) {
+                              <span class="eo-fleet__loc-badge">{{ lang() === 'en' ? 'On-demand' : 'Sur demande' }}</span>
+                            } @else {
+                              <span class="eo-fleet__loc-badge eo-fleet__loc-badge--fr">{{ lang() === 'en' ? 'Core' : 'Socle FR' }}</span>
+                            }
+                          </div>
+                        </div>
+                      }
+                    </div>
+                  </div>
+                }
+              </div>
+              @if (block.note) {
+                <p class="eo-note eo-note--spaced"><i class="ri-information-line"></i> {{ t(block.note, block.noteEn) }}</p>
+              }
+            }
+
+            @case ('alliance') {
+              @for (p of tl(block.paragraphs, block.paragraphsEn); track $index) {
+                <p class="eo-text">{{ p }}</p>
+              }
+              @if (block.alliance; as al) {
+                <div class="eo-alliance">
+                  <div class="eo-alliance__studios">
+                    <div class="eo-alliance__studio">
+                      <div class="eo-alliance__logo-box">
+                        <img [src]="al.leftLogo" [alt]="al.leftName" loading="lazy">
+                      </div>
+                      @if (al.leftGroup) {
+                        <span class="eo-alliance__group">{{ al.leftGroup }}</span>
+                      }
+                      <span class="eo-alliance__name">{{ al.leftName }}</span>
+                      <span class="eo-alliance__role">{{ t(al.leftRole, al.leftRoleEn) }}</span>
+                    </div>
+
+                    <div class="eo-alliance__plus" aria-hidden="true">×</div>
+
+                    <div class="eo-alliance__studio">
+                      <div class="eo-alliance__logo-box">
+                        <img [src]="al.rightLogo" [alt]="al.rightName" loading="lazy">
+                      </div>
+                      @if (al.rightGroup) {
+                        <span class="eo-alliance__group">{{ al.rightGroup }}</span>
+                      }
+                      <span class="eo-alliance__name">{{ al.rightName }}</span>
+                      <span class="eo-alliance__role">{{ t(al.rightRole, al.rightRoleEn) }}</span>
+                    </div>
+                  </div>
+
+                  <div class="eo-alliance__project">
+                    <span class="eo-alliance__tag">{{ t(al.projectTag, al.projectTagEn) }}</span>
+                    <h3 class="eo-alliance__project-title">{{ al.projectTitle }}</h3>
+                    <p class="eo-alliance__project-desc">{{ t(al.projectDesc, al.projectDescEn) }}</p>
+                    <div class="eo-alliance__pillars">
+                      @for (pil of al.pillars; track pil.label) {
+                        <span class="eo-alliance__pillar">
+                          <i [class]="pil.icon"></i>
+                          {{ t(pil.label, pil.labelEn) }}
+                        </span>
+                      }
+                    </div>
+                  </div>
+                </div>
+              }
+            }
+
             @default {
               @for (p of tl(block.paragraphs, block.paragraphsEn); track $index) {
                 <p class="eo-text">{{ p }}</p>

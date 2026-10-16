@@ -1,4 +1,4 @@
-import { SERVERS } from '../server/server';
+import { SERVERS, GROUPS } from '../server/server';
 
 
 export interface CaseItem {
@@ -46,8 +46,93 @@ export interface CaseBrandCard {
   parent?: boolean;
 }
 
+export interface CaseServerGroup {
+  name: string;
+  nameEn: string;
+  icon: string;
+  count: number;
+  pct: number;
+  desc: string;
+  descEn: string;
+}
+
+export interface CaseServerLocation {
+  city: string;
+  country: string;
+  countryEn: string;
+  count: number;
+  international?: boolean;
+}
+
+export interface CaseAlliance {
+  leftName: string;
+  leftGroup?: string;
+  leftRole: string;
+  leftRoleEn: string;
+  leftLogo: string;
+  rightName: string;
+  rightGroup?: string;
+  rightRole: string;
+  rightRoleEn: string;
+  rightLogo: string;
+  projectTitle: string;
+  projectTag: string;
+  projectTagEn: string;
+  projectDesc: string;
+  projectDescEn: string;
+  pillars: { icon: string; label: string; labelEn: string }[];
+}
+
+const SERVER_GROUPS_BREAKDOWN: CaseServerGroup[] = GROUPS
+  .map(g => {
+    const count = SERVERS.filter(s => s.group === g.prefix).length;
+    return {
+      name: g.name,
+      nameEn: g.nameEn,
+      icon: g.icon.replace(/^\//, ''),
+      count,
+      pct: Math.round((count / SERVERS.length) * 100),
+      desc: g.description,
+      descEn: g.descriptionEn,
+    };
+  })
+  .filter(g => g.count > 0)
+  .sort((a, b) => b.count - a.count);
+
+const COUNTRY_EN_MAP: Record<string, string> = {
+  'France': 'France',
+  'Allemagne': 'Germany',
+  'Japon': 'Japan',
+  'Canada': 'Canada',
+};
+
+const CITY_CLEAN_MAP: Record<string, string> = {
+  'Frankfurt am Main': 'Francfort',
+};
+
+const SERVER_LOCATIONS_BREAKDOWN: CaseServerLocation[] = (() => {
+  const map = new Map<string, { city: string; country: string; count: number }>();
+  for (const s of SERVERS) {
+    const [rawCity = s.lieu, rawCountry = 'France'] = s.lieu.split(' - ').map(p => p.trim());
+    const city = CITY_CLEAN_MAP[rawCity] ?? rawCity;
+    const key = `${city}|${rawCountry}`;
+    const prev = map.get(key);
+    if (prev) prev.count++;
+    else map.set(key, { city, country: rawCountry, count: 1 });
+  }
+  return Array.from(map.values())
+    .map(loc => ({
+      city: loc.city,
+      country: loc.country,
+      countryEn: COUNTRY_EN_MAP[loc.country] ?? loc.country,
+      count: loc.count,
+      international: loc.country !== 'France',
+    }))
+    .sort((a, b) => (a.international === b.international ? b.count - a.count : a.international ? 1 : -1));
+})();
+
 export interface CaseBlock {
-  type: 'text' | 'compare' | 'features' | 'story' | 'stats' | 'bars' | 'steps' | 'showcase' | 'testimonial' | 'voices' | 'gallery' | 'logo-evolution' | 'brand-grid';
+  type: 'text' | 'compare' | 'features' | 'story' | 'stats' | 'bars' | 'steps' | 'showcase' | 'testimonial' | 'voices' | 'gallery' | 'logo-evolution' | 'brand-grid' | 'server-fleet' | 'alliance';
   label?: string;
   labelEn?: string;
   title?: string;
@@ -83,6 +168,12 @@ export interface CaseBlock {
   evolutions?: CaseLogoEvolution[];
   /** brand-grid : grille de logos et identités des filiales */
   brands?: CaseBrandCard[];
+  /** server-fleet : parc de serveurs dynamique */
+  serverGroups?: CaseServerGroup[];
+  serverLocations?: CaseServerLocation[];
+  serverTotal?: number;
+  /** alliance : co-développement entre deux entités */
+  alliance?: CaseAlliance;
 }
 
 export interface CaseVoice {
@@ -949,6 +1040,24 @@ export const CASE_STUDIES: CaseStudy[] = [
         authorRoleEn: 'CEO & Founder of Tyrolium',
       },
       {
+        type: 'compare',
+        label: 'Le choix',
+        labelEn: 'The choice',
+        title: 'Trois façons de réagir face à un talent qui veut créer sa boîte.',
+        titleEn: 'Three ways to react when a talent wants to start their own company.',
+        columns: [
+          { name: 'Le retenir en interne', nameEn: 'Hold him back in-house' },
+          { name: 'Le laisser partir seul', nameEn: 'Let him leave alone' },
+          { name: 'Incubation TimeClaw × TyroCiel', nameEn: 'TimeClaw × TyroCiel incubation', highlight: true },
+        ],
+        rows: [
+          { label: 'Liberté de créer ses propres jeux et sa marque', labelEn: 'Freedom to create his own games and brand', values: [false, true, true] },
+          { label: 'Rhodotales conserve son réalisateur', labelEn: 'Rhodotales keeps its director', values: [true, false, true] },
+          { label: 'Accompagnement administratif, site web et communication', labelEn: 'Admin, website and communication support', values: [true, false, true] },
+          { label: 'Deux communautés réunies autour du même jeu', labelEn: 'Two communities united around the same game', values: [false, false, true] },
+        ],
+      },
+      {
         type: 'features',
         label: "L'accord",
         labelEn: 'The deal',
@@ -989,24 +1098,41 @@ export const CASE_STUDIES: CaseStudy[] = [
         photo: 'assets/teams/Mathys_Lacoque.jpg',
       },
       {
-        type: 'features',
-        label: 'Plus loin',
-        labelEn: 'Going further',
+        type: 'alliance',
+        label: 'Co-développement',
+        labelEn: 'Co-development',
         title: 'Deux studios, un jeu, une même force de frappe.',
         titleEn: 'Two studios, one game, the same reach.',
         paragraphs: [
-          "Rhodotales est un jeu de plateforme HD-2D dans un monde médiéval fantastique. Sa mécanique signature : naviguer entre 3 plans distincts. Le jeu est en développement.",
-          "Le partenariat ne s'arrête pas au code. Les outils de communication de Tyrolium, qui portent tout TyroCiel, sont partagés pour Rhodotales : le jeu est porté à la fois sur les profils de TyroCiel et sur ceux de TimeClaw.",
+          "Rhodotales est un jeu de plateforme HD-2D dans un monde médiéval fantastique. Sa mécanique signature : naviguer entre 3 plans distincts. Le partenariat unit la structure de TyroCiel et la direction créative de TimeClaw.",
+          "Les outils de communication de Tyrolium, qui portent tout TyroCiel, sont partagés pour Rhodotales : le jeu est porté à la fois sur les profils de TyroCiel et sur ceux de TimeClaw.",
         ],
         paragraphsEn: [
-          'Rhodotales is an HD-2D platformer set in a medieval fantasy world. Its signature mechanic: moving between 3 distinct planes. The game is in development.',
-          "The partnership does not stop at the code. Tyrolium's communication tools, which power all of TyroCiel, are shared for Rhodotales: the game is promoted on both TyroCiel's and TimeClaw's profiles.",
+          'Rhodotales is an HD-2D platformer set in a medieval fantasy world. Its signature mechanic: moving between 3 distinct planes. The partnership unites TyroCiel\'s structure and TimeClaw\'s creative direction.',
+          "Tyrolium's communication tools, which power all of TyroCiel, are shared for Rhodotales: the game is promoted on both TyroCiel's and TimeClaw's profiles.",
         ],
-        items: [
-          { icon: 'ri-share-forward-fill', title: 'Deux vitrines pour un jeu', titleEn: 'Two showcases for one game', desc: 'Chaque studio parle de Rhodotales à sa propre communauté.', descEn: 'Each studio talks about Rhodotales to its own community.' },
-          { icon: 'ri-tools-fill', title: 'Les outils de communication de Tyrolium', titleEn: "Tyrolium's communication tools", desc: "La même boîte à outils de communication, au service des deux studios.", descEn: 'The same communication toolkit, serving both studios.' },
-          { icon: 'ri-hand-coin-fill', title: 'Financé en fonds propres', titleEn: 'Self-funded', desc: "Comme tous les projets de TyroCiel, Rhodotales est financé par les fonds du groupe, sans investisseur.", descEn: "Like every TyroCiel project, Rhodotales is funded by the group's own money, with no investors." },
-        ],
+        alliance: {
+          leftName: 'TyroCiel',
+          leftGroup: 'Tyrolium',
+          leftRole: 'Studio de jeu vidéo du groupe · Production & Financement',
+          leftRoleEn: 'Group video game studio · Production & Funding',
+          leftLogo: 'assets/tyrolium-ui/projects/TyroCiel.png',
+          rightName: 'TimeClaw',
+          rightGroup: 'Studio partenaire incubé',
+          rightRole: 'Studio indépendant de Mathys Lacoque · Réalisation & Création',
+          rightRoleEn: 'Mathys Lacoque\'s indie studio · Direction & Creation',
+          rightLogo: 'assets/partners/timeclaw.png',
+          projectTitle: 'Rhodotales',
+          projectTag: 'Plateforme HD-2D · Médiéval fantastique · 3 plans de profondeur',
+          projectTagEn: 'HD-2D Platformer · Medieval fantasy · 3 depth planes',
+          projectDesc: 'Deux vitrines, une même boîte à outils de communication, et un développement 100 % financé en fonds propres par le groupe.',
+          projectDescEn: 'Two showcases, the same communication toolkit, and development 100% self-funded by the group.',
+          pillars: [
+            { icon: 'ri-share-forward-fill', label: 'Deux vitrines pour un jeu', labelEn: 'Two showcases for one game' },
+            { icon: 'ri-tools-fill', label: 'Outils de com partagés', labelEn: 'Shared communication tools' },
+            { icon: 'ri-hand-coin-fill', label: '100 % financé en fonds propres', labelEn: '100% self-funded' },
+          ],
+        },
       },
       {
         type: 'features',
@@ -1135,6 +1261,27 @@ export const CASE_STUDIES: CaseStudy[] = [
         ],
       },
       {
+        type: 'server-fleet',
+        label: 'Le parc en temps réel',
+        labelEn: 'Live server fleet',
+        title: `${SERVERS.length} serveurs et instances déployés.`,
+        titleEn: `${SERVERS.length} servers and instances deployed.`,
+        paragraphs: [
+          "Notre règle est simple : nous hébergeons en France (Strasbourg, Gravelines, Décines-Charpieu, Lyon, Blainville). Mais quand un client ou un projet a un besoin spécifique à l'international : réseau, VPN, redirection de paquets ou proximité géographique, nous avons la capacité de déployer hors de nos frontières, comme à Francfort, Tokyo ou Toronto.",
+        ],
+        paragraphsEn: [
+          'Our rule is simple: we host in France (Strasbourg, Gravelines, Décines-Charpieu, Lyon, Blainville). Still, when a client or project has a specific international requirement : networking, VPN, packet routing or geographic proximity, we have the capacity to deploy abroad, including in Frankfurt, Tokyo and Toronto.',
+        ],
+        serverGroups: SERVER_GROUPS_BREAKDOWN,
+        serverLocations: SERVER_LOCATIONS_BREAKDOWN,
+        serverTotal: SERVERS.length,
+        note: "Données synchronisées dynamiquement avec l'inventaire public de notre page Serveurs.",
+        noteEn: 'Data dynamically synced with the public inventory on our Servers page.',
+        linkLabel: 'Explorer les ' + SERVERS.length + ' serveurs en détail',
+        linkLabelEn: 'Explore all ' + SERVERS.length + ' servers in detail',
+        linkRouter: '/server',
+      },
+      {
         type: 'steps',
         label: 'La trajectoire',
         labelEn: 'The trajectory',
@@ -1166,6 +1313,24 @@ export const CASE_STUDIES: CaseStudy[] = [
         ],
       },
       {
+        type: 'compare',
+        label: 'Pourquoi ça marche',
+        labelEn: 'Why it works',
+        title: 'Trois modèles économiques, une seule équation gagnante.',
+        titleEn: 'Three business models, one winning equation.',
+        columns: [
+          { name: 'Prestation web one-shot', nameEn: 'One-off web service' },
+          { name: 'Revendeur qui loue ses serveurs', nameEn: 'Reseller renting servers' },
+          { name: 'Modèle SolidServ (MRR)', nameEn: 'SolidServ model (MRR)', highlight: true },
+        ],
+        rows: [
+          { label: 'Revenu mensuel récurrent qui s\'additionne', labelEn: 'Compounding monthly recurring revenue', values: [false, true, true] },
+          { label: 'Machines possédées en propre (coût marginal quasi nul)', labelEn: 'Owned hardware (near-zero marginal cost)', values: [false, false, true] },
+          { label: 'Possibilité d\'offrir la création du site au client', labelEn: 'Ability to offer website creation for free', values: [false, false, true] },
+          { label: 'Capacité de déploiement en France et à l\'international', labelEn: 'Deployment capacity in France and internationally', values: [false, true, true] },
+        ],
+      },
+      {
         type: 'text',
         label: 'En pratique',
         labelEn: 'In practice',
@@ -1184,6 +1349,15 @@ export const CASE_STUDIES: CaseStudy[] = [
         linkRouter: '/etudes-de-cas/cabinet-marthelot',
       },
       {
+        type: 'testimonial',
+        quote: "Même quand ce n'est pas facile, tu n'as jamais abandonné, et c'est admirable. Je pense sincèrement que tu es fait pour tracer ton propre chemin et pas pour être salarié.",
+        quoteEn: "Even when things get tough, you have never given up, and that is admirable. I truly believe you are meant to carve your own path, not to be an employee.",
+        author: 'Pierre-Louis Devaud',
+        authorRole: 'Cofondateur de SolidServ · Cofondateur historique de TyroServ',
+        authorRoleEn: 'Co-founder of SolidServ · Historic co-founder of TyroServ',
+        photo: 'assets/teams/Pierre-Louis_Devaud.jpg',
+      },
+      {
         type: 'features',
         label: 'Les leçons',
         labelEn: 'The lessons',
@@ -1194,9 +1368,6 @@ export const CASE_STUDIES: CaseStudy[] = [
           { icon: 'ri-forbid-2-fill', title: 'Un mauvais client coûte plus qu\'il ne rapporte', titleEn: 'A bad customer costs more than they pay', desc: 'La crypto nous a appris à choisir nos clients plutôt qu\'à les accumuler.', descEn: 'Crypto taught us to choose our customers rather than pile them up.' },
           { icon: 'ri-repeat-fill', title: 'Le récurrent finance l\'avenir', titleEn: 'Recurring revenue funds the future', desc: 'Un revenu qui revient chaque mois permet de planifier, d\'investir et de dire non.', descEn: 'Revenue that comes back every month lets you plan, invest and say no.' },
         ],
-        linkLabel: 'Voir notre infrastructure',
-        linkLabelEn: 'See our infrastructure',
-        linkRouter: '/server',
       },
     ],
     cta: {
