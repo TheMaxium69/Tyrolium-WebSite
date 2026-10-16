@@ -89,6 +89,8 @@ export interface CaseFact {
 export interface CaseStudy {
   slug: string;
   brand: string;
+  /** nom avec article pour « Étude de cas sur … » dans la liste (ex. « le Cabinet Marthelot ») */
+  brandFr?: string;
   logo: string;
   /** logo du partenaire (version blanche), affiché dans l'encadré « En bref » */
   partnerLogo?: string;
@@ -346,6 +348,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     slug: 'cabinet-marthelot',
     brand: 'Cabinet Marthelot',
+    brandFr: 'le Cabinet Marthelot',
     logo: 'assets/tyrolium-ui/projects/Tyrolium-White.png',
     partnerLogo: 'assets/etudes/cabinet-marthelot-white.png',
     gradient: 'linear-gradient(135deg, #0000FF 0%, #BF0000 100%)',
