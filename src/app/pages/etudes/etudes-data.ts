@@ -24,8 +24,30 @@ export interface CaseCompareRow {
   values: boolean[];
 }
 
+export interface CaseLogoEvolution {
+  oldName: string;
+  oldPeriod: string;
+  oldPeriodEn?: string;
+  oldLogo: string;
+  newName: string;
+  newPeriod: string;
+  newPeriodEn?: string;
+  newLogo: string;
+  desc: string;
+  descEn?: string;
+}
+
+export interface CaseBrandCard {
+  name: string;
+  role: string;
+  roleEn?: string;
+  logo: string;
+  url?: string;
+  parent?: boolean;
+}
+
 export interface CaseBlock {
-  type: 'text' | 'compare' | 'features' | 'story' | 'stats' | 'bars' | 'steps' | 'showcase' | 'testimonial' | 'voices' | 'gallery';
+  type: 'text' | 'compare' | 'features' | 'story' | 'stats' | 'bars' | 'steps' | 'showcase' | 'testimonial' | 'voices' | 'gallery' | 'logo-evolution' | 'brand-grid';
   label?: string;
   labelEn?: string;
   title?: string;
@@ -57,6 +79,10 @@ export interface CaseBlock {
   voices?: CaseVoice[];
   /** gallery : photos (la première est affichée en grand) */
   photos?: { src: string; caption: string; captionEn?: string }[];
+  /** logo-evolution : comparaisons avant / après de logos */
+  evolutions?: CaseLogoEvolution[];
+  /** brand-grid : grille de logos et identités des filiales */
+  brands?: CaseBrandCard[];
 }
 
 export interface CaseVoice {
@@ -1234,6 +1260,54 @@ export const CASE_STUDIES: CaseStudy[] = [
         linkRouter: '/chronologie',
       },
       {
+        type: 'logo-evolution',
+        label: 'La preuve par l\'image',
+        labelEn: 'Visual proof',
+        title: 'Trois projets, trois mondes qui n\'avaient rien en commun.',
+        titleEn: 'Three projects, three worlds that had nothing in common.',
+        paragraphs: [
+          "Avant la refonte, rien ne permettait de deviner que ces trois marques appartenaient au même groupe : ni les formes, ni les couleurs, ni les typographies. En 2026, chacune a gardé son symbole, mais toutes parlent désormais la même langue visuelle.",
+        ],
+        paragraphsEn: [
+          'Before the overhaul, nothing suggested that these three brands belonged to the same group: neither shapes, nor colours, nor typography. In 2026, each kept its own symbol, but they all speak the same visual language.',
+        ],
+        evolutions: [
+          {
+            oldName: 'Tyrolium Ent.',
+            oldPeriod: '2019 – 2021',
+            oldLogo: 'assets/etudes/tyrolium-ui/tyrolium-old.png',
+            newName: 'Tyrolium',
+            newPeriod: 'Depuis 2026',
+            newPeriodEn: 'Since 2026',
+            newLogo: 'assets/tyrolium-ui/projects/Tyrolium.png',
+            desc: 'Du bleu plat des débuts au dégradé bleu-rouge et aux reliefs de la holding.',
+            descEn: 'From the flat blue of the early days to the holding\'s blue-red gradient and depth.',
+          },
+          {
+            oldName: 'TyroStudio',
+            oldPeriod: '2020 – 2025',
+            oldLogo: 'assets/etudes/tyrolium-ui/tyrostudio-old.png',
+            newName: 'TyroCiel',
+            newPeriod: 'Depuis 2026',
+            newPeriodEn: 'Since 2026',
+            newLogo: 'assets/tyrolium-ui/projects/TyroCiel.png',
+            desc: 'Du phénix rose isolé à l\'étoile de TyroCiel, hommage à Loriciel aligné sur le groupe.',
+            descEn: 'From the isolated pink phoenix to TyroCiel\'s star, a tribute to Loriciel aligned with the group.',
+          },
+          {
+            oldName: 'Influnias',
+            oldPeriod: '2022 – 2026',
+            oldLogo: 'assets/etudes/tyrolium-ui/influnias-old.png',
+            newName: 'Influnias',
+            newPeriod: 'Depuis 2026',
+            newPeriodEn: 'Since 2026',
+            newLogo: 'assets/tyrolium-ui/projects/Influnias.png',
+            desc: 'D\'un logotype vertical pastel sans lien avec Tyrolium à un symbole géométrique unifié.',
+            descEn: 'From a vertical pastel wordmark unrelated to Tyrolium to a unified geometric symbol.',
+          },
+        ],
+      },
+      {
         type: 'story',
         label: '2023',
         labelEn: '2023',
@@ -1271,6 +1345,24 @@ export const CASE_STUDIES: CaseStudy[] = [
         ],
       },
       {
+        type: 'compare',
+        label: 'Le basculement',
+        labelEn: 'The shift',
+        title: 'De l\'archipel au système.',
+        titleEn: 'From an archipelago to a system.',
+        columns: [
+          { name: 'Avant (2017 – 2025)', nameEn: 'Before (2017 – 2025)' },
+          { name: 'Depuis Tyrolium UI (2026)', nameEn: 'Since Tyrolium UI (2026)', highlight: true },
+        ],
+        rows: [
+          { label: 'Charte graphique et typographies communes', labelEn: 'Shared brand guidelines and typography', values: [false, true] },
+          { label: 'Librairie de composants partagée (Tyrolium UI)', labelEn: 'Shared component library (Tyrolium UI)', values: [false, true] },
+          { label: 'Compte utilisateur unique (Useritium)', labelEn: 'Single user account (Useritium)', values: [false, true] },
+          { label: 'API et back-office centralisés', labelEn: 'Centralised API and back office', values: [false, true] },
+          { label: 'Une correction déployée sur tous les sites d\'un coup', labelEn: 'A fix deployed across every website at once', values: [false, true] },
+        ],
+      },
+      {
         type: 'text',
         label: 'Juillet 2026',
         labelEn: 'July 2026',
@@ -1302,6 +1394,33 @@ export const CASE_STUDIES: CaseStudy[] = [
         author: 'Maxime Tournier',
         authorRole: 'PDG & Fondateur de Tyrolium',
         authorRoleEn: 'CEO & Founder of Tyrolium',
+      },
+      {
+        type: 'brand-grid',
+        label: 'L\'écosystème unifié',
+        labelEn: 'The unified ecosystem',
+        title: 'Une holding, huit filiales, une seule signature.',
+        titleEn: 'One holding, eight subsidiaries, a single signature.',
+        paragraphs: [
+          "Chaque entité possède son propre emblème, mais toutes partagent désormais le même ADN géométrique, le même dégradé et la même architecture Typo (Noto Sans Display + Syne + Inter).",
+        ],
+        paragraphsEn: [
+          'Each entity has its own emblem, yet they all share the same geometric DNA, the same gradient and the same typographic architecture (Noto Sans Display + Syne + Inter).',
+        ],
+        brands: [
+          { name: 'Tyrolium',    role: 'Maison mère · Holding technologique', roleEn: 'Parent company · Tech holding', logo: 'assets/tyrolium-ui/projects/Tyrolium.png',    url: 'tyrolium.fr',    parent: true },
+          { name: 'SolidServ',   role: 'Hébergeur de serveurs',               roleEn: 'Server hosting',                logo: 'assets/tyrolium-ui/projects/SolidServ.png',   url: 'solidserv.fr' },
+          { name: 'TyroServ',    role: 'Serveur Minecraft',                   roleEn: 'Minecraft server',              logo: 'assets/tyrolium-ui/projects/TyroServ.png',    url: 'tyroserv.fr' },
+          { name: 'TyroCiel',    role: 'Studio de jeu-vidéo',                 roleEn: 'Video game studio',             logo: 'assets/tyrolium-ui/projects/TyroCiel.png',    url: 'tyrociel.fr' },
+          { name: 'Gamenium',    role: 'Média & actu jeu-vidéo',              roleEn: 'Gaming news media',             logo: 'assets/tyrolium-ui/projects/Gamenium.png',    url: 'gamenium.fr' },
+          { name: 'Useritium',   role: 'Comptes utilisateurs',                roleEn: 'User accounts',                 logo: 'assets/tyrolium-ui/projects/Useritium.png',   url: 'useritium.fr' },
+          { name: 'NexiumiaCRM', role: 'Logiciel CRM',                        roleEn: 'CRM software',                  logo: 'assets/tyrolium-ui/projects/NexiumiaCRM.png', url: 'nexiumiacrm.fr' },
+          { name: 'Influnias',   role: 'Agence d\'influenceurs',              roleEn: 'Influencer agency',             logo: 'assets/tyrolium-ui/projects/Influnias.png',   url: 'influnias.fr' },
+          { name: 'Vturias',     role: 'Agence de VTubers',                   roleEn: 'VTuber agency',                 logo: 'assets/tyrolium-ui/projects/Vturias.png',     url: 'vturias.fr' },
+        ],
+        linkLabel: 'Explorer le Media Kit complet',
+        linkLabelEn: 'Explore the full Media Kit',
+        linkRouter: '/mediakit',
       },
       {
         type: 'features',

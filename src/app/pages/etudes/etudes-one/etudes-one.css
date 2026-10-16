@@ -847,6 +847,281 @@
 [data-theme="dark"] .eo-voice__tag--muted { color: #9ca3af; background: #1f2533; border-color: #374151; }
 [data-theme="dark"] .eo-voice__audio { color-scheme: dark; }
 
+/* ─── Logo Evolution (Avant / Après) ────────────────────────────────────── */
+
+.eo-evolutions {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  margin-top: 1.25rem;
+}
+
+.eo-evo {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  padding: 1.35rem 1.5rem 1.2rem;
+}
+
+.eo-evo__pair {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 1rem;
+}
+
+.eo-evo__side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 1.15rem 1rem;
+  border-radius: 14px;
+  background: #f6f7fb;
+  border: 1px solid #eef0f6;
+}
+
+.eo-evo__side--new {
+  background:
+    linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(135deg, rgba(0, 0, 255, 0.45) 0%, rgba(191, 0, 0, 0.45) 100%) border-box;
+  border: 1.5px solid transparent;
+  box-shadow: 0 8px 24px rgba(5, 51, 200, 0.06);
+}
+
+.eo-evo__badge {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #6b7280;
+  background: #e5e7eb;
+  padding: 0.22rem 0.65rem;
+  border-radius: 99px;
+}
+
+.eo-evo__badge--new {
+  color: #0533c8;
+  background: rgba(5, 51, 200, 0.09);
+}
+
+.eo-evo__canvas {
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.eo-evo__canvas img {
+  max-height: 72px;
+  max-width: 140px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.eo-evo__combo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.12rem;
+}
+
+.eo-evo__group {
+  font-family: 'Noto Sans Display', sans-serif;
+  font-size: 0.55rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #9ca3af;
+  line-height: 1;
+}
+
+.eo-evo__name {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1.1;
+}
+
+.eo-evo__name--old {
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.eo-evo__arrow {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0000FF 0%, #BF0000 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  flex-shrink: 0;
+}
+
+.eo-evo__desc {
+  margin: 0.95rem 0 0;
+  padding-top: 0.85rem;
+  border-top: 1px solid #eef0f6;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.84rem;
+  line-height: 1.55;
+  color: #4b5563;
+  text-align: center;
+}
+
+[data-theme="dark"] .eo-evo { background: #161b27; border-color: #374151; }
+[data-theme="dark"] .eo-evo__side { background: #111520; border-color: #232a3a; }
+[data-theme="dark"] .eo-evo__side--new {
+  background:
+    linear-gradient(#1b2232, #1b2232) padding-box,
+    linear-gradient(135deg, rgba(96, 165, 250, 0.55) 0%, rgba(248, 113, 113, 0.55) 100%) border-box;
+}
+[data-theme="dark"] .eo-evo__badge { background: #232a3a; color: #9ca3af; }
+[data-theme="dark"] .eo-evo__badge--new { background: rgba(96, 165, 250, 0.15); color: #60a5fa; }
+[data-theme="dark"] .eo-evo__name { color: #f3f4f6; }
+[data-theme="dark"] .eo-evo__name--old { color: #9ca3af; }
+[data-theme="dark"] .eo-evo__desc { border-top-color: #232a3a; color: #9ca3af; }
+
+/* ─── Brand Grid (Écosystème unifié) ────────────────────────────────────── */
+
+.eo-brands {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.9rem;
+  margin-top: 1.25rem;
+}
+
+.eo-brand {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.2rem 1.15rem;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.eo-brand:hover {
+  transform: translateY(-2px);
+  border-color: #cbd5e1;
+}
+
+.eo-brand--parent {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  align-items: center;
+  padding: 1.35rem 1.5rem;
+  background:
+    linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(135deg, #0000FF 0%, #BF0000 100%) border-box;
+  border: 2px solid transparent;
+}
+
+.eo-brand__head {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.eo-brand__logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.eo-brand--parent .eo-brand__logo {
+  width: 46px;
+  height: 46px;
+}
+
+.eo-brand__id {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.eo-brand__group {
+  font-family: 'Noto Sans Display', sans-serif;
+  font-size: 0.56rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #9ca3af;
+  line-height: 1;
+}
+
+.eo-brand__group--parent {
+  color: #0533c8;
+  font-weight: 600;
+}
+
+.eo-brand__name {
+  font-family: 'Syne', sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #111827;
+  line-height: 1.15;
+}
+
+.eo-brand--parent .eo-brand__name {
+  font-size: 1.2rem;
+}
+
+.eo-brand__foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #eef0f6;
+}
+
+.eo-brand--parent .eo-brand__foot {
+  padding-top: 0;
+  border-top: none;
+  gap: 1.25rem;
+}
+
+.eo-brand__role {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  color: #6b7280;
+}
+
+.eo-brand__url {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #0533c8;
+  background: rgba(5, 51, 200, 0.07);
+  padding: 0.18rem 0.55rem;
+  border-radius: 99px;
+  white-space: nowrap;
+}
+
+[data-theme="dark"] .eo-brand { background: #161b27; border-color: #374151; }
+[data-theme="dark"] .eo-brand:hover { border-color: #4b5563; }
+[data-theme="dark"] .eo-brand--parent {
+  background:
+    linear-gradient(#161b27, #161b27) padding-box,
+    linear-gradient(135deg, #0000FF 0%, #BF0000 100%) border-box;
+}
+[data-theme="dark"] .eo-brand__group--parent { color: #60a5fa; }
+[data-theme="dark"] .eo-brand__name { color: #f3f4f6; }
+[data-theme="dark"] .eo-brand__foot { border-top-color: #232a3a; }
+[data-theme="dark"] .eo-brand__role { color: #9ca3af; }
+[data-theme="dark"] .eo-brand__url { color: #60a5fa; background: rgba(96, 165, 250, 0.12); }
+
 /* ─── Aside ─────────────────────────────────────────────────────────────── */
 
 .eo-aside {
@@ -996,6 +1271,10 @@
   .eo-voices { grid-template-columns: 1fr; }
   .eo-gallery { grid-template-columns: 1fr; gap: 0.75rem; }
   .eo-gallery__item--wide { aspect-ratio: 4 / 3; }
+  .eo-brands { grid-template-columns: repeat(2, 1fr); }
+  .eo-brand--parent { flex-direction: column; align-items: flex-start; }
+  .eo-brand--parent .eo-brand__foot { width: 100%; padding-top: 0.75rem; border-top: 1px solid #eef0f6; }
+  [data-theme="dark"] .eo-brand--parent .eo-brand__foot { border-top-color: #232a3a; }
 }
 
 @media (max-width: 560px) {
@@ -1009,4 +1288,7 @@
   .eo-hero__stat { padding: 1rem; }
   .eo-hero__stat-value { font-size: 1.35rem; }
   .eo-stat__value { font-size: 1.7rem; }
+  .eo-evo__pair { grid-template-columns: 1fr; gap: 0.65rem; }
+  .eo-evo__arrow { margin: 0 auto; transform: rotate(90deg); }
+  .eo-brands { grid-template-columns: 1fr; }
 }

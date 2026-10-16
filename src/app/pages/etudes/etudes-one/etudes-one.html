@@ -255,6 +255,70 @@
               </div>
             }
 
+            @case ('logo-evolution') {
+              @for (p of tl(block.paragraphs, block.paragraphsEn); track $index) {
+                <p class="eo-text">{{ p }}</p>
+              }
+              <div class="eo-evolutions">
+                @for (ev of block.evolutions; track ev.newName) {
+                  <div class="eo-evo">
+                    <div class="eo-evo__pair">
+                      <div class="eo-evo__side eo-evo__side--old">
+                        <span class="eo-evo__badge">{{ lang() === 'en' ? 'Before' : 'Avant' }} · {{ t(ev.oldPeriod, ev.oldPeriodEn) }}</span>
+                        <div class="eo-evo__canvas">
+                          <img [src]="ev.oldLogo" [alt]="ev.oldName" loading="lazy">
+                        </div>
+                        <span class="eo-evo__name eo-evo__name--old">{{ ev.oldName }}</span>
+                      </div>
+                      <div class="eo-evo__arrow" aria-hidden="true">
+                        <i class="ri-arrow-right-line"></i>
+                      </div>
+                      <div class="eo-evo__side eo-evo__side--new">
+                        <span class="eo-evo__badge eo-evo__badge--new">{{ t(ev.newPeriod, ev.newPeriodEn) }}</span>
+                        <div class="eo-evo__canvas">
+                          <img [src]="ev.newLogo" [alt]="ev.newName" loading="lazy">
+                        </div>
+                        <div class="eo-evo__combo">
+                          <span class="eo-evo__group">Tyrolium</span>
+                          <span class="eo-evo__name">{{ ev.newName }}</span>
+                        </div>
+                      </div>
+                    </div>
+                    <p class="eo-evo__desc">{{ t(ev.desc, ev.descEn) }}</p>
+                  </div>
+                }
+              </div>
+            }
+
+            @case ('brand-grid') {
+              @for (p of tl(block.paragraphs, block.paragraphsEn); track $index) {
+                <p class="eo-text">{{ p }}</p>
+              }
+              <div class="eo-brands">
+                @for (b of block.brands; track b.name) {
+                  <div class="eo-brand" [class.eo-brand--parent]="b.parent">
+                    <div class="eo-brand__head">
+                      <img class="eo-brand__logo" [src]="b.logo" [alt]="b.name" loading="lazy">
+                      <div class="eo-brand__id">
+                        @if (!b.parent) {
+                          <span class="eo-brand__group">Tyrolium</span>
+                        } @else {
+                          <span class="eo-brand__group eo-brand__group--parent">Holding</span>
+                        }
+                        <span class="eo-brand__name">{{ b.name }}</span>
+                      </div>
+                    </div>
+                    <div class="eo-brand__foot">
+                      <span class="eo-brand__role">{{ t(b.role, b.roleEn) }}</span>
+                      @if (b.url) {
+                        <span class="eo-brand__url">{{ b.url }}</span>
+                      }
+                    </div>
+                  </div>
+                }
+              </div>
+            }
+
             @default {
               @for (p of tl(block.paragraphs, block.paragraphsEn); track $index) {
                 <p class="eo-text">{{ p }}</p>
