@@ -56,8 +56,8 @@ export class Partenaires {
       partners: [
         { name: 'Proxmox', logo: 'assets/partners/proxmox.webp', description: 'Virtualisation & conteneurs', descriptionEn: 'Virtualisation & containers' },
         { name: 'Stripe',  logo: 'assets/partners/stripe.png',   description: 'Paiement en ligne',          descriptionEn: 'Online payment' },
-        { name: 'OVH',     logo: 'assets/partners/ovh.webp',     description: 'Cloud & hébergement',        descriptionEn: 'Cloud & hosting' },
         { name: 'Tebex',   logo: 'assets/partners/tebex.png',    description: 'Monétisation gaming',        descriptionEn: 'Gaming monetisation' },
+        { name: 'TimeClaw', logo: 'assets/partners/timeclaw.png', description: 'Studio de jeu vidéo',        descriptionEn: 'Video game studio' },
       ],
     },
     {
@@ -69,6 +69,7 @@ export class Partenaires {
         { name: 'Graphic Nook',  logo: 'assets/partners/graphic-nook.png',  description: 'Design & identité',   descriptionEn: 'Design & identity' },
         { name: 'Evogue',        logo: 'assets/partners/evogue.webp',        description: 'Communication',       descriptionEn: 'Communication' },
         { name: 'Ascentia',      logo: 'assets/partners/ascentia.png',       description: 'Projets Minecraft',   descriptionEn: 'Minecraft projects' },
+        { name: 'Cabinet Marthelot', logo: 'assets/partners/cabinet-marthelot.png', description: 'Accompagnement des indépendants & TPE', descriptionEn: 'Support for freelancers & small businesses' },
       ],
     },
     {
