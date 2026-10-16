@@ -955,7 +955,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     slug: 'timeclaw',
     brand: 'TimeClaw',
-    logo: 'assets/tyrolium-ui/projects/Tyrolium-White.png',
+    logo: 'assets/tyrolium-ui/projects/TyroCiel-White.png',
     partnerLogo: 'assets/etudes/timeclaw-white.png',
     gradient: 'linear-gradient(135deg, #0000FF 0%, #BF0000 100%)',
     category: 'Incubation · Jeu vidéo',
