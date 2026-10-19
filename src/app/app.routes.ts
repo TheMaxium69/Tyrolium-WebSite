@@ -1,29 +1,4 @@
 import { Routes } from '@angular/router';
-import { Home } from './pages/home/home';
-import { Project } from './pages/project/project';
-import { Contact } from './pages/contact/contact';
-import { Mediakit } from './pages/mediakit/mediakit';
-import { Partenaires } from './pages/partenaires/partenaires';
-import { Chronologie } from './pages/chronologie/chronologie';
-import { Equipe } from './pages/equipe/equipe';
-import { Rse } from './pages/rse/rse';
-import { Vision } from './pages/vision/vision';
-import { Labs } from './pages/labs/labs';
-import { LabsOne } from './pages/labs/labs-one/labs-one';
-import { Etudes } from './pages/etudes/etudes';
-import { EtudesOne } from './pages/etudes/etudes-one/etudes-one';
-import { Server } from './pages/server/server';
-import { PrestationLayout } from './pages/prestation/prestation-layout';
-import { PrestationWeb } from './pages/prestation/web/prestation-web';
-import { PrestationServer } from './pages/prestation/server/prestation-server';
-import { PrestationMinecraft } from './pages/prestation/minecraft/prestation-minecraft';
-import { PrestationIncubateur } from './pages/prestation/incubateur/prestation-incubateur';
-import { PrestationFormation } from './pages/prestation/formation/prestation-formation';
-import { LegalLayout } from './pages/legal/legal-layout';
-import { LegalTerms } from './pages/legal/terms/legal-terms';
-import { LegalCgu } from './pages/legal/cgu/legal-cgu';
-import { LegalCgv } from './pages/legal/cgv/legal-cgv';
-import { LegalPrivacy } from './pages/legal/privacy/legal-privacy';
 import { tyroUiErrorRoutes, TyroUiSeo, tyroUiLocalizedRoutes } from 'tyrolium-ui';
 
 /* ─── SEO (titre + description par page, FR / EN) ─────────────────────── */
@@ -133,42 +108,44 @@ const SEO_LEGAL_PRIVACY: TyroUiSeo = {
   description: { fr: 'Comment Tyrolium collecte, utilise et protège vos données personnelles, et quels sont vos droits.', en: 'How Tyrolium collects, uses and protects your personal data, and what your rights are.' },
 };
 
+// Chaque page est chargée à la demande (loadComponent) : le JS initial ne contient que le cadre du site,
+// le code d'une page n'est téléchargé que quand on y va (ou préchargé en arrière-plan, voir app.config.ts)
 export const routes: Routes = tyroUiLocalizedRoutes([
-  { path: '', component: Home, data: { seo: SEO_HOME } },
-  { path: 'project', component: Project, data: { seo: SEO_PROJECT } },
-  { path: 'contact', component: Contact, data: { seo: SEO_CONTACT } },
-  { path: 'mediakit', component: Mediakit, data: { seo: SEO_MEDIAKIT } },
-  { path: 'labs', component: Labs, data: { seo: SEO_LABS } },
-  { path: 'labs/:slug', component: LabsOne },
-  { path: 'etudes-de-cas', component: Etudes, data: { seo: SEO_ETUDES } },
-  { path: 'etudes-de-cas/:slug', component: EtudesOne },
-  { path: 'server', component: Server, data: { seo: SEO_SERVER } },
-  { path: 'partenaires', component: Partenaires, data: { seo: SEO_PARTENAIRES } },
-  { path: 'chronologie', component: Chronologie, data: { seo: SEO_CHRONOLOGIE } },
-  { path: 'equipe', component: Equipe, data: { seo: SEO_EQUIPE } },
-  { path: 'vision', component: Vision, data: { seo: SEO_VISION } },
-  { path: 'rse', component: Rse, data: { seo: SEO_RSE } },
+  { path: '', loadComponent: () => import('./pages/home/home').then(m => m.Home), data: { seo: SEO_HOME } },
+  { path: 'project', loadComponent: () => import('./pages/project/project').then(m => m.Project), data: { seo: SEO_PROJECT } },
+  { path: 'contact', loadComponent: () => import('./pages/contact/contact').then(m => m.Contact), data: { seo: SEO_CONTACT } },
+  { path: 'mediakit', loadComponent: () => import('./pages/mediakit/mediakit').then(m => m.Mediakit), data: { seo: SEO_MEDIAKIT } },
+  { path: 'labs', loadComponent: () => import('./pages/labs/labs').then(m => m.Labs), data: { seo: SEO_LABS } },
+  { path: 'labs/:slug', loadComponent: () => import('./pages/labs/labs-one/labs-one').then(m => m.LabsOne) },
+  { path: 'etudes-de-cas', loadComponent: () => import('./pages/etudes/etudes').then(m => m.Etudes), data: { seo: SEO_ETUDES } },
+  { path: 'etudes-de-cas/:slug', loadComponent: () => import('./pages/etudes/etudes-one/etudes-one').then(m => m.EtudesOne) },
+  { path: 'server', loadComponent: () => import('./pages/server/server').then(m => m.Server), data: { seo: SEO_SERVER } },
+  { path: 'partenaires', loadComponent: () => import('./pages/partenaires/partenaires').then(m => m.Partenaires), data: { seo: SEO_PARTENAIRES } },
+  { path: 'chronologie', loadComponent: () => import('./pages/chronologie/chronologie').then(m => m.Chronologie), data: { seo: SEO_CHRONOLOGIE } },
+  { path: 'equipe', loadComponent: () => import('./pages/equipe/equipe').then(m => m.Equipe), data: { seo: SEO_EQUIPE } },
+  { path: 'vision', loadComponent: () => import('./pages/vision/vision').then(m => m.Vision), data: { seo: SEO_VISION } },
+  { path: 'rse', loadComponent: () => import('./pages/rse/rse').then(m => m.Rse), data: { seo: SEO_RSE } },
   {
     path: 'prestation',
-    component: PrestationLayout,
+    loadComponent: () => import('./pages/prestation/prestation-layout').then(m => m.PrestationLayout),
     children: [
       { path: '',           redirectTo: 'web', pathMatch: 'full' },
-      { path: 'web',        component: PrestationWeb, data: { seo: SEO_PRESTATION_WEB } },
-      { path: 'server',     component: PrestationServer, data: { seo: SEO_PRESTATION_SERVER } },
-      { path: 'minecraft',  component: PrestationMinecraft, data: { seo: SEO_PRESTATION_MINECRAFT } },
-      { path: 'incubateur', component: PrestationIncubateur, data: { seo: SEO_PRESTATION_INCUBATEUR } },
-      { path: 'formation',  component: PrestationFormation, data: { seo: SEO_PRESTATION_FORMATION } },
+      { path: 'web',        loadComponent: () => import('./pages/prestation/web/prestation-web').then(m => m.PrestationWeb), data: { seo: SEO_PRESTATION_WEB } },
+      { path: 'server',     loadComponent: () => import('./pages/prestation/server/prestation-server').then(m => m.PrestationServer), data: { seo: SEO_PRESTATION_SERVER } },
+      { path: 'minecraft',  loadComponent: () => import('./pages/prestation/minecraft/prestation-minecraft').then(m => m.PrestationMinecraft), data: { seo: SEO_PRESTATION_MINECRAFT } },
+      { path: 'incubateur', loadComponent: () => import('./pages/prestation/incubateur/prestation-incubateur').then(m => m.PrestationIncubateur), data: { seo: SEO_PRESTATION_INCUBATEUR } },
+      { path: 'formation',  loadComponent: () => import('./pages/prestation/formation/prestation-formation').then(m => m.PrestationFormation), data: { seo: SEO_PRESTATION_FORMATION } },
     ],
   },
   {
     path: 'legal',
-    component: LegalLayout,
+    loadComponent: () => import('./pages/legal/legal-layout').then(m => m.LegalLayout),
     children: [
       { path: '',      redirectTo: 'terms', pathMatch: 'full' },
-      { path: 'terms',   component: LegalTerms, data: { seo: SEO_LEGAL_TERMS } },
-      { path: 'cgu',    component: LegalCgu, data: { seo: SEO_LEGAL_CGU } },
-      { path: 'cgv',    component: LegalCgv, data: { seo: SEO_LEGAL_CGV } },
-      { path: 'privacy', component: LegalPrivacy, data: { seo: SEO_LEGAL_PRIVACY } },
+      { path: 'terms',   loadComponent: () => import('./pages/legal/terms/legal-terms').then(m => m.LegalTerms), data: { seo: SEO_LEGAL_TERMS } },
+      { path: 'cgu',    loadComponent: () => import('./pages/legal/cgu/legal-cgu').then(m => m.LegalCgu), data: { seo: SEO_LEGAL_CGU } },
+      { path: 'cgv',    loadComponent: () => import('./pages/legal/cgv/legal-cgv').then(m => m.LegalCgv), data: { seo: SEO_LEGAL_CGV } },
+      { path: 'privacy', loadComponent: () => import('./pages/legal/privacy/legal-privacy').then(m => m.LegalPrivacy), data: { seo: SEO_LEGAL_PRIVACY } },
     ],
   },
   ...tyroUiErrorRoutes(),
