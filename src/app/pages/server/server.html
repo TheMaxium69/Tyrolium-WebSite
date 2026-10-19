@@ -55,7 +55,7 @@
     <!-- Rent a server banner -->
     <a href="https://solidserv.fr" target="_blank" rel="noopener" class="sv-rent-banner">
       <div class="sv-rent-banner__left">
-        <img src="/assets/tyrolium-ui/projects/SolidServ.png" alt="SolidServ" class="sv-rent-banner__logo">
+        <img loading="lazy" decoding="async" src="/assets/tyrolium-ui/projects/SolidServ.png" alt="SolidServ" class="sv-rent-banner__logo">
         <div>
           <span class="sv-rent-banner__title">{{ lang() === 'en' ? 'Need a server?' : 'Besoin d\'un serveur ?' }}</span>
           <span class="sv-rent-banner__sub">{{ lang() === 'en' ? 'Rent a VPS or dedicated server via SolidServ' : 'Louez un VPS ou un serveur dédié via SolidServ' }}</span>
@@ -76,7 +76,7 @@
         </button>
         @for (g of groups; track g.prefix) {
           <button class="sv-filter-btn" [class.sv-filter-btn--active]="activeGroup() === g.prefix" (click)="setGroup(g.prefix)">
-            <img [src]="g.icon" [alt]="g.name" class="sv-filter-icon">
+            <img loading="lazy" decoding="async" [src]="g.icon" [alt]="g.name" class="sv-filter-icon">
             {{ lang() === 'en' ? g.nameEn : g.name }}
           </button>
         }
@@ -114,7 +114,7 @@
         @for (section of groupedSections(); track section.group.prefix) {
           <div class="sv-section">
             <div class="sv-section__head">
-              <img [src]="section.group.icon" [alt]="section.group.name" class="sv-section__icon">
+              <img loading="lazy" decoding="async" [src]="section.group.icon" [alt]="section.group.name" class="sv-section__icon">
               <div class="sv-section__head-text">
                 <h2 class="sv-section__title">{{ lang() === 'en' ? section.group.nameEn : section.group.name }}</h2>
                 <p class="sv-section__desc">{{ lang() === 'en' ? section.group.descriptionEn : section.group.description }}</p>
@@ -126,14 +126,14 @@
                 <div class="sv-card">
                   <div class="sv-card__header">
                     <div class="sv-card__icon-wrap">
-                      <img [src]="groupOf(s.group)?.icon" [alt]="s.group" class="sv-card__type-icon">
+                      <img loading="lazy" decoding="async" [src]="groupOf(s.group)?.icon" [alt]="s.group" class="sv-card__type-icon">
                     </div>
                     <div class="sv-card__title-wrap">
                       <h3 class="sv-card__name">{{ s.name }}</h3>
                       @if (s.alias) { <span class="sv-card__alias">{{ s.alias }}</span> }
                     </div>
                     @if (s.tag && projectLogo(s.tag)) {
-                      <img [src]="projectLogo(s.tag)!" [alt]="s.tag" class="sv-card__project-logo">
+                      <img loading="lazy" decoding="async" [src]="projectLogo(s.tag)!" [alt]="s.tag" class="sv-card__project-logo">
                     } @else if (s.tag) {
                       <span class="sv-card__tag-badge">{{ s.tag }}</span>
                     }
@@ -155,14 +155,14 @@
             <div class="sv-card">
               <div class="sv-card__header">
                 <div class="sv-card__icon-wrap">
-                  <img [src]="groupOf(s.group)?.icon" [alt]="s.group" class="sv-card__type-icon">
+                  <img loading="lazy" decoding="async" [src]="groupOf(s.group)?.icon" [alt]="s.group" class="sv-card__type-icon">
                 </div>
                 <div class="sv-card__title-wrap">
                   <h3 class="sv-card__name">{{ s.name }}</h3>
                   @if (s.alias) { <span class="sv-card__alias">{{ s.alias }}</span> }
                 </div>
                 @if (s.tag && projectLogo(s.tag)) {
-                  <img [src]="projectLogo(s.tag)!" [alt]="s.tag" class="sv-card__project-logo">
+                  <img loading="lazy" decoding="async" [src]="projectLogo(s.tag)!" [alt]="s.tag" class="sv-card__project-logo">
                 } @else if (s.tag) {
                   <span class="sv-card__tag-badge">{{ s.tag }}</span>
                 }

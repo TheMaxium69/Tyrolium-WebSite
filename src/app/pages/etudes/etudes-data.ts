@@ -527,6 +527,15 @@ export const CASE_STUDIES: CaseStudy[] = [
         noteEn: 'Billing goes through the firm: end client → Cabinet Marthelot → Tyrolium. The firm sets its own price; Tyrolium is paid through hosting.',
       },
       {
+        type: 'testimonial',
+        quote: "Chez les artisans, indépendants et TPE que j'accompagne au Cabinet Marthelot, je constatais souvent un manque d'image professionnelle et de site web adapté par manque de budget ou de temps. En intégrant Tyrolium et sa filiale SolidServ dans notre accompagnement, nos clients bénéficient immédiatement d'un site vitrine complet, hébergé et ultra-accessible, sans lourds frais de création initiaux. Pour notre cabinet, c'est l'opportunité d'offrir une réponse globale dès la première étape de leur développement en clarifiant leur proposition de valeur. Au quotidien, la collaboration est fluide et efficace : après notre étude de leurs besoins, Tyrolium prend le relais avec réactivité pour concevoir une vitrine claire et sur-mesure. Retravailler avec Tyrolium, avec qui j'ai déjà travaillé dans le passé, apporte une confiance totale et naturelle dans cette synergie.",
+        quoteEn: "Among the craftspeople, freelancers and small businesses I support at Cabinet Marthelot, I often saw a lack of professional image and of a suitable website, for lack of budget or time. By bringing Tyrolium and its subsidiary SolidServ into our support package, our clients immediately get a complete showcase website, hosted and highly accessible, with no heavy upfront build costs. For our firm, it is the opportunity to offer a complete answer from the very first stage of their growth, by clarifying their value proposition. Day to day, the collaboration is smooth and efficient: after we study their needs, Tyrolium quickly takes over to design a clear, tailor-made showcase. Working with Tyrolium again, having worked with them in the past, brings complete and natural trust to this partnership.",
+        author: 'Maëwan Marthelot',
+        authorRole: 'Président du Cabinet Marthelot',
+        authorRoleEn: 'President of Cabinet Marthelot · translated from French',
+        photo: 'assets/teams/Maewan_Marthelot.jpg',
+      },
+      {
         type: 'text',
         label: 'Pourquoi on peut l\'offrir',
         labelEn: 'Why we can offer it',
@@ -613,6 +622,18 @@ export const CASE_STUDIES: CaseStudy[] = [
         authorRoleEn: 'Fernando Paysagiste, Nancy area · translated from French',
       },
       {
+        type: 'features',
+        label: 'Gagnant-gagnant',
+        labelEn: 'Win-win',
+        title: 'Trois gagnants, zéro perdant.',
+        titleEn: 'Three winners, no losers.',
+        items: [
+          { icon: 'ri-store-2-fill', title: 'Le client', titleEn: 'The client', desc: 'Un site professionnel, sans avancer le prix de la création, hébergé et maintenu.', descEn: 'A professional website, without paying for the build upfront, hosted and maintained.' },
+          { icon: 'ri-briefcase-4-fill', title: 'Le cabinet', titleEn: 'The firm', desc: "Une offre d'accompagnement plus complète, avec un vrai site intégré à la formule.", descEn: 'A more complete support package, with a real website built into it.' },
+          { icon: 'ri-server-fill', title: 'Tyrolium', titleEn: 'Tyrolium', desc: 'Des clients apportés par le cabinet, un revenu récurrent et des serveurs rentabilisés.', descEn: 'Clients brought in by the firm, recurring revenue and servers that pay for themselves.' },
+        ],
+      },
+      {
         type: 'story',
         label: "L'anecdote",
         labelEn: 'The anecdote',
@@ -631,28 +652,6 @@ export const CASE_STUDIES: CaseStudy[] = [
         author: 'Maxime Tournier',
         authorRole: 'PDG & Fondateur de Tyrolium',
         authorRoleEn: 'CEO & Founder of Tyrolium',
-      },
-      {
-        // À compléter : coller ici le témoignage de Maëwan (le bloc reste masqué tant que "quote" est vide)
-        type: 'testimonial',
-        quote: '',
-        quoteEn: '',
-        author: 'Maëwan Marthelot',
-        authorRole: 'Président du Cabinet Marthelot',
-        authorRoleEn: 'President of Cabinet Marthelot',
-        photo: 'assets/teams/Maewan_Marthelot.jpg',
-      },
-      {
-        type: 'features',
-        label: 'Gagnant-gagnant',
-        labelEn: 'Win-win',
-        title: 'Trois gagnants, zéro perdant.',
-        titleEn: 'Three winners, no losers.',
-        items: [
-          { icon: 'ri-store-2-fill', title: 'Le client', titleEn: 'The client', desc: 'Un site professionnel, sans avancer le prix de la création, hébergé et maintenu.', descEn: 'A professional website, without paying for the build upfront, hosted and maintained.' },
-          { icon: 'ri-briefcase-4-fill', title: 'Le cabinet', titleEn: 'The firm', desc: "Une offre d'accompagnement plus complète, avec un vrai site intégré à la formule.", descEn: 'A more complete support package, with a real website built into it.' },
-          { icon: 'ri-server-fill', title: 'Tyrolium', titleEn: 'Tyrolium', desc: 'Des clients apportés par le cabinet, un revenu récurrent et des serveurs rentabilisés.', descEn: 'Clients brought in by the firm, recurring revenue and servers that pay for themselves.' },
-        ],
       },
       {
         type: 'features',

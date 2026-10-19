@@ -7,11 +7,11 @@
 
   <div class="project-card__visual">
     <div class="project-card__logo-wrap">
-      <img class="project-card__logo project-card__logo--light"
+      <img loading="lazy" decoding="async" class="project-card__logo project-card__logo--light"
            [src]="project.imageLight || project.image"
            [alt]="project.name"
            [class.auto-white]="!project.imageLight">
-      <img class="project-card__logo project-card__logo--color"
+      <img loading="lazy" decoding="async" class="project-card__logo project-card__logo--color"
            [src]="project.image"
            [alt]="project.name">
     </div>

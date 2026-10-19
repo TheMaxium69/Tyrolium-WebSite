@@ -189,7 +189,7 @@
               <blockquote class="eo-testimonial__quote">{{ t(block.quote, block.quoteEn) }}</blockquote>
               <div class="eo-testimonial__author">
                 @if (block.photo) {
-                  <img class="eo-testimonial__photo" [src]="block.photo" [alt]="block.author">
+                  <img loading="lazy" decoding="async" class="eo-testimonial__photo" [src]="block.photo" [alt]="block.author">
                 }
                 <div>
                   <span class="eo-story__name">{{ block.author }}</span>
@@ -221,7 +221,7 @@
                   <figure class="eo-voice">
                     <div class="eo-voice__head">
                       @if (v.photo) {
-                        <img class="eo-voice__photo" [src]="v.photo" [alt]="v.name">
+                        <img loading="lazy" decoding="async" class="eo-voice__photo" [src]="v.photo" [alt]="v.name">
                       } @else {
                         <span class="eo-voice__photo eo-voice__photo--empty"><i class="ri-user-fill"></i></span>
                       }
@@ -448,12 +448,12 @@
       <div class="eo-facts">
         @if (study.partnerLogo) {
           <div class="eo-facts__partner" [style.background]="study.gradient">
-            <img [src]="study.partnerLogo" [alt]="study.brand">
+            <img loading="lazy" decoding="async" [src]="study.partnerLogo" [alt]="study.brand">
           </div>
         } @else if (study.partnerCombo; as combo) {
           <div class="eo-facts__partner" [style.background]="study.gradient">
             <div class="eo-combo">
-              <img class="eo-combo__logo" [src]="combo.logo" [alt]="combo.name">
+              <img loading="lazy" decoding="async" class="eo-combo__logo" [src]="combo.logo" [alt]="combo.name">
               <div class="eo-combo__text">
                 @if (combo.group) {
                   <span class="eo-combo__group">{{ combo.group }}</span>

@@ -660,7 +660,7 @@ export class Mediakit implements AfterViewInit, OnDestroy {
       name: 'Fond d\'écran Gradient Sombre',
       nameEn: 'Gradient Dark Wallpaper',
       slug: 'wallpaper-gradient-dark',
-      thumb: 'assets/wallpapers/TyroliumWallpaper-Gradient-Dark-1080p.png',
+      thumb: 'assets/wallpapers-thumbs/TyroliumWallpaper-Gradient-Dark.jpg',
       versions: [
         { label: '4K',     url: 'assets/wallpapers/TyroliumWallpaper-Gradient-Dark-4K.png',     filename: 'tyrolium-gradient-dark-4k.png' },
         { label: '1440p',  url: 'assets/wallpapers/TyroliumWallpaper-Gradient-Dark-1440p.png',  filename: 'tyrolium-gradient-dark-1440p.png' },
@@ -672,7 +672,7 @@ export class Mediakit implements AfterViewInit, OnDestroy {
       name: 'Fond d\'écran Gradient Clair',
       nameEn: 'Gradient White Wallpaper',
       slug: 'wallpaper-gradient-white',
-      thumb: 'assets/wallpapers/TyroliumWallpaper-Gradient-White-1080p.png',
+      thumb: 'assets/wallpapers-thumbs/TyroliumWallpaper-Gradient-White.jpg',
       versions: [
         { label: '4K',     url: 'assets/wallpapers/TyroliumWallpaper-Gradient-White-4K.png',     filename: 'tyrolium-gradient-white-4k.png' },
         { label: '1440p',  url: 'assets/wallpapers/TyroliumWallpaper-Gradient-White-1440p.png',  filename: 'tyrolium-gradient-white-1440p.png' },
@@ -683,7 +683,7 @@ export class Mediakit implements AfterViewInit, OnDestroy {
       name: 'Fond d\'écran Glass Sombre',
       nameEn: 'Glass Dark Wallpaper',
       slug: 'wallpaper-glass-dark',
-      thumb: 'assets/wallpapers/TyroliumWallpaper-Glass-Dark-1080p.png',
+      thumb: 'assets/wallpapers-thumbs/TyroliumWallpaper-Glass-Dark.jpg',
       versions: [
         { label: '4K',    url: 'assets/wallpapers/TyroliumWallpaper-Glass-Dark-4K.png',    filename: 'tyrolium-glass-dark-4k.png' },
         { label: '1440p', url: 'assets/wallpapers/TyroliumWallpaper-Glass-Dark-1440p.png', filename: 'tyrolium-glass-dark-1440p.png' },
@@ -694,7 +694,7 @@ export class Mediakit implements AfterViewInit, OnDestroy {
       name: 'Fond d\'écran Glass Clair',
       nameEn: 'Glass White Wallpaper',
       slug: 'wallpaper-glass-white',
-      thumb: 'assets/wallpapers/TyroliumWallpaper-Glass-White-1080p.png',
+      thumb: 'assets/wallpapers-thumbs/TyroliumWallpaper-Glass-White.jpg',
       versions: [
         { label: '4K',    url: 'assets/wallpapers/TyroliumWallpaper-Glass-White-4K.png',    filename: 'tyrolium-glass-white-4k.png' },
         { label: '1440p', url: 'assets/wallpapers/TyroliumWallpaper-Glass-White-1440p.png', filename: 'tyrolium-glass-white-1440p.png' },
@@ -705,7 +705,7 @@ export class Mediakit implements AfterViewInit, OnDestroy {
       name: 'Fond d\'écran Atom Sombre',
       nameEn: 'Atom Dark Wallpaper',
       slug: 'wallpaper-atom-dark',
-      thumb: 'assets/wallpapers/TyroliumWallpaper-Atom-Dark-1080p.png',
+      thumb: 'assets/wallpapers-thumbs/TyroliumWallpaper-Atom-Dark.jpg',
       versions: [
         { label: '4K',    url: 'assets/wallpapers/TyroliumWallpaper-Atom-Dark-4K.png',    filename: 'tyrolium-atom-dark-4k.png' },
         { label: '1440p', url: 'assets/wallpapers/TyroliumWallpaper-Atom-Dark-1440p.png', filename: 'tyrolium-atom-dark-1440p.png' },
@@ -716,7 +716,7 @@ export class Mediakit implements AfterViewInit, OnDestroy {
       name: 'Fond d\'écran Atom Clair',
       nameEn: 'Atom White Wallpaper',
       slug: 'wallpaper-atom-white',
-      thumb: 'assets/wallpapers/TyroliumWallpaper-Atom-White-1080p.png',
+      thumb: 'assets/wallpapers-thumbs/TyroliumWallpaper-Atom-White.jpg',
       versions: [
         { label: '4K',    url: 'assets/wallpapers/TyroliumWallpaper-Atom-White-4K.png',    filename: 'tyrolium-atom-white-4k.png' },
         { label: '1440p', url: 'assets/wallpapers/TyroliumWallpaper-Atom-White-1440p.png', filename: 'tyrolium-atom-white-1440p.png' },

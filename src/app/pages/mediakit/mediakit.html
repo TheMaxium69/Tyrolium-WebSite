@@ -128,7 +128,7 @@
         <div class="mk-logo-card mk-logo-card--classic">
           <div class="mk-logo-card-badge">Classique</div>
           <div class="mk-logo-preview mk-logo-preview--light">
-            <img [src]="tyrolium.logo" [alt]="tyrolium.name + ' logo'">
+            <img loading="lazy" decoding="async" [src]="tyrolium.logo" [alt]="tyrolium.name + ' logo'">
           </div>
           <div class="mk-logo-card-footer">
             <span class="mk-logo-card-name">{{ tyrolium.name }}</span>
@@ -143,7 +143,7 @@
           <div class="mk-logo-card-badge">Typo - Dark</div>
           <div class="mk-logo-preview mk-logo-preview--combo-light">
             <div class="mk-navbar-combo mk-combo-export-wrap" #tyroliumComboTypoDark>
-              <img [src]="tyrolium.logo" [alt]="tyrolium.name" class="mk-combo-logo">
+              <img loading="lazy" decoding="async" [src]="tyrolium.logo" [alt]="tyrolium.name" class="mk-combo-logo">
               <div class="mk-combo-text">
                 <span class="mk-combo-name mk-combo-name--light">{{ tyrolium.name }}</span>
               </div>
@@ -162,7 +162,7 @@
           <div class="mk-logo-card-badge mk-logo-card-badge--light">Typo - Light</div>
           <div class="mk-logo-preview mk-logo-preview--combo-dark">
             <div class="mk-navbar-combo mk-combo-export-wrap" #tyroliumComboTypoLight>
-              <img [src]="tyrolium.logo" [alt]="tyrolium.name" class="mk-combo-logo">
+              <img loading="lazy" decoding="async" [src]="tyrolium.logo" [alt]="tyrolium.name" class="mk-combo-logo">
               <div class="mk-combo-text">
                 <span class="mk-combo-name mk-combo-name--dark">{{ tyrolium.name }}</span>
               </div>
@@ -180,7 +180,7 @@
         <div class="mk-logo-card mk-logo-card--white">
           <div class="mk-logo-card-badge mk-logo-card-badge--light">White</div>
           <div class="mk-logo-preview mk-logo-preview--combo-dark">
-            <img [src]="logoWhite(tyrolium.logo)" [alt]="tyrolium.name + ' logo white'">
+            <img loading="lazy" decoding="async" [src]="logoWhite(tyrolium.logo)" [alt]="tyrolium.name + ' logo white'">
           </div>
           <div class="mk-logo-card-footer">
             <span class="mk-logo-card-name">{{ tyrolium.name }} White</span>
@@ -195,7 +195,7 @@
           <div class="mk-logo-card-badge mk-logo-card-badge--light">White - Typo</div>
           <div class="mk-logo-preview mk-logo-preview--combo-dark">
             <div class="mk-navbar-combo mk-combo-export-wrap" #tyroliumComboWhiteTypo>
-              <img [src]="logoWhite(tyrolium.logo)" [alt]="tyrolium.name" class="mk-combo-logo">
+              <img loading="lazy" decoding="async" [src]="logoWhite(tyrolium.logo)" [alt]="tyrolium.name" class="mk-combo-logo">
               <div class="mk-combo-text">
                 <span class="mk-combo-name mk-combo-name--dark">{{ tyrolium.name }}</span>
               </div>
@@ -214,7 +214,7 @@
           <div class="mk-logo-card-badge">Gradient</div>
           <div class="mk-logo-preview mk-logo-preview--light">
             <div class="mk-gradient-export-wrap" [style.background]="brandGradient" #tyroliumComboGradient>
-              <img [src]="logoWhite(tyrolium.logo)" [alt]="tyrolium.name" class="mk-gradient-export-logo">
+              <img loading="lazy" decoding="async" [src]="logoWhite(tyrolium.logo)" [alt]="tyrolium.name" class="mk-gradient-export-logo">
             </div>
           </div>
           <div class="mk-logo-card-footer">
@@ -229,7 +229,7 @@
         <div class="mk-logo-card mk-logo-card--black">
           <div class="mk-logo-card-badge">Black</div>
           <div class="mk-logo-preview mk-logo-preview--fixed-light">
-            <img [src]="logoBlack(tyrolium.logo)" [alt]="tyrolium.name + ' logo black'">
+            <img loading="lazy" decoding="async" [src]="logoBlack(tyrolium.logo)" [alt]="tyrolium.name + ' logo black'">
           </div>
           <div class="mk-logo-card-footer">
             <span class="mk-logo-card-name">{{ tyrolium.name }} Black</span>
@@ -244,7 +244,7 @@
           <div class="mk-logo-card-badge">Black - Typo</div>
           <div class="mk-logo-preview mk-logo-preview--combo-light">
             <div class="mk-navbar-combo mk-combo-export-wrap" #tyroliumComboBlackTypo>
-              <img [src]="logoBlack(tyrolium.logo)" [alt]="tyrolium.name" class="mk-combo-logo">
+              <img loading="lazy" decoding="async" [src]="logoBlack(tyrolium.logo)" [alt]="tyrolium.name" class="mk-combo-logo">
               <div class="mk-combo-text">
                 <span class="mk-combo-name mk-combo-name--light">{{ tyrolium.name }}</span>
               </div>
@@ -262,7 +262,7 @@
         <div class="mk-logo-card mk-logo-card--classic">
           <div class="mk-logo-card-badge">{{ lang() === 'en' ? 'Social media' : 'Réseaux sociaux' }}</div>
           <div class="mk-logo-preview mk-logo-preview--light mk-logo-preview--pp">
-            <img [src]="logoPP(tyrolium.logo)" [alt]="tyrolium.name + ' photo de profil'" class="mk-pp-img">
+            <img loading="lazy" decoding="async" [src]="logoPP(tyrolium.logo)" [alt]="tyrolium.name + ' photo de profil'" class="mk-pp-img">
           </div>
           <div class="mk-logo-card-footer">
             <span class="mk-logo-card-name">{{ tyrolium.name }} {{ lang() === 'en' ? 'Social media' : 'Réseaux sociaux' }}</span>
@@ -286,7 +286,7 @@
           <div class="mk-wallpaper-card">
             <div class="mk-wallpaper-preview">
               @if (wp.thumb) {
-                <img [src]="wp.thumb" [alt]="lang() === 'en' ? wp.nameEn : wp.name" class="mk-wallpaper-thumb">
+                <img loading="lazy" decoding="async" [src]="wp.thumb" [alt]="lang() === 'en' ? wp.nameEn : wp.name" class="mk-wallpaper-thumb">
               } @else {
                 <div class="mk-wallpaper-placeholder" [style.background]="brandGradient">
                   <i class="ri-image-2-line"></i>
@@ -322,7 +322,7 @@
         <!-- Project header -->
         <div class="mk-project-header">
           <div class="mk-project-avatar" [style.background]="getGradient(project)">
-            <img [src]="logoWhite(project.logo)" [alt]="project.name">
+            <img loading="lazy" decoding="async" [src]="logoWhite(project.logo)" [alt]="project.name">
           </div>
           <div>
             <div class="mk-project-header-meta">
@@ -346,7 +346,7 @@
           <div class="mk-logo-card mk-logo-card--classic">
             <div class="mk-logo-card-badge">Classique</div>
             <div class="mk-logo-preview mk-logo-preview--light">
-              <img [src]="project.logo" [alt]="project.name + ' logo'">
+              <img loading="lazy" decoding="async" [src]="project.logo" [alt]="project.name + ' logo'">
             </div>
             <div class="mk-logo-card-footer">
               <span class="mk-logo-card-name">{{ project.name }}</span>
@@ -361,7 +361,7 @@
             <div class="mk-logo-card-badge">Typo - Dark</div>
             <div class="mk-logo-preview mk-logo-preview--combo-light">
               <div class="mk-navbar-combo mk-combo-export-wrap" #projectComboTypoDark>
-                <img [src]="project.logo" [alt]="project.name" class="mk-combo-logo">
+                <img loading="lazy" decoding="async" [src]="project.logo" [alt]="project.name" class="mk-combo-logo">
                 <div class="mk-combo-text">
                   <span class="mk-combo-group mk-combo-group--light">Tyrolium</span>
                   <span class="mk-combo-name mk-combo-name--light">{{ project.name }}</span>
@@ -381,7 +381,7 @@
             <div class="mk-logo-card-badge mk-logo-card-badge--light">Typo - Light</div>
             <div class="mk-logo-preview mk-logo-preview--combo-dark">
               <div class="mk-navbar-combo mk-combo-export-wrap" #projectComboTypoLight>
-                <img [src]="project.logo" [alt]="project.name" class="mk-combo-logo">
+                <img loading="lazy" decoding="async" [src]="project.logo" [alt]="project.name" class="mk-combo-logo">
                 <div class="mk-combo-text">
                   <span class="mk-combo-group mk-combo-group--dark">Tyrolium</span>
                   <span class="mk-combo-name mk-combo-name--dark">{{ project.name }}</span>
@@ -400,7 +400,7 @@
           <div class="mk-logo-card mk-logo-card--white">
             <div class="mk-logo-card-badge mk-logo-card-badge--light">White</div>
             <div class="mk-logo-preview mk-logo-preview--combo-dark">
-              <img [src]="logoWhite(project.logo)" [alt]="project.name + ' logo white'">
+              <img loading="lazy" decoding="async" [src]="logoWhite(project.logo)" [alt]="project.name + ' logo white'">
             </div>
             <div class="mk-logo-card-footer">
               <span class="mk-logo-card-name">{{ project.name }} White</span>
@@ -415,7 +415,7 @@
             <div class="mk-logo-card-badge mk-logo-card-badge--light">White - Typo</div>
             <div class="mk-logo-preview mk-logo-preview--combo-dark">
               <div class="mk-navbar-combo mk-combo-export-wrap" #projectComboWhiteTypo>
-                <img [src]="logoWhite(project.logo)" [alt]="project.name" class="mk-combo-logo">
+                <img loading="lazy" decoding="async" [src]="logoWhite(project.logo)" [alt]="project.name" class="mk-combo-logo">
                 <div class="mk-combo-text">
                   <span class="mk-combo-group mk-combo-group--dark">Tyrolium</span>
                   <span class="mk-combo-name mk-combo-name--dark">{{ project.name }}</span>
@@ -435,7 +435,7 @@
             <div class="mk-logo-card-badge">Gradient</div>
             <div class="mk-logo-preview mk-logo-preview--light">
               <div class="mk-gradient-export-wrap" [style.background]="getGradient(project)" #projectComboGradient>
-                <img [src]="logoWhite(project.logo)" [alt]="project.name" class="mk-gradient-export-logo">
+                <img loading="lazy" decoding="async" [src]="logoWhite(project.logo)" [alt]="project.name" class="mk-gradient-export-logo">
               </div>
             </div>
             <div class="mk-logo-card-footer">
@@ -450,7 +450,7 @@
           <div class="mk-logo-card mk-logo-card--black">
             <div class="mk-logo-card-badge">Black</div>
             <div class="mk-logo-preview mk-logo-preview--fixed-light">
-              <img [src]="logoBlack(project.logo)" [alt]="project.name + ' logo black'">
+              <img loading="lazy" decoding="async" [src]="logoBlack(project.logo)" [alt]="project.name + ' logo black'">
             </div>
             <div class="mk-logo-card-footer">
               <span class="mk-logo-card-name">{{ project.name }} Black</span>
@@ -465,7 +465,7 @@
             <div class="mk-logo-card-badge">Black - Typo</div>
             <div class="mk-logo-preview mk-logo-preview--combo-light">
               <div class="mk-navbar-combo mk-combo-export-wrap" #projectComboBlackTypo>
-                <img [src]="logoBlack(project.logo)" [alt]="project.name" class="mk-combo-logo">
+                <img loading="lazy" decoding="async" [src]="logoBlack(project.logo)" [alt]="project.name" class="mk-combo-logo">
                 <div class="mk-combo-text">
                   <span class="mk-combo-group mk-combo-group--light">Tyrolium</span>
                   <span class="mk-combo-name mk-combo-name--light">{{ project.name }}</span>
@@ -484,7 +484,7 @@
           <div class="mk-logo-card mk-logo-card--classic">
             <div class="mk-logo-card-badge">{{ lang() === 'en' ? 'Social media' : 'Réseaux sociaux' }}</div>
             <div class="mk-logo-preview mk-logo-preview--light mk-logo-preview--pp">
-              <img [src]="logoPP(project.logo)" [alt]="project.name + ' photo de profil'" class="mk-pp-img">
+              <img loading="lazy" decoding="async" [src]="logoPP(project.logo)" [alt]="project.name + ' photo de profil'" class="mk-pp-img">
             </div>
             <div class="mk-logo-card-footer">
               <span class="mk-logo-card-name">{{ project.name }} {{ lang() === 'en' ? 'Social media' : 'Réseaux sociaux' }}</span>
@@ -582,7 +582,7 @@
             <div class="bento-bg-noise"></div>
             <div class="bento-card bento-card--hero">
               <div class="bento-glow bento-glow--hero"></div>
-              <img src="assets/tyrolium-ui/projects/Tyrolium-White.png" alt="Tyrolium" class="bento-hero-logo">
+              <img loading="lazy" decoding="async" src="assets/tyrolium-ui/projects/Tyrolium-White.png" alt="Tyrolium" class="bento-hero-logo">
               <div class="bento-hero-bottom">
                 <span class="bento-hero-eyebrow">{{ lang() === 'en' ? 'Tech Holding' : 'Holding Technologique' }}</span>
                 <span class="bento-hero-name">Tyrolium</span>
@@ -591,7 +591,7 @@
             </div>
             <div class="bento-card bento-card--solidserv">
               <div class="bento-glow bento-glow--blue"></div>
-              <img src="assets/tyrolium-ui/projects/SolidServ.png" alt="SolidServ" class="bento-logo--lg">
+              <img loading="lazy" decoding="async" src="assets/tyrolium-ui/projects/SolidServ.png" alt="SolidServ" class="bento-logo--lg">
               <div class="bento-sub-bottom">
                 <span class="bento-sub-name">SolidServ</span>
                 <span class="bento-sub-desc">{{ lang() === 'en' ? 'Server hosting' : 'Hébergeur de serveurs' }}</span>
@@ -599,7 +599,7 @@
             </div>
             <div class="bento-card bento-card--tyrociel">
               <div class="bento-glow bento-glow--purple"></div>
-              <img src="assets/tyrolium-ui/projects/TyroCiel.png" alt="TyroCiel" class="bento-logo--lg">
+              <img loading="lazy" decoding="async" src="assets/tyrolium-ui/projects/TyroCiel.png" alt="TyroCiel" class="bento-logo--lg">
               <div class="bento-sub-bottom">
                 <span class="bento-sub-name">TyroCiel</span>
                 <span class="bento-sub-desc">{{ lang() === 'en' ? 'Video game studio' : 'Studio de jeu-vidéo' }}</span>
@@ -607,7 +607,7 @@
             </div>
             <div class="bento-card bento-card--influnias">
               <div class="bento-glow bento-glow--pink"></div>
-              <img src="assets/tyrolium-ui/projects/Influnias.png" alt="Influnias" class="bento-logo--lg">
+              <img loading="lazy" decoding="async" src="assets/tyrolium-ui/projects/Influnias.png" alt="Influnias" class="bento-logo--lg">
               <div class="bento-wide-text">
                 <span class="bento-sub-name">Influnias</span>
                 <span class="bento-sub-desc">{{ lang() === 'en' ? 'Influencer agency' : "Agence d'influenceurs" }}</span>
@@ -615,7 +615,7 @@
             </div>
             <div class="bento-card bento-card--useritium">
               <div class="bento-glow bento-glow--blue-sm"></div>
-              <img src="assets/tyrolium-ui/projects/Useritium.png" alt="Useritium" class="bento-logo--sm">
+              <img loading="lazy" decoding="async" src="assets/tyrolium-ui/projects/Useritium.png" alt="Useritium" class="bento-logo--sm">
               <div class="bento-sm-bottom">
                 <span class="bento-sm-name">Useritium</span>
                 <span class="bento-sm-desc">{{ lang() === 'en' ? 'User accounts' : 'Comptes utilisateurs' }}</span>
@@ -623,14 +623,14 @@
             </div>
             <div class="bento-card bento-card--tyroserv">
               <div class="bento-glow bento-glow--green-sm"></div>
-              <img src="assets/tyrolium-ui/projects/TyroServ.png" alt="TyroServ" class="bento-logo--sm">
+              <img loading="lazy" decoding="async" src="assets/tyrolium-ui/projects/TyroServ.png" alt="TyroServ" class="bento-logo--sm">
               <div class="bento-sm-bottom">
                 <span class="bento-sm-name">TyroServ</span>
                 <span class="bento-sm-desc">{{ lang() === 'en' ? 'Minecraft server' : 'Serveur Minecraft' }}</span>
               </div>
             </div>
             <div class="bento-card bento-card--gamenium">
-              <img src="assets/tyrolium-ui/projects/Gamenium.png" alt="Gamenium" class="bento-logo--sm">
+              <img loading="lazy" decoding="async" src="assets/tyrolium-ui/projects/Gamenium.png" alt="Gamenium" class="bento-logo--sm">
               <div class="bento-sm-bottom">
                 <span class="bento-sm-name">Gamenium</span>
                 <span class="bento-sm-desc">{{ lang() === 'en' ? 'Gaming news' : 'Actu jeu-vidéo' }}</span>
@@ -638,14 +638,14 @@
             </div>
             <div class="bento-card bento-card--nexiumia">
               <div class="bento-glow bento-glow--indigo-sm"></div>
-              <img src="assets/tyrolium-ui/projects/NexiumiaCRM.png" alt="NexiumiaCRM" class="bento-logo--sm">
+              <img loading="lazy" decoding="async" src="assets/tyrolium-ui/projects/NexiumiaCRM.png" alt="NexiumiaCRM" class="bento-logo--sm">
               <div class="bento-sm-bottom">
                 <span class="bento-sm-name">NexiumiaCRM</span>
                 <span class="bento-sm-desc">CRM</span>
               </div>
             </div>
             <div class="bento-card bento-card--sm bento-card--vturias">
-              <img src="assets/tyrolium-ui/projects/Vturias.png" alt="Vturias" class="bento-logo--sm">
+              <img loading="lazy" decoding="async" src="assets/tyrolium-ui/projects/Vturias.png" alt="Vturias" class="bento-logo--sm">
               <div class="bento-sm-bottom">
                 <span class="bento-sm-name">Vturias</span>
                 <span class="bento-sm-desc">{{ lang() === 'en' ? 'VTuber agency' : 'Agence VTubers' }}</span>
@@ -677,26 +677,26 @@
 
                 <!-- Hero -->
                 <div class="bento-proj-card bento-proj-card--hero" [style.background]="proj.heroBg">
-                  <img [src]="proj.logo" [alt]="proj.name" class="bento-proj-logo">
+                  <img loading="lazy" decoding="async" [src]="proj.logo" [alt]="proj.name" class="bento-proj-logo">
                   <span class="bento-proj-hero-name">{{ proj.name }}</span>
                 </div>
 
                 <!-- Logo White -->
                 <div class="bento-proj-card bento-proj-card--white">
-                  <img [src]="logoWhite(proj.logo)" [alt]="proj.name + ' White'" class="bento-proj-logo-variant">
+                  <img loading="lazy" decoding="async" [src]="logoWhite(proj.logo)" [alt]="proj.name + ' White'" class="bento-proj-logo-variant">
                   <span class="bento-proj-variant-label">White</span>
                 </div>
 
                 <!-- Logo Black -->
                 <div class="bento-proj-card bento-proj-card--black">
-                  <img [src]="logoBlack(proj.logo)" [alt]="proj.name + ' Black'" class="bento-proj-logo-variant">
+                  <img loading="lazy" decoding="async" [src]="logoBlack(proj.logo)" [alt]="proj.name + ' Black'" class="bento-proj-logo-variant">
                   <span class="bento-proj-variant-label">Black</span>
                 </div>
 
                 <!-- Typo -->
                 <div class="bento-proj-card bento-proj-card--typo">
                   <div class="bento-proj-typo-combo">
-                    <img [src]="proj.logo" [alt]="proj.name" class="bento-proj-typo-logo">
+                    <img loading="lazy" decoding="async" [src]="proj.logo" [alt]="proj.name" class="bento-proj-typo-logo">
                     <div class="bento-proj-typo-text">
                       <span class="bento-proj-typo-group">Tyrolium</span>
                       <span class="bento-proj-typo-name">{{ proj.name }}</span>
@@ -741,7 +741,7 @@
             <div class="model-glow model-glow--red"></div>
 
             <div class="model-head">
-              <img src="assets/tyrolium-ui/projects/Tyrolium-White.png" alt="Tyrolium" class="model-logo">
+              <img loading="lazy" decoding="async" src="assets/tyrolium-ui/projects/Tyrolium-White.png" alt="Tyrolium" class="model-logo">
               <span class="model-eyebrow">{{ lang() === 'en' ? 'The Tyrolium model' : 'Le modèle Tyrolium' }}</span>
               <span class="model-title">{{ lang() === 'en' ? 'A circular machine.' : 'Une machine circulaire.' }}</span>
             </div>

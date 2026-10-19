@@ -44,7 +44,7 @@
           @for (partner of cat.partners; track partner.name) {
             <div class="pt-card">
               <div class="pt-card-logo">
-                <img [src]="partner.logo" [alt]="partner.name" (error)="$any($event.target).style.opacity='0'">
+                <img loading="lazy" decoding="async" [src]="partner.logo" [alt]="partner.name" (error)="$any($event.target).style.opacity='0'">
               </div>
               <div class="pt-card-info">
                 <span class="pt-card-name">{{ partner.name }}</span>

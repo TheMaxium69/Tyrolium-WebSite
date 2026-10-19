@@ -40,7 +40,7 @@
     <div class="eq-founder-wrap eq-animate">
       <div class="eq-founder-card">
         <div class="eq-founder-photo-wrap">
-          <img class="eq-founder-photo" [src]="founder.photo" [alt]="founder.name">
+          <img loading="lazy" decoding="async" class="eq-founder-photo" [src]="founder.photo" [alt]="founder.name">
         </div>
         <div class="eq-founder-info">
           <h2 class="eq-founder-name">{{ founder.name }}</h2>
@@ -56,7 +56,7 @@
 
       <div class="eq-founder-card eq-founder-card--second">
         <div class="eq-founder-photo-wrap">
-          <img class="eq-founder-photo eq-founder-photo--second" [src]="cofounder.photo" [alt]="cofounder.name">
+          <img loading="lazy" decoding="async" class="eq-founder-photo eq-founder-photo--second" [src]="cofounder.photo" [alt]="cofounder.name">
         </div>
         <div class="eq-founder-info">
           <h2 class="eq-founder-name eq-founder-name--second">{{ cofounder.name }}</h2>
@@ -83,7 +83,7 @@
         <div class="eq-card eq-animate" [style.--delay]="(i * 60) + 'ms'">
           <div class="eq-card-photo-wrap">
             @if (p.photo) {
-              <img class="eq-card-photo" [src]="p.photo" [alt]="p.name">
+              <img loading="lazy" decoding="async" class="eq-card-photo" [src]="p.photo" [alt]="p.name">
             } @else {
               <span class="eq-card-photo eq-initials">{{ initials(p.name) }}</span>
             }
@@ -121,7 +121,7 @@
       @for (p of network; track p.name; let i = $index) {
         <div class="eq-network-card eq-animate" [style.--delay]="(i * 80) + 'ms'">
           @if (p.photo) {
-            <img class="eq-network-photo" [src]="p.photo" [alt]="p.name">
+            <img loading="lazy" decoding="async" class="eq-network-photo" [src]="p.photo" [alt]="p.name">
           } @else {
             <span class="eq-network-photo eq-initials">{{ initials(p.name) }}</span>
           }
@@ -142,7 +142,7 @@
       }
 
       <a class="eq-network-card eq-network-card--brand eq-animate" href="https://vturias.fr" target="_blank" rel="noopener">
-        <span class="eq-network-photo eq-network-logo"><img src="assets/tyrolium-ui/projects/Vturias-White.png" alt="Vturias"></span>
+        <span class="eq-network-photo eq-network-logo"><img loading="lazy" decoding="async" src="assets/tyrolium-ui/projects/Vturias-White.png" alt="Vturias"></span>
         <div class="eq-network-body">
           <h3 class="eq-card-name">{{ lang() === 'en' ? 'Vturias talents' : 'Les talents Vturias' }}</h3>
           <p class="eq-network-bio">
@@ -186,7 +186,7 @@
         <div class="eq-card eq-animate" [class.eq-card--featured]="p.featured" [style.--delay]="((i % 6) * 50) + 'ms'">
           <div class="eq-card-photo-wrap">
             @if (p.photo) {
-              <img class="eq-card-photo" [src]="p.photo" [alt]="p.name">
+              <img loading="lazy" decoding="async" class="eq-card-photo" [src]="p.photo" [alt]="p.name">
             } @else {
               <span class="eq-card-photo eq-initials">{{ initials(p.name) }}</span>
             }

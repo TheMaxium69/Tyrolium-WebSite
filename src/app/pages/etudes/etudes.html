@@ -39,7 +39,7 @@
         <a class="ec-card" [routerLink]="['/etudes-de-cas', study.slug]">
           <div class="ec-card__header" [style.background]="study.gradient">
             <div class="ec-hero__noise"></div>
-            <img class="ec-card__logo" [src]="study.logo" [alt]="study.brand">
+            <img loading="lazy" decoding="async" class="ec-card__logo" [src]="study.logo" [alt]="study.brand">
             <div class="ec-card__headline">
               <span class="ec-card__headline-value">{{ lang() === 'en' ? (study.headline.valueEn ?? study.headline.value) : study.headline.value }}</span>
               <span class="ec-card__headline-label">{{ lang() === 'en' ? study.headline.titleEn : study.headline.title }}</span>
