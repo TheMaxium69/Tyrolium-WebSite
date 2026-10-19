@@ -67,3 +67,38 @@ DirectorySlash Off
 ErrorDocument 404 /404/index.html
 ErrorDocument 403 /403/index.html
 ErrorDocument 410 /410/index.html
+
+# ==========================================
+# 7. PERFORMANCE : COMPRESSION
+# ==========================================
+# Les fichiers texte sont compressés avant l'envoi (≈ 4× plus légers sur le réseau).
+# Les images et polices woff2 sont déjà compressées : inutile de les recompresser.
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml text/javascript
+  AddOutputFilterByType DEFLATE application/javascript application/json application/xml application/manifest+json
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# ==========================================
+# 8. PERFORMANCE : CACHE NAVIGATEUR
+# ==========================================
+# Les règles s'appliquent dans l'ordre : la dernière qui correspond l'emporte.
+<IfModule mod_headers.c>
+  # Images, polices, fichiers divers sans code dans le nom : 7 jours
+  # (un fichier remplacé sous le même nom est vu par tous au plus tard une semaine après)
+  <FilesMatch "\.(png|jpe?g|gif|webp|avif|ico|svg|woff2?|ttf|otf|mp4|webm|m4a|mp3|pdf)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+
+  # Fichiers du build avec un code dans le nom (main-XXXXXXXX.js, styles-…css, chunk-…js, polices de media/) :
+  # leur nom change dès que leur contenu change → gardés 1 an, sans jamais redemander
+  <FilesMatch "-[A-Z0-9]{8}\.(js|css|woff2?|ttf|otf|svg|png|jpe?g|gif|webp)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # Pages HTML (index.html, pages pré-rendues, pages d'erreur), robots.txt, sitemap.xml :
+  # même nom à chaque déploiement → le navigateur redemande toujours s'il y a du nouveau
+  <FilesMatch "\.(html|txt|xml)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
