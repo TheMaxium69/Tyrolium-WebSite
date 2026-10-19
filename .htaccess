@@ -35,7 +35,16 @@
   RewriteRule ^(Download|generate-pp|Contenu/Image)($|/) - [L]
 
   # ==========================================
-  # 5. ROUTAGE ANGULAR
+  # 5. IMAGES WEBP (négociation de contenu)
+  # ==========================================
+  # tyrobuild crée logo.png.webp à côté de logo.png : un navigateur qui accepte le WebP
+  # reçoit la version WebP (plus légère) à la même adresse, les autres reçoivent le PNG / JPEG
+  RewriteCond %{HTTP_ACCEPT} image/webp
+  RewriteCond %{REQUEST_FILENAME}.webp -f
+  RewriteRule ^(.+\.(?:png|jpe?g))$ /$1.webp [T=image/webp,L]
+
+  # ==========================================
+  # 6. ROUTAGE ANGULAR
   # ==========================================
   # /404, /403 et /410 (et /en/…) visités directement : ils renvoient aussi leur vrai code
   RewriteRule ^(en/)?404/?$ - [R=404,L]
@@ -55,7 +64,7 @@
 </IfModule>
 
 # ==========================================
-# 6. SÉCURITÉ ET PAGES D'ERREUR
+# 7. SÉCURITÉ ET PAGES D'ERREUR
 # ==========================================
 # Désactiver le listing des répertoires (un dossier sans page répond 403)
 Options -Indexes
@@ -69,7 +78,7 @@ ErrorDocument 403 /403/index.html
 ErrorDocument 410 /410/index.html
 
 # ==========================================
-# 7. PERFORMANCE : COMPRESSION
+# 8. PERFORMANCE : COMPRESSION
 # ==========================================
 # Les fichiers texte sont compressés avant l'envoi (≈ 4× plus légers sur le réseau).
 # Les images et polices woff2 sont déjà compressées : inutile de les recompresser.
@@ -80,7 +89,7 @@ ErrorDocument 410 /410/index.html
 </IfModule>
 
 # ==========================================
-# 8. PERFORMANCE : CACHE NAVIGATEUR
+# 9. PERFORMANCE : CACHE NAVIGATEUR
 # ==========================================
 # Les règles s'appliquent dans l'ordre : la dernière qui correspond l'emporte.
 <IfModule mod_headers.c>
@@ -101,4 +110,32 @@ ErrorDocument 410 /410/index.html
   <FilesMatch "\.(html|txt|xml)$">
     Header set Cache-Control "no-cache"
   </FilesMatch>
+
+  # Images : la réponse dépend du navigateur (WebP ou non) → les caches intermédiaires doivent le savoir
+  <FilesMatch "\.(png|jpe?g|webp)$">
+    Header append Vary Accept
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_mime.c>
+  AddType image/webp .webp
+</IfModule>
+
+# ==========================================
+# 10. SÉCURITÉ : EN-TÊTES
+# ==========================================
+# Sans risque de blocage : ils limitent ce qu'un site malveillant peut faire avec le tien
+# ("always" : envoyés aussi avec les pages d'erreur)
+<IfModule mod_headers.c>
+  # Personne d'autre ne peut afficher le site dans une iframe (anti-clickjacking)
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Content-Security-Policy "frame-ancestors 'self'"
+  # Le navigateur ne devine jamais le type d'un fichier (un .txt n'est jamais exécuté comme du JS)
+  Header always set X-Content-Type-Options "nosniff"
+  # Un site externe ne voit que "https://domaine", pas l'adresse complète de la page d'où vient le visiteur
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  # Le site n'utilise ni caméra, ni micro, ni géolocalisation : personne ne pourra les demander
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  # HTTPS obligatoire pendant 7 jours (durée courte : si le certificat tombe, blocage d'une semaine au plus)
+  Header always set Strict-Transport-Security "max-age=604800"
 </IfModule>
