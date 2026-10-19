@@ -1,5 +1,5 @@
-import { Component, ViewEncapsulation, ViewChild, ViewChildren, QueryList, ElementRef, AfterViewInit, OnDestroy, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, ViewEncapsulation, ViewChild, ViewChildren, QueryList, ElementRef, AfterViewInit, OnDestroy, inject, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { TyroUiLangService, NavbarMenuCategory, ITyroUiNavbarMenuItem } from 'tyrolium-ui';
 import { toPng } from 'html-to-image';
 
@@ -37,6 +37,7 @@ export interface MkProject {
   encapsulation: ViewEncapsulation.None,
 })
 export class Mediakit implements AfterViewInit, OnDestroy {
+  private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
   readonly lang = inject(TyroUiLangService).lang;
 
@@ -56,6 +57,7 @@ export class Mediakit implements AfterViewInit, OnDestroy {
   private modelRo?: ResizeObserver;
 
   ngAfterViewInit() {
+    if (!this.isBrowser) return;
     this.bentoRo = new ResizeObserver(() => this.updateBentoScale());
     this.bentoRo.observe(this.bentoOuterRef.nativeElement);
     this.updateBentoScale();
@@ -83,6 +85,7 @@ export class Mediakit implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy() {
+    if (!this.isBrowser) return;
     this.bentoRo?.disconnect();
     this.projBentoRo?.disconnect();
     this.modelRo?.disconnect();

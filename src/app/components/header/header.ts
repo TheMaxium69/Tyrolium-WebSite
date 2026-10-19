@@ -7,7 +7,9 @@ import {
   NgZone,
   ViewEncapsulation,
   inject,
+  PLATFORM_ID,
 } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { TyroUiLangService } from 'tyrolium-ui';
 import * as THREE from 'three';
 
@@ -385,6 +387,7 @@ class AppScene {
   encapsulation: ViewEncapsulation.None,
 })
 export class Header implements AfterViewInit, OnDestroy {
+  private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
   readonly lang = inject(TyroUiLangService).lang;
 
   @ViewChild('canvasContainer') canvasContainerRef!: ElementRef<HTMLDivElement>;
@@ -397,6 +400,7 @@ export class Header implements AfterViewInit, OnDestroy {
   constructor(private ngZone: NgZone) {}
 
   ngAfterViewInit(): void {
+    if (!this.isBrowser) return;
     this.ngZone.runOutsideAngular(() => {
       this.appScene = new AppScene(this.canvasContainerRef.nativeElement);
       this.appScene.init();
@@ -415,6 +419,7 @@ export class Header implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    if (!this.isBrowser) return;
     this.appScene?.destroy();
     window.removeEventListener('mousemove', this.boundMouseMove);
     window.removeEventListener('resize',    this.boundResize);

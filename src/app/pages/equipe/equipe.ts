@@ -1,5 +1,5 @@
-import { Component, inject, AfterViewInit, OnDestroy, NgZone, ViewEncapsulation } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, inject, AfterViewInit, OnDestroy, NgZone, ViewEncapsulation, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { TyroUiLangService, TyroUiCTA } from 'tyrolium-ui';
 
@@ -31,6 +31,7 @@ export interface TeamPerson {
   encapsulation: ViewEncapsulation.None,
 })
 export class Equipe implements AfterViewInit, OnDestroy {
+  private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
   readonly lang = inject(TyroUiLangService).lang;
 
@@ -252,6 +253,7 @@ export class Equipe implements AfterViewInit, OnDestroy {
   constructor(private ngZone: NgZone) {}
 
   ngAfterViewInit(): void {
+    if (!this.isBrowser) return;
     this.ngZone.runOutsideAngular(() => {
       this.observer = new IntersectionObserver(
         (entries) => {
@@ -268,6 +270,7 @@ export class Equipe implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    if (!this.isBrowser) return;
     this.observer?.disconnect();
   }
 }

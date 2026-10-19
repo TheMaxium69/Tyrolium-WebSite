@@ -1,7 +1,7 @@
 import { Component, inject, OnInit, OnDestroy, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { TyroUiCTA, TyroUiLangService } from 'tyrolium-ui';
+import { TyroUiCTA, TyroUiLangService, TyroUiSeoService } from 'tyrolium-ui';
 import { CaseStudy, getCaseStudyBySlug } from '../etudes-data';
 
 @Component({
@@ -15,6 +15,7 @@ export class EtudesOne implements OnInit, OnDestroy {
   readonly lang = inject(TyroUiLangService).lang;
   private readonly route = inject(ActivatedRoute);
   private readonly router = inject(Router);
+  private readonly seo = inject(TyroUiSeoService);
   private sub!: Subscription;
 
   study!: CaseStudy;
@@ -24,6 +25,10 @@ export class EtudesOne implements OnInit, OnDestroy {
       const found = getCaseStudyBySlug(params.get('slug') ?? '');
       if (!found) { this.router.navigate(['/etudes-de-cas']); return; }
       this.study = found;
+      this.seo.set({
+        title:       { fr: `${found.brand} - Étude de cas`, en: `${found.brand} - Case Study` },
+        description: { fr: found.summary, en: found.summaryEn },
+      });
     });
   }
 

@@ -1,5 +1,5 @@
-import { Component, ViewEncapsulation, inject, AfterViewInit, OnDestroy, NgZone } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, ViewEncapsulation, inject, AfterViewInit, OnDestroy, NgZone, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { TyroUiLangService } from 'tyrolium-ui';
 
@@ -28,6 +28,7 @@ export interface TimelineEvent {
   encapsulation: ViewEncapsulation.None,
 })
 export class Chronologie implements AfterViewInit, OnDestroy {
+  private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
   readonly lang = inject(TyroUiLangService).lang;
 
@@ -952,6 +953,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
   constructor(private ngZone: NgZone) {}
 
   ngAfterViewInit(): void {
+    if (!this.isBrowser) return;
     this.ngZone.runOutsideAngular(() => {
       this.observer = new IntersectionObserver(
         (entries) => {
@@ -968,6 +970,7 @@ export class Chronologie implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    if (!this.isBrowser) return;
     this.observer?.disconnect();
   }
 }

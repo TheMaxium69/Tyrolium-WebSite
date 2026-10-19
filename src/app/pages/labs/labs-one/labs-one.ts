@@ -1,6 +1,6 @@
 import { Component, inject, OnInit, OnDestroy, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { TyroUiLangService } from 'tyrolium-ui';
+import { TyroUiLangService, TyroUiSeoService } from 'tyrolium-ui';
 import { LABS, Lab, getLabBySlug } from '../labs-data';
 import { Subscription } from 'rxjs';
 
@@ -15,6 +15,7 @@ export class LabsOne implements OnInit, OnDestroy {
   readonly lang = inject(TyroUiLangService).lang;
   private readonly route = inject(ActivatedRoute);
   private readonly router = inject(Router);
+  private readonly seo = inject(TyroUiSeoService);
   private sub!: Subscription;
 
   lab!: Lab;
@@ -28,6 +29,10 @@ export class LabsOne implements OnInit, OnDestroy {
       if (!found) { this.router.navigate(['/labs']); return; }
 
       this.lab = found;
+      this.seo.set({
+        title:       { fr: found.name, en: found.name },
+        description: { fr: found.description, en: found.descriptionEn },
+      });
       const idx = LABS.indexOf(found);
       this.prevLab = LABS[idx - 1] ?? null;
       this.nextLab = LABS[idx + 1] ?? null;
