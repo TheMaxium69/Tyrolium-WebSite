@@ -1,0 +1,12 @@
+User-agent: *
+Disallow: /Contenu/
+Disallow: /Download/
+Disallow: /generate-pp/
+Disallow: /403/
+Disallow: /404/
+Disallow: /410/
+Disallow: /en/403/
+Disallow: /en/404/
+Disallow: /en/410/
+
+Sitemap: https://tyrolium.fr/sitemap.xml

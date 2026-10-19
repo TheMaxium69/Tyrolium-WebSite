@@ -1,3 +1,9 @@
+# ══════════════════════════════════════════════════════════════════
+# tyrolium.fr — Apache (pré-rendu)
+# Généré par scripts/tyrobuild.mjs : ne pas modifier dans prod/,
+# modifier scripts/server-config/apache.htaccess puis relancer tyrobuild.
+# ══════════════════════════════════════════════════════════════════
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
@@ -10,33 +16,54 @@
   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
   # ==========================================
-  # 2. EXCLUSION DE DOSSIERS SPÉCIFIQUES
+  # 2. FICHIERS CACHÉS (.git, .gitignore…)
   # ==========================================
-  # Remplace ces chemins par les dossiers à laisser en comportement natif Apache
-  # Retire ces lignes si tu n'as pas de dossiers à exclure sur un site spécifique
+  # Le dossier déployé est un dépôt git : on ne sert jamais un fichier ou dossier caché
+  RewriteRule (^|/)\.(?!well-known/) - [R=404,L]
+
+  # ==========================================
+  # 3. PAGES SUPPRIMÉES DÉFINITIVEMENT (410 Gone)
+  # ==========================================
+  # Anciennes URLs encore référencées : 410 dit aux moteurs de les retirer pour de bon
+  # (liste "gone" dans scripts/tyrobuild.mjs)
+  RewriteRule ^(ServerMC|Panel)(/.*)?$ - [R=410,L]
+
+  # ==========================================
+  # 4. EXCLUSION DE DOSSIERS SPÉCIFIQUES
+  # ==========================================
+  # Dossiers laissés en comportement natif Apache (liste dans scripts/tyrobuild.mjs)
   RewriteRule ^(Download|generate-pp|Contenu/Image)($|/) - [L]
 
   # ==========================================
-  # 3. ROUTAGE ANGULAR
+  # 5. ROUTAGE ANGULAR
   # ==========================================
-  # Si le chemin demandé correspond à un fichier existant (-f) ou un dossier existant (-d)
-  # (Cela permet à tes assets, scripts, et styles de se charger normalement)
-  RewriteCond %{REQUEST_FILENAME} -f [OR]
-  RewriteCond %{REQUEST_FILENAME} -d
+  # /404, /403 et /410 (et /en/…) visités directement : ils renvoient aussi leur vrai code
+  RewriteRule ^(en/)?404/?$ - [R=404,L]
+  RewriteRule ^(en/)?403/?$ - [R=403,L]
+  RewriteRule ^(en/)?410/?$ - [R=410,L]
+
+  # Fichier existant (assets, scripts, styles…) → servi tel quel
+  RewriteCond %{REQUEST_FILENAME} -f
   RewriteRule ^ - [L]
 
-  # Sinon, on renvoie tout le reste vers le point d'entrée d'Angular
-  # Si ton site n'est pas à la racine, modifie "/index.html" en "/ton-sous-dossier/index.html"
-  RewriteRule ^ /index.html [L]
+  # Page pré-rendue : /equipe → /equipe/index.html (sans redirection vers /equipe/)
+  RewriteCond %{REQUEST_FILENAME}/index.html -f
+  RewriteRule ^(.+?)/?$ /$1/index.html [L]
+
+  # Tout le reste n'existe pas : pas de réécriture, Apache répond 404
+  # (ou 403 pour un dossier sans page) avec la page d'erreur pré-rendue ci-dessous
 </IfModule>
 
 # ==========================================
-# 4. SÉCURITÉ ET FALLBACK (404 & 403)
+# 6. SÉCURITÉ ET PAGES D'ERREUR
 # ==========================================
-# Désactiver le listing des répertoires (génère une erreur 403 si on tente de lister un dossier)
+# Désactiver le listing des répertoires (un dossier sans page répond 403)
 Options -Indexes
 
-# Si une erreur 404 (Introuvable) ou 403 (Interdit) survient côté Apache,
-# on renvoie le visiteur sur l'index d'Angular.
-ErrorDocument 404 /index.html
-ErrorDocument 403 /index.html
+# Empêche Apache de rediriger /equipe vers /equipe/ (301) : les pages pré-rendues sont des dossiers
+DirectorySlash Off
+
+# Vrai code HTTP + page d'erreur pré-rendue (Angular affiche la même page au démarrage)
+ErrorDocument 404 /404/index.html
+ErrorDocument 403 /403/index.html
+ErrorDocument 410 /410/index.html

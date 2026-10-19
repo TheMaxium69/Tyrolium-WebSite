@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://tyrolium.fr</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/chronologie</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/chronologie"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/chronologie"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/chronologie"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/contact</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/contact"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/en</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/en/chronologie</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/chronologie"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/chronologie"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/chronologie"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/en/contact</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/contact"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/en/equipe</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/equipe"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/equipe"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/equipe"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/en/etudes-de-cas</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/etudes-de-cas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/etudes-de-cas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/etudes-de-cas"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/en/etudes-de-cas/cabinet-marthelot</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/etudes-de-cas/cabinet-marthelot"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/etudes-de-cas/cabinet-marthelot"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/etudes-de-cas/cabinet-marthelot"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/en/etudes-de-cas/solidserv</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/etudes-de-cas/solidserv"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/etudes-de-cas/solidserv"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/etudes-de-cas/solidserv"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/en/etudes-de-cas/timeclaw</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/etudes-de-cas/timeclaw"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/etudes-de-cas/timeclaw"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/etudes-de-cas/timeclaw"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/en/etudes-de-cas/tyrolium-ui</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/etudes-de-cas/tyrolium-ui"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/etudes-de-cas/tyrolium-ui"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/etudes-de-cas/tyrolium-ui"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/en/etudes-de-cas/tyroserv</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/etudes-de-cas/tyroserv"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/etudes-de-cas/tyroserv"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/etudes-de-cas/tyroserv"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/en/etudes-de-cas/tyrostage</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/etudes-de-cas/tyrostage"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/etudes-de-cas/tyrostage"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/etudes-de-cas/tyrostage"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/en/labs</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/labs"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/labs"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/labs"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/en/labs/api-getserver-minecraft</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/labs/api-getserver-minecraft"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/labs/api-getserver-minecraft"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/labs/api-getserver-minecraft"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/en/labs/chatbox-twitch-framework</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/labs/chatbox-twitch-framework"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/labs/chatbox-twitch-framework"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/labs/chatbox-twitch-framework"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/en/labs/discordbot-framework</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/labs/discordbot-framework"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/labs/discordbot-framework"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/labs/discordbot-framework"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/en/labs/genjson-minecraft</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/labs/genjson-minecraft"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/labs/genjson-minecraft"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/labs/genjson-minecraft"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/en/labs/tyrogit</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/labs/tyrogit"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/labs/tyrogit"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/labs/tyrogit"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/en/labs/tyrolium-ip</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/labs/tyrolium-ip"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/labs/tyrolium-ip"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/labs/tyrolium-ip"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/en/labs/tyrolium-speedtest</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/labs/tyrolium-speedtest"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/labs/tyrolium-speedtest"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/labs/tyrolium-speedtest"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/en/labs/tyrolium-ui</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/labs/tyrolium-ui"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/labs/tyrolium-ui"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/labs/tyrolium-ui"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/en/labs/tyrositeframework</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/labs/tyrositeframework"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/labs/tyrositeframework"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/labs/tyrositeframework"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/en/legal/cgu</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/legal/cgu"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/legal/cgu"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/legal/cgu"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/en/legal/cgv</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/legal/cgv"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/legal/cgv"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/legal/cgv"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/en/legal/privacy</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/legal/privacy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/legal/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/legal/privacy"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/en/legal/terms</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/legal/terms"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/legal/terms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/legal/terms"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/en/mediakit</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/mediakit"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/mediakit"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/mediakit"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/en/partenaires</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/partenaires"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/partenaires"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/partenaires"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/en/prestation/formation</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/prestation/formation"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/prestation/formation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/prestation/formation"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/en/prestation/incubateur</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/prestation/incubateur"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/prestation/incubateur"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/prestation/incubateur"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/en/prestation/minecraft</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/prestation/minecraft"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/prestation/minecraft"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/prestation/minecraft"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/en/prestation/server</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/prestation/server"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/prestation/server"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/prestation/server"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/en/prestation/web</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/prestation/web"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/prestation/web"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/prestation/web"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/en/project</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/project"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/project"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/project"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/en/rse</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/rse"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/rse"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/rse"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/en/server</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/server"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/server"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/server"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/en/vision</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/vision"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/vision"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/vision"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/equipe</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/equipe"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/equipe"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/equipe"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/etudes-de-cas</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/etudes-de-cas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/etudes-de-cas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/etudes-de-cas"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/etudes-de-cas/cabinet-marthelot</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/etudes-de-cas/cabinet-marthelot"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/etudes-de-cas/cabinet-marthelot"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/etudes-de-cas/cabinet-marthelot"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/etudes-de-cas/solidserv</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/etudes-de-cas/solidserv"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/etudes-de-cas/solidserv"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/etudes-de-cas/solidserv"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/etudes-de-cas/timeclaw</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/etudes-de-cas/timeclaw"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/etudes-de-cas/timeclaw"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/etudes-de-cas/timeclaw"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/etudes-de-cas/tyrolium-ui</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/etudes-de-cas/tyrolium-ui"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/etudes-de-cas/tyrolium-ui"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/etudes-de-cas/tyrolium-ui"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/etudes-de-cas/tyroserv</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/etudes-de-cas/tyroserv"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/etudes-de-cas/tyroserv"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/etudes-de-cas/tyroserv"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/etudes-de-cas/tyrostage</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/etudes-de-cas/tyrostage"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/etudes-de-cas/tyrostage"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/etudes-de-cas/tyrostage"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/labs</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/labs"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/labs"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/labs"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/labs/api-getserver-minecraft</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/labs/api-getserver-minecraft"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/labs/api-getserver-minecraft"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/labs/api-getserver-minecraft"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/labs/chatbox-twitch-framework</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/labs/chatbox-twitch-framework"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/labs/chatbox-twitch-framework"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/labs/chatbox-twitch-framework"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/labs/discordbot-framework</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/labs/discordbot-framework"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/labs/discordbot-framework"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/labs/discordbot-framework"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/labs/genjson-minecraft</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/labs/genjson-minecraft"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/labs/genjson-minecraft"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/labs/genjson-minecraft"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/labs/tyrogit</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/labs/tyrogit"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/labs/tyrogit"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/labs/tyrogit"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/labs/tyrolium-ip</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/labs/tyrolium-ip"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/labs/tyrolium-ip"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/labs/tyrolium-ip"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/labs/tyrolium-speedtest</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/labs/tyrolium-speedtest"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/labs/tyrolium-speedtest"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/labs/tyrolium-speedtest"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/labs/tyrolium-ui</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/labs/tyrolium-ui"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/labs/tyrolium-ui"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/labs/tyrolium-ui"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/labs/tyrositeframework</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/labs/tyrositeframework"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/labs/tyrositeframework"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/labs/tyrositeframework"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/legal/cgu</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/legal/cgu"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/legal/cgu"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/legal/cgu"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/legal/cgv</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/legal/cgv"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/legal/cgv"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/legal/cgv"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/legal/privacy</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/legal/privacy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/legal/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/legal/privacy"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/legal/terms</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/legal/terms"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/legal/terms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/legal/terms"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/mediakit</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/mediakit"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/mediakit"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/mediakit"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/partenaires</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/partenaires"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/partenaires"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/partenaires"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/prestation/formation</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/prestation/formation"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/prestation/formation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/prestation/formation"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/prestation/incubateur</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/prestation/incubateur"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/prestation/incubateur"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/prestation/incubateur"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/prestation/minecraft</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/prestation/minecraft"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/prestation/minecraft"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/prestation/minecraft"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/prestation/server</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/prestation/server"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/prestation/server"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/prestation/server"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/prestation/web</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/prestation/web"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/prestation/web"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/prestation/web"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/project</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/project"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/project"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/project"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/rse</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/rse"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/rse"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/rse"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/server</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/server"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/server"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/server"/>
+  </url>
+  <url>
+    <loc>https://tyrolium.fr/vision</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tyrolium.fr/vision"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyrolium.fr/en/vision"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyrolium.fr/vision"/>
+  </url>
+</urlset>
