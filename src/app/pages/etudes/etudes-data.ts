@@ -220,6 +220,8 @@ export interface CaseStudy {
   periodEn?: string;
   dataAsOf: string;
   dataAsOfEn: string;
+  /** Date de publication (AAAA-MM-JJ) : ordre et date des articles du flux RSS, balise article:published_time */
+  publishedAt: string;
   title: string;
   titleEn: string;
   summary: string;
@@ -244,6 +246,7 @@ export interface CaseStudy {
 export const CASE_STUDIES: CaseStudy[] = [
   {
     slug: 'tyroserv',
+    publishedAt: '2026-09-26',
     brand: 'TyroServ',
     logo: 'assets/tyrolium-ui/projects/TyroServ-White.png',
     partnerCombo: { logo: 'assets/tyrolium-ui/projects/TyroServ-White.png', group: 'Tyrolium', name: 'TyroServ' },
@@ -464,6 +467,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
   {
     slug: 'cabinet-marthelot',
+    publishedAt: '2026-09-26',
     brand: 'Cabinet Marthelot',
     brandFr: 'le Cabinet Marthelot',
     logo: 'assets/tyrolium-ui/projects/Tyrolium-White.png',
@@ -679,6 +683,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
   {
     slug: 'tyrostage',
+    publishedAt: '2026-09-26',
     brand: 'TyroStage',
     logo: 'assets/tyrolium-ui/projects/Tyrolium-White.png',
     partnerCombo: { logo: 'assets/tyrolium-ui/projects/Tyrolium-White.png', name: 'Tyrolium' },
@@ -953,6 +958,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
   {
     slug: 'timeclaw',
+    publishedAt: '2026-10-16',
     brand: 'TimeClaw',
     logo: 'assets/tyrolium-ui/projects/TyroCiel-White.png',
     partnerLogo: 'assets/etudes/timeclaw-white.png',
@@ -1174,6 +1180,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
   {
     slug: 'solidserv',
+    publishedAt: '2026-10-16',
     brand: 'SolidServ',
     logo: 'assets/tyrolium-ui/projects/SolidServ-White.png',
     partnerCombo: { logo: 'assets/tyrolium-ui/projects/SolidServ-White.png', group: 'Tyrolium', name: 'SolidServ' },
@@ -1382,6 +1389,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
   {
     slug: 'tyrolium-ui',
+    publishedAt: '2026-10-16',
     brand: 'Tyrolium UI',
     logo: 'assets/tyrolium-ui/projects/Tyrolium-White.png',
     partnerCombo: { logo: 'assets/tyrolium-ui/projects/Tyrolium-White.png', group: 'Tyrolium', name: 'Design System' },

@@ -28,6 +28,7 @@ export class EtudesOne implements OnInit, OnDestroy {
       this.seo.set({
         title:       { fr: `${found.brand} - Étude de cas`, en: `${found.brand} - Case Study` },
         description: { fr: found.summary, en: found.summaryEn },
+        publishedAt: found.publishedAt,
       });
     });
   }
