@@ -1,0 +1,14 @@
+/* TEAM */
+    Fondateur, développeur : Maxime Tournier
+    Contact : contact@tyrolium.fr
+    X : @TyroliumE
+    Équipe : https://tyrolium.fr/equipe
+    Localisation : France
+
+/* SITE */
+    Site : Tyrolium - https://tyrolium.fr
+    Dernière mise à jour : 2026/10/21
+    Langues : Français, English
+    Standards : HTML5, CSS3, TypeScript
+    Composants : Angular, Tyrolium UI - https://design.tyrolium.fr
+    Logiciels : Angular CLI, sharp, Remix Icon

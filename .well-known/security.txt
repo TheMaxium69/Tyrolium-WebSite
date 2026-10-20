@@ -1,0 +1,6 @@
+# Une faille de sécurité sur ce site ? Merci de nous l'écrire avant de la rendre publique.
+# Found a security issue on this site? Please tell us before making it public.
+Contact: mailto:contact@tyrolium.fr
+Expires: 2027-09-01T00:00:00Z
+Preferred-Languages: fr, en
+Canonical: https://tyrolium.fr/.well-known/security.txt

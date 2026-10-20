@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tyrolium - Études de cas</title>
+    <link>https://tyrolium.fr/etudes-de-cas</link>
+    <description>Comment Tyrolium construit, lance et fait grandir ses produits, raconté avec les chiffres, les choix et les galères.</description>
+    <language>fr</language>
+    <atom:link href="https://tyrolium.fr/rss.xml" rel="self" type="application/rss+xml"/>
+    <lastBuildDate>Fri, 16 Oct 2026 00:00:00 GMT</lastBuildDate>
+    <image>
+      <url>https://tyrolium.fr/og-image.png</url>
+      <title>Tyrolium - Études de cas</title>
+      <link>https://tyrolium.fr/etudes-de-cas</link>
+    </image>
+    <item>
+      <title>Il voulait son propre studio. Nous l'avons aidé à le créer.</title>
+      <link>https://tyrolium.fr/etudes-de-cas/timeclaw</link>
+      <guid isPermaLink="true">https://tyrolium.fr/etudes-de-cas/timeclaw</guid>
+      <description>Mathys est arrivé chez nous en stage. Il est devenu le réalisateur de Rhodotales, puis l'une des têtes pensantes de TyroCiel. Quand il a voulu créer ses propres jeux, nous ne l'avons pas retenu : nous avons incubé son studio, TimeClaw. Et il n'a jamais quitté Rhodotales.</description>
+      <pubDate>Fri, 16 Oct 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>L'hébergeur né dans la galère, devenu le moteur du groupe</title>
+      <link>https://tyrolium.fr/etudes-de-cas/solidserv</link>
+      <guid isPermaLink="true">https://tyrolium.fr/etudes-de-cas/solidserv</guid>
+      <description>SolidServ est né en 2022 d'une idée de Pierre-Louis, avec des serveurs achetés grâce à TyroServ et très peu de moyens. Un faux départ avec la crypto, une explosion en 2025, et en 2026, tout Tyrolium se réorganise autour de ses revenus récurrents.</description>
+      <pubDate>Fri, 16 Oct 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Nous avons fusionné nos identités. Presque tout le monde était contre.</title>
+      <link>https://tyrolium.fr/etudes-de-cas/tyrolium-ui</link>
+      <guid isPermaLink="true">https://tyrolium.fr/etudes-de-cas/tyrolium-ui</guid>
+      <description>Pendant des années, chaque idée de Tyrolium avait son site, sa charte et son back-office. En juillet 2026, pour nos 9 ans, tout a convergé : une API, un back-office, une identité forte et une librairie de composants partagée par toutes les filiales. Le choix le plus critiqué de notre histoire.</description>
+      <pubDate>Fri, 16 Oct 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Le serveur Minecraft qui a financé un groupe</title>
+      <link>https://tyrolium.fr/etudes-de-cas/tyroserv</link>
+      <guid isPermaLink="true">https://tyrolium.fr/etudes-de-cas/tyroserv</guid>
+      <description>Comment un serveur semi-crack lancé en plein confinement a converti 21,8 % de ses joueurs, réuni 110 000 joueurs uniques et financé le démarrage de Tyrolium.</description>
+      <pubDate>Sat, 26 Sep 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Nous ne lisons pas les CV. Nous regardons les gens travailler.</title>
+      <link>https://tyrolium.fr/etudes-de-cas/tyrostage</link>
+      <guid isPermaLink="true">https://tyrolium.fr/etudes-de-cas/tyrostage</guid>
+      <description>TyroStage, c'est notre méthode de recrutement : repérer les talents pendant nos formations en école, sur des semaines de pratique réelle, plutôt que sur un CV et un entretien d'une heure.</description>
+      <pubDate>Sat, 26 Sep 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Un site pro offert, financé par l'hébergement</title>
+      <link>https://tyrolium.fr/etudes-de-cas/cabinet-marthelot</link>
+      <guid isPermaLink="true">https://tyrolium.fr/etudes-de-cas/cabinet-marthelot</guid>
+      <description>Avec le Cabinet Marthelot, nous offrons à des artisans, indépendants et TPE un site vitrine développé par nos équipes, sans coût de création : seul l'hébergement est payant, en abonnement.</description>
+      <pubDate>Sat, 26 Sep 2026 00:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

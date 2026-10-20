@@ -119,6 +119,7 @@ ErrorDocument 410 /410/index.html
 
 <IfModule mod_mime.c>
   AddType image/webp .webp
+  AddType application/manifest+json .webmanifest
 </IfModule>
 
 # ==========================================

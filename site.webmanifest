@@ -1,0 +1,33 @@
+{
+  "id": "/",
+  "name": "Tyrolium",
+  "short_name": "Tyrolium",
+  "description": "Tyrolium est une holding technologique française fondée en 2017. De la conception web à l'infrastructure cloud, nous accompagnons chaque projet avec expertise et passion. Nous développons notre propre écosystème : hébergement, gaming, CRM et réseaux sociaux. Fondé par Maxime Tournier.",
+  "lang": "fr",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#111827",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

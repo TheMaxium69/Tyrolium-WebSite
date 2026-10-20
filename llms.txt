@@ -1,0 +1,68 @@
+# Tyrolium
+
+> Tyrolium est une holding technologique française fondée en 2017. De la conception web à l'infrastructure cloud, nous accompagnons chaque projet avec expertise et passion. Nous développons notre propre écosystème : hébergement, gaming, CRM et réseaux sociaux. Fondé par Maxime Tournier.
+
+Site officiel : https://tyrolium.fr (page d'accueil : Tyrolium - Holding Technologique).
+Chaque page existe en français et en anglais : version anglaise = même adresse précédée de /en (ex. https://tyrolium.fr/en).
+Fait partie du groupe Tyrolium, holding technologique française fondée en 2017 par Maxime Tournier. Contact : contact@tyrolium.fr.
+
+## Pages
+
+- [Chronologie](https://tyrolium.fr/chronologie): D'un serveur Minecraft moddé en 2017 à une holding technologique : l'histoire de Tyrolium à travers ses moments clés.
+- [Contact](https://tyrolium.fr/contact): Une question, un projet, une idée ? Contactez l'équipe Tyrolium, nous vous répondons dans les meilleurs délais.
+- [Équipe](https://tyrolium.fr/equipe): Un fondateur, un noyau de membres historiques, des partenaires de confiance : celles et ceux qui construisent Tyrolium depuis 2017.
+- [Media Kit](https://tyrolium.fr/mediakit): Ressources visuelles officielles du groupe Tyrolium : logos, typographies, couleurs et déclinaisons par filiale.
+- [Partenaires](https://tyrolium.fr/partenaires): Les organismes, institutions et entreprises qui font confiance à Tyrolium et soutiennent son développement.
+- [Nos filiales](https://tyrolium.fr/project): Découvrez l'écosystème de filiales piloté par Tyrolium : hébergement, gaming, CRM, compte universel et agences de créateurs.
+- [RSE](https://tyrolium.fr/rse): La technologie au service de la nation : l'engagement de Tyrolium pour une France numérique souveraine, méritocratique et responsable.
+- [Nos serveurs](https://tyrolium.fr/server): Un aperçu de tous les serveurs de l'infrastructure Tyrolium / SolidServ : VPS, dédiés, internes, cloud et plus encore.
+- [Notre vision](https://tyrolium.fr/vision): Bâtir le géant technologique que la France n'a jamais su construire : indépendant, souverain et porté par une nouvelle génération.
+
+## Études de cas
+
+- [Études de cas](https://tyrolium.fr/etudes-de-cas): Comment Tyrolium construit, lance et fait grandir ses produits, raconté avec les chiffres, les choix et les galères.
+- [Cabinet Marthelot - Étude de cas](https://tyrolium.fr/etudes-de-cas/cabinet-marthelot): Avec le Cabinet Marthelot, nous offrons à des artisans, indépendants et TPE un site vitrine développé par nos équipes, sans coût de création : seul l'hébergement est payant, en abonnement.
+- [SolidServ - Étude de cas](https://tyrolium.fr/etudes-de-cas/solidserv): SolidServ est né en 2022 d'une idée de Pierre-Louis, avec des serveurs achetés grâce à TyroServ et très peu de moyens. Un faux départ avec la crypto, une explosion en 2025, et en 2026, tout Tyrolium se réorganise autour de ses revenus récurrents.
+- [TimeClaw - Étude de cas](https://tyrolium.fr/etudes-de-cas/timeclaw): Mathys est arrivé chez nous en stage. Il est devenu le réalisateur de Rhodotales, puis l'une des têtes pensantes de TyroCiel. Quand il a voulu créer ses propres jeux, nous ne l'avons pas retenu : nous avons incubé son studio, TimeClaw. Et il n'a jamais quitté Rhodotales.
+- [Tyrolium UI - Étude de cas](https://tyrolium.fr/etudes-de-cas/tyrolium-ui): Pendant des années, chaque idée de Tyrolium avait son site, sa charte et son back-office. En juillet 2026, pour nos 9 ans, tout a convergé : une API, un back-office, une identité forte et une librairie de composants partagée par toutes les filiales. Le choix le plus critiqué de notre histoire.
+- [TyroServ - Étude de cas](https://tyrolium.fr/etudes-de-cas/tyroserv): Comment un serveur semi-crack lancé en plein confinement a converti 21,8 % de ses joueurs, réuni 110 000 joueurs uniques et financé le démarrage de Tyrolium.
+- [TyroStage - Étude de cas](https://tyrolium.fr/etudes-de-cas/tyrostage): TyroStage, c'est notre méthode de recrutement : repérer les talents pendant nos formations en école, sur des semaines de pratique réelle, plutôt que sur un CV et un entretien d'une heure.
+
+## Labs
+
+- [Labs](https://tyrolium.fr/labs): Expériences internes, outils et innovations de l'équipe technique Tyrolium, construits en interne et partagés ouvertement.
+- [ApiGetServer for Minecraft](https://tyrolium.fr/labs/api-getserver-minecraft): API PHP hébergée sur le même serveur que Minecraft, permettant d'exposer à l'extérieur les données clés : joueurs connectés, stats, map, et intégration des plugins majeurs.
+- [ChatBoxTwitch Framework](https://tyrolium.fr/labs/chatbox-twitch-framework): Framework PHP hébergé sur Apache/Nginx qui crée un environnement de personnalisation des chatbox Streamlabs en HTML/CSS/JS - conçu pour les talents d'Influnias et Vturias.
+- [DiscordBot Framework](https://tyrolium.fr/labs/discordbot-framework): Framework interne basé sur JDA Discord qui permet à Tyrolium de développer des bots Discord rapidement pour ses filiales et ses clients.
+- [GenJSON for Minecraft](https://tyrolium.fr/labs/genjson-minecraft): Script PowerShell qui génère automatiquement les fichiers JSON de ressources Minecraft - blockstates, modèles d'items et de blocs - pour accélérer le développement de mods.
+- [TyroGit Client](https://tyrolium.fr/labs/tyrogit): Alternative à GitHub Desktop développée en interne, avec support multi-remote, logos de dépôt personnalisés via .tyrogit et intégration des thèmes Tyrolium.
+- [Tyrolium IP](https://tyrolium.fr/labs/tyrolium-ip): Petit outil web qui affiche l'adresse IP publique du visiteur telle que vue par l'infrastructure Tyrolium / SolidServ, sans inscription ni tracking.
+- [Tyrolium SpeedTest](https://tyrolium.fr/labs/tyrolium-speedtest): Test de vitesse de connexion (débit, ping, gigue) hébergé sur speedtest.tyrolium.fr, avec une interface Angular aux couleurs Tyrolium.
+- [Tyrolium UI](https://tyrolium.fr/labs/tyrolium-ui): Librairie Angular interne partagée par tous les sites du groupe. Navbar universelle, Auth, CTA, Footer, thèmes et langues.
+- [TyroSiteFramework](https://tyrolium.fr/labs/tyrositeframework): Framework PHP interne conçu pour développer des sites et applications web clients très rapidement, avec un système de composants réutilisables et des imports automatisés.
+
+## Prestations
+
+- [Formations](https://tyrolium.fr/prestation/formation): Formations pratiques animées par des développeurs actifs, en présentiel ou à distance, individuelles ou en groupe.
+- [Incubateur](https://tyrolium.fr/prestation/incubateur): Accompagnement, infrastructure, réseau et visibilité : tout ce dont votre idée a besoin pour devenir un produit tech viable et ambitieux.
+- [Serveur Minecraft clé en main](https://tyrolium.fr/prestation/minecraft): Création, configuration et administration de serveurs Minecraft moddés ou vanilla, avec notre expérience depuis 2017 sur TyroServ.
+- [Hébergement](https://tyrolium.fr/prestation/server): Hébergement haute disponibilité : infrastructure professionnelle, datacenter en France et supervision 24/7.
+- [Création de sites web](https://tyrolium.fr/prestation/web): Du site vitrine à l'application métier, Tyrolium conçoit des expériences web modernes, performantes, accessibles et qui génèrent des leads.
+
+## Groupe Tyrolium
+
+- [Gamenium](https://gamenium.fr): Gamenium est un SaaS gratuit pour les joueurs : consultez les actualités JV, gérez votre collection dans le moindre détail et explorez une base de référence complète de jeux vidéo. Une filiale de Tyrolium.
+- [Influnias](https://influnias.fr): Influnias est une agence de créateurs de contenu qui donne aux talents du numérique les moyens de grandir. De la stratégie éditoriale aux partenariats de marque, nous accompagnons chaque créateur avec expertise et passion. Une filiale de Tyrolium.
+- [NexiumiaCRM](https://nexiumiacrm.fr): NexiumiaCRM est un CRM professionnel. Gérez vos contacts, votre pipeline et votre activité avec un outil hébergé et conçu avec le savoir-faire français. Une filiale de Tyrolium.
+- [SolidServ](https://solidserv.fr): SolidServ est un hébergeur de serveurs situé en France pour les entreprises et les particuliers. VPS, hébergement web, serveurs dédiés et serveurs de jeu - une infrastructure fiable et haute performance pour tous vos projets. Une filiale de Tyrolium.
+- [TyroCiel](https://tyrociel.fr): TyroCiel est un studio de jeu-vidéo français. Nous créons des expériences gaming immersives et originales avec passion et liberté créative totale. Une filiale de Tyrolium.
+- [TyroServ](https://tyroserv.fr): TyroServ est un serveur Minecraft PVP Faction moddé. Découvrez le TyroMod, notre mod exclusif avec la fusion de minerais. Saison 3 en cours de développement. Une filiale de Tyrolium.
+- [Useritium](https://useritium.fr): Useritium est un compte universel français gratuit. Une seule identité pour accéder à tout l'écosystème, hébergé en France par SolidServ. Une filiale de Tyrolium.
+- [Vturias](https://vturias.fr): Vturias est une agence de VTubing française dédiée à la création, la promotion et le développement des talents virtuels. Une filiale de Tyrolium, née du partenariat avec la VTubeuse AuroreTVv.
+
+## Optional
+
+- [Conditions générales d'utilisation](https://tyrolium.fr/legal/cgu): Conditions générales d'utilisation des sites et services du groupe Tyrolium.
+- [Conditions générales de vente](https://tyrolium.fr/legal/cgv): Conditions générales de vente des prestations et services du groupe Tyrolium.
+- [Politique de confidentialité](https://tyrolium.fr/legal/privacy): Comment Tyrolium collecte, utilise et protège vos données personnelles, et quels sont vos droits.
+- [Mentions légales](https://tyrolium.fr/legal/terms): Mentions légales du site Tyrolium : éditeur, hébergement, propriété intellectuelle et responsabilité.
