@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: tyrolium.fr
+Token: 93bf8fd782e7d6d51e071f3363cbda3b131d740f380f26dd670a422ffe97d58a
